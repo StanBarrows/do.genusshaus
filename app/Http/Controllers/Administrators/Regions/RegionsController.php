@@ -5,7 +5,7 @@ namespace Genusshaus\Http\Controllers\Places\Regions;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Http\Requests\Places\Regions\StoreRegionsRequest;
 
-class StoreRegionsController extends Controller
+class RegionsController extends Controller
 {
     public function store(StoreRegionsRequest $request)
     {

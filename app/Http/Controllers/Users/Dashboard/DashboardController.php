@@ -29,23 +29,6 @@ class DashboardController extends Controller
         return view('dashboard.index');
     }
 
-    public function images(Request $request)
-    {
-        $file = app()->uploadcare->getFile($request->uploadcare);
-
-        $uploadcare = new Uploadcare;
-
-        $uploadcare->uuid = $file->data['uuid'];
-        $uploadcare->url = $file->getUrl();
-
-        $uploadcare->save();
-
-        $file->store();
-
-        return redirect()->back();
-
-    }
-
 
 
 
