@@ -2,8 +2,8 @@
 
 namespace Genusshaus\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Genusshaus\App\Controllers\Controller;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
 {

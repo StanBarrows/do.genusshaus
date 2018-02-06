@@ -11,7 +11,6 @@ class StorePlacesRequest extends FormRequest
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -26,7 +25,7 @@ class StorePlacesRequest extends FormRequest
     {
         return [
 /*            'region_id' => 'required|exists:regions,id',*/
-            'name' => 'required',
+            'name'       => 'required',
             'uploadcare' => 'required|url',
         ];
     }

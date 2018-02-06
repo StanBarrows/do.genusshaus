@@ -1,9 +1,9 @@
 <?php
 
 use Faker\Generator as Faker;
-
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -17,9 +17,8 @@ use Genusshaus\Domain\Places\Models\Region;
 
 $factory->define(Place::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->uuid->unique(),
-        'region_id' => function()
-        {
+        'uuid'      => $faker->uuid->unique(),
+        'region_id' => function () {
             return factory(Region::class)->create()->id;
         },
         'name' => $faker->company,

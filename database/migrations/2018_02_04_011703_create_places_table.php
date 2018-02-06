@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePlacesTable extends Migration
 {
@@ -19,7 +19,6 @@ class CreatePlacesTable extends Migration
 
             $table->unsignedInteger('region_id');
 
-
             $table->string('type')->default('basic');
 
             $table->string('name');
@@ -28,8 +27,6 @@ class CreatePlacesTable extends Migration
             $table->softDeletes();
 
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
-
-
         });
     }
 

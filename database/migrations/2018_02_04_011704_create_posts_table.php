@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
@@ -11,7 +11,6 @@ class CreatePostsTable extends Migration
      *
      * @return void
      */
-
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
@@ -34,8 +33,6 @@ class CreatePostsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
-
-
         });
     }
 

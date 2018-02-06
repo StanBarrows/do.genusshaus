@@ -18,18 +18,16 @@ return [
 
     'private_key' => env('UC_SECRET_KEY'),
 
-
     /*
      |--------------------------------------------------------------------------
      | Settings
      |--------------------------------------------------------------------------
     */
 
-
-    'clearable' => 'true',
-    'doNotStore' => 'true',
-    'tabs' => 'file url',
-    'crop' => '3:2',
+    'clearable'   => 'true',
+    'doNotStore'  => 'true',
+    'tabs'        => 'file url',
+    'crop'        => '3:2',
     'imageShrink' => '2560x1560',
 
 ];

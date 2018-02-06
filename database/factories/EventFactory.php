@@ -3,6 +3,7 @@
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Event;
 use Genusshaus\Domain\Places\Models\Place;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -16,20 +17,18 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->uuid->unique(),
-        'place_id' => function()
-        {
+        'uuid'     => $faker->uuid->unique(),
+        'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
 
         'published' => false,
-        'pushed' => false,
+        'pushed'    => false,
 
+        'name'        => $faker->sentence(5, true),
+        'description' => $faker->paragraph(3, true),
 
-        'name' => $faker->sentence(5,true),
-        'description' => $faker->paragraph(3,true),
-
-        'start' => $faker->dateTime,
+        'start'  => $faker->dateTime,
         'finish' => null,
     ];
 });

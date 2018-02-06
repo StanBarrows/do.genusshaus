@@ -13,16 +13,14 @@ class PostTest extends TestCase
 
     protected $place;
 
-
     public function setUp()
     {
         parent::setUp();
         $this->disableExceptionHandling();
     }
 
-
     /** @test */
-    function a_post_belongs_to_an_place()
+    public function a_post_belongs_to_an_place()
     {
         $post = create(Post::class);
         $this->assertInstanceOf(Place::class, $post->place);

@@ -8,11 +8,9 @@ use Genusshaus\Http\Requests\Places\Places\StartImpersonateRequest;
 
 class EventsController extends Controller
 {
-
     public function index()
     {
         return view('app.places.events.index');
-
     }
 
     public function store(StartImpersonateRequest $request)
@@ -21,10 +19,10 @@ class EventsController extends Controller
         $place = Place::first();
 
         $event = $place->events()->create([
-            'name' => $request->name,
+            'name'        => $request->name,
             'description' => $request->description,
-            'start' => $request->start,
-            'finish' => $request->finish,
+            'start'       => $request->start,
+            'finish'      => $request->finish,
 
         ]);
 
@@ -32,8 +30,8 @@ class EventsController extends Controller
 
         $event->uploadcares()->create([
             'uploadcareable_id' => $event->id,
-            'uuid' => $uploadcare->data['uuid'],
-            'url' => $uploadcare->getUrl(),
+            'uuid'              => $uploadcare->data['uuid'],
+            'url'               => $uploadcare->getUrl(),
         ]);
 
         $uploadcare->store();

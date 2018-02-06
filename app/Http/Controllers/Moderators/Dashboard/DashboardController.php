@@ -3,15 +3,12 @@
 namespace Genusshaus\Http\Controllers\Moderators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
 
 class DashboardController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware(['auth','role:moderator']);
-
+        $this->middleware(['auth', 'role:moderator']);
     }
 
     /**
@@ -23,10 +20,4 @@ class DashboardController extends Controller
     {
         return view('app.moderators.dashboard.index');
     }
-
-
-
-
-
-
 }

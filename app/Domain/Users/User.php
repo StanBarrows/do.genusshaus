@@ -3,10 +3,9 @@
 namespace Genusshaus\App\Domain\Users;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Smart6ate\Roles\Traits\HasRoles;
-
 
 class User extends Authenticatable
 {
@@ -30,12 +29,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-
     public function getAvatar()
     {
-        if(empty($this->avatar)) { return 'https://www.gravatar.com/avatar/' . md5($this->email) . 'x?s=500&d=mm';}
+        if (empty($this->avatar)) {
+            return 'https://www.gravatar.com/avatar/'.md5($this->email).'x?s=500&d=mm';
+        }
 
         return $this->avatar;
     }
-
 }

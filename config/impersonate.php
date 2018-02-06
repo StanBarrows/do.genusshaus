@@ -13,5 +13,5 @@ return [
             'model' => Genusshaus\App\Domain\Users\User::class,
         ],
 
-        'redirect_route' => 'dashboard.index'
+        'redirect_route' => 'dashboard.index',
 ];

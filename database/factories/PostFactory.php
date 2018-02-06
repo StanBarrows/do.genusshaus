@@ -1,8 +1,9 @@
 <?php
 
 use Faker\Generator as Faker;
-use Genusshaus\Domain\Places\Models\Post;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Places\Models\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -16,21 +17,20 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
-        'uuid' => $faker->uuid->unique(),
-        'place_id' => function()
-        {
+        'uuid'     => $faker->uuid->unique(),
+        'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
 
         'published' => false,
-        'pushed' => false,
+        'pushed'    => false,
 
-        'title' => $faker->sentence(5,true),
-        'teaser' => $faker->paragraph(1,true),
-        'body' => $faker->paragraph(3,true),
+        'title'  => $faker->sentence(5, true),
+        'teaser' => $faker->paragraph(1, true),
+        'body'   => $faker->paragraph(3, true),
 
         'author' => $faker->name,
-        'src' => $faker->url
+        'src'    => $faker->url,
 
     ];
 });

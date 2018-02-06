@@ -7,11 +7,9 @@ use Genusshaus\App\Domain\Users\User;
 
 class DashboardController extends Controller
 {
-
     public function __construct()
     {
-        $this->middleware(['auth','role:administrator']);
-
+        $this->middleware(['auth', 'role:administrator']);
     }
 
     /**
@@ -22,12 +20,7 @@ class DashboardController extends Controller
     public function index()
     {
         $users = User::all();
+
         return view('app.administrators.dashboard.index', compact('users'));
     }
-
-
-
-
-
-
 }

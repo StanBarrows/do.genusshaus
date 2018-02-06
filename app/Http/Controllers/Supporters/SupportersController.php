@@ -10,12 +10,12 @@ class SupportersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','role:supporter'] ,['except' => ['destroy']]);
+        $this->middleware(['auth', 'role:supporter'], ['except' => ['destroy']]);
     }
 
     public function index()
     {
-       return view('app.supporters.index');
+        return view('app.supporters.index');
     }
 
     public function store(StartImpersonateRequest $request)
@@ -33,5 +33,4 @@ class SupportersController extends Controller
 
         return redirect('/');
     }
-
 }

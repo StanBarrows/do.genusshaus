@@ -12,7 +12,6 @@ class PlacesController extends Controller
     public function index()
     {
         return view('app.places.places.index');
-
     }
 
     public function store(StorePlacesRequest $request)
@@ -21,11 +20,11 @@ class PlacesController extends Controller
         $region = Region::first();
 
         $place = Place::create([
-            'region_id' => $region->id,
-            'name' => $request->name,
+            'region_id'   => $region->id,
+            'name'        => $request->name,
             'description' => $request->description,
-            'start' => $request->start,
-            'finish' => $request->finish,
+            'start'       => $request->start,
+            'finish'      => $request->finish,
 
         ]);
 
@@ -33,8 +32,8 @@ class PlacesController extends Controller
 
         $place->uploadcares()->create([
             'uploadcareable_id' => $place->id,
-            'uuid' => $uploadcare->data['uuid'],
-            'url' => $uploadcare->getUrl(),
+            'uuid'              => $uploadcare->data['uuid'],
+            'url'               => $uploadcare->getUrl(),
         ]);
 
         $uploadcare->store();

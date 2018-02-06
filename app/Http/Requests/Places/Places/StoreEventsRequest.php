@@ -12,7 +12,6 @@ class StoreEventsRequest extends FormRequest
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -23,15 +22,14 @@ class StoreEventsRequest extends FormRequest
      *
      * @return array
      */
-
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name'        => 'required|string|max:255',
             'description' => 'required|string',
-            'start' => 'required|date_format:Y-m-d H:i:s|after:' . Carbon::now(),
-            'finish' => 'nullable|date_format:Y-m-d H:i:s|after:start',
-            'uploadcare' => 'required|url'
+            'start'       => 'required|date_format:Y-m-d H:i:s|after:'.Carbon::now(),
+            'finish'      => 'nullable|date_format:Y-m-d H:i:s|after:start',
+            'uploadcare'  => 'required|url',
         ];
     }
 }
