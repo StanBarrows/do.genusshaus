@@ -14,13 +14,13 @@
             <ul class="navbar-nav">
 
                 @if (!Auth::guest())
-                    <li class="nav-item"><a href="{{ route('dashboard.index') }}" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ route('users.dashboard.index') }}" class="nav-link">Dashboard</a></li>
 
-                    <li class="nav-item"><a href="{{ route('places.index') }}" class="nav-link">Places</a></li>
+                    <li class="nav-item"><a href="{{ route('places.index') }}" class="nav-link">Your Places</a></li>
                     <li class="nav-item"><a href="{{ route('events.index') }}" class="nav-link">Events</a></li>
                     <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">Posts</a></li>
 
-                    <li class="nav-item"><a href="{{ route('support.index') }}" class="nav-link"><strong><i style="color: #4ca0f5" class="fas fa-question-circle fa-lg"></i></strong></a></li>
+                    <li class="nav-item"><a href="{{ route('users.support.index') }}" class="nav-link"><strong><i style="color: #4ca0f5" class="fas fa-question-circle fa-lg"></i></strong></a></li>
 
 
 
@@ -33,8 +33,6 @@
                 @if (Auth::guest())
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                 @else
-
-
                     <li class="avatar">
                         <img src="{{Auth::user()->getAvatar()}}">
                     </li>
@@ -44,8 +42,7 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Profil</a>
-
+                            <a class="dropdown-item" href="{{ route('users.profile.index') }}">Your profil</a>
 
                             @role('administrator')
                             <div class="dropdown-divider"></div>
@@ -55,8 +52,8 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('moderators.dashboard.index') }}"><i class="fas fa-cog mr-1"></i> Moderator </a>
                             @endrole
-                            <div class="dropdown-divider"></div>
                             @role('supporter')
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('supporters.index') }}"><i class="fas fa-medkit mr-2"></i>Support </a>
                             @endrole
                         </div>
@@ -74,10 +71,10 @@
                     @impersonating
                     <li class="nav-item">
 
-                        <a href="#" onclick="event.preventDefault();document.getElementById('impersonate-destroy').submit();"  class="nav-link">Stop Impersonating</a>
+                        <a href="#" onclick="event.preventDefault();document.getElementById('supporters.impersonate-destroy').submit();"  class="nav-link">Stop Impersonating</a>
 
 
-                        <form id="impersonate-destroy" action="{{ route('logout') }}" method="POST"
+                        <form id="impersonate-destroy" action="{{ route('supporters.impersonate-destroy') }}" method="POST"
                               style="display: none;">
                             {{ csrf_field() }}
                         </form>

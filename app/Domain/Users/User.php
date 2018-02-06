@@ -29,6 +29,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function getRouteKeyName()
+    {
+        return 'email';
+    }
+
+
     public function getAvatar()
     {
         if (empty($this->avatar)) {
@@ -36,5 +43,10 @@ class User extends Authenticatable
         }
 
         return $this->avatar;
+    }
+
+    public function isSameAs(User $user)
+    {
+        return $this->id == $user->id;
     }
 }
