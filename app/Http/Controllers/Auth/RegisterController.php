@@ -4,6 +4,7 @@ namespace Genusshaus\Http\Controllers\Auth;
 
 use Genusshaus\App\Domain\Users\User;
 use Genusshaus\App\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -51,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'terms' => 'require',
         ]);
     }
 
@@ -58,8 +60,9 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \Genusshaus\User
+     * @return \Genusshaus\Domain\Places\Models\User
      */
+
     protected function create(array $data)
     {
         return User::create([
@@ -67,5 +70,29 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function showRegistrationForm()
+    {
+        return redirect()->route('dashboard.index');
+    }
+
+    /**
+     * Handle a registration request for the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function register(Request $request)
+    {
+        abort(404);
     }
 }

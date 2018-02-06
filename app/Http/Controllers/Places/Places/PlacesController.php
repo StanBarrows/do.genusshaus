@@ -7,11 +7,11 @@ use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Http\Requests\Places\Places\StorePlacesRequest;
 
-class StorePlacesController extends Controller
+class PlacesController extends Controller
 {
     public function index()
     {
-        return view('places.index');
+        return view('app.places.places.index');
 
     }
 

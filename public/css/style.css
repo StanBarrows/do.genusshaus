@@ -1,0 +1,19 @@
+.avatar
+{
+    padding: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent !important;
+    z-index: 999;
+}
+
+.avatar img
+{
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    display: block;
+    position: relative;
+    z-index: 998;
+}

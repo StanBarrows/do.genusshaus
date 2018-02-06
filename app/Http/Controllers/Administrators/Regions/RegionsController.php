@@ -1,6 +1,6 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Places\Regions;
+namespace Genusshaus\Http\Controllers\Administrators\Regions;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Http\Requests\Places\Regions\StoreRegionsRequest;

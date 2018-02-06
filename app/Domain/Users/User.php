@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Smart6ate\Roles\Traits\HasRoles;
 
+
 class User extends Authenticatable
 {
     use Notifiable, SoftDeletes, HasRoles;
@@ -29,5 +30,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function getAvatar()
+    {
+        if(empty($this->avatar)) { return 'https://www.gravatar.com/avatar/' . md5($this->email) . 'x?s=500&d=mm';}
+
+        return $this->avatar;
+    }
 
 }

@@ -16,6 +16,7 @@ class RolesTableSeeder extends Seeder
         $now = Carbon::now();
 
         $roles = [
+
             [
                 'title' => 'administrator',
                 'created_at' => $now,
@@ -23,6 +24,11 @@ class RolesTableSeeder extends Seeder
             ],
             [
                 'title' => 'moderator',
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+            [
+                'title' => 'supporter',
                 'created_at' => $now,
                 'updated_at' => $now,
             ]

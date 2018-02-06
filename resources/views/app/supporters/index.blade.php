@@ -13,7 +13,7 @@
                     </h5>
                     <div class="card-body">
 
-                        <form class="form-horizontal" method="POST" action="{{ route('administrators.impersonate.start') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('impersonate.store') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group row">

@@ -1577,7 +1577,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/smart6ate/uploadcare",
-                "reference": "6e735cf9ec8e88e8987824d1a788529b7662dfc9",
+                "reference": "6350ef665c09f55222df0d25a874e60ee026b70a",
                 "shasum": null
             },
             "require": {

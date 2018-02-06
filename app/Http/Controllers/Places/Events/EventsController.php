@@ -4,18 +4,18 @@ namespace Genusshaus\Http\Controllers\Places\Events;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Http\Requests\Places\Places\StoreEventsRequest;
+use Genusshaus\Http\Requests\Places\Places\StartImpersonateRequest;
 
-class StoreEventsController extends Controller
+class EventsController extends Controller
 {
 
     public function index()
     {
-        return view('events.index');
+        return view('app.places.events.index');
 
     }
 
-    public function store(StoreEventsRequest $request)
+    public function store(StartImpersonateRequest $request)
     {
         /* EDIT */
         $place = Place::first();

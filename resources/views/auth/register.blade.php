@@ -83,6 +83,23 @@
 
                         <div class="form-group row">
                             <div class="col-lg-8 offset-2">
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input {{ $errors->has('terms') ? ' is-invalid' : '' }}" name="terms"> I accept the <a target="_blank" href="#">terms of service</a>
+                                    </label>
+                                </div>
+
+                                @if ($errors->has('terms'))
+                                    <div class="invalid-feedback">
+                                        <strong>{{ $errors->first('terms') }}</strong>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class="col-lg-8 offset-2">
                                 <button type="submit" class="btn btn-block btn-primary">
                                     Register
                                 </button>

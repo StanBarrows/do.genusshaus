@@ -1,6 +1,6 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Administrators\Dashboard;
+namespace Genusshaus\Http\Controllers\Moderators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\App\Domain\Users\User;
@@ -10,7 +10,7 @@ class DashboardController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','role:supporter']);
+        $this->middleware(['auth','role:moderator']);
 
     }
 
@@ -21,7 +21,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('app.supporters.dashboard.index');
+        return view('app.moderators.dashboard.index');
     }
 
 

@@ -1,10 +1,8 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Users;
+namespace Genusshaus\Http\Controllers\Users\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Illuminate\Http\Request;
-use Smart6ate\Uploadcare\Models\Uploadcare;
 
 class DashboardController extends Controller
 {
@@ -26,7 +24,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('app.users.dashboard.index');
     }
 
 

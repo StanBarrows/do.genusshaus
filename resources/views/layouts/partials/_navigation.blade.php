@@ -18,17 +18,11 @@
 
                     <li class="nav-item"><a href="{{ route('places.index') }}" class="nav-link">Places</a></li>
                     <li class="nav-item"><a href="{{ route('events.index') }}" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">Posts</a></li>
 
-                    {{--  <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="#">Action</a>
-                              <a class="dropdown-item" href="#">Another action</a>
-                              <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                      </li>--}}
+                    <li class="nav-item"><a href="{{ route('support.index') }}" class="nav-link"><strong><i style="color: #4ca0f5" class="fas fa-question-circle fa-lg"></i></strong></a></li>
+
+
 
                 @endif
             </ul>
@@ -41,7 +35,33 @@
                 @else
 
 
-                    <li class="nav-item"><a href="#" class="nav-link">{{ Auth::user()->name }}</a></li>
+                    <li class="avatar">
+                        <img src="{{Auth::user()->getAvatar()}}">
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ Auth::user()->name }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Profil</a>
+
+
+                            @role('administrator')
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('administrators.dashboard.index') }}"><i class="fas fa-unlock mr-1"></i> Administrator </a>
+                            @endrole
+                            @role('moderator')
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('moderators.dashboard.index') }}"><i class="fas fa-cog mr-1"></i> Moderator </a>
+                            @endrole
+                            <div class="dropdown-divider"></div>
+                            @role('supporter')
+                            <a class="dropdown-item" href="{{ route('supporters.index') }}"><i class="fas fa-medkit mr-2"></i>Support </a>
+                            @endrole
+                        </div>
+                    </li>
+
                     <li class="nav-item"><a href="{{ route('logout') }}"  onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="nav-link">Logout</a>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -51,7 +71,27 @@
 
                     </li>
 
+                    @impersonating
+                    <li class="nav-item">
+
+                        <a href="#" onclick="event.preventDefault();document.getElementById('impersonate-destroy').submit();"  class="nav-link">Stop Impersonating</a>
+
+
+                        <form id="impersonate-destroy" action="{{ route('logout') }}" method="POST"
+                              style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+
+
+
+
+                    </li>
+                    @endimpersonating
+
+
+
                 @endif
+
             </ul>
 
 

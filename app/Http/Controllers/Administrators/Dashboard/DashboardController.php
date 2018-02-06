@@ -1,21 +1,16 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Administrators;
+namespace Genusshaus\Http\Controllers\Administrators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Illuminate\Http\Request;
-use Smart6ate\Uploadcare\Models\Uploadcare;
+use Genusshaus\App\Domain\Users\User;
 
-class AdministratorsController extends Controller
+class DashboardController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
-        $this->middleware(['auth','administrator']);
+        $this->middleware(['auth','role:administrator']);
 
     }
 
@@ -26,7 +21,8 @@ class AdministratorsController extends Controller
      */
     public function index()
     {
-        return view('app.administrators.dashboard.index');
+        $users = User::all();
+        return view('app.administrators.dashboard.index', compact('users'));
     }
 
 
