@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d0ae45a0a37def377d59b593dbd9ffd",
+    "content-hash": "76138551d62e39bc9a283ae29e057434",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1537,11 +1537,16 @@
         {
             "name": "smart6ate/roles",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smart6ate/roles.git",
+                "reference": "3f84012db6cc230ba51406c8995c785499752e37"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/smart6ate/roles",
-                "reference": "0a5f9c7ed7aa2f1882fcd15c3277e65fcfbc2b17",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/smart6ate/roles/zipball/3f84012db6cc230ba51406c8995c785499752e37",
+                "reference": "3f84012db6cc230ba51406c8995c785499752e37",
+                "shasum": ""
             },
             "require-dev": {
                 "orchestra/testbench": "^3.5",
@@ -1560,25 +1565,29 @@
                     "Smart6ate\\Roles\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "classmap": []
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Sebastian Fix",
                     "email": "info@smartgate.ch"
                 }
             ],
-            "description": "Internal role/permission management"
+            "description": "Internal role/permission management",
+            "time": "2018-02-06T13:37:31+00:00"
         },
         {
             "name": "smart6ate/uploadcare",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smart6ate/uploadcare.git",
+                "reference": "6350ef665c09f55222df0d25a874e60ee026b70a"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/smart6ate/uploadcare",
+                "type": "zip",
+                "url": "https://api.github.com/repos/smart6ate/uploadcare/zipball/6350ef665c09f55222df0d25a874e60ee026b70a",
                 "reference": "6350ef665c09f55222df0d25a874e60ee026b70a",
-                "shasum": null
+                "shasum": ""
             },
             "require": {
                 "uploadcare/uploadcare-php": "^2.1"
@@ -1600,13 +1609,15 @@
                     "Smart6ate\\Uploadcare\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Sebastian Fix",
                     "email": "info@smartgate.ch"
                 }
             ],
-            "description": "An uploadcre integration for Laravel"
+            "description": "An uploadcre integration for Laravel",
+            "time": "2018-02-05T07:06:18+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2897,16 +2908,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "06ef9bd6e9411cbbe1d444c08cff8384f5b06769"
+                "reference": "fcd441f1dab962d9def79d9038055c7fa9df38c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/06ef9bd6e9411cbbe1d444c08cff8384f5b06769",
-                "reference": "06ef9bd6e9411cbbe1d444c08cff8384f5b06769",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/fcd441f1dab962d9def79d9038055c7fa9df38c0",
+                "reference": "fcd441f1dab962d9def79d9038055c7fa9df38c0",
                 "shasum": ""
             },
             "require": {
@@ -2954,7 +2965,7 @@
                 "testing",
                 "webdriver"
             ],
-            "time": "2018-01-26T13:36:30+00:00"
+            "time": "2018-02-05T15:10:23+00:00"
         },
         {
             "name": "mockery/mockery",
