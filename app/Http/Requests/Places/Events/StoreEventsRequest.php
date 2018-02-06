@@ -1,6 +1,6 @@
 <?php
 
-namespace Genusshaus\Http\Requests\Places\Places;
+namespace Genusshaus\Http\Requests\Places\Events;
 
 use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
