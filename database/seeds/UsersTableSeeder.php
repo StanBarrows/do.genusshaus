@@ -17,24 +17,9 @@ class UsersTableSeeder extends Seeder
 
         $users = [
             [
-                'name'       => 'Sebastian Fix',
-                'email'      => 'sebastian.fix@smartgate.ch',
-                'password'   => bcrypt('normal'),
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name'       => 'Oliver Reist',
-                'email'      => 'oliver.reist@smartgate.ch',
-                'password'   => bcrypt('genusshaus2018$$'),
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-
-            [
-                'name'       => 'Dominik Sapinski',
-                'email'      => 'dsapinski@soft-evolution.com',
-                'password'   => bcrypt('genusshaus2018$$'),
+                'name'       => env('DEFAULT_USER_NAME'),
+                'email'      => env('DEFAULT_USER_EMAIL'),
+                'password'   => bcrypt(env('DEFAULT_USER_PASSWORD')),
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
