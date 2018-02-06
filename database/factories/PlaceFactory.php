@@ -17,7 +17,7 @@ use Genusshaus\Domain\Places\Models\Region;
 
 $factory->define(Place::class, function (Faker $faker) {
     return [
-        'uuid'      => $faker->uuid->unique(),
+        'uuid'      => $faker->uuid,
         'region_id' => function () {
             return factory(Region::class)->create()->id;
         },

@@ -17,7 +17,7 @@ use Genusshaus\Domain\Places\Models\Post;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
-        'uuid'     => $faker->uuid->unique(),
+        'uuid'     => $faker->uuid,
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },

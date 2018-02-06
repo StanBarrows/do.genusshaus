@@ -35,10 +35,11 @@ class StorePlacesTest extends TestCase
     /** @test */
     public function a_place_requires_a_valid_region_id()
     {
-        factory(create(Region::class), 2);
+        factory(create(Region::class));
         $this->publishPlace(['region_id' => null])
             ->assertSessionHasErrors('region_id');
-        $this->publishPlace(['region_id' => 5])
+
+        $this->publishPlace(['region_id' => 99])
             ->assertSessionHasErrors('region_id');
     }
 }
