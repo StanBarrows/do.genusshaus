@@ -2,7 +2,6 @@
 
 namespace Genusshaus\Http\Requests\Places\Posts;
 
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePostsRequest extends FormRequest

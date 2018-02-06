@@ -13,15 +13,10 @@ Route::post('posts/store', 'Controllers\Places\Posts\PostsController@store')->na
 Route::get('events', 'Controllers\Places\Events\EventsController@index')->name('events.index');
 Route::post('events/store', 'Controllers\Places\Events\EventsController@store')->name('events.store');
 
-
-
 Route::group(['prefix' => '/backend'], function () {
-
     include 'app/auth.php';
     include 'app/users.php';
     include 'app/administrators.php';
     include 'app/moderators.php';
     include 'app/supporters.php';
-
 });
-

@@ -19,10 +19,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-
         $users = User::all();
 
         return view('app.moderators.dashboard.index', compact('users'));
-
     }
 }
