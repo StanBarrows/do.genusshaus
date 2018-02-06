@@ -6,7 +6,7 @@
 
             <div class="col-sm-12 col-md-3 mb-4">
 
-                @include('app.administrators.dashboard.partials._sidebar')
+                @include('app.moderators.dashboard.partials._sidebar')
 
             </div>
 

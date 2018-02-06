@@ -1,24 +1,25 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Places\Events;
+namespace Genusshaus\Http\Controllers\Places\Posts;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Http\Requests\Places\Events\StoreEventsRequest;
+use Genusshaus\Http\Requests\Places\Posts\StorePostsRequest;
 
-class EventsController extends Controller
+class PostsController extends Controller
 {
     public function index()
     {
-        return view('app.places.events.index');
+        return view('app.places.posts.index');
     }
 
-    public function store(StoreEventsRequest $request)
+
+    public function store(StorePostsRequest $request)
     {
         /* EDIT */
         $place = Place::first();
 
-        $event = $place->events()->create([
+        $post = $place->posts()->create([
             'name'        => $request->name,
             'description' => $request->description,
             'start'       => $request->start,
@@ -28,7 +29,7 @@ class EventsController extends Controller
 
         $uploadcare = app()->uploadcare->getFile($request->uploadcare);
 
-        $event->uploadcares()->create([
+        $post->uploadcares()->create([
             'uploadcareable_id' => $event->id,
             'uuid'              => $uploadcare->data['uuid'],
             'url'               => $uploadcare->getUrl(),
@@ -38,4 +39,6 @@ class EventsController extends Controller
 
         dd('succes');
     }
+
+
 }

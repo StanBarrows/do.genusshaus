@@ -4,7 +4,15 @@
     <div class="container">
         <div class="row mt-5">
 
-            <div class="col-md-10 offset-1">
+
+            <div class="col-sm-12 col-md-3 mb-4">
+
+                @include('app.supporters.partials._sidebar')
+
+            </div>
+
+
+            <div class="col-sm-12 col-md-9">
 
                 <div class="card">
                     <h5 class="card-header">Impersonate a user
@@ -13,7 +21,7 @@
                     </h5>
                     <div class="card-body">
 
-                        <form class="form-horizontal" method="POST" action="{{ route('impersonate.store') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('supporters.impersonate.store') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group row">

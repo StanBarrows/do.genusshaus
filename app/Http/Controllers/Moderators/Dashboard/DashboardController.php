@@ -3,6 +3,7 @@
 namespace Genusshaus\Http\Controllers\Moderators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\App\Domain\Users\User;
 
 class DashboardController extends Controller
 {
@@ -18,6 +19,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('app.moderators.dashboard.index');
+
+        $users = User::all();
+
+        return view('app.moderators.dashboard.index', compact('users'));
+
     }
 }
