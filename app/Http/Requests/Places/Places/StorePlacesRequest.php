@@ -24,7 +24,7 @@ class StorePlacesRequest extends FormRequest
     public function rules()
     {
         return [
-            'region_id' => 'required|exists:regions,id',
+            'region_id'  => 'required|exists:regions,id',
             'name'       => 'required',
             'uploadcare' => 'required|url',
         ];
