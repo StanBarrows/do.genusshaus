@@ -12,12 +12,10 @@ use Illuminate\Support\Str;
 
 class PasswordController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware(['auth']);
     }
-
 
     public function index()
     {
@@ -25,8 +23,7 @@ class PasswordController extends Controller
 
     public function update(UpdatePasswordRequest $request, User $user)
     {
-        if (!$user->isSameAs(Auth::user()))
-        {
+        if (!$user->isSameAs(Auth::user())) {
             abort(404);
         }
 

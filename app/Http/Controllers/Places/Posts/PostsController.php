@@ -13,7 +13,6 @@ class PostsController extends Controller
         return view('app.places.posts.index');
     }
 
-
     public function store(StorePostsRequest $request)
     {
         /* EDIT */
@@ -39,6 +38,4 @@ class PostsController extends Controller
 
         dd('succes');
     }
-
-
 }
