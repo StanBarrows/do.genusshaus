@@ -10,8 +10,7 @@ class Place extends Model
 {
     use SoftDeletes, HasUploadcare;
 
-    protected $fillable = ['region_id','name'];
-
+    protected $fillable = ['region_id', 'name'];
 
     public function region()
     {

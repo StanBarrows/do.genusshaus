@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Region;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories

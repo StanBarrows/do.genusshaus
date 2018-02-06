@@ -4,7 +4,6 @@ namespace Tests\Feature\Places;
 
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -22,20 +21,19 @@ class StorePlacesTest extends TestCase
     {
         $this->withExceptionHandling()->signIn();
         $place = make(Place::class, $overrides);
+
         return $this->post(route('places.store', $place->toArray()));
     }
 
-
     /** @test */
-    function a_place_requires_a_name()
+    public function a_place_requires_a_name()
     {
         $this->publishPlace(['name' => null])
             ->assertSessionHasErrors('name');
     }
 
-
     /** @test */
-    function a_place_requires_a_valid_region_id()
+    public function a_place_requires_a_valid_region_id()
     {
         factory(create(Region::class), 2);
         $this->publishPlace(['region_id' => null])
@@ -43,6 +41,4 @@ class StorePlacesTest extends TestCase
         $this->publishPlace(['region_id' => 5])
             ->assertSessionHasErrors('region_id');
     }
-
-
 }

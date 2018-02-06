@@ -2,11 +2,11 @@
 
 namespace Genusshaus\Http\Controllers\Auth;
 
-use Genusshaus\App\Domain\Users\User;
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\App\Domain\Users\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -43,42 +43,41 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'name'     => 'required|string|max:255',
+            'email'    => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'terms' => 'require',
+            'terms'    => 'require',
         ]);
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param array $data
+     *
      * @return \Genusshaus\Domain\Places\Models\User
      */
-
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+            'name'     => $data['name'],
+            'email'    => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
-
 
     /**
      * Show the application registration form.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function showRegistrationForm()
     {
         return redirect()->route('dashboard.index');
@@ -87,10 +86,10 @@ class RegisterController extends Controller
     /**
      * Handle a registration request for the application.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-
     public function register(Request $request)
     {
         abort(404);

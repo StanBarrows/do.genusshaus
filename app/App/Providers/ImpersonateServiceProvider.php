@@ -12,13 +12,11 @@ class ImpersonateServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function boot()
     {
         Blade::if('impersonating', function () {
             return session()->has('impersonate');
         });
-
     }
 
     /**

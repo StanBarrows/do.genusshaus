@@ -12,7 +12,6 @@ class StartImpersonateRequest extends FormRequest
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -23,15 +22,14 @@ class StartImpersonateRequest extends FormRequest
      *
      * @return array
      */
-
     public function rules()
     {
         return [
             'email' => [
-                'required','email',Rule::exists('users','email')->where(function ($builder) {
-                    return $builder->where('email','!=', $this->user()->email);
-                })
-            ]
+                'required', 'email', Rule::exists('users', 'email')->where(function ($builder) {
+                    return $builder->where('email', '!=', $this->user()->email);
+                }),
+            ],
         ];
     }
 }
