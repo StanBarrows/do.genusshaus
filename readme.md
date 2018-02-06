@@ -3,7 +3,7 @@
 # Genusshaus
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/smart6ate/do.genusshaus.svg?branch=master" alt="Build Status"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/smart6ate/do.genusshaus.svg?branch=developer" alt="Build Status"></a>
 </p>
 
 ## About Genusshaus
