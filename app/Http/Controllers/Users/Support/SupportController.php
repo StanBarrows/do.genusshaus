@@ -6,12 +6,10 @@ use Genusshaus\App\Controllers\Controller;
 
 class SupportController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware(['auth']);
     }
-
 
     public function index()
     {

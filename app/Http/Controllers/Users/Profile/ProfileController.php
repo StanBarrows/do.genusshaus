@@ -9,12 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware(['auth']);
     }
-
 
     public function index()
     {
@@ -25,11 +23,9 @@ class ProfileController extends Controller
 
     public function update(UpdateProfileRequest $request, User $user)
     {
-        if (!$user->isSameAs(Auth::user()))
-        {
+        if (!$user->isSameAs(Auth::user())) {
             abort(404);
         }
-
 
         $user->name = $request->name;
         $user->email = $request->email;
