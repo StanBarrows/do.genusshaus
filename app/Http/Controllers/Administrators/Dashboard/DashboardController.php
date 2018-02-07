@@ -22,7 +22,7 @@ class DashboardController extends Controller
         return redirect()->route('administrators.users.index');
 
         /*        $regions = Region::all();
-        
+
                return view('app.administrators.dashboard.index', compact('regions'));*/
     }
 }
