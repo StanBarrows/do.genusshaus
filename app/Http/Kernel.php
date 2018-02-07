@@ -36,6 +36,7 @@ class Kernel extends HttpKernel
             \Genusshaus\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Genusshaus\Http\Middleware\ImpersonateMiddleware::class,
+            \Genusshaus\Http\Middleware\AddUserIdToRequest::class,
         ],
 
         'api' => [

@@ -10,7 +10,9 @@ class SupportersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'role:supporter'], ['except' => ['destroy']]);
+        $this->middleware(['web','auth']);
+        $this->middleware(['role:supporter'], ['except' => ['destroy']]);
+
     }
 
     public function index()

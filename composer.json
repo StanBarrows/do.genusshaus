@@ -19,6 +19,7 @@
 
 
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.1",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "laravel/dusk": "^2.0",
@@ -36,7 +37,10 @@
             "Genusshaus\\": "app/"
 
         },
-        "files": ["tests/Helpers/functions.php"]
+        "files": [
+            "app/helpers.php",
+            "tests/Helpers/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

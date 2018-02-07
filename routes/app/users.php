@@ -5,10 +5,10 @@ Route::group(['prefix' => '/users', 'namespace' => 'Controllers\Users', 'as' => 
 
     Route::group(['prefix' => '/profile', 'namespace' => 'Profile', 'as' => 'profile.'], function () {
         Route::get('/', 'ProfileController@index')->name('index');
-        Route::patch('/{user}', 'ProfileController@update')->name('update');
+        Route::patch('/', 'ProfileController@update')->name('update');
 
         Route::get('/password', 'PasswordController@index')->name('password.index');
-        Route::patch('/password/{user}', 'PasswordController@update')->name('password.update');
+        Route::patch('/password', 'PasswordController@update')->name('password.update');
     });
 
     Route::group(['prefix' => '/support', 'namespace' => 'Support', 'as' => 'support.'], function () {

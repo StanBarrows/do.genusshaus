@@ -2,7 +2,7 @@
 
 namespace Genusshaus\Domain\Places\Models;
 
-use Genusshaus\Domain\Places\Beacon\Beacon;
+use Genusshaus\Domain\Moderators\Models\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User;
@@ -22,6 +22,12 @@ class Place extends Model
     public function region()
     {
         return $this->belongsTo(Region::class);
+    }
+
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
     }
 
     public function events()

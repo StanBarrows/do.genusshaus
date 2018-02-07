@@ -8,6 +8,11 @@ use Genusshaus\Http\Requests\Places\Posts\StorePostsRequest;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['web','auth']);
+    }
+
     public function index()
     {
         return view('app.places.posts.index');

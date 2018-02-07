@@ -11,7 +11,7 @@ class ProfileController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['web', 'auth']);
     }
 
     public function index()
@@ -21,8 +21,10 @@ class ProfileController extends Controller
         return view('app.users.profile.index', compact('user'));
     }
 
-    public function update(UpdateProfileRequest $request, User $user)
+    public function update(UpdateProfileRequest $request)
     {
+        $user = User::find($request->user_id);
+
         if (!$user->isSameAs(Auth::user())) {
             abort(404);
         }

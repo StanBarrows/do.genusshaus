@@ -1,4 +1,3 @@
-
 @role('supporter')
 
 <div class="card">
@@ -6,9 +5,9 @@
         <strong>Users</strong>
     </div>
     <ul class="list-group list-group-flush">
-{{--
-        <li class="list-group-item"><a href="#">Manage users</a></li>
---}}
+        {{--
+                <li class="list-group-item"><a href="#">Manage users</a></li>
+        --}}
         <li class="list-group-item"><a href="#">Impersonate a user</a></li>
     </ul>
 </div>

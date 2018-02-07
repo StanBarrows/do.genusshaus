@@ -14,15 +14,17 @@ class PasswordController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['web', 'auth']);
     }
 
     public function index()
     {
     }
 
-    public function update(UpdatePasswordRequest $request, User $user)
+    public function update(UpdatePasswordRequest $request)
     {
+        $user = User::find($request->user_id);
+
         if (!$user->isSameAs(Auth::user())) {
             abort(404);
         }

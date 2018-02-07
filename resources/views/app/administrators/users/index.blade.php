@@ -1,62 +1,42 @@
-@extends('layouts.app')
+@extends('app.administrators.layouts.default')
 
-@section('content')
-    <div class="container">
-        <div class="row mt-5">
+@section('app.administrators.content')
 
-            <div class="col-sm-12 col-md-3 mb-4">
+    <div class="card">
+        <h5 class="card-header">Manage Users
 
-                @include('app.administrators.partials._sidebar')
+        </h5>
+        <div class="card-body">
 
-            </div>
+            @if(!empty($users))
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>E-Mail</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            <div class="col-sm-12 col-md-9">
+                    @foreach($users as $user)
 
-                <div class="card">
-                    <h5 class="card-header">Manage Users
-
-
-                    </h5>
-                    <div class="card-body">
-
-                        @if(!empty($users))
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>E-Mail</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            @foreach($users as $user)
-
-                                <tr>
-                                    <th scope="row">{{ $user->id }}</th>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                </tr>
+                        <tr>
+                            <th scope="row">{{ $user->id }}</th>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                        </tr>
 
 
-                            @endforeach
+                    @endforeach
 
-                            </tbody>
-                        </table>
-                       @endif
-
-
-                    </div>
-                </div>
+                    </tbody>
+                </table>
+            @endif
 
 
-            </div>
         </div>
     </div>
 
 @endsection
 
-@section('scripts')
-
-
-@endsection

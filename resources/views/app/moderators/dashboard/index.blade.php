@@ -1,36 +1,44 @@
-@extends('layouts.app')
+@extends('app.moderators.layouts.default')
 
-@section('content')
-    <div class="container">
-        <div class="row mt-5">
+@section('app.moderators.content')
 
-            <div class="col-sm-12 col-md-3 mb-4">
+    <div class="card">
+        <h5 class="card-header">Manage beacons
 
-                @include('app.moderators.partials._sidebar')
+        </h5>
+        <div class="card-body">
 
-            </div>
+            @if(!empty($beacons))
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Place</th>
+                        <th class="text-center">Major</th>
+                        <th class="text-center">Minor</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            <div class="col-sm-12 col-md-9">
+                    @foreach($beacons as $beacon)
 
-                <div class="card">
-                    <h5 class="card-header">Dashboard
-
-
-                    </h5>
-                    <div class="card-body">
-
-
-                    </div>
-                </div>
+                        <tr>
+                            <th scope="row">{{ $beacon->id }}</th>
+                            <td>{{ optional($beacon->place)->name ?: 'NA' }}</td>
+                            <th class="text-center">{{ $beacon->major }}</th>
+                            <th class="text-center"> {{ $beacon->minor }}</th>
+                        </tr>
 
 
-            </div>
+                    @endforeach
+
+                    </tbody>
+                </table>
+            @endif
+
+
         </div>
     </div>
 
 @endsection
 
-@section('scripts')
-
-
-@endsection

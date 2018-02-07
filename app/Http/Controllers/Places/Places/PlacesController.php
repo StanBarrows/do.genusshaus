@@ -9,6 +9,11 @@ use Genusshaus\Http\Requests\Places\Places\StorePlacesRequest;
 
 class PlacesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['web','auth']);
+    }
+
     public function index()
     {
         return view('app.places.places.index');

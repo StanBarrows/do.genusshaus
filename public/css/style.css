@@ -17,3 +17,8 @@
     position: relative;
     z-index: 998;
 }
+
+.list-group-item.active {
+    background-color: #EFEFEF;
+    border-color: #EFEFEF;
+}

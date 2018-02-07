@@ -8,7 +8,7 @@ class SupportController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['web', 'auth']);
     }
 
     public function index()

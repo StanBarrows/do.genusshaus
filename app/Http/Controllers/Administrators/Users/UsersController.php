@@ -10,6 +10,11 @@ use Illuminate\Support\Str;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['web','auth','role:administrator']);
+    }
+
     public function index()
     {
         $users = User::all();
@@ -39,10 +44,7 @@ class UsersController extends Controller
             $user->roles()->attach($role);
         }
 
-//            if($request->notify)
-//            {
-//                Notify $user
-//            }
+            // if($request->notify) & notify user
 
         return back();
     }

@@ -1,59 +1,40 @@
-@extends('layouts.app')
+@extends('app.moderators.layouts.default')
 
-@section('content')
-    <div class="container">
-        <div class="row mt-5">
+@section('app.moderators.content')
 
-            <div class="col-sm-12 col-md-3 mb-4">
+    <div class="card">
+        <h5 class="card-header">Manage places
 
-                @include('app.moderators.partials._sidebar')
+        </h5>
+        <div class="card-body">
 
-            </div>
+            @if(!empty($places))
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            <div class="col-sm-12 col-md-9">
+                    @foreach($places as $place)
 
-                <div class="card">
-                    <h5 class="card-header">Manage places
-
-                    </h5>
-                    <div class="card-body">
-
-                        @if(!empty($places))
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            @foreach($places as $place)
-
-                                <tr>
-                                    <th scope="row">{{ $place->id }}</th>
-                                    <td>{{ $place->name }}</td>
-                                </tr>
+                        <tr>
+                            <th scope="row">{{ $place->id }}</th>
+                            <td>{{ $place->name }}</td>
+                        </tr>
 
 
-                            @endforeach
+                    @endforeach
 
-                            </tbody>
-                        </table>
-                        @endif
-
-
-                    </div>
-                </div>
+                    </tbody>
+                </table>
+            @endif
 
 
-            </div>
         </div>
     </div>
 
 @endsection
 
-@section('scripts')
-
-
-@endsection
