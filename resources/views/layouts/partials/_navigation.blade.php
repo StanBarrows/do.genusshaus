@@ -71,16 +71,13 @@
                     @impersonating
                     <li class="nav-item">
 
-                        <a href="#" onclick="event.preventDefault();document.getElementById('supporters.impersonate-destroy').submit();"  class="nav-link">Stop Impersonating</a>
+                        <a href="#" onclick="event.preventDefault();document.getElementById('impersonate-destroy').submit();"  class="nav-link">Stop Impersonating</a>
 
 
-                        <form id="impersonate-destroy" action="{{ route('supporters.impersonate-destroy') }}" method="POST"
+                        <form id="impersonate-destroy" action="{{ route('supporters.impersonate.destroy') }}" method="POST"
                               style="display: none;">
                             {{ csrf_field() }}
                         </form>
-
-
-
 
                     </li>
                     @endimpersonating

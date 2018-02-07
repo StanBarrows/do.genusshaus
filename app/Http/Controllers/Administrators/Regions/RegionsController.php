@@ -3,12 +3,14 @@
 namespace Genusshaus\Http\Controllers\Administrators\Regions;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Http\Requests\Places\Regions\StoreRegionsRequest;
+use Genusshaus\Domain\Places\Models\Region;
 
 class RegionsController extends Controller
 {
-    public function store(StoreRegionsRequest $request)
+    public function index()
     {
-        return response(null, 200);
+        $regions = Region::all();
+
+        return view('app.administrators.regions.index', compact('regions'));
     }
 }

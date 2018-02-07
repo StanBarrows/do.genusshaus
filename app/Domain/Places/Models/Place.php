@@ -2,8 +2,10 @@
 
 namespace Genusshaus\Domain\Places\Models;
 
+use Genusshaus\Domain\Places\Beacon\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 
 class Place extends Model
@@ -11,6 +13,12 @@ class Place extends Model
     use SoftDeletes, HasUploadcare;
 
     protected $fillable = ['region_id', 'name'];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function region()
     {
@@ -20,6 +28,11 @@ class Place extends Model
     public function events()
     {
         return $this->hasMany(Event::class);
+    }
+
+    public function beacons()
+    {
+        return $this->hasMany(Beacon::class);
     }
 
     public function posts()

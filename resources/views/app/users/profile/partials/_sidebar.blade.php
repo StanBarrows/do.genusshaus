@@ -4,7 +4,12 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item"><a href="">Manage profile</a></li>
+
+
+{{--
         <li class="list-group-item"><a href="">Update password</a></li>
+--}}
+
     </ul>
 </div>
 

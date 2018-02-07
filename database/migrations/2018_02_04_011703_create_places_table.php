@@ -15,7 +15,10 @@ class CreatePlacesTable extends Migration
     {
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
+
             $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+
+            $table->unsignedInteger('user_id')->nullable();
 
             $table->unsignedInteger('region_id');
 
@@ -23,9 +26,12 @@ class CreatePlacesTable extends Migration
 
             $table->string('name');
 
+            $table->boolean('active')->default(false);
+
             $table->timestamps();
             $table->softDeletes();
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
         });
     }

@@ -22,15 +22,22 @@ class SupportersController extends Controller
     {
         $user = User::where('email', $request->email)->first();
 
-        session()->put('impersonate', $user->id);
+        if($user->roles->isEmpty())
+        {
+            session()->put('impersonate', $user->id);
 
-        return redirect('/');
+            return redirect('/');
+        }
+
+        return back();
     }
 
     public function destroy()
     {
         session()->forget('impersonate');
 
-        return redirect('/');
+        return redirect()->route('supporters.index');
     }
+
+
 }

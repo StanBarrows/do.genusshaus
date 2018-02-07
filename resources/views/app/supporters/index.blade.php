@@ -21,12 +21,18 @@
                     </h5>
                     <div class="card-body">
 
+                        <div class="alert alert-info" role="alert">
+                            <strong>Heads up!</strong> You're only allowed to impersonate users without any roles!
+
+                        </div>
+
+
                         <form class="form-horizontal" method="POST" action="{{ route('supporters.impersonate.store') }}">
                             {{ csrf_field() }}
 
                             <div class="form-group row">
 
-                                <div class="col-lg-8 offset-2">
+                                <div class="col-lg-12">
                                     <input  title="email"
                                             placeholder="User E-Mail"
                                             id="email"
@@ -46,7 +52,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <div class="col-lg-8 offset-2 text-center">
+                                <div class="col-lg-12 text-center">
                                     <button type="submit" class="btn btn-block btn-primary">
                                         Impersonate
                                     </button>
