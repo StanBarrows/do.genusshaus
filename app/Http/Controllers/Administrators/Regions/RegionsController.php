@@ -9,7 +9,7 @@ class RegionsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web','auth','role:administrator']);
+        $this->middleware(['web', 'auth', 'role:administrator']);
     }
 
     public function index()
