@@ -38,7 +38,7 @@ class User extends Authenticatable
     public function getAvatar()
     {
         if (empty($this->avatar)) {
-            return 'https://www.gravatar.com/avatar/' . md5($this->email) . 'x?s=500&d=mm';
+            return 'https://www.gravatar.com/avatar/'.md5($this->email).'x?s=500&d=mm';
         }
 
         return $this->avatar;
@@ -59,10 +59,8 @@ class User extends Authenticatable
         return $query->where('active', false);
     }
 
-
     public function scopeActive($query)
     {
         return $query->where('active', true);
     }
-
 }

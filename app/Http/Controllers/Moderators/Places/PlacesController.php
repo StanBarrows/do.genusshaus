@@ -25,7 +25,6 @@ class PlacesController extends Controller
         return view('app.moderators.places.index', compact('places'));
     }
 
-
     public function create()
     {
         $region = Region::first();

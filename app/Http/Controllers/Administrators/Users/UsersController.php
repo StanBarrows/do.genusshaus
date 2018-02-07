@@ -22,10 +22,9 @@ class UsersController extends Controller
         return view('app.administrators.users.create');
     }
 
-
     public function store(InviteUsersRequest $request)
     {
-        $user = new User;
+        $user = new User();
 
         $user->name = $request->name;
         $user->email = $request->email;

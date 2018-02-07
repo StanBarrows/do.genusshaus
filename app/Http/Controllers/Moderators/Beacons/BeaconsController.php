@@ -25,11 +25,10 @@ class BeaconsController extends Controller
         return view('app.moderators.beacons.index', compact('beacons'));
     }
 
-
     public function create()
     {
         $places = Place::all();
 
-        return view('app.moderators.beacons.create',compact('places'));
+        return view('app.moderators.beacons.create', compact('places'));
     }
 }

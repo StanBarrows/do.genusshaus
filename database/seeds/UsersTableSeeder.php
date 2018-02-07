@@ -1,14 +1,12 @@
 <?php
 
 use Carbon\Carbon;
-use Smart6ate\Roles\Models\Role;
 use Genusshaus\App\Domain\Users\User;
 use Illuminate\Database\Seeder;
+use Smart6ate\Roles\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
-
-
     public function run()
     {
         $now = Carbon::now();
@@ -29,11 +27,8 @@ class UsersTableSeeder extends Seeder
 
         $user = User::first();
 
-        foreach($roles as $role)
-        {
+        foreach ($roles as $role) {
             $user->roles()->attach($role);
         }
-
-
     }
 }
