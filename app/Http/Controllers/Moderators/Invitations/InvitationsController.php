@@ -25,7 +25,6 @@ class InvitationsController extends Controller
         return view('app.moderators.invitations.index', compact('users'));
     }
 
-
     public function create()
     {
         $places = Place::all();

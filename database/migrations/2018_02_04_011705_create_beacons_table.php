@@ -26,9 +26,6 @@ class CreateBeaconsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
-
-
-
         });
     }
 

@@ -22,8 +22,7 @@ class SupportersController extends Controller
     {
         $user = User::where('email', $request->email)->first();
 
-        if($user->roles->isEmpty())
-        {
+        if ($user->roles->isEmpty()) {
             session()->put('impersonate', $user->id);
 
             return redirect('/');
@@ -38,6 +37,4 @@ class SupportersController extends Controller
 
         return redirect()->route('supporters.index');
     }
-
-
 }

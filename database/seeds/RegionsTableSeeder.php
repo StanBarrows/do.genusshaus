@@ -6,7 +6,6 @@ use Illuminate\Database\Seeder;
 
 class RegionsTableSeeder extends Seeder
 {
-
     public function run()
     {
         $now = Carbon::now();
@@ -24,6 +23,5 @@ class RegionsTableSeeder extends Seeder
         ];
 
         Region::insert($regions);
-
     }
 }
