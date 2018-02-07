@@ -10,8 +10,7 @@ class BeaconsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web','auth','role:moderator']);
-
+        $this->middleware(['web', 'auth', 'role:moderator']);
     }
 
     /**

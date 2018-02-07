@@ -12,7 +12,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web','auth','role:administrator']);
+        $this->middleware(['web', 'auth', 'role:administrator']);
     }
 
     public function index()
@@ -44,7 +44,7 @@ class UsersController extends Controller
             $user->roles()->attach($role);
         }
 
-            // if($request->notify) & notify user
+        // if($request->notify) & notify user
 
         return back();
     }

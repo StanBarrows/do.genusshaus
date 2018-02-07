@@ -9,7 +9,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web','auth','role:administrator']);
+        $this->middleware(['web', 'auth', 'role:administrator']);
     }
 
     /**
@@ -22,7 +22,7 @@ class DashboardController extends Controller
         return redirect()->route('administrators.users.index');
 
         /*        $regions = Region::all();
-        
+
                return view('app.administrators.dashboard.index', compact('regions'));*/
     }
 }
