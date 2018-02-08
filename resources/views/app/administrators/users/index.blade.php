@@ -29,15 +29,15 @@
                             <td class="text-center">
                                 @if(!auth()->user()->isSameAs($user))
                                     @if($user->active)
-                                        <a href="{{ route('administrators.users.activate', $user) }}" onclick="event.preventDefault();document.getElementById('activate-form').submit();"class="badge badge-warning">Deactivate</a>
+                                        <a href="{{ route('administrators.users.activate', $user) }}" onclick="event.preventDefault();document.getElementById('activate-form').submit();"class="badge badge-success">Active</a>
                                     @else
-                                        <a href="#" onclick="event.preventDefault();document.getElementById('deactivate-form').submit();" class="badge badge-success">Activate</a>
+                                        <a href="#" onclick="event.preventDefault();document.getElementById('deactivate-form').submit();" class="badge badge-warning">Inactive</a>
                                     @endif
                                 @else
                                     @if($user->active)
-                                        <span class="badge badge-warning">Deactivate</span>
+                                        <span class="badge badge-success">Active</span>
                                     @else
-                                        <span class="badge badge-success">Activate</span>
+                                        <span class="badge badge-warning">Inactive</span>
                                     @endif
                                 @endif
                             </td>

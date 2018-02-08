@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row mt-5">
 
-            @if(auth()->user()->places->count())
-                @foreach(auth()->user()->places as $place)
+            @if($places->count())
+                @foreach($places as $place)
                     <div class="col-md-3">
                         <div class="card">
                             <img class="card-img-top" src="{{ asset('images/demo_restaurant.jpg') }}" alt="{{ $place->title }}">

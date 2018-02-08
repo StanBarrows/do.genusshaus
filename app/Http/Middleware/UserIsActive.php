@@ -4,7 +4,7 @@ namespace Genusshaus\Http\Middleware;
 
 use Closure;
 
-class IsActive
+class UserIsActive
 {
     /**
      * Handle an incoming request.

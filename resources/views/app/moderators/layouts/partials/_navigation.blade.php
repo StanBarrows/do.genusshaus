@@ -1,5 +1,6 @@
 @role('moderator')
 
+{{--
 <div class="card">
     <div class="card-header">
         <strong>Moderators</strong>
@@ -11,10 +12,9 @@
     </ul>
 </div>
 
+--}}
 
-
-
-<div class="card mt-4">
+<div class="card">
     <div class="card-header">
         <strong>Onboarding</strong>
     </div>

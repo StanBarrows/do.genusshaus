@@ -17,20 +17,12 @@
 
                     <div class="col-lg-12">
                         <input title="name"
-                               placeholder="Name"
-                               id="name"
-                               name="name"
                                type="text"
-                               class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                               class="form-control"
                                value="{{ $user->name }}"
                                disabled
                         >
 
-                        @if ($errors->has('name'))
-                            <div class="invalid-feedback">
-                                <strong>{{ $errors->first('name') }}</strong>
-                            </div>
-                        @endif
                     </div>
                 </div>
 
@@ -40,20 +32,12 @@
 
                     <div class="col-lg-12">
                         <input title="email"
-                               placeholder="E-Mail"
-                               id="email"
-                               name="email"
                                type="email"
-                               class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                               class="form-control"
                                value="{{ $user->email }}"
                                disabled
                         >
 
-                        @if ($errors->has('email'))
-                            <div class="invalid-feedback">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </div>
-                        @endif
                     </div>
                 </div>
 

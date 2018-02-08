@@ -20,7 +20,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::group(['prefix' => '/backend'], function () {
         include 'app/users.php';
 
-        Route::group(['middleware' => ['active']], function () {
+        Route::group(['middleware' => ['user-is-active']], function () {
+
             include 'app/places.php';
             include 'app/administrators.php';
             include 'app/moderators.php';

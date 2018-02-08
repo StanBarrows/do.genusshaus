@@ -5,7 +5,7 @@
         <strong>Administrators</strong>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item"><a href="{{ route('administrators.dashboard.index') }}">Dashboard </a></li>
+        <li class="list-group-item {{ current_route('administrators.dashboard.index') }}"><a href="{{ route('administrators.dashboard.index') }}">Dashboard </a></li>
     </ul>
 </div>--}}
 

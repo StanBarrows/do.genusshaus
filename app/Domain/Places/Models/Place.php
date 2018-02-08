@@ -24,10 +24,6 @@ class Place extends Model
             $place->uuid = Uuid::uuid1();
             $place->slug = Carbon::now()->format('ymd').'-'.str_slug($place->name);
         });
-
-        static::updating(function ($place) {
-            $place->slug = $place->created_at->format('ymd').'-'.str_slug($place->name);
-        });
     }
 
     public function getRouteKeyName()
@@ -63,5 +59,10 @@ class Place extends Model
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('active', true);
     }
 }

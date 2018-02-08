@@ -11,7 +11,8 @@ class PlacesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web', 'auth', 'role:moderator']);
+          $this->middleware(['web', 'auth', 'role:moderator']);
+          $this->middleware('role:administrator')->only('delete');
     }
 
     /**
@@ -43,6 +44,61 @@ class PlacesController extends Controller
         $place->published = false;
 
         $place->save();
+
+        return redirect()->route('moderators.places.index');
+    }
+
+    public function edit(Place $place)
+    {
+        return view('app.moderators.places.edit', compact('place'));
+    }
+
+    public function activate(Place $place)
+    {
+        if($place->user_id)
+        {
+            $place->active = true;
+            $place->save();
+        }
+
+        return back();
+    }
+
+    public function deactivate(Place $place)
+    {
+        $place->active = false;
+        $place->save();
+
+        return back();
+    }
+
+    public function assign(Place $place)
+    {
+        $place->user_id = auth()->user()->id;
+        $place->active = true;
+        $place->save();
+
+        return back();
+    }
+
+    public function unassign(Place $place)
+    {
+        $place->user_id = null;
+        $place->active = false;
+
+        $place->save();
+
+        return back();
+    }
+
+
+    public function delete(Place $place)
+    {
+        $place->active = false;
+        $place->published = false;
+        $place->save();
+
+        $place->delete();
 
         return redirect()->route('moderators.places.index');
     }

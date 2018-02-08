@@ -1,3 +1,4 @@
+{{--
 <div class="card">
     <div class="card-header">
         <strong>{{ $place->name }}</strong>
@@ -9,9 +10,9 @@
 
     </ul>
 </div>
+--}}
 
-
-<div class="card mt-4">
+<div class="card">
     <div class="card-header">
         <strong>Place</strong>
     </div>

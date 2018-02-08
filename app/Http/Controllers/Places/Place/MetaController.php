@@ -7,7 +7,7 @@ use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Http\Requests\Places\Places\StorePlacesRequest;
 
-class PlacesController extends Controller
+class MetaController extends Controller
 {
     public function __construct()
     {
@@ -16,7 +16,7 @@ class PlacesController extends Controller
 
     public function index()
     {
-        return view('app.places.places.index');
+        return view('app.places.place.address.index');
     }
 
     public function store(StorePlacesRequest $request)
@@ -45,4 +45,6 @@ class PlacesController extends Controller
 
         dd('succes');
     }
+
+
 }

@@ -59,6 +59,7 @@ class Kernel extends HttpKernel
         'can'         => \Illuminate\Auth\Middleware\Authorize::class,
         'guest'       => \Genusshaus\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle'    => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'active'      => \Genusshaus\Http\Middleware\IsActive::class,
+        'user-is-active'      => \Genusshaus\Http\Middleware\UserIsActive::class,
+        'place-is-active'      => \Genusshaus\Http\Middleware\PlaceIsActive::class,
     ];
 }

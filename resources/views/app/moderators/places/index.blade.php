@@ -14,7 +14,8 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th class="text-center">User</th>
+                        <th class="text-center">Stauts</th>
+                        <th class="text-center"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -24,7 +25,24 @@
                         <tr>
                             <th scope="row">{{ $place->id }}</th>
                             <td>{{ $place->name }}</td>
-                            <td class="text-center">{{ optional($place->user)->name ?: 'NA'}}</td>
+                            <td class="text-center">
+                                @if($place->active)
+                                    <span class="badge badge-success">Active</span>
+                                @else
+                                    <span class="badge badge-light">Inactive</span>
+                                @endif
+
+                                    @if($place->published)
+                                        <span class="badge badge-success">Published</span>
+                                    @else
+                                        <span class="badge badge-light">Unpublished</span>
+                                    @endif
+
+
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ route('moderators.places.edit', $place) }}" class="badge badge-primary">Edit</a>
+                            </td>
                         </tr>
 
 

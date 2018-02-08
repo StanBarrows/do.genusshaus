@@ -27,6 +27,12 @@
     color: white;
 }
 
+.btn-light
+{
+    background-color: lightgray;
+
+}
+
 
 .badge {
     padding: 5px;
