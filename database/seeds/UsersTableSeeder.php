@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
                 'name'       => env('DEFAULT_USER_NAME'),
                 'email'      => env('DEFAULT_USER_EMAIL'),
                 'password'   => bcrypt(env('DEFAULT_USER_PASSWORD')),
-                'active'   => true,
+                'active'     => true,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],

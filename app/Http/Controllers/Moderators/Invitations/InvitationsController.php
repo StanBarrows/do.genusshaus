@@ -30,14 +30,14 @@ class InvitationsController extends Controller
 
     public function create()
     {
-        $places = Place::where('user_id','=',null)->get();
+        $places = Place::where('user_id', '=', null)->get();
 
         return view('app.moderators.invitations.create', compact('places'));
     }
 
     public function store(StoreInvitationsRequest $request)
     {
-        $user = new User;
+        $user = new User();
 
         $user->name = $request->name;
         $user->email = $request->email;

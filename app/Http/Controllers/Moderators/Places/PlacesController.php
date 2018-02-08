@@ -28,14 +28,14 @@ class PlacesController extends Controller
 
     public function create()
     {
-        $regions = Region::where('active',true)->get();
+        $regions = Region::where('active', true)->get();
 
         return view('app.moderators.places.create', compact('regions'));
     }
 
     public function store(StorePlacesRequest $request)
     {
-        $place = new Place;
+        $place = new Place();
 
         $place->region_id = $request->region_id;
         $place->name = $request->name;

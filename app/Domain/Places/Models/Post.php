@@ -14,13 +14,10 @@ class Post extends Model
     {
         parent::boot();
 
-        static::creating(function ($post)
-        {
+        static::creating(function ($post) {
             $post->uuid = Uuid::uuid1();
         });
-
     }
-
 
     public function place()
     {

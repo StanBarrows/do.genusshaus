@@ -35,7 +35,7 @@ class BeaconsController extends Controller
 
     public function store(StoreInvitationsRequest $request)
     {
-        $beacon = new Beacon;
+        $beacon = new Beacon();
 
         $beacon->place_id = $request->place_id;
         $beacon->major = $request->major;

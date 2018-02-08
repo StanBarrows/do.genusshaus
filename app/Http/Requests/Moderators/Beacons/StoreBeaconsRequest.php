@@ -25,8 +25,8 @@ class StoreBeaconsRequest extends FormRequest
     {
         return [
             'place_id' => 'required|exists:places,id',
-            'major'  => 'required|numeric',
-            'minor' => 'required|numeric',
+            'major'    => 'required|numeric',
+            'minor'    => 'required|numeric',
         ];
     }
 }

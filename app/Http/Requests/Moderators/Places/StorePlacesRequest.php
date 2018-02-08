@@ -25,8 +25,8 @@ class StorePlacesRequest extends FormRequest
     {
         return [
             'region_id' => 'required|exists:regions,id',
-            'name'  => 'required|string|max:255',
-            'address' => 'required|string|max:255',
+            'name'      => 'required|string|max:255',
+            'address'   => 'required|string|max:255',
         ];
     }
 }
