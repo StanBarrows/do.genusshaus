@@ -25,14 +25,13 @@ class StorePlacesTest extends TestCase
         return $this->post(route('places.store', $place->toArray()));
     }
 
-    /** @test */
     public function a_place_requires_a_name()
     {
         $this->publishPlace(['name' => null])
             ->assertSessionHasErrors('name');
     }
 
-    /** @test */
+
     public function a_place_requires_a_valid_region_id()
     {
         factory(create(Region::class));
