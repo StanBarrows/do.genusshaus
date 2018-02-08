@@ -9,7 +9,7 @@
         </h5>
         <div class="card-body">
 
-            @if(!empty($regions))
+            @if($regions->count())
                 <table class="table">
                     <thead>
                     <tr>
@@ -33,6 +33,10 @@
 
                     </tbody>
                 </table>
+            @else
+                <div class="alert alert-info" role="alert">
+                    <strong>Info! </strong> No regions available.
+                </div>
             @endif
 
 

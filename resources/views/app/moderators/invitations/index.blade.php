@@ -10,14 +10,14 @@
 
                 </div>
 
+
                 <div class="card-body">
 
-
+                    @if(($users->count()))
                     <table class="table">
                         <thead>
                         <tr>
                             <th>E-Mail</th>
-                            <th>Place</th>
                             <th>Send invitation at</th>
                             <th></th>
 
@@ -28,23 +28,24 @@
 
                         @foreach($users as $user)
 
-
                             <tr>
 
                                 <td>{{ $user->email }}</td>
-
-                                <td>{{ optional($user->place)->name ?: 'NA' }}</td>
 
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
                                 <td><a href="#" class="btn btn-sm btn-primary">Resend invitation</a></td>
 
                             </tr>
 
-
                         @endforeach
 
                         </tbody>
                     </table>
+                    @else
+                        <div class="alert alert-info" role="alert">
+                            <strong>Info! </strong> No pending invitations available.
+                        </div>
+                    @endif
 
                 </div>
             </div>

@@ -16,7 +16,7 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+            $table->uuid('uuid')->unique();
 
             $table->unsignedInteger('user_id')->nullable();
 
@@ -25,8 +25,10 @@ class CreatePlacesTable extends Migration
             $table->string('type')->default('basic');
 
             $table->string('name');
+            $table->string('slug')->unique();
 
             $table->boolean('active')->default(false);
+            $table->boolean('published')->default(false);
 
             $table->timestamps();
             $table->softDeletes();

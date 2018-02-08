@@ -10,7 +10,7 @@
         <div class="card-body">
 
 
-            <form class="form-horizontal" method="POST" action="{{ route('moderators.beacons.store') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.store') }}">
                 {{ csrf_field() }}
 
 
@@ -22,8 +22,10 @@
                                 class="form-control{{ $errors->has('region_id') ? ' is-invalid' : '' }}"
                                 name="region_id" required autofocus>
 
-                            <option disabled selected>Please select</option>
-                            <option value="{{ $region->id }}">{{ $region->name }}</option>
+                            <option disabled selected>Please select a region</option>
+                            @foreach($regions as $region)
+                                <option value="{{ $region->id }}">{{ $region->name }}</option>
+                            @endforeach
                         </select>
 
                         @if ($errors->has('region_id'))

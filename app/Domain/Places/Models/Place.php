@@ -2,10 +2,12 @@
 
 namespace Genusshaus\Domain\Places\Models;
 
+use Carbon\Carbon;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User;
+use Ramsey\Uuid\Uuid;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 
 class Place extends Model
@@ -13,6 +15,28 @@ class Place extends Model
     use SoftDeletes, HasUploadcare;
 
     protected $fillable = ['region_id', 'name'];
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($place)
+        {
+            $place->uuid = Uuid::uuid1();
+            $place->slug = Carbon::now()->format('ymd') . '-' . str_slug($place->name);
+        });
+
+        static::updating(function ($place)
+        {
+            $place->slug = $place->created_at->format('ymd') . '-' . str_slug($place->name);
+
+        });
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'uuid';
+    }
 
     public function user()
     {
@@ -43,4 +67,6 @@ class Place extends Model
     {
         return $this->hasMany(Post::class);
     }
+
 }
+

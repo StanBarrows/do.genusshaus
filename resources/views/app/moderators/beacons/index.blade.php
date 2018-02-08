@@ -8,7 +8,8 @@
         </h5>
         <div class="card-body">
 
-            @if(!empty($beacons))
+
+            @if($beacons->count())
                 <table class="table">
                     <thead>
                     <tr>
@@ -34,7 +35,12 @@
 
                     </tbody>
                 </table>
+            @else
+                <div class="alert alert-info" role="alert">
+                    <strong>Info! </strong> No beacons available.
+                </div>
             @endif
+
 
 
         </div>

@@ -4,5 +4,4 @@ Route::group(['prefix' => '/supporters', 'namespace' => 'Controllers\Supporters'
     Route::get('/', 'SupportersController@index')->name('index');
 
     Route::post('/impersonate/start', 'SupportersController@store')->name('impersonate.store');
-    Route::post('/impersonate/destroy', 'SupportersController@destroy')->name('impersonate.destroy');
 });

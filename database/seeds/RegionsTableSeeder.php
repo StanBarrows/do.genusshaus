@@ -1,6 +1,5 @@
 <?php
 
-use Carbon\Carbon;
 use Genusshaus\Domain\Places\Models\Region;
 use Illuminate\Database\Seeder;
 
@@ -8,17 +7,20 @@ class RegionsTableSeeder extends Seeder
 {
     public function run()
     {
-        $now = Carbon::now();
-
         $regions = [
             [
                 'name'       => 'Basel',
+                'active'       => true,
             ],
             [
                 'name'       => 'Zürich',
+                'active'       => false,
+
             ],
             [
                 'name'       => 'Freiburg',
+                'active'       => false,
+
             ],
         ];
 

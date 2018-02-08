@@ -60,15 +60,22 @@
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <input title="roles"
-                               placeholder="Roles"
-                               id="roles"
-                               name="roles[]"
-                               type="text"
-                               class="form-control{{ $errors->has('roles') ? ' is-invalid' : '' }}"
-                               value="{{ old('roles') }}" required
+                        <select title="roles"
+                                id="roles"
+                                multiple
+                                name="roles[]"
+                                type="text"
+                                class="form-control{{ $errors->has('roles') ? ' is-invalid' : '' }}"
+                                required
 
                         >
+
+                            <option value="" selected disabled>Please select a role</option>
+                            @foreach($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->title }} </option>
+                            @endforeach
+
+                        </select>
 
                         @if ($errors->has('roles'))
                             <div class="invalid-feedback">
@@ -78,9 +85,20 @@
                     </div>
                 </div>
 
+
                 <div class="form-group row">
                     <div class="col-lg-12">
-                        <button class="btn btn-block btn-success" type="submit">Invite</button>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="1" name="notify" {{ old('notify') ? 'checked' : '' }}> Notfy user
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-12">
+                        <button class="btn btn-block btn-success" type="submit">Create</button>
                     </div>
                 </div>
 

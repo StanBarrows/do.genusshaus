@@ -14,7 +14,7 @@ class RegionsController extends Controller
 
     public function index()
     {
-        $regions = Region::all();
+        $regions = Region::with('places')->get();
 
         return view('app.administrators.regions.index', compact('regions'));
     }

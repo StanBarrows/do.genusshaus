@@ -14,9 +14,9 @@ class CreateBeaconsTable extends Migration
     public function up()
     {
         Schema::create('beacons', function (Blueprint $table) {
-            $table->string('id')->unique();
+            $table->increments('id');
 
-            $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+            $table->uuid('uuid')->unique();
             $table->unsignedInteger('place_id')->nullable();
 
             $table->string('major');
@@ -36,7 +36,7 @@ class CreateBeaconsTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyConstraints('events');
+        Schema::disableForeignKeyConstraints('beacons');
         Schema::dropIfExists('beacons');
     }
 }

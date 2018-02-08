@@ -22,3 +22,20 @@
     background-color: #EFEFEF;
     border-color: #EFEFEF;
 }
+
+.btn-warning {
+    color: white;
+}
+
+
+.badge {
+    padding: 5px;
+}
+
+.badge-warning {
+    color: white;
+}
+
+.badge-info {
+    color: white;
+}

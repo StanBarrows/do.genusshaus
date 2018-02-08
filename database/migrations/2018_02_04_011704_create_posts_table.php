@@ -16,7 +16,7 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+            $table->uuid('uuid')->unique();
 
             $table->unsignedInteger('place_id');
 

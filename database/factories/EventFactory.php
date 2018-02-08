@@ -17,7 +17,6 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
-        'uuid'     => $faker->uuid,
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },

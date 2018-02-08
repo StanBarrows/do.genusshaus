@@ -16,7 +16,7 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+            $table->uuid('uuid')->unique();
 
             $table->unsignedInteger('place_id');
 

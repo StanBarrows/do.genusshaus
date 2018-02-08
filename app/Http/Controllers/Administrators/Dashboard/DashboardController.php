@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Administrators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Region;
+use Genusshaus\App\Domain\Users\User;
 
 class DashboardController extends Controller
 {
@@ -19,10 +19,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return redirect()->route('administrators.users.index');
+        $users = User::all();
 
-        /*        $regions = Region::all();
-
-               return view('app.administrators.dashboard.index', compact('regions'));*/
+        return view('app.administrators.dashboard.index', compact('users'));
     }
 }

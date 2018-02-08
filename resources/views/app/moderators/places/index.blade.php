@@ -8,12 +8,13 @@
         </h5>
         <div class="card-body">
 
-            @if(!empty($places))
+            @if($places->count())
                 <table class="table">
                     <thead>
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th class="text-center">User</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -23,6 +24,7 @@
                         <tr>
                             <th scope="row">{{ $place->id }}</th>
                             <td>{{ $place->name }}</td>
+                            <td class="text-center">{{ optional($place->user)->name ?: 'NA'}}</td>
                         </tr>
 
 
@@ -30,7 +32,13 @@
 
                     </tbody>
                 </table>
+
+            @else
+                <div class="alert alert-info" role="alert">
+                    <strong>Info! </strong> No places available.
+                </div>
             @endif
+
 
 
         </div>

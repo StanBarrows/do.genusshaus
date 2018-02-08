@@ -15,6 +15,27 @@
             <form class="form-horizontal" method="POST" action="{{ route('moderators.invitations.store') }}">
                 {{ csrf_field() }}
 
+                <div class="form-group row">
+
+                    <div class="col-lg-12">
+                        <input title="name"
+                               placeholder="Name"
+                               id="name"
+                               name="name"
+                               type="text"
+                               class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
+                               value="{{ old('name') }}"
+                               required autofocus
+                        >
+
+                        @if ($errors->has('name'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
 
                 <div class="form-group row">
 
@@ -26,7 +47,7 @@
                                type="text"
                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                value="{{ old('email') }}"
-                               required autofocus
+                               required
                         >
 
                         @if ($errors->has('email'))
@@ -43,7 +64,7 @@
 
                         <select title="place_id" id="place_id" class="form-control{{ $errors->has('place_id') ? ' is-invalid' : '' }}" name="place_id" required>
 
-                            <option disabled selected>Please select</option>
+                            <option disabled selected>Please select a place</option>
                             @foreach($places as $place)
                                 <option value="{{ $place->id }}">{{ $place->name }}</option>
                             @endforeach

@@ -17,10 +17,11 @@ use Genusshaus\Domain\Places\Models\Region;
 
 $factory->define(Place::class, function (Faker $faker) {
     return [
-        'uuid'      => $faker->uuid,
         'region_id' => function () {
             return factory(Region::class)->create()->id;
         },
-        'name' => $faker->company,
+        'name' => $faker->unique()->company,
+        'active' => $faker->boolean(false),
+        'published' => $faker->boolean(false),
     ];
 });

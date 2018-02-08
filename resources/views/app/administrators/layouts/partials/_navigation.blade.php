@@ -26,9 +26,18 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item {{ current_route('administrators.regions.index') }}"><a href="{{ route('administrators.regions.index') }}">Manage regions</a></li>
-        {{--
-                <li class="list-group-item"><a href="">Horizon</a></li>
-        --}}
+
+
+    </ul>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <strong>Countries</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item {{ current_route('administrators.countries.index') }}"><a href="{{ route('administrators.countries.index') }}">Manage countries</a></li>
+
 
     </ul>
 </div>

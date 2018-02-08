@@ -14,7 +14,8 @@
         "laravelnews/laravel-twbs4": "^1.3",
         "ramsey/uuid": "^3.7",
         "smart6ate/roles": "dev-master",
-        "smart6ate/uploadcare": "dev-master"
+        "smart6ate/uploadcare": "dev-master",
+        "toin0u/geocoder-laravel": "^4.0"
     },
 
 
