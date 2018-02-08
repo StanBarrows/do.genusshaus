@@ -31,7 +31,6 @@ class StorePlacesTest extends TestCase
             ->assertSessionHasErrors('name');
     }
 
-
     public function a_place_requires_a_valid_region_id()
     {
         factory(create(Region::class));
