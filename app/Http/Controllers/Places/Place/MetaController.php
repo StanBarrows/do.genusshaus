@@ -45,6 +45,4 @@ class MetaController extends Controller
 
         dd('succes');
     }
-
-
 }

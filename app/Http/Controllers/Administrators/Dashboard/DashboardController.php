@@ -17,13 +17,11 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         $users = User::all();
 
         return redirect()->route('administrators.users.create');
-
 
 //        return view('app.administrators.dashboard.index', compact('users'));
     }

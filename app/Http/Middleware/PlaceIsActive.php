@@ -16,13 +16,9 @@ class PlaceIsActive
      *
      * @return mixed
      */
-
-
     public function __construct()
     {
-
     }
-
 
     public function handle($request, Closure $next)
     {

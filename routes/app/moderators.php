@@ -7,7 +7,6 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
         Route::get('/', 'InvitationsController@index')->name('index');
         Route::get('/create', 'InvitationsController@create')->name('create');
         Route::post('/store', 'InvitationsController@store')->name('store');
-
     });
 
     Route::group(['prefix' => '/places', 'namespace' => 'Places', 'as' => 'places.'], function () {
@@ -24,7 +23,6 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
 
         Route::patch('/assign/{place}', 'PlacesController@assign')->name('assign');
         Route::patch('/unassign/{place}', 'PlacesController@unassign')->name('unassign');
-
 
         Route::delete('/delete/{place}', 'PlacesController@delete')->name('delete');
     });

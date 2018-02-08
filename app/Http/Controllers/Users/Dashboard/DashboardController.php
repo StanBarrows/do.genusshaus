@@ -24,8 +24,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $places = Place::where('user_id',auth()->user()->id)->active()->get();
+        $places = Place::where('user_id', auth()->user()->id)->active()->get();
 
-        return view('app.users.dashboard.index',compact('places'));
+        return view('app.users.dashboard.index', compact('places'));
     }
 }
