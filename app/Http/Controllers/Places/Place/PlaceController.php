@@ -4,8 +4,6 @@ namespace Genusshaus\Http\Controllers\Places\Places;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Http\Requests\Places\Places\StorePlacesRequest;
 
 class PlaceController extends Controller
 {
@@ -18,6 +16,4 @@ class PlaceController extends Controller
     {
         return view('app.places.place.dashboard.index');
     }
-
-
 }

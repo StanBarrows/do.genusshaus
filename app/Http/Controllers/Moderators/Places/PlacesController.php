@@ -11,8 +11,8 @@ class PlacesController extends Controller
 {
     public function __construct()
     {
-          $this->middleware(['web', 'auth', 'role:moderator']);
-          $this->middleware('role:administrator')->only('delete');
+        $this->middleware(['web', 'auth', 'role:moderator']);
+        $this->middleware('role:administrator')->only('delete');
     }
 
     /**
@@ -55,8 +55,7 @@ class PlacesController extends Controller
 
     public function activate(Place $place)
     {
-        if($place->user_id)
-        {
+        if ($place->user_id) {
             $place->active = true;
             $place->save();
         }
@@ -90,7 +89,6 @@ class PlacesController extends Controller
 
         return back();
     }
-
 
     public function delete(Place $place)
     {
