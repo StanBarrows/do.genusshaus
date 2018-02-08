@@ -7,7 +7,6 @@ class CountriesTableSeeder extends Seeder
 {
     public function run()
     {
-
         $countries = [
             [
                 'code'       => 'CHE',

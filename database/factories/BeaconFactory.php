@@ -3,6 +3,7 @@
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Genusshaus\Domain\Places\Models\Place;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -19,7 +20,7 @@ $factory->define(Beacon::class, function (Faker $faker) {
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
-        'major' => $faker->numberBetween(1,250),
-        'minor' => $faker->numberBetween(1,250),
+        'major' => $faker->numberBetween(1, 250),
+        'minor' => $faker->numberBetween(1, 250),
     ];
 });

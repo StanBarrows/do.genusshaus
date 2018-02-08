@@ -13,18 +13,14 @@ class Event extends Model
 
     protected $fillable = ['name', 'description', 'start', 'finish'];
 
-
     public static function boot()
     {
         parent::boot();
 
-        static::creating(function ($event)
-        {
+        static::creating(function ($event) {
             $event->uuid = Uuid::uuid1();
         });
-
     }
-
 
     public function place()
     {
