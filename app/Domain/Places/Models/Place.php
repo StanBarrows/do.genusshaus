@@ -20,16 +20,13 @@ class Place extends Model
     {
         parent::boot();
 
-        static::creating(function ($place)
-        {
+        static::creating(function ($place) {
             $place->uuid = Uuid::uuid1();
-            $place->slug = Carbon::now()->format('ymd') . '-' . str_slug($place->name);
+            $place->slug = Carbon::now()->format('ymd').'-'.str_slug($place->name);
         });
 
-        static::updating(function ($place)
-        {
-            $place->slug = $place->created_at->format('ymd') . '-' . str_slug($place->name);
-
+        static::updating(function ($place) {
+            $place->slug = $place->created_at->format('ymd').'-'.str_slug($place->name);
         });
     }
 
@@ -67,6 +64,4 @@ class Place extends Model
     {
         return $this->hasMany(Post::class);
     }
-
 }
-

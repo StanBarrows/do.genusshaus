@@ -11,17 +11,14 @@ class Beacon extends Model
 {
     use SoftDeletes;
 
-
     public static function boot()
     {
         parent::boot();
 
-        static::creating(function ($beacon)
-        {
+        static::creating(function ($beacon) {
             $beacon->uuid = Uuid::uuid1();
         });
     }
-
 
     public function place()
     {

@@ -9,16 +9,16 @@ class RegionsTableSeeder extends Seeder
     {
         $regions = [
             [
-                'name'       => 'Basel',
+                'name'         => 'Basel',
                 'active'       => true,
             ],
             [
-                'name'       => 'Zürich',
+                'name'         => 'Zürich',
                 'active'       => false,
 
             ],
             [
-                'name'       => 'Freiburg',
+                'name'         => 'Freiburg',
                 'active'       => false,
 
             ],

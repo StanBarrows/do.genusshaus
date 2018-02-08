@@ -10,10 +10,7 @@ class PlacesComposers
     public function compose($view)
     {
         $view->with([
-           'place' => Place::where('uuid',  Route::current()->parameters()['place'])->first(),
+           'place' => Place::where('uuid', Route::current()->parameters()['place'])->first(),
         ]);
-
-
     }
-
 }

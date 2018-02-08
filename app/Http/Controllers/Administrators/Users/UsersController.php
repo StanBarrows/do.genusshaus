@@ -53,14 +53,12 @@ class UsersController extends Controller
         return redirect()->route('administrators.users.index');
     }
 
-
     public function edit(User $user)
     {
         $roles = Role::all();
 
-        return view('app.administrators.users.edit', compact('user','roles'));
+        return view('app.administrators.users.edit', compact('user', 'roles'));
     }
-
 
     public function update(UpdateUsersRequest $request, User $user)
     {
@@ -75,8 +73,7 @@ class UsersController extends Controller
 
     public function activate(User $user)
     {
-        if(!auth()->user()->isSameAs($user))
-        {
+        if (!auth()->user()->isSameAs($user)) {
             $user->active = true;
             $user->save();
         }
@@ -86,8 +83,7 @@ class UsersController extends Controller
 
     public function deactivate(User $user)
     {
-        if(!auth()->user()->isSameAs($user))
-        {
+        if (!auth()->user()->isSameAs($user)) {
             $user->active = false;
             $user->save();
         }
@@ -97,12 +93,10 @@ class UsersController extends Controller
 
     public function delete(User $user)
     {
-
-
-        if(!auth()->user()->isSameAs($user))
-        {
+        if (!auth()->user()->isSameAs($user)) {
             $user->delete();
         }
+
         return back();
     }
 }

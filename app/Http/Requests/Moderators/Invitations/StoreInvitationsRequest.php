@@ -24,8 +24,8 @@ class StoreInvitationsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|unique:users,email',
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|unique:users,email',
             'place_id'  => 'required|exists:places,id',
         ];
     }

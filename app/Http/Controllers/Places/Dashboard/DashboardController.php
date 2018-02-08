@@ -3,10 +3,6 @@
 namespace Genusshaus\Http\Controllers\Places\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Http\Requests\Places\Events\StoreEventsRequest;
-use Illuminate\Support\Facades\Route;
-use Smart6ate\Roles\Models\Role;
 
 class DashboardController extends Controller
 {
@@ -19,5 +15,4 @@ class DashboardController extends Controller
     {
         return view('app.places.dashboard.index');
     }
-
 }
