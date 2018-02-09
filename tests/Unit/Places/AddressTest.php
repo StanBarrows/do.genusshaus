@@ -4,7 +4,6 @@ namespace Tests\Unit\Places;
 
 use Genusshaus\Domain\Places\Models\Address;
 use Genusshaus\Domain\Places\Models\Place;
-
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -20,7 +19,6 @@ class AddressTest extends TestCase
         $this->disableExceptionHandling();
 
         $this->address = $address = create(Address::class);
-
     }
 
     /** @test */
@@ -38,7 +36,6 @@ class AddressTest extends TestCase
     /** @test */
     public function a_address_has_one_country()
     {
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne',  $this->address->country());
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne', $this->address->country());
     }
-
 }

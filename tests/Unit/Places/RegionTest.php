@@ -17,7 +17,6 @@ class RegionTest extends TestCase
         $this->region = create(Region::class);
     }
 
-
     /** @test */
     public function create_a_region()
     {

@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Address;
-use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Country;
+use Genusshaus\Domain\Places\Models\Place;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,16 +22,15 @@ $factory->define(Address::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
 
-        'company' => $faker->company,
-        'street' => $faker->streetAddress,
-        'postcode' => $faker->postcode,
-        'city' => $faker->city,
+        'company'    => $faker->company,
+        'street'     => $faker->streetAddress,
+        'postcode'   => $faker->postcode,
+        'city'       => $faker->city,
         'country_id' => function () {
             return factory(Country::class)->create()->id;
         },
-        'latitude' => $faker->latitude,
+        'latitude'  => $faker->latitude,
         'longitude' => $faker->longitude,
-
 
     ];
 });

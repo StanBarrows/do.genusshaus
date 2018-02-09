@@ -25,9 +25,7 @@ class UserTest extends TestCase
         $this->assertInstanceOf(User::class, $event);
     }
 
-
     public function a_user_has_many_places()
     {
-
     }
 }
