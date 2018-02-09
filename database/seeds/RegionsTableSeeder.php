@@ -12,16 +12,6 @@ class RegionsTableSeeder extends Seeder
                 'name'         => 'Basel',
                 'active'       => true,
             ],
-            [
-                'name'         => 'Zürich',
-                'active'       => false,
-
-            ],
-            [
-                'name'         => 'Freiburg',
-                'active'       => false,
-
-            ],
         ];
 
         Region::insert($regions);

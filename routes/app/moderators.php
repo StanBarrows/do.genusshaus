@@ -24,6 +24,13 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
         Route::patch('/assign/{place}', 'PlacesController@assign')->name('assign');
         Route::patch('/unassign/{place}', 'PlacesController@unassign')->name('unassign');
 
+
+        Route::patch('/publish/{place}', 'PlacesController@publish')->name('publish');
+        Route::patch('/unpublish/{place}', 'PlacesController@unpublish')->name('unpublish');
+
+        Route::patch('/reset/{place}', 'PlacesController@reset')->name('reset');
+
+
         Route::delete('/delete/{place}', 'PlacesController@delete')->name('delete');
     });
 

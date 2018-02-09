@@ -38,6 +38,9 @@
                                         <span class="badge badge-light">Unpublished</span>
                                     @endif
 
+                                    @if($place->is_sent_for_review)
+                                        <span class="badge badge-warning">Sent for review</span>
+                                    @endif
 
                             </td>
                             <td class="text-center">

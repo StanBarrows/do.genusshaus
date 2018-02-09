@@ -13,5 +13,6 @@ Route::group(['prefix' => '/users', 'namespace' => 'Controllers\Users', 'as' => 
 
     Route::group(['prefix' => '/support', 'namespace' => 'Support', 'as' => 'support.'], function () {
         Route::get('/', 'SupportController@index')->name('index');
+        Route::post('/store', 'SupportController@store')->name('store');
     });
 });

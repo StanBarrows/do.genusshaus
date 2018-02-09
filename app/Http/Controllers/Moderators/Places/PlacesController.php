@@ -3,9 +3,12 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\App\Domain\Users\User;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
+use Genusshaus\Http\Requests\Moderators\Places\AssignUserRequest;
 use Genusshaus\Http\Requests\Moderators\Places\StorePlacesRequest;
+use Illuminate\Http\Request;
 
 class PlacesController extends Controller
 {
@@ -57,6 +60,7 @@ class PlacesController extends Controller
     {
         if ($place->user_id) {
             $place->active = true;
+            $place->type = 'premium';
             $place->save();
         }
 
@@ -66,14 +70,17 @@ class PlacesController extends Controller
     public function deactivate(Place $place)
     {
         $place->active = false;
+        $place->published = false;
         $place->save();
 
         return back();
     }
 
-    public function assign(Place $place)
+    public function assign(AssignUserRequest $request, Place $place)
     {
-        $place->user_id = auth()->user()->id;
+        $user = User::where('email',$request->email)->first();
+
+        $place->user_id = $user->id;
         $place->active = true;
         $place->save();
 
@@ -84,11 +91,45 @@ class PlacesController extends Controller
     {
         $place->user_id = null;
         $place->active = false;
+        $place->published = false;
 
         $place->save();
 
         return back();
     }
+
+
+    public function publish(Place $place)
+    {
+        if ($place->active) {
+            $place->published = true;
+            $place->is_sent_for_review = false;
+            $place->save();
+        }
+
+        return back();
+    }
+
+    public function unpublish(Place $place)
+    {
+        $place->published = false;
+        $place->is_sent_for_review = false;
+        $place->save();
+
+        return back();
+    }
+
+
+
+    public function reset(Place $place)
+    {
+        $place->is_sent_for_review = false;
+        $place->published = false;
+        $place->save();
+
+        return back();
+    }
+
 
     public function delete(Place $place)
     {

@@ -18,29 +18,33 @@ class PostsController extends Controller
         return view('app.places.posts.index');
     }
 
-    public function store(StorePostsRequest $request)
+    public function create()
     {
-        /* EDIT */
-        $place = Place::first();
+        return view('app.places.posts.create');
+    }
 
+    public function store(StorePostsRequest $request, Place $place)
+    {
         $post = $place->posts()->create([
-            'name'        => $request->name,
-            'description' => $request->description,
-            'start'       => $request->start,
-            'finish'      => $request->finish,
+            'title'        => $request->title,
+            'teaser' => $request->teaser,
+            'body' => $request->body,
+            'author' => $request->author,
+            'src'       => $request->src,
 
         ]);
 
         $uploadcare = app()->uploadcare->getFile($request->uploadcare);
 
         $post->uploadcares()->create([
-            'uploadcareable_id' => $event->id,
+            'uploadcareable_id' => $post->id,
             'uuid'              => $uploadcare->data['uuid'],
             'url'               => $uploadcare->getUrl(),
         ]);
 
         $uploadcare->store();
 
-        dd('succes');
+        return redirect()->route('places.posts.index', $place);
+
     }
 }

@@ -1,79 +1,49 @@
-@extends('layouts.app')
+@extends('app.places.layouts.default')
 
-@section('content')
-    <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-10 offset-md-1">
+@section('app.places.content')
 
-                <div class="col-lg-10 offset-1">
-                    <p>Events</p>
+    <div class="card">
+        <h5 class="card-header">Events
 
+        </h5>
+
+        <div class="card-body">
+
+            @if($place->events->count())
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Start</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    @foreach($place->events as $event)
+
+                        <tr>
+                            <td>{{ $event->name }}</td>
+                            <td>{{ $event->start->diffForHumans() }}</td>
+                            <td>  @if($event->active)
+                                    <span class="badge badge-success">Active</span>
+                                @else
+                                    <span class="badge badge-warning">Inactive</span>
+                                @endif</td>
+                        </tr>
+
+                    @endforeach
+
+                    </tbody>
+                </table>
+            @else
+                <div class="alert alert-info" role="alert">
+                    <strong>Info! </strong> No events available.
                 </div>
+            @endif
 
-                <form class="form-horizontal" method="POST" action="{{ route('events.store') }}">
-                    {{ csrf_field() }}
-
-                    <div class="form-group row">
-
-                        <div class="col-lg-10 offset-1">
-                            <input title="name"
-                                   placeholder="Name"
-                                   id="name"
-                                   name="name"
-                                   type="text"
-                                   class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                                   value="{{ old('name') }}"
-                                   autofocus
-                            >
-
-                            @if ($errors->has('name'))
-                                <div class="invalid-feedback">
-                                    <strong>{{ $errors->first('name') }}</strong>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-
-                    <input type="hidden" name="description" value="Lorem Ipsum" required>
-                    <input type="hidden" name="start" value="2019-02-05 00:50:12" required>
-
-                    <div class="form-group row">
-
-                        <div class="col-lg-10 offset-1">
-                            <input id="uploadcare" value="{{ old('uploadcare') }}" name="uploadcare" type="hidden"
-                                   role="uploadcare-uploader"
-                                   class="form-control {{ $errors->has('uploadcare') ? ' is-invalid' : '' }}">
-
-                            @if ($errors->has('uploadcare'))
-                                <div class="invalid-feedback">
-                                    <strong>{{ $errors->first('uploadcare') }}</strong>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-
-                    <div class="form-group row">
-
-                        <div class="col-lg-10 offset-1">
-                            <button class="btn btn-block btn-success" type="submit">Submit</button>
-
-                        </div>
-                    </div>
-
-
-                </form>
-
-
-            </div>
         </div>
     </div>
 
 @endsection
 
-@section('scripts')
-
-    @include('packages.uploadcare.uploadcare')
-
-@endsection

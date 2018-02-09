@@ -1,11 +1,11 @@
 <?php
 
-namespace Genusshaus\Http\Controllers\Places\Places;
+namespace Genusshaus\Http\Controllers\Places\Contacts;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 
-class OpeningController extends Controller
+class ContactsController extends Controller
 {
     public function __construct()
     {
@@ -14,6 +14,6 @@ class OpeningController extends Controller
 
     public function index()
     {
-        return view('app.places.place.address.index');
+        return view('app.places.contacts.index');
     }
 }

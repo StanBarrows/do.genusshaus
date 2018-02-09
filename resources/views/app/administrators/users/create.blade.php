@@ -86,7 +86,7 @@
                 </div>
 
 
-                <div class="form-group row">
+            {{--    <div class="form-group row">
                     <div class="col-lg-12">
                         <div class="form-check">
                             <label class="form-check-label">
@@ -94,7 +94,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div>--}}
 
                 <div class="form-group row">
                     <div class="col-lg-12">

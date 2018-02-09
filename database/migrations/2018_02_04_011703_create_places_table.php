@@ -26,8 +26,10 @@ class CreatePlacesTable extends Migration
 
             $table->string('name');
             $table->string('slug')->unique();
+            $table->longText('description')->nullable();
 
             $table->boolean('active')->default(false);
+            $table->boolean('is_sent_for_review')->default(false);
             $table->boolean('published')->default(false);
 
             $table->timestamps();

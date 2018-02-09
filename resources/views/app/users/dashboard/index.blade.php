@@ -11,7 +11,23 @@
                             <img class="card-img-top" src="{{ asset('images/demo_restaurant.jpg') }}" alt="{{ $place->title }}">
                             <div class="card-body text-center">
                                 <h6 class="card-title">{{ $place->name }}</h6>
+
+
+
+                                @if($place->is_sent_for_review)
+                                    <span class="badge badge-warning">Sent for review</span>
+                                @else
+                                    @if($place->published)
+                                        <span class="badge badge-success">Published</span>
+                                    @else
+                                        <span class="badge badge-danger">Unpublished</span>
+                                    @endif
+                                @endif
+
+                                <hr>
+
                                 <a href="{{ route('places.dashboard.index', $place) }}" class="btn btn-sm btn-primary">Manage</a>
+
                             </div>
                         </div>
                     </div>

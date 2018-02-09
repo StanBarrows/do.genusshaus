@@ -7,7 +7,7 @@ use Genusshaus\Domain\Moderators\Models\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User;
-use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 
 class Place extends Model
@@ -21,7 +21,7 @@ class Place extends Model
         parent::boot();
 
         static::creating(function ($place) {
-            $place->uuid = Uuid::uuid1();
+            $place->uuid = (string) Str::uuid();
             $place->slug = Carbon::now()->format('ymd').'-'.str_slug($place->name);
         });
     }
@@ -40,6 +40,12 @@ class Place extends Model
     {
         return $this->belongsTo(Region::class);
     }
+
+    public function contact()
+    {
+        return $this->hasOne(Contact::class);
+    }
+
 
     public function address()
     {

@@ -55,7 +55,7 @@
                         </tr>
                         @endif
 
-                        <tr class="">
+                       {{-- <tr class="">
 
                             <th scope="row"></th>
                             <td>Last activity: <strong>
@@ -90,7 +90,7 @@
                               style="display: none;">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                        </form>
+                        </form>--}}
 
                     @endforeach
 

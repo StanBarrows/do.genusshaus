@@ -19,7 +19,9 @@
                         <tr>
                             <th>E-Mail</th>
                             <th>Send invitation at</th>
+{{--
                             <th></th>
+--}}
 
                         </tr>
                         </thead>
@@ -33,7 +35,9 @@
                                 <td>{{ $user->email }}</td>
 
                                 <td>{{ $user->created_at->diffForHumans() }}</td>
+{{--
                                 <td><a href="#" class="btn btn-sm btn-primary">Resend invitation</a></td>
+--}}
 
                             </tr>
 

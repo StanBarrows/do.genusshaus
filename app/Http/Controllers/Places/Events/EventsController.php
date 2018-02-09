@@ -18,17 +18,17 @@ class EventsController extends Controller
         return view('app.places.events.index');
     }
 
-    public function store(StoreEventsRequest $request)
+    public function create()
     {
-        /* EDIT */
-        $place = Place::first();
+        return view('app.places.events.create');
+    }
 
+    public function store(StoreEventsRequest $request, Place $place)
+    {
         $event = $place->events()->create([
             'name'        => $request->name,
             'description' => $request->description,
             'start'       => $request->start,
-            'finish'      => $request->finish,
-
         ]);
 
         $uploadcare = app()->uploadcare->getFile($request->uploadcare);
@@ -41,6 +41,6 @@ class EventsController extends Controller
 
         $uploadcare->store();
 
-        dd('succes');
+        return redirect()->route('places.events.index', $place);
     }
 }

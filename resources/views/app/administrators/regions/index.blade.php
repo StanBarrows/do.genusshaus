@@ -15,7 +15,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th class="text-center">Active places</th>
+                        <th class="text-center">Places</th>
                     </tr>
                     </thead>
                     <tbody>

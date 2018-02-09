@@ -4,7 +4,7 @@ namespace Genusshaus\Domain\Places\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 
 class Event extends Model
@@ -13,12 +13,20 @@ class Event extends Model
 
     protected $fillable = ['name', 'description', 'start', 'finish'];
 
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'start',
+    ];
+
+
     public static function boot()
     {
         parent::boot();
 
         static::creating(function ($event) {
-            $event->uuid = Uuid::uuid1();
+            $event->uuid = (string) Str::uuid();
         });
     }
 

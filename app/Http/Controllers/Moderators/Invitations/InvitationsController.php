@@ -4,6 +4,7 @@ namespace Genusshaus\Http\Controllers\Moderators\Invitations;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Moderators\Invitations\StoreInvitationsRequest;
 use Illuminate\Support\Facades\Hash;
@@ -21,6 +22,7 @@ class InvitationsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $users = User::inactive()->get();
@@ -48,7 +50,10 @@ class InvitationsController extends Controller
 
         $place = Place::find($request->place_id);
         $place->user_id = $user->id;
+        $place->active = true;
         $place->save();
+
+        $user->notify(new InviteUsersNotification($user, $place));
 
         return redirect()->route('moderators.invitations.index');
     }

@@ -26,9 +26,8 @@ class StoreEventsRequest extends FormRequest
     {
         return [
             'name'        => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'required|string|max:1500',
             'start'       => 'required|date_format:Y-m-d H:i:s|after:'.Carbon::now(),
-            'finish'      => 'nullable|date_format:Y-m-d H:i:s|after:start',
             'uploadcare'  => 'required|url',
         ];
     }
