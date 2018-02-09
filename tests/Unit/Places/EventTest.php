@@ -23,7 +23,7 @@ class EventTest extends TestCase
     public function a_event_belongs_to_an_place()
     {
         $event = create(Event::class);
-        
+
         $this->assertInstanceOf(Place::class, $event->place);
     }
 }
