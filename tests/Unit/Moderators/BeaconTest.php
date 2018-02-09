@@ -7,7 +7,7 @@ use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-class AddressTest extends TestCase
+class BeaconTest extends TestCase
 {
     use DatabaseMigrations;
 
@@ -25,7 +25,6 @@ class AddressTest extends TestCase
         $beacon = create(Beacon::class);
         $this->assertInstanceOf(Beacon::class, $beacon);
     }
-
 
     /** @test */
     public function a_beacon_belongs_to_one_place()

@@ -18,7 +18,6 @@ class CountryTest extends TestCase
         $this->disableExceptionHandling();
 
         $this->country = $country = create(Country::class);
-
     }
 
     /** @test */
@@ -26,6 +25,4 @@ class CountryTest extends TestCase
     {
         $this->assertInstanceOf(Country::class, $this->country);
     }
-
-
 }

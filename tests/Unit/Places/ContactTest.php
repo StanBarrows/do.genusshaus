@@ -26,7 +26,6 @@ class ContactTest extends TestCase
         $this->assertInstanceOf(Contact::class, $contact);
     }
 
-
     /** @test */
     public function a_contact_belongs_to_one_place()
     {

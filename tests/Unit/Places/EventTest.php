@@ -23,11 +23,8 @@ class EventTest extends TestCase
     /** @test */
     public function create_a_event()
     {
-
         $this->assertInstanceOf(Event::class, $this->event);
     }
-
-
 
     /** @test */
     public function a_event_belongs_to_one_place()

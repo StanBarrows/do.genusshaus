@@ -17,6 +17,6 @@ use Genusshaus\Domain\Places\Models\Country;
 $factory->define(Country::class, function (Faker $faker) {
     return [
         'code' => $faker->unique()->countryCode,
-        'name' => $faker->unique()->country
+        'name' => $faker->unique()->country,
     ];
 });

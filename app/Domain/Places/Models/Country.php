@@ -9,6 +9,4 @@ class Country extends Model
     protected $fillable = [''];
 
     public $timestamps = false;
-
-
 }

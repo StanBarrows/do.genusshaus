@@ -3,10 +3,10 @@
 namespace Genusshaus\Domain\Places\Models;
 
 use Carbon\Carbon;
+use Genusshaus\App\Domain\Users\User;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Genusshaus\App\Domain\Users\User;
 use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 

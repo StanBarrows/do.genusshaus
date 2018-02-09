@@ -21,14 +21,13 @@ $factory->define(Contact::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
 
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'web' => $faker->url,
-        'phone' => $faker->phoneNumber,
-        'facebook' => $faker->url,
+        'name'      => $faker->name,
+        'email'     => $faker->email,
+        'web'       => $faker->url,
+        'phone'     => $faker->phoneNumber,
+        'facebook'  => $faker->url,
         'instagram' => $faker->url,
-        'twitter' => $faker->url,
-
+        'twitter'   => $faker->url,
 
     ];
 });
