@@ -11,7 +11,6 @@ class SendSupportRequest extends FormRequest
      *
      * @return bool
      */
-
     public function authorize()
     {
         return true;
@@ -24,10 +23,9 @@ class SendSupportRequest extends FormRequest
      */
     public function rules()
     {
-
         return [
             'place_id'  => 'required|exists:places,id',
-            'body' => 'required|max:5000',
+            'body'      => 'required|max:5000',
         ];
     }
 }

@@ -15,5 +15,4 @@ class Contact extends Model
     {
         return $this->belongsTo(Place::class);
     }
-    
 }

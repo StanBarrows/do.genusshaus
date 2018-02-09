@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Controllers\Places\Contacts;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
 
 class ContactsController extends Controller
 {

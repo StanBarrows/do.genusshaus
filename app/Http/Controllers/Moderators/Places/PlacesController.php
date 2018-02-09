@@ -8,7 +8,6 @@ use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Http\Requests\Moderators\Places\AssignUserRequest;
 use Genusshaus\Http\Requests\Moderators\Places\StorePlacesRequest;
-use Illuminate\Http\Request;
 
 class PlacesController extends Controller
 {
@@ -78,7 +77,7 @@ class PlacesController extends Controller
 
     public function assign(AssignUserRequest $request, Place $place)
     {
-        $user = User::where('email',$request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
         $place->user_id = $user->id;
         $place->active = true;
@@ -97,7 +96,6 @@ class PlacesController extends Controller
 
         return back();
     }
-
 
     public function publish(Place $place)
     {
@@ -119,8 +117,6 @@ class PlacesController extends Controller
         return back();
     }
 
-
-
     public function reset(Place $place)
     {
         $place->is_sent_for_review = false;
@@ -129,7 +125,6 @@ class PlacesController extends Controller
 
         return back();
     }
-
 
     public function delete(Place $place)
     {

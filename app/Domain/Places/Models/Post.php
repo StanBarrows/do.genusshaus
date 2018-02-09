@@ -11,8 +11,7 @@ class Post extends Model
 {
     use SoftDeletes, HasUploadcare;
 
-    protected $fillable = ['title','teaser','body','author','src'];
-
+    protected $fillable = ['title', 'teaser', 'body', 'author', 'src'];
 
     public static function boot()
     {
