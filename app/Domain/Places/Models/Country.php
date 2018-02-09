@@ -10,8 +10,5 @@ class Country extends Model
 
     public $timestamps = false;
 
-    public function address()
-    {
-        return $this->belongsTo(Address::class);
-    }
+
 }

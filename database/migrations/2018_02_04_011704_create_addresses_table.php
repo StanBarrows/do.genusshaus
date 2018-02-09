@@ -20,7 +20,7 @@ class CreateAddressesTable extends Migration
             $table->string('company');
             $table->string('street');
             $table->string('postcode');
-            $table->string('place');
+            $table->string('city');
             $table->unsignedInteger('country_id');
 
             $table->string('latitude')->nullable();

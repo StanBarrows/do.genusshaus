@@ -27,7 +27,14 @@
                             <td>{{ $user->name }}</td>
                             <td><a href="mailto:{{$user->email}}">{{ $user->email }}</a></td>
                             <td class="text-center">
-                                @if(!auth()->user()->isSameAs($user))
+
+                                @if($user->active)
+                                    <span class="badge badge-success">Active</span>
+                                @else
+                                    <span class="badge badge-warning">Inactive</span>
+                                @endif
+                                
+                              {{--  @if(!auth()->user()->isSameAs($user))
                                     @if($user->active)
                                         <a href="{{ route('administrators.users.activate', $user) }}" onclick="event.preventDefault();document.getElementById('activate-form').submit();"class="badge badge-success">Active</a>
                                     @else
@@ -39,7 +46,7 @@
                                     @else
                                         <span class="badge badge-warning">Inactive</span>
                                     @endif
-                                @endif
+                                @endif--}}
                             </td>
                         </tr>
 

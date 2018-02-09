@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User;
+use Genusshaus\App\Domain\Users\User;
 use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 

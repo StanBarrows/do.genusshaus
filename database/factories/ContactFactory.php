@@ -1,9 +1,8 @@
 <?php
 
 use Faker\Generator as Faker;
+use Genusshaus\Domain\Places\Models\Contact;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\App\Domain\Users\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +15,20 @@ use Genusshaus\App\Domain\Users\User;
 |
 */
 
-$factory->define(Place::class, function (Faker $faker) {
+$factory->define(Contact::class, function (Faker $faker) {
     return [
-        'user_id' => function () {
-            return factory(User::class)->create()->id;
+        'place_id' => function () {
+            return factory(Place::class)->create()->id;
         },
-        'region_id' => function () {
-            return factory(Region::class)->create()->id;
-        },
-        'name'      => $faker->unique()->company,
-        'active'    => $faker->boolean(false),
-        'published' => $faker->boolean(false),
+
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'web' => $faker->url,
+        'phone' => $faker->phoneNumber,
+        'facebook' => $faker->url,
+        'instagram' => $faker->url,
+        'twitter' => $faker->url,
+
+
     ];
 });

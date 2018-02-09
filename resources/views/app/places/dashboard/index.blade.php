@@ -117,7 +117,7 @@
                         <h6>Place</h6>
                         <input title="place"
                                class="form-control"
-                               value="{{ optional($place->address)->place }}" disabled>
+                               value="{{ optional($place->address)->city }}" disabled>
                     </div>
                 </div>
 
