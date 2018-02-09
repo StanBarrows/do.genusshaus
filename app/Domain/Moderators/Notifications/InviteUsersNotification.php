@@ -5,9 +5,9 @@ namespace Genusshaus\Domain\Moderators\Notifications;
 use Genusshaus\App\Domain\Users\User;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Notifications\Notification;
 
 class InviteUsersNotification extends Notification implements ShouldQueue
 {
@@ -18,7 +18,6 @@ class InviteUsersNotification extends Notification implements ShouldQueue
      *
      * @return void
      */
-
     protected $user;
     protected $place;
 
@@ -31,7 +30,8 @@ class InviteUsersNotification extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function via($notifiable)
@@ -42,23 +42,25 @@ class InviteUsersNotification extends Notification implements ShouldQueue
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
+     *
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new MailMessage())
             ->subject('Invitiation Genusshaus')
-            ->greeting('Hello ' . $this->user->name)
-            ->line('You received an invitation for ' . $this->place->name)
-            ->action('Register', route('invitiations.register', 'user='.$this->user->email . '&place='. $this->place->uuid))
+            ->greeting('Hello '.$this->user->name)
+            ->line('You received an invitation for '.$this->place->name)
+            ->action('Register', route('invitiations.register', 'user='.$this->user->email.'&place='.$this->place->uuid))
             ->line('Please do not hesitate to contact us, if you have any further questions!');
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed $notifiable
+     * @param mixed $notifiable
+     *
      * @return array
      */
     public function toArray($notifiable)

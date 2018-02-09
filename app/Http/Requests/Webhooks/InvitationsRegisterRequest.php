@@ -24,7 +24,7 @@ class InvitationsRegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'user' => 'required|exists:users,email',
+            'user'  => 'required|exists:users,email',
             'place' => 'required|exists:places,uuid',
         ];
     }

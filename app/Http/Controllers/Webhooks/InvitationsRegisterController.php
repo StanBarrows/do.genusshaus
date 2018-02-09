@@ -16,31 +16,26 @@ class InvitationsRegisterController extends Controller
     public function __construct()
     {
         $this->middleware(['guest']);
-
     }
 
     public function index(InvitationsRegisterRequest $request)
     {
-        $user = User::where('email',$request->user)->first();
-        $place = Place::where('uuid',$request->place)->first();
+        $user = User::where('email', $request->user)->first();
+        $place = Place::where('uuid', $request->place)->first();
 
         $place->active = true;
         $place->save();
 
-        if($user->active)
-        {
+        if ($user->active) {
             return redirect()->route('users.dashboard.index');
-
         }
 
         return view('app.webhooks.invitations.index', compact('user'));
-
     }
 
     public function store(InvitationsStorePasswordRequest $request, User $user)
     {
-        if(!$user->active)
-        {
+        if (!$user->active) {
             $user->password = Hash::make($request->password);
             $user->setRememberToken(Str::random(60));
 
@@ -51,8 +46,6 @@ class InvitationsRegisterController extends Controller
             event(new PasswordReset($user));
         }
 
-
         return redirect()->route('users.dashboard.index');
-
     }
 }

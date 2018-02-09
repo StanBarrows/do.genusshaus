@@ -27,10 +27,10 @@ class PostsController extends Controller
     {
         $post = $place->posts()->create([
             'title'        => $request->title,
-            'teaser' => $request->teaser,
-            'body' => $request->body,
-            'author' => $request->author,
-            'src'       => $request->src,
+            'teaser'       => $request->teaser,
+            'body'         => $request->body,
+            'author'       => $request->author,
+            'src'          => $request->src,
 
         ]);
 
@@ -45,6 +45,5 @@ class PostsController extends Controller
         $uploadcare->store();
 
         return redirect()->route('places.posts.index', $place);
-
     }
 }

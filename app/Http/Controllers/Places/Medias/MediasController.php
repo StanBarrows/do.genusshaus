@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Controllers\Places\Medias;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
 
 class MediasController extends Controller
 {

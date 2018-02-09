@@ -2,16 +2,11 @@
 
 include 'app/auth.php';
 
-
 Route::get('/', function () {
-
     return redirect()->route('users.dashboard.index');
 });
 
-
-
 Route::group(['middleware' => ['web', 'auth']], function () {
-
     Route::group(['prefix' => '/backend'], function () {
         include 'app/users.php';
 
@@ -28,4 +23,3 @@ Route::post('/supporters/impersonate/destroy', 'Controllers\Supporters\Supporter
 
 Route::get('/webhooks/invitations/register', 'Controllers\Webhooks\InvitationsRegisterController@index')->name('invitiations.register');
 Route::post('/webhooks/invitations/register/{user}', 'Controllers\Webhooks\InvitationsRegisterController@store')->name('invitiations.reset.password');
-

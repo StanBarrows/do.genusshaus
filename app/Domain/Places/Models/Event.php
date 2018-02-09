@@ -20,7 +20,6 @@ class Event extends Model
         'start',
     ];
 
-
     public static function boot()
     {
         parent::boot();

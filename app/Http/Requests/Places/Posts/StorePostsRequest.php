@@ -21,16 +21,15 @@ class StorePostsRequest extends FormRequest
      *
      * @return array
      */
-
     public function rules()
     {
         return [
-            'title'        => 'required|string|max:60',
+            'title'         => 'required|string|max:60',
             'teaser'        => 'required|string|max:255',
-            'body'        => 'required|string|max:5000',
+            'body'          => 'required|string|max:5000',
             'author'        => 'required|string|max:255',
-            'src'        => 'required|string|max:255',
-            'uploadcare'  => 'required|url',
+            'src'           => 'required|string|max:255',
+            'uploadcare'    => 'required|url',
         ];
     }
 }

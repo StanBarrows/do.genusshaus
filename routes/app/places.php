@@ -2,7 +2,6 @@
 
 
     Route::group(['prefix' => '/places/{place}', 'namespace' => 'Controllers\Places', 'as' => 'places.'], function () {
-
         Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
         Route::group(['prefix' => '/place', 'namespace' => 'Place', 'as' => 'place.'], function () {
@@ -14,7 +13,6 @@
             Route::get('/', 'OpeningsController@index')->name('index');
             Route::patch('/update', 'OpeningsController@index')->name('update');
         });
-
 
         Route::group(['prefix' => '/contacts', 'namespace' => 'Contacts', 'as' => 'contacts.'], function () {
             Route::get('/', 'ContactsController@index')->name('index');
@@ -45,12 +43,10 @@
         });
 
         Route::group(['prefix' => '/settings', 'namespace' => 'Settings', 'as' => 'settings.'], function () {
-
             Route::get('/', 'SettingsController@index')->name('index');
 
             Route::patch('/unpublish', 'SettingsController@unpublish')->name('unpublish');
             Route::patch('/review', 'SettingsController@review')->name('review');
-
         });
     });
 

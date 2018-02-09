@@ -36,8 +36,8 @@ return [
     ],
     'erp_smartgate' => [
 
-        'url' => env('TICKETING_WEBHOOK_URL'),
-        'auth_key' => env('TICKETING_WEBHOOK_AUTH_KEY')
+        'url'      => env('TICKETING_WEBHOOK_URL'),
+        'auth_key' => env('TICKETING_WEBHOOK_AUTH_KEY'),
     ],
 
 ];

@@ -3,13 +3,12 @@
 namespace Genusshaus\App\Domain\Users\Jobs\Support;
 
 use Genusshaus\Domain\Places\Models\Place;
-use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;
-use Illuminate\Http\Request;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Http\Request;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 
 class SendSupportRequestJob implements ShouldQueue
 {
@@ -20,7 +19,6 @@ class SendSupportRequestJob implements ShouldQueue
      *
      * @return void
      */
-
     protected $request;
 
     public function __construct(Request $request)
@@ -33,22 +31,12 @@ class SendSupportRequestJob implements ShouldQueue
      *
      * @return void
      */
-
     public function handle()
     {
-       $place = Place::find($this->request->place_id);
+        $place = Place::find($this->request->place_id);
 
-        try
-        {
-
-
-
+        try {
+        } catch (\Exception $exception) {
         }
-        catch (\Exception $exception)
-        {
-
-
-        }
-
     }
 }
