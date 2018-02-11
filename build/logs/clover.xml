@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1518390444">
-  <project timestamp="1518390444">
+<coverage generated="1518391358">
+  <project timestamp="1518391358">
     <package name="Genusshaus\App\Console\Commands">
       <file name="/Users/sebastian/Development/tasty/app/App/Console/Commands/SampleData.php">
         <class name="Genusshaus\App\Console\Commands\SampleData" namespace="Genusshaus\App\Console\Commands">

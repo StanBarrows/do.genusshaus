@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Pages;
 
-use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Smart6ate\Roles\Models\Role;
