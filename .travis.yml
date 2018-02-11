@@ -14,3 +14,7 @@ services:
 cache:
   directories:
     - vendor
+
+
+after_success:
+  - chmod +x ./tests.sh; ./tests.sh
