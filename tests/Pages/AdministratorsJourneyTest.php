@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Pages;
 
-use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Smart6ate\Roles\Models\Role;
@@ -12,7 +11,8 @@ class AdministratorsJourneyTest extends TestCase
 {
     use DatabaseMigrations;
 
-    protected $user, $place;
+    protected $user;
+    protected $place;
 
     protected function setUp()
     {
@@ -21,10 +21,7 @@ class AdministratorsJourneyTest extends TestCase
         $this->withExceptionHandling();
         $this->user = $user = factory(User::class)->create(['active' => true]);
 
-
-
         $this->signIn($user);
-
     }
 
     /** @test */
@@ -54,7 +51,6 @@ class AdministratorsJourneyTest extends TestCase
         $this->get(route('administrators.users.create'))->assertStatus(200);
     }
 
-
     /** @test */
     public function a_user_can_not_visite_the_manage_users_page()
     {
@@ -68,13 +64,11 @@ class AdministratorsJourneyTest extends TestCase
         $this->get(route('administrators.users.index'))->assertStatus(200);
     }
 
-
     /** @test */
     public function a_user_can_not_visite_the_manage_logs_page()
     {
         $this->get(route('administrators.logs.index'))->assertStatus(404);
     }
-
 
     /** @test */
     public function a_administrator_can_visite_the_manage_logs_page()
@@ -83,13 +77,9 @@ class AdministratorsJourneyTest extends TestCase
         $this->get(route('administrators.logs.index'))->assertStatus(200);
     }
 
-
     public function addAdministratorsRole()
     {
         $role = factory(Role::class)->create(['title' => 'administrator']);
         $this->user->roles()->attach($role);
     }
-
-
-
 }
