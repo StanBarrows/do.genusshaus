@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Pages;
 
-use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Smart6ate\Roles\Models\Role;
@@ -12,7 +11,8 @@ class SupportersJourneyTest extends TestCase
 {
     use DatabaseMigrations;
 
-    protected $user, $place;
+    protected $user;
+    protected $place;
 
     protected function setUp()
     {
@@ -21,10 +21,7 @@ class SupportersJourneyTest extends TestCase
         $this->withExceptionHandling();
         $this->user = $user = factory(User::class)->create(['active' => true]);
 
-
-
         $this->signIn($user);
-
     }
 
     /** @test */
@@ -43,14 +40,9 @@ class SupportersJourneyTest extends TestCase
         $this->get(route('supporters.index'))->assertStatus(200);
     }
 
-
     public function addSupporterRole()
     {
         $role = factory(Role::class)->create(['title' => 'supporter']);
         $this->user->roles()->attach($role);
     }
-
-
-
-
 }
