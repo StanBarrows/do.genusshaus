@@ -1,7 +1,7 @@
 <?php
 
 use Carbon\Carbon;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 use Smart6ate\Roles\Models\Role;
 
