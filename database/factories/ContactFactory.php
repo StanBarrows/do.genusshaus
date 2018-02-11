@@ -17,6 +17,7 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Contact::class, function (Faker $faker) {
     return [
+
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },

@@ -18,6 +18,7 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Address::class, function (Faker $faker) {
     return [
+
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
@@ -26,9 +27,11 @@ $factory->define(Address::class, function (Faker $faker) {
         'street'     => $faker->streetAddress,
         'postcode'   => $faker->postcode,
         'city'       => $faker->city,
+
         'country_id' => function () {
-            return factory(Country::class)->create()->id;
+            return  factory(Country::class)->create()->id;
         },
+
         'latitude'  => $faker->latitude,
         'longitude' => $faker->longitude,
 

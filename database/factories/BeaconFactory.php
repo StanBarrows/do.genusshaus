@@ -17,9 +17,11 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Beacon::class, function (Faker $faker) {
     return [
+
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
+
         'major' => $faker->numberBetween(1, 250),
         'minor' => $faker->numberBetween(1, 250),
     ];

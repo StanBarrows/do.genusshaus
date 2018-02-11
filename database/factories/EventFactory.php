@@ -17,17 +17,18 @@ use Genusshaus\Domain\Places\Models\Place;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
+
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
 
-        'published' => false,
+        'published' => $faker->boolean(),
         'pushed'    => false,
 
         'name'        => $faker->sentence(5, true),
         'description' => $faker->paragraph(3, true),
 
-        'start'  => $faker->dateTime,
+        'start'  => $faker->dateTimeBetween('now','+2 years'),
         'finish' => null,
     ];
 });
