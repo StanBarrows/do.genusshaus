@@ -2,10 +2,10 @@
 
 use Faker\Factory as Faker;
 use Genusshaus\Domain\Moderators\Models\Beacon;
-use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Contact;
 use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Event;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Post;
 use Genusshaus\Domain\Places\Models\Region;

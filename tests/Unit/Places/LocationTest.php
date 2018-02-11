@@ -2,8 +2,8 @@
 
 namespace Tests\Unit\Places;
 
-use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Country;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;

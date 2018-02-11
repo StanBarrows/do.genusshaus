@@ -17,7 +17,7 @@ class LocationsController extends Controller
     {
         $location = $place->location;
 
-        return view('app.places.locations.index', compact('place','location'));
+        return view('app.places.locations.index', compact('place', 'location'));
     }
 
     public function update(StoreContactsRequest $request, Place $place)
