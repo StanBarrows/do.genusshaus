@@ -20,6 +20,8 @@ class EventTest extends TestCase
         $this->event = $event = create(Event::class);
     }
 
+
+
     /** @test */
     public function create_a_event()
     {
@@ -29,7 +31,6 @@ class EventTest extends TestCase
     /** @test */
     public function a_event_belongs_to_one_place()
     {
-        $event = create(Event::class);
         $this->assertInstanceOf(Place::class, $this->event->place);
     }
 }
