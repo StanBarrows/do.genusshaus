@@ -13,9 +13,18 @@ class UsersTableSeeder extends Seeder
 
         $users = [
             [
-                'name'       => env('DEFAULT_USER_NAME'),
-                'email'      => env('DEFAULT_USER_EMAIL'),
-                'password'   => bcrypt(env('DEFAULT_USER_PASSWORD')),
+                'name'       => 'Sebastian Fix',
+                'email'      => 'sebastian.fix@smartgate.ch',
+                'password'   => bcrypt('UwaEbEG7owrEiVxzkbiBt8B'),
+                'active'     => true,
+                'created_at' => $now,
+                'updated_at' => $now,
+            ],
+
+            [
+                'name'       => 'Oliver Reist',
+                'email'      => 'oliver.reist@smartgate.ch',
+                'password'   => bcrypt('sNcsQvQx8HkYA7fwjmrpjdv'),
                 'active'     => true,
                 'created_at' => $now,
                 'updated_at' => $now,
@@ -26,10 +35,14 @@ class UsersTableSeeder extends Seeder
 
         User::insert($users);
 
-        $user = User::first();
+        $all_users = User::all();
 
-        foreach ($roles as $role) {
-            $user->roles()->attach($role);
+        foreach ($all_users as $user) {
+            foreach ($roles as $role) {
+                $user->roles()->attach($role);
+            }
         }
+
+
     }
 }

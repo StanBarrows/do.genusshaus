@@ -25,7 +25,7 @@ class StorePostsRequest extends FormRequest
     {
         return [
             'title'         => 'required|string|max:60',
-            'teaser'        => 'required|string|max:255',
+            'teaser'        => 'required|string|max:200',
             'body'          => 'required|string|max:5000',
             'author'        => 'required|string|max:255',
             'src'           => 'required|string|max:255',

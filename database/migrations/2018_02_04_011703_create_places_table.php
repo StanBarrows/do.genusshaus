@@ -31,7 +31,7 @@ class CreatePlacesTable extends Migration
             $table->boolean('is_sent_for_review')->default(false);
             $table->boolean('published')->default(false);
 
-            $table->boolean('image_processed')->default(false);
+            $table->boolean('image_processed')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

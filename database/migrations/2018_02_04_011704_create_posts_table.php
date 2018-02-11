@@ -23,6 +23,8 @@ class CreatePostsTable extends Migration
             $table->boolean('published')->default(false);
             $table->boolean('pushed')->default(false);
 
+            $table->boolean('image_processed')->default(true);
+
             $table->string('title');
             $table->text('teaser');
             $table->longText('body');

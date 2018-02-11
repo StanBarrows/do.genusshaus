@@ -9,7 +9,7 @@
 
         <div class="card-body">
 
-            @if($place->events->count())
+            @if($events->count())
                 <table class="table">
                     <thead>
                     <tr>
@@ -20,15 +20,15 @@
                     </thead>
                     <tbody>
 
-                    @foreach($place->events as $event)
+                    @foreach($events as $event)
 
                         <tr>
-                            <td>{{ $event->name }}</td>
+                            <td><a href="{{ route('places.events.edit', [$place, $event]) }}">{{ $event->name }}</a></td>
                             <td>{{ $event->start->diffForHumans() }}</td>
                             <td>  @if($event->active)
-                                    <span class="badge badge-success">Active</span>
+                                    <span class="badge badge-success">Published</span>
                                 @else
-                                    <span class="badge badge-warning">Inactive</span>
+                                    <span class="badge badge-danger">Unpublished</span>
                                 @endif</td>
                         </tr>
 

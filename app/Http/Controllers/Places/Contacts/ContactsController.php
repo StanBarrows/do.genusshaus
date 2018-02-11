@@ -13,24 +13,25 @@ class ContactsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index()
+    public function index(Place $place)
     {
-        return view('app.places.contacts.index');
+        return view('app.places.contacts.index',compact('place'));
     }
 
     public function update(StoreContactsRequest $request, Place $place)
     {
-        $contact = $place->contact;
 
-        $contact->name = $request->name;
-        $contact->email = $request->email;
-        $contact->web = $request->web;
-        $contact->phone = $request->phone;
-        $contact->facebook = $request->facebook;
-        $contact->instagram = $request->instagram;
-        $contact->twitter = $request->twitter;
+        $place->contact()->update([
 
-        $contact->save();
+            'name' => $request->name,
+            'email' => $request->email,
+            'web' => $request->web,
+            'phone' => $request->phone,
+            'facebook' => $request->facebook,
+            'instagram' => $request->instagram,
+            'twitter' => $request->twitter
+
+        ]);
 
         return back();
     }

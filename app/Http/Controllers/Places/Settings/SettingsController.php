@@ -12,9 +12,9 @@ class SettingsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index()
+    public function index(Place $place)
     {
-        return view('app.places.settings.index');
+        return view('app.places.settings.index', compact('place'));
     }
 
     public function unpublish(Place $place)

@@ -24,6 +24,7 @@ $factory->define(Event::class, function (Faker $faker) {
 
         'published' => $faker->boolean(),
         'pushed'    => false,
+        'image_processed'        =>true,
 
         'name'        => $faker->sentence(5, true),
         'description' => $faker->paragraph(3, true),

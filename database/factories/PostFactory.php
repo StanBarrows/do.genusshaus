@@ -24,6 +24,8 @@ $factory->define(Post::class, function (Faker $faker) {
 
         'published' => $faker->boolean(),
         'pushed'    => false,
+        'image_processed'=> true,
+
 
         'title'  => $faker->sentence(5, true),
         'teaser' => $faker->paragraph(3, true),

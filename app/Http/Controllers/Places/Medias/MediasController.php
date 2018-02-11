@@ -5,6 +5,8 @@ namespace Genusshaus\Http\Controllers\Places\Medias;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Places\Medias\StoreMediasRequest;
+use Illuminate\Http\Request;
+use Smart6ate\Uploadcare\Models\Uploadcare;
 
 class MediasController extends Controller
 {
@@ -13,44 +15,90 @@ class MediasController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index()
+    public function index(Place $place)
     {
-        return view('app.places.medias.index');
+        return view('app.places.medias.index', compact('place'));
     }
 
-    public function update(StoreMediasRequest $request, Place $place)
+
+    public function deleteUploadcareObject(Place $place, Uploadcare $uploadcare)
     {
-        if (optional($place->uploadcares)->count()) {
-            $uuid = $place->uploadcares->first();
+        $uploadcare->delete();
 
-            if (!$place->image_processed) {
-                return back();
-                //WITH ERROR
-            }
+        try
+        {
+            $place->deleteUploadcare($uploadcare);
 
-            try {
-                $place->deleteUploadcare($uuid);
-            } catch (\Exception $exception) {
-            }
+        } catch (\Exception $exception) {
 
-            $place->image_processed = false;
-            $place->save();
-
-            $uuid->delete();
         }
+    }
 
-        $uploadcare = app()->uploadcare->getFile($request->uploadcare);
+
+
+    public function createUploadcareObject(Place $place, Request $request)
+    {
+        $place->image_processed = false;
+        $place->save();
+
+
+        $new_uploadcare_object = app()->uploadcare->getFile($request->uploadcare);
 
         $place->uploadcares()->create([
             'uploadcareable_id' => $place->id,
-            'uuid'              => $uploadcare->data['uuid'],
-            'url'               => $uploadcare->getUrl(),
+            'uuid'              => $new_uploadcare_object->data['uuid'],
+            'url'               => $new_uploadcare_object->getUrl(),
         ]);
 
-        $uploadcare->store();
+        $new_uploadcare_object->store();
 
         $place->image_processed = true;
         $place->save();
+
+    }
+
+    public function validateIfUploadcareObjectExists(Request $request)
+    {
+
+        $uploadcare_object_uuid = app()->uploadcare->getFile($request->uploadcare)->data['uuid'];
+
+        $check = Uploadcare::where('uuid',$uploadcare_object_uuid)->first();
+
+        if(!empty($check))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+
+    public function update(StoreMediasRequest $request, Place $place)
+    {
+        if (!$place->image_processed)
+        {
+            return back();
+        }
+
+        if($place->uploadcares->count()) {
+
+            if($this->validateIfUploadcareObjectExists($request))
+            {
+                return back();
+            }
+
+            else
+            {
+                $this->createUploadcareObject($place, $request);
+
+                $old_uploadcare_object = $place->uploadcares->first();
+                $this->deleteUploadcareObject($place, $old_uploadcare_object);
+            }
+        }
+        else
+        {
+            $this->createUploadcareObject($place, $request);
+        }
 
         return back();
     }

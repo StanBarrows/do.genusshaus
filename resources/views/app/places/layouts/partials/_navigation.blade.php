@@ -1,20 +1,7 @@
-{{--
 <div class="card">
     <div class="card-header">
         <strong>{{ $place->name }}</strong>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item {{ current_route('places.dashboard.index') }}">
-            <a class="text-center" href="{{ route('places.dashboard.index', $place) }}">Dashboard</a>
-        </li>
 
-    </ul>
-</div>
---}}
-
-<div class="card">
-    <div class="card-header">
-        <strong>Place</strong>
 
         <span class="float-right">
 
@@ -29,10 +16,28 @@
             @endif
 
         </span>
+
+
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item {{ current_route('places.dashboard.index') }}">
-                <a class="text-center" href="{{ route('places.dashboard.index', $place) }}">Information</a>
+            <a class="text-center" href="{{ route('places.dashboard.index', $place) }}">Dashboard</a>
+        </li>
+
+    </ul>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <strong>Place</strong>
+
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item {{ current_route('places.information.index') }}">
+                <a class="text-center" href="{{ route('places.information.index', $place) }}">Information</a>
+        </li>
+        <li class="list-group-item {{ current_route('places.addresses.index') }}">
+                <a class="text-center" href="{{ route('places.addresses.index', $place) }}">Addresses</a>
         </li>
 
         <li class="list-group-item {{ current_route('places.openings.index') }}">

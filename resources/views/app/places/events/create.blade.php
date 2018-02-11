@@ -20,7 +20,7 @@
                                type="text"
                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                value="{{ old('name') }}"
-                               autofocus>
+                               required autofocus>
 
                         @if ($errors->has('name'))
                             <div class="invalid-feedback">

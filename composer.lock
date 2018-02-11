@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "305577babbef826361ac653e1d9ad337",
+    "content-hash": "f716f46a4c99f8e6b57d6809bc1b047d",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -2174,12 +2174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smart6ate/roles.git",
-                "reference": "3f84012db6cc230ba51406c8995c785499752e37"
+                "reference": "f869010570d17e46ce3817660b6d4c0ec1710f0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smart6ate/roles/zipball/3f84012db6cc230ba51406c8995c785499752e37",
-                "reference": "3f84012db6cc230ba51406c8995c785499752e37",
+                "url": "https://api.github.com/repos/smart6ate/roles/zipball/f869010570d17e46ce3817660b6d4c0ec1710f0e",
+                "reference": "f869010570d17e46ce3817660b6d4c0ec1710f0e",
                 "shasum": ""
             },
             "require-dev": {
@@ -2206,8 +2206,8 @@
                     "email": "info@smartgate.ch"
                 }
             ],
-            "description": "Internal role/permission management",
-            "time": "2018-02-06T13:37:31+00:00"
+            "description": "Internal role management for Laravel",
+            "time": "2018-02-11T12:27:34+00:00"
         },
         {
             "name": "smart6ate/tags",
@@ -2215,12 +2215,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smart6ate/tags.git",
-                "reference": "8d7a23b79f505195756743cf059831290eee05a1"
+                "reference": "ea49ac9d7436fa173b7c38c446cca8241504e784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smart6ate/tags/zipball/8d7a23b79f505195756743cf059831290eee05a1",
-                "reference": "8d7a23b79f505195756743cf059831290eee05a1",
+                "url": "https://api.github.com/repos/smart6ate/tags/zipball/ea49ac9d7436fa173b7c38c446cca8241504e784",
+                "reference": "ea49ac9d7436fa173b7c38c446cca8241504e784",
                 "shasum": ""
             },
             "require": {
@@ -2237,7 +2237,7 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Smart6ate\\Tags\\Providers\\TagsServiceProviders"
+                        "Smart6ate\\Tags\\Providers\\TagsServiceProvider"
                     ]
                 }
             },
@@ -2254,7 +2254,7 @@
                 }
             ],
             "description": "An Eloquent tagging package for Laravel",
-            "time": "2018-02-11T10:17:27+00:00"
+            "time": "2018-02-11T12:28:14+00:00"
         },
         {
             "name": "smart6ate/uploadcare",
@@ -2262,12 +2262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smart6ate/uploadcare.git",
-                "reference": "5f7399881acdfdea1898eadf8249f07223b671c5"
+                "reference": "247116ffc3e176305c9fc9205e697f65cd254174"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smart6ate/uploadcare/zipball/5f7399881acdfdea1898eadf8249f07223b671c5",
-                "reference": "5f7399881acdfdea1898eadf8249f07223b671c5",
+                "url": "https://api.github.com/repos/smart6ate/uploadcare/zipball/247116ffc3e176305c9fc9205e697f65cd254174",
+                "reference": "247116ffc3e176305c9fc9205e697f65cd254174",
                 "shasum": ""
             },
             "require": {
@@ -2297,8 +2297,8 @@
                     "email": "info@smartgate.ch"
                 }
             ],
-            "description": "An uploadcre integration for Laravel",
-            "time": "2018-02-11T11:13:01+00:00"
+            "description": "An uploadcre wrapper for Laravel",
+            "time": "2018-02-11T12:28:40+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3453,16 +3453,16 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "f0018d359a2ad6968ad11b283283a925e017f3c9"
+                "reference": "59a7a08d84111a5b2407fb58b9d74af3ebe430e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/f0018d359a2ad6968ad11b283283a925e017f3c9",
-                "reference": "f0018d359a2ad6968ad11b283283a925e017f3c9",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/59a7a08d84111a5b2407fb58b9d74af3ebe430e7",
+                "reference": "59a7a08d84111a5b2407fb58b9d74af3ebe430e7",
                 "shasum": ""
             },
             "require": {
@@ -3517,7 +3517,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2018-02-07T08:29:09+00:00"
+            "time": "2018-02-07T19:51:45+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -5306,8 +5306,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "smart6ate/roles": 20,
-        "smart6ate/uploadcare": 20,
-        "smart6ate/tags": 20
+        "smart6ate/tags": 20,
+        "smart6ate/uploadcare": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

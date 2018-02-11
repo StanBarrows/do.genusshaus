@@ -1,11 +1,10 @@
 <?php
 
-namespace Genusshaus\Http\Requests\Places\Events;
+namespace Genusshaus\Http\Requests\Places\Posts;
 
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreEventsRequest extends FormRequest
+class UpdatePostsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,10 +24,11 @@ class StoreEventsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'        => 'required|string|max:60',
-            'description' => 'required|string|max:1500',
-            'start'       => 'required|date_format:Y-m-d H:i:s|after:'.Carbon::now(),
-            'uploadcare'  => 'required|url',
+            'title'         => 'required|string|max:60',
+            'teaser'        => 'required|string|max:200',
+            'body'          => 'required|string|max:5000',
+            'author'        => 'required|string|max:255',
+            'src'           => 'required|string|max:255',
         ];
     }
 }

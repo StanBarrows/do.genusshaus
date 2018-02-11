@@ -9,7 +9,7 @@
 
         <div class="card-body">
 
-            @if($place->posts->count())
+            @if($posts->count())
                 <table class="table">
                     <thead>
                     <tr>
@@ -20,10 +20,11 @@
                     </thead>
                     <tbody>
 
-                    @foreach($place->posts as $post)
+                    @foreach($posts as $post)
 
                         <tr>
-                            <td>{{ $post->title }}</td>
+                            <td><a href="{{ route('places.posts.edit', [$place, $post]) }}">{{ $post->title }}</a></td>
+
                             <td>  @if($post->active)
                                     <span class="badge badge-success">Active</span>
                                 @else

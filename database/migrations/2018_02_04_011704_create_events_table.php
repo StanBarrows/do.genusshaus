@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
 
             $table->boolean('published')->default(false);
             $table->boolean('pushed')->default(false);
+            $table->boolean('image_processed')->default(true);
 
             $table->string('name');
             $table->longText('description');
