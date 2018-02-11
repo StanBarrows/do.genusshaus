@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Administrators\Users;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Administrators\Users\StoreUsersRequest;
 use Genusshaus\Http\Requests\Administrators\Users\UpdateUsersRequest;
 use Illuminate\Support\Facades\Hash;

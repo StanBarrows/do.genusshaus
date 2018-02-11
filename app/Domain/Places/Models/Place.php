@@ -3,8 +3,8 @@
 namespace Genusshaus\Domain\Places\Models;
 
 use Carbon\Carbon;
-use Genusshaus\App\Domain\Users\User;
 use Genusshaus\Domain\Moderators\Models\Beacon;
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
@@ -14,7 +14,7 @@ class Place extends Model
 {
     use SoftDeletes, HasUploadcare;
 
-    protected $fillable = ['region_id', 'name'];
+    protected $fillable = ['region_id', 'name','description','active'];
 
     public static function boot()
     {
@@ -22,7 +22,6 @@ class Place extends Model
 
         static::creating(function ($place) {
             $place->uuid = (string) Str::uuid();
-            $place->slug = Carbon::now()->format('ymd').'-'.str_slug($place->name);
         });
     }
 

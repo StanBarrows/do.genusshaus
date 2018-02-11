@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Webhooks;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Webhooks\InvitationsRegisterRequest;
 use Genusshaus\Http\Requests\Webhooks\InvitationsStorePasswordRequest;

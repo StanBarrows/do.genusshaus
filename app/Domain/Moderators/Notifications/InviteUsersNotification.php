@@ -2,7 +2,7 @@
 
 namespace Genusshaus\Domain\Moderators\Notifications;
 
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

@@ -6,9 +6,16 @@
 
             @if($places->count())
                 @foreach($places as $place)
-                    <div class="col-md-3">
+                    <div class="col-md-4 mt-4">
                         <div class="card">
-                            <img class="card-img-top" src="{{ asset('images/demo_restaurant.jpg') }}" alt="{{ $place->title }}">
+
+                            @if(optional($place->uploadcares)->count())
+                                <img class="card-img-top" src="{{ optional($place->uploadcares)->first()->url }}" alt="{{ $place->title }}">
+                                @else
+                                <img class="card-img-top" src="{{ asset('storage/images/preview_places.jpg') }}" alt="{{ $place->title }}">
+                            @endif
+
+
                             <div class="card-body text-center">
                                 <h6 class="card-title">{{ $place->name }}</h6>
 

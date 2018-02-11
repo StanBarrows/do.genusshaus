@@ -57,9 +57,9 @@
 
                     <div class="col-lg-12">
 
-                        <input title="name"
+                        <textarea rows="3" title="name"
                                class="form-control"
-                               value="{{ $place->description }}" disabled>
+                                 disabled>{{ $place->description }}</textarea>
 
 
                     </div>
@@ -80,7 +80,7 @@
 
         </h5>
 
-        <div class="card-body">
+         <div class="card-body">
 
             <h6>Company</h6>
             <div class="form-group row">
@@ -93,7 +93,7 @@
             </div>
 
 
-                <h6>Street</h6>
+              <h6>Street</h6>
                 <div class="form-group row">
 
                     <div class="col-lg-12">
@@ -121,12 +121,13 @@
                     </div>
                 </div>
 
+
                 <h6>Country</h6>
                 <div class="form-group row">
                     <div class="col-lg-12">
                         <input title="country"
                                class="form-control"
-                               value="{{ optional($place->address)->country }}" disabled>
+                               value="{{ optional($place->address)->country->name }}" disabled>
                     </div>
                 </div>
 

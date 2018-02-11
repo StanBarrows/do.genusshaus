@@ -16,13 +16,17 @@
                 @if (!Auth::guest())
                     <li class="nav-item"><a href="{{ route('users.dashboard.index') }}" class="nav-link">Your dashboard</a></li>
 
+
+
 {{--
                     <li class="nav-item"><a href="{{ route('places.index') }}" class="nav-link">Your Places</a></li>
                     <li class="nav-item"><a href="{{ route('events.index') }}" class="nav-link">Events</a></li>
                     <li class="nav-item"><a href="{{ route('posts.index') }}" class="nav-link">Posts</a></li>
 --}}
 
+{{--
                     <li class="nav-item"><a href="{{ route('users.support.index') }}" class="nav-link"><strong><i style="color: #4ca0f5" class="fas fa-question-circle fa-lg"></i></strong></a></li>
+--}}
 
 
 
@@ -45,6 +49,8 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('users.profile.index') }}">Your profil</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ route('users.profile.index') }}">Your subscription</a>
 
                             @role('administrator')
                             <div class="dropdown-divider"></div>

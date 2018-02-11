@@ -13,6 +13,26 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
         Route::get('/', 'PlacesController@index')->name('index');
 
         Route::get('/create', 'PlacesController@create')->name('create');
+
+
+        Route::group(['prefix' => '/place'], function () {
+
+
+        });
+
+
+        Route::group(['prefix' => '/metas'], function () {
+
+
+        });
+
+
+        Route::group(['prefix' => '/setting'], function () {
+
+
+        });
+
+
         Route::post('/store', 'PlacesController@store')->name('store');
 
         Route::get('/edit/{place}', 'PlacesController@edit')->name('edit');

@@ -33,7 +33,7 @@
                                 @else
                                     <span class="badge badge-warning">Inactive</span>
                                 @endif
-                                
+
                               {{--  @if(!auth()->user()->isSameAs($user))
                                     @if($user->active)
                                         <a href="{{ route('administrators.users.activate', $user) }}" onclick="event.preventDefault();document.getElementById('activate-form').submit();"class="badge badge-success">Active</a>

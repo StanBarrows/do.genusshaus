@@ -10,7 +10,7 @@
                 <h5 class="card-header">Support </h5>
                 <div class="card-body">
 
-                    @if(auth()->user()->places->count())
+                    @if($places->count())
                         <form class="form-horizontal" method="POST" action="{{ route('users.support.store') }}">
                             {{ csrf_field() }}
 
@@ -22,7 +22,7 @@
                                     <select title="place_id" id="place_id" name="place_id" class="form-control{{ $errors->has('place_id') ? ' is-invalid' : '' }}">
 
                                         <option disabled selected>Please select a place</option>
-                                        @foreach(auth()->user()->places as $place)
+                                        @foreach($places as $place)
                                             <option value="{{ $place->id }}">{{ $place->name }}</option>
                                         @endforeach
 
@@ -52,7 +52,7 @@
 
                             <div class="form-group row">
                                 <div class="col-lg-12">
-                                    <button class="btn btn-block btn-success" type="submit">Send request</button>
+                                    <button class="btn btn-block btn-success" type="submit">Send a request</button>
                                 </div>
                             </div>
 
@@ -60,7 +60,7 @@
                         </form>
                     @else
                         <div class="alert alert-info" role="alert">
-                            <strong>Info! </strong> No places available to ask any quesitons.
+                            <strong>Info! </strong> You have no places available to ask any quesitons.
                         </div>
                     @endif
 

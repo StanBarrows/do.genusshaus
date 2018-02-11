@@ -1,6 +1,6 @@
-@extends('app.moderators.layouts.default')
+@extends('app.moderators.places.layouts.default')
 
-@section('app.moderators.content')
+@section('app.moderators.places.content')
 
     <div class="card">
         <h5 class="card-header">{{ $place->name }}

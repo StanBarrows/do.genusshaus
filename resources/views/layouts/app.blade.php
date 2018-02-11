@@ -22,7 +22,11 @@
 
     @include('layouts.partials._navigation')
 
-    @yield('content')
+    <div style="margin-bottom: 100px;">
+
+        @yield('content')
+
+    </div>
 
     @include('layouts.partials._footer')
 

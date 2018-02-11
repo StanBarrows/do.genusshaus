@@ -13,6 +13,7 @@
         "laravel/tinker": "~1.0",
         "smart6ate/roles": "dev-master",
         "smart6ate/uploadcare": "dev-master",
+        "smart6ate/tags": "dev-master",
         "toin0u/geocoder-laravel": "^4.0"
     },
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1936580439dcb3e814c442fdfe7715f5",
+    "content-hash": "305577babbef826361ac653e1d9ad337",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -966,16 +966,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.6.1",
+            "version": "v5.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "74c54c0dc8195d7b96c5c3bbb16ccf2467605ecc"
+                "reference": "db3e5422070d9b5166493313142b30419efab207"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/74c54c0dc8195d7b96c5c3bbb16ccf2467605ecc",
-                "reference": "74c54c0dc8195d7b96c5c3bbb16ccf2467605ecc",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/db3e5422070d9b5166493313142b30419efab207",
+                "reference": "db3e5422070d9b5166493313142b30419efab207",
                 "shasum": ""
             },
             "require": {
@@ -1097,7 +1097,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-02-08T16:56:04+00:00"
+            "time": "2018-02-09T13:33:22+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2210,17 +2210,64 @@
             "time": "2018-02-06T13:37:31+00:00"
         },
         {
+            "name": "smart6ate/tags",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/smart6ate/tags.git",
+                "reference": "8d7a23b79f505195756743cf059831290eee05a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/smart6ate/tags/zipball/8d7a23b79f505195756743cf059831290eee05a1",
+                "reference": "8d7a23b79f505195756743cf059831290eee05a1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">= 5.0",
+                "illuminate/support": ">= 5.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "~5.0",
+                "vlucas/phpdotenv": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Smart6ate\\Tags\\Providers\\TagsServiceProviders"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Smart6ate\\Tags\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Sebastian Fix",
+                    "email": "info@smartgate.ch"
+                }
+            ],
+            "description": "An Eloquent tagging package for Laravel",
+            "time": "2018-02-11T10:17:27+00:00"
+        },
+        {
             "name": "smart6ate/uploadcare",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smart6ate/uploadcare.git",
-                "reference": "6350ef665c09f55222df0d25a874e60ee026b70a"
+                "reference": "5f7399881acdfdea1898eadf8249f07223b671c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smart6ate/uploadcare/zipball/6350ef665c09f55222df0d25a874e60ee026b70a",
-                "reference": "6350ef665c09f55222df0d25a874e60ee026b70a",
+                "url": "https://api.github.com/repos/smart6ate/uploadcare/zipball/5f7399881acdfdea1898eadf8249f07223b671c5",
+                "reference": "5f7399881acdfdea1898eadf8249f07223b671c5",
                 "shasum": ""
             },
             "require": {
@@ -2251,7 +2298,7 @@
                 }
             ],
             "description": "An uploadcre integration for Laravel",
-            "time": "2018-02-05T07:06:18+00:00"
+            "time": "2018-02-11T11:13:01+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3163,16 +3210,16 @@
         },
         {
             "name": "toin0u/geocoder-laravel",
-            "version": "4.0.3",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/GeocoderLaravel.git",
-                "reference": "20b262968975a559d6f95f8cf42d61def478c7f6"
+                "reference": "853f1f43c40b5934cf48c5d0ae1dc879179fbe57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/GeocoderLaravel/zipball/20b262968975a559d6f95f8cf42d61def478c7f6",
-                "reference": "20b262968975a559d6f95f8cf42d61def478c7f6",
+                "url": "https://api.github.com/repos/geocoder-php/GeocoderLaravel/zipball/853f1f43c40b5934cf48c5d0ae1dc879179fbe57",
+                "reference": "853f1f43c40b5934cf48c5d0ae1dc879179fbe57",
                 "shasum": ""
             },
             "require": {
@@ -3180,21 +3227,26 @@
                 "geocoder-php/geo-plugin-provider": "^4.0",
                 "geocoder-php/google-maps-provider": "^4.0",
                 "guzzlehttp/psr7": "*",
-                "illuminate/cache": "5.*",
-                "illuminate/support": "5.*",
+                "illuminate/cache": "5.0 - 5.6",
+                "illuminate/support": "5.0 - 5.6",
                 "php": "^7.0",
                 "php-http/curl-client": "^1.7",
                 "willdurand/geocoder": "^4.0"
             },
             "require-dev": {
+                "codedungeon/phpunit-result-printer": "*",
                 "doctrine/dbal": "^2.5",
                 "fzaninotto/faker": "~1.4",
                 "geocoder-php/bing-maps-provider": "^4.0",
+                "geocoder-php/geoip2-provider": "^4.0",
                 "geocoder-php/maxmind-binary-provider": "^4.0",
-                "laravel/laravel": "5.5.*",
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "~5.0",
-                "satooshi/php-coveralls": "dev-master@dev",
+                "orchestra/database": "3.6.x-dev@dev",
+                "orchestra/testbench": "^3.6.0",
+                "orchestra/testbench-browser-kit": "3.6.x-dev@dev",
+                "orchestra/testbench-dusk": "3.6.x-dev@dev",
+                "php-coveralls/php-coveralls": "*",
+                "phpunit/phpunit": "^7.0",
                 "sebastian/phpcpd": "*"
             },
             "type": "library",
@@ -3235,7 +3287,7 @@
                 "geocoding",
                 "laravel"
             ],
-            "time": "2017-10-27T21:27:28+00:00"
+            "time": "2018-02-09T14:37:53+00:00"
         },
         {
             "name": "uploadcare/uploadcare-php",
@@ -3340,16 +3392,16 @@
         },
         {
             "name": "willdurand/geocoder",
-            "version": "4.1.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/geocoder-php/php-common.git",
-                "reference": "6ea4b6da439d3483f6e18fcd4d18ea5f510f4b9b"
+                "reference": "5e97b3c3d830fe47474cb331a05b4c63e16217b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/6ea4b6da439d3483f6e18fcd4d18ea5f510f4b9b",
-                "reference": "6ea4b6da439d3483f6e18fcd4d18ea5f510f4b9b",
+                "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/5e97b3c3d830fe47474cb331a05b4c63e16217b9",
+                "reference": "5e97b3c3d830fe47474cb331a05b4c63e16217b9",
                 "shasum": ""
             },
             "require": {
@@ -3357,7 +3409,7 @@
             },
             "require-dev": {
                 "nyholm/nsa": "^1.1",
-                "phpunit/phpunit": "^6.1",
+                "phpunit/phpunit": "6.3.*",
                 "symfony/stopwatch": "~2.5"
             },
             "suggest": {
@@ -3395,7 +3447,7 @@
                 "geocoding",
                 "geoip"
             ],
-            "time": "2017-09-16T13:21:54+00:00"
+            "time": "2018-02-10T13:22:58+00:00"
         }
     ],
     "packages-dev": [
@@ -5254,7 +5306,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "smart6ate/roles": 20,
-        "smart6ate/uploadcare": 20
+        "smart6ate/uploadcare": 20,
+        "smart6ate/tags": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

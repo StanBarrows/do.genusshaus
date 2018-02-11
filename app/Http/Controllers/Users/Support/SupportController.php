@@ -16,7 +16,9 @@ class SupportController extends Controller
 
     public function index()
     {
-        return view('app.users.support.index');
+        $places = Place::where('user_id', auth()->user()->id)->where('active',true)->get();
+
+        return view('app.users.support.index', compact('places'));
     }
 
     public function store(SendSupportRequest $request)

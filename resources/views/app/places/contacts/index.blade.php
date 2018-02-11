@@ -2,9 +2,9 @@
 
 @section('app.places.content')
 
-    <form class="form-horizontal" method="POST" action="{{ route('places.contacts.store', $place) }}">
+    <form class="form-horizontal" method="POST" action="{{ route('places.contacts.update', $place) }}">
         {{ csrf_field() }}
-
+        {{ method_field('PATCH') }}
 
         <div class="card">
             <h5 class="card-header">Contacts
@@ -84,7 +84,7 @@
                                placeholder="Phone"
                                id="phone"
                                name="phone"
-                               type="number"
+                               type="text"
                                class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
                                value="{{ old('phone', optional($place->contact)->phone) }}"
                                required
@@ -115,17 +115,17 @@
                     <div class="col-lg-12">
                         <input title="facebook"
                                placeholder="Facebook"
-                               id="facbeook"
-                               name="facbeook"
+                               id="facebook"
+                               name="facebook"
                                type="url"
-                               class="form-control{{ $errors->has('facbeook') ? ' is-invalid' : '' }}"
-                               value="{{ old('facbeook', optional($place->contact)->facbeook) }}"
+                               class="form-control{{ $errors->has('facebook') ? ' is-invalid' : '' }}"
+                               value="{{ old('facebook', optional($place->contact)->facebook) }}"
                                required
                         >
 
-                        @if ($errors->has('facbeook'))
+                        @if ($errors->has('facebook'))
                             <div class="invalid-feedback">
-                                <strong>{{ $errors->first('facbeook') }}</strong>
+                                <strong>{{ $errors->first('facebook') }}</strong>
                             </div>
                         @endif
                     </div>

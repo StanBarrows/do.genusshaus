@@ -5,7 +5,7 @@ namespace Genusshaus\Http\Controllers\Moderators\Beacons;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Http\Requests\Moderators\Beacons\StoreInvitationsRequest;
+use Genusshaus\Http\Requests\Moderators\Beacons\StoreBeaconsRequest;
 
 class BeaconsController extends Controller
 {
@@ -21,7 +21,7 @@ class BeaconsController extends Controller
      */
     public function index()
     {
-        $beacons = Beacon::all();
+        $beacons = Beacon::with('place')->get();
 
         return view('app.moderators.beacons.index', compact('beacons'));
     }
@@ -33,7 +33,7 @@ class BeaconsController extends Controller
         return view('app.moderators.beacons.create', compact('places'));
     }
 
-    public function store(StoreInvitationsRequest $request)
+    public function store(StoreBeaconsRequest $request)
     {
         $beacon = new Beacon();
 

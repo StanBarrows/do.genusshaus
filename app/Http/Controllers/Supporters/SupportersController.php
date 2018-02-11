@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Supporters;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Supporters\StartImpersonateRequest;
 
 class SupportersController extends Controller

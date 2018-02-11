@@ -16,12 +16,12 @@
 
         Route::group(['prefix' => '/contacts', 'namespace' => 'Contacts', 'as' => 'contacts.'], function () {
             Route::get('/', 'ContactsController@index')->name('index');
-            Route::post('/store', 'ContactsController@store')->name('store');
+            Route::patch('/update', 'ContactsController@update')->name('update');
         });
 
         Route::group(['prefix' => '/media', 'namespace' => 'Medias', 'as' => 'medias.'], function () {
             Route::get('/', 'MediasController@index')->name('index');
-            Route::patch('/update', 'MediasController@index')->name('update');
+            Route::patch('/update', 'MediasController@update')->name('update');
         });
 
         Route::group(['prefix' => '/events', 'namespace' => 'Events', 'as' => 'events.'], function () {

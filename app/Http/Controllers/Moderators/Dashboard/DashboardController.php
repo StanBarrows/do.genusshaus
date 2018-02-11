@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Moderators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 
 class DashboardController extends Controller
 {

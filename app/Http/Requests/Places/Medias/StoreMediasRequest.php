@@ -1,10 +1,10 @@
 <?php
 
-namespace Genusshaus\Http\Requests\Moderators\Invitations;
+namespace Genusshaus\Http\Requests\Places\Medias;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreInvitationsRequest extends FormRequest
+class StoreMediasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,7 @@ class StoreInvitationsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|string|max:255',
-            'email'     => 'required|email',
-            'place_id'  => 'required|exists:places,id',
+            'uploadcare' => 'required|url'
         ];
     }
 }

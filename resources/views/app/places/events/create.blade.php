@@ -94,7 +94,7 @@
                     <div class="col-lg-12">
                         <input id="uploadcare" value="{{ old('uploadcare') }}" name="uploadcare" type="hidden"
                                role="uploadcare-uploader"
-                               class="form-control {{ $errors->has('uploadcare') ? ' is-invalid' : '' }}">
+                               class="form-control {{ $errors->has('uploadcare') ? ' is-invalid' : '' }}" required>
 
                         @if ($errors->has('uploadcare'))
                             <div class="invalid-feedback">
