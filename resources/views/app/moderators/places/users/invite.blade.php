@@ -13,7 +13,7 @@
 
 
 
-            <form class="form-horizontal" method="POST" action="{{ route('moderators.invitations.store') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.users.invite.store', $place) }}">
                 {{ csrf_field() }}
 
                 <div class="form-group row">

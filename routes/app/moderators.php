@@ -3,11 +3,6 @@
 Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators', 'as' => 'moderators.'], function () {
     Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
-    Route::group(['prefix' => '/invitations', 'namespace' => 'Invitations', 'as' => 'invitations.'], function () {
-        Route::get('/', 'InvitationsController@index')->name('index');
-        Route::get('/create', 'InvitationsController@create')->name('create');
-        Route::post('/store', 'InvitationsController@store')->name('store');
-    });
 
     Route::group(['prefix' => '/places', 'namespace' => 'Places', 'as' => 'places.'], function () {
         Route::get('/', 'PlacesController@index')->name('index');
@@ -31,6 +26,7 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
             Route::group(['prefix' => '/users', 'namespace' => 'Users', 'as' => 'users.'], function () {
                 Route::get('/', 'UsersController@index')->name('index');
                 Route::get('/invite', 'UsersController@invite')->name('invite');
+                Route::post('/invite/store', 'UsersController@store')->name('invite.store');
 
                 Route::patch('/assign', 'UsersController@assign')->name('assign');
             });

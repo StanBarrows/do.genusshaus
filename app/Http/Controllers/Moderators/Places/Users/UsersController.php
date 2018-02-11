@@ -6,8 +6,8 @@ use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
-use Genusshaus\Http\Requests\Moderators\Invitations\StoreInvitationsRequest;
 use Genusshaus\Http\Requests\Moderators\Places\Users\AssignUserRequest;
+use Genusshaus\Http\Requests\Moderators\Places\Users\StoreInvitationsRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -44,11 +44,11 @@ class UsersController extends Controller
         return view('app.moderators.places.users.create', compact('place', 'places'));
     }
 
-    public function store(StoreInvitationsRequest $request)
+    public function store(StoreInvitationsRequest $request, Place $place)
     {
         $user = User::where('email', $request->email)->first();
 
-        if (!$user->count()) {
+        if (empty($user)) {
             $user = new User();
 
             $user->name = $request->name;
@@ -59,14 +59,13 @@ class UsersController extends Controller
             $user->save();
         }
 
-        $place = Place::find($request->place_id);
         $place->user_id = $user->id;
         $place->active = true;
         $place->save();
 
         $user->notify(new InviteUsersNotification($user, $place));
 
-        return redirect()->route('moderators.placs.users.index');
+        return redirect()->route('moderators.places.users.index', $place);
     }
 
     public function assign(AssignUserRequest $request, Place $place)

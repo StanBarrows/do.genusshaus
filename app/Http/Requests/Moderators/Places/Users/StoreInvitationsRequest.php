@@ -1,6 +1,6 @@
 <?php
 
-namespace Genusshaus\Http\Requests\Moderators\Invitations;
+namespace Genusshaus\Http\Requests\Moderators\Places\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,7 +26,6 @@ class StoreInvitationsRequest extends FormRequest
         return [
             'name'      => 'required|string|max:255',
             'email'     => 'required|email',
-            'place_id'  => 'required|exists:places,id',
         ];
     }
 }

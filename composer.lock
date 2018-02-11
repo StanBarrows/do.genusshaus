@@ -2174,12 +2174,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smart6ate/roles.git",
-                "reference": "d9457e0a12034055f1a1cb85c3fe978eea139f6f"
+                "reference": "112d823b4a2ce4731a88164deff264bff765214a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smart6ate/roles/zipball/d9457e0a12034055f1a1cb85c3fe978eea139f6f",
-                "reference": "d9457e0a12034055f1a1cb85c3fe978eea139f6f",
+                "url": "https://api.github.com/repos/smart6ate/roles/zipball/112d823b4a2ce4731a88164deff264bff765214a",
+                "reference": "112d823b4a2ce4731a88164deff264bff765214a",
                 "shasum": ""
             },
             "require": {
@@ -2210,7 +2210,7 @@
                 }
             ],
             "description": "Internal role management for Laravel",
-            "time": "2018-02-11T23:14:11+00:00"
+            "time": "2018-02-11T23:23:00+00:00"
         },
         {
             "name": "smart6ate/uploadcare",
