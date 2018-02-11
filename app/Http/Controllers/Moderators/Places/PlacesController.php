@@ -39,8 +39,7 @@ class PlacesController extends Controller
     {
         $response = app('geocoder')->geocode($request->location)->get();
 
-        if(!$response->count())
-        {
+        if (!$response->count()) {
             return back();
         }
 
@@ -57,12 +56,12 @@ class PlacesController extends Controller
 
         $place->location()->create([
 
-            'street' => $location['streetName'] . ' ' . $location['streetNumber'],
-            'postcode' => $location['postalCode'],
-            'city' => $location['locality'],
+            'street'     => $location['streetName'].' '.$location['streetNumber'],
+            'postcode'   => $location['postalCode'],
+            'city'       => $location['locality'],
             'country_id' => $country->id,
-            'latitude' => $location['latitude'],
-            'longitude' => $location['longitude'],
+            'latitude'   => $location['latitude'],
+            'longitude'  => $location['longitude'],
         ]);
 
         return redirect()->route('moderators.places.index');

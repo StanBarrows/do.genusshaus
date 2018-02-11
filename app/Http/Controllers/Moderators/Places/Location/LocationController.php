@@ -19,7 +19,6 @@ class LocationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index(Place $place)
     {
         return view('app.moderators.places.location.index', compact('place'));
@@ -29,8 +28,7 @@ class LocationController extends Controller
     {
         $response = app('geocoder')->geocode($request->location)->get();
 
-        if(!$response->count())
-        {
+        if (!$response->count()) {
             return back();
         }
 
@@ -38,10 +36,10 @@ class LocationController extends Controller
 
         $place->location()->update([
 
-            'street' => $location['streetName'] . ' ' . $location['streetNumber'],
-            'postcode' => $location['postalCode'],
-            'city' => $location['locality'],
-            'latitude' => $location['latitude'],
+            'street'    => $location['streetName'].' '.$location['streetNumber'],
+            'postcode'  => $location['postalCode'],
+            'city'      => $location['locality'],
+            'latitude'  => $location['latitude'],
             'longitude' => $location['longitude'],
         ]);
 

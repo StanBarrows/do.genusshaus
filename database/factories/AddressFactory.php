@@ -1,8 +1,8 @@
 <?php
 
 use Faker\Generator as Faker;
-use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Country;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Place;
 
 /*
