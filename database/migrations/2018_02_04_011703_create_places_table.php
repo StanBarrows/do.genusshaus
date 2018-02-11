@@ -36,13 +36,10 @@ class CreatePlacesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
 
-            $table->index(['id','uuid','user_id','region_id']);
-
-
+            $table->index(['id', 'uuid', 'user_id', 'region_id']);
         });
     }
 

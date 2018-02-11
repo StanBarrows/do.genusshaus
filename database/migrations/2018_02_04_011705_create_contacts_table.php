@@ -19,20 +19,19 @@ class CreateContactsTable extends Migration
 
             $table->string('name');
             $table->string('email');
-            $table->string('web')->nullable();;
+            $table->string('web')->nullable();
             $table->string('phone')->nullable();
 
-            $table->string('facebook')->nullable();;
-            $table->string('instagram')->nullable();;
-            $table->string('twitter')->nullable();;
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
 
-            $table->index(['id','place_id']);
-
+            $table->index(['id', 'place_id']);
         });
     }
 

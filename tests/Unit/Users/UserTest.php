@@ -24,6 +24,4 @@ class UserTest extends TestCase
         $event = create(User::class);
         $this->assertInstanceOf(User::class, $event);
     }
-
-
 }

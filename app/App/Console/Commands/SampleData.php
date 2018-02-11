@@ -2,7 +2,6 @@
 
 namespace Genusshaus\App\Console\Commands;
 
-
 use Illuminate\Console\Command;
 
 class SampleData extends Command
@@ -38,14 +37,12 @@ class SampleData extends Command
      */
     public function handle()
     {
-
         $this->info('hi');
 
         $this->call('migrate:fresh');
 
         $this->call('db:seed');
 
-        $this->call('db:seed', array('--class' => 'SampleDataSeeder'));
-
+        $this->call('db:seed', ['--class' => 'SampleDataSeeder']);
     }
 }

@@ -19,7 +19,6 @@ class CreateCountriesTable extends Migration
             $table->string('name');
 
             $table->index(['id']);
-
         });
     }
 

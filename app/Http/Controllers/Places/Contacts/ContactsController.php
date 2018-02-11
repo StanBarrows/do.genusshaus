@@ -33,6 +33,5 @@ class ContactsController extends Controller
         $contact->save();
 
         return back();
-
     }
 }

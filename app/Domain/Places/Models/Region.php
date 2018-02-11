@@ -12,9 +12,8 @@ class Region extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'name'
+        'name',
     ];
-
 
     public function places()
     {

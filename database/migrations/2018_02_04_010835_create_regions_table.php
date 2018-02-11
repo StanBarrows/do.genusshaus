@@ -20,7 +20,6 @@ class CreateRegionsTable extends Migration
             $table->softDeletes();
 
             $table->index(['id']);
-
         });
     }
 

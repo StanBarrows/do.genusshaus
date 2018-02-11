@@ -20,24 +20,17 @@ class MediasController extends Controller
 
     public function update(StoreMediasRequest $request, Place $place)
     {
-
-        if(optional($place->uploadcares)->count())
-        {
+        if (optional($place->uploadcares)->count()) {
             $uuid = $place->uploadcares->first();
 
-            if(!$place->image_processed)
-            {
+            if (!$place->image_processed) {
                 return back();
                 //WITH ERROR
             }
 
-            try
-            {
+            try {
                 $place->deleteUploadcare($uuid);
-            }
-            catch (\Exception $exception)
-            {
-
+            } catch (\Exception $exception) {
             }
 
             $place->image_processed = false;
@@ -56,11 +49,9 @@ class MediasController extends Controller
 
         $uploadcare->store();
 
-
         $place->image_processed = true;
         $place->save();
 
         return back();
-
     }
 }
