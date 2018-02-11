@@ -22,9 +22,9 @@ $factory->define(Event::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
 
-        'published' => $faker->boolean(),
-        'pushed'    => false,
-        'image_processed'        =>true,
+        'published'              => $faker->boolean(),
+        'pushed'                 => false,
+        'image_processed'        => true,
 
         'name'        => $faker->sentence(5, true),
         'description' => $faker->paragraph(3, true),

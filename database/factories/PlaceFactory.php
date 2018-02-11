@@ -26,10 +26,10 @@ $factory->define(Place::class, function (Faker $faker) {
         'region_id' => function () {
             return factory(Region::class)->create()->id;
         },
-        'name'             => $faker->company,
-        'description'      => $faker->paragraph(3),
-        'active'           => $faker->boolean(true),
+        'name'                   => $faker->company,
+        'description'            => $faker->paragraph(3),
+        'active'                 => $faker->boolean(true),
         'image_processed'        => true,
-        'published'        => $faker->boolean(false),
+        'published'              => $faker->boolean(false),
     ];
 });

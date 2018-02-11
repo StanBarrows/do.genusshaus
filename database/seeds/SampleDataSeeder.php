@@ -80,7 +80,6 @@ class SampleDataSeeder extends Seeder
                 });
         }
 
-
         factory(Place::class, random_int(3, 5))
             ->create(['region_id' => $region, 'image_processed' => true, 'active' => false])
             ->each(function ($place) {
@@ -133,9 +132,5 @@ class SampleDataSeeder extends Seeder
                         ]);
                     });
             });
-
-
-
-
     }
 }
