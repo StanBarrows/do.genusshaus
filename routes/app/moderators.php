@@ -3,7 +3,6 @@
 Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators', 'as' => 'moderators.'], function () {
     Route::get('/', 'Dashboard\DashboardController@index')->name('dashboard.index');
 
-
     Route::group(['prefix' => '/places', 'namespace' => 'Places', 'as' => 'places.'], function () {
         Route::get('/', 'PlacesController@index')->name('index');
         Route::get('/create', 'PlacesController@create')->name('create');
