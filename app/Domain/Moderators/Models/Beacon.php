@@ -11,8 +11,7 @@ class Beacon extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['estimote_id','major','minor'];
-
+    protected $fillable = ['estimote_id', 'major', 'minor'];
 
     public static function boot()
     {

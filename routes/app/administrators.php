@@ -15,10 +15,7 @@ Route::group(['prefix' => '/administrators', 'namespace' => 'Controllers\Adminis
         Route::delete('/delete/{user}', 'UsersController@delete')->name('delete');
     });
 
-
     Route::group(['prefix' => '/logs', 'namespace' => 'Logs', 'as' => 'logs.'], function () {
         Route::get('/', 'LogsController@index')->name('index');
     });
-
-
 });

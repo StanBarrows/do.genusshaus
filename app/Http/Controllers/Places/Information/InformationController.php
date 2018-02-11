@@ -24,6 +24,5 @@ class InformationController extends Controller
         $place->save();
 
         return back();
-
     }
 }

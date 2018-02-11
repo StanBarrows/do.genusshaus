@@ -15,21 +15,20 @@ class ContactsController extends Controller
 
     public function index(Place $place)
     {
-        return view('app.places.contacts.index',compact('place'));
+        return view('app.places.contacts.index', compact('place'));
     }
 
     public function update(StoreContactsRequest $request, Place $place)
     {
-
         $place->contact()->update([
 
-            'name' => $request->name,
-            'email' => $request->email,
-            'web' => $request->web,
-            'phone' => $request->phone,
-            'facebook' => $request->facebook,
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'web'       => $request->web,
+            'phone'     => $request->phone,
+            'facebook'  => $request->facebook,
             'instagram' => $request->instagram,
-            'twitter' => $request->twitter
+            'twitter'   => $request->twitter,
 
         ]);
 

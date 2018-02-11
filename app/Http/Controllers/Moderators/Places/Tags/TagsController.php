@@ -21,7 +21,6 @@ class TagsController extends Controller
     {
         $tags = $place->tags;
 
-        return view('app.moderators.places.tags.index', compact('place','tags'));
+        return view('app.moderators.places.tags.index', compact('place', 'tags'));
     }
-
 }

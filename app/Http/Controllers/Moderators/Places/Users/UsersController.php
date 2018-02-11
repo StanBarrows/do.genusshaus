@@ -27,21 +27,21 @@ class UsersController extends Controller
     {
         $users = $place->users;
 
-        return view('app.moderators.places.users.index', compact('place','users'));
+        return view('app.moderators.places.users.index', compact('place', 'users'));
     }
 
     public function invite(Place $place)
     {
         $users = User::inactive()->get();
 
-        return view('app.moderators.places.users.invite', compact('place','users'));
+        return view('app.moderators.places.users.invite', compact('place', 'users'));
     }
 
     public function create(Place $place)
     {
         $places = Place::where('user_id', '=', null)->get();
 
-        return view('app.moderators.places.users.create', compact('place','places'));
+        return view('app.moderators.places.users.create', compact('place', 'places'));
     }
 
     public function store(StoreInvitationsRequest $request)
@@ -80,6 +80,3 @@ class UsersController extends Controller
         return back();
     }
 }
-
-
-

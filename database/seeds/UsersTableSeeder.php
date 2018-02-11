@@ -42,7 +42,5 @@ class UsersTableSeeder extends Seeder
                 $user->roles()->attach($role);
             }
         }
-
-
     }
 }

@@ -17,10 +17,8 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index(Place $place)
     {
         return view('app.moderators.places.dashboard.index', compact('place'));
     }
-
 }

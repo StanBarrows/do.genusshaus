@@ -21,5 +21,4 @@ class CategoriesController extends Controller
     {
         return view('app.moderators.places.categories.index', compact('place'));
     }
-
 }

@@ -4,7 +4,6 @@ namespace Tests\Unit\Places;
 
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -31,7 +30,6 @@ class PlaceTest extends TestCase
     public function a_place_has_many_user()
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->users);
-
     }
 
     /** @test */
