@@ -31,7 +31,6 @@ class PlaceTest extends TestCase
     public function a_place_has_many_user()
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->users);
-
     }
 
     /** @test */
