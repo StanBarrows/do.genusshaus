@@ -2,7 +2,6 @@
 
 namespace Genusshaus\Domain\Places\Models;
 
-use Carbon\Carbon;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
@@ -14,7 +13,7 @@ class Place extends Model
 {
     use SoftDeletes, HasUploadcare;
 
-    protected $fillable = ['region_id', 'name','description','active'];
+    protected $fillable = ['region_id', 'name', 'description', 'active'];
 
     public static function boot()
     {

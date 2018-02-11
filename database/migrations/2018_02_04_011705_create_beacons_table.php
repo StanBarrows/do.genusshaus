@@ -28,8 +28,7 @@ class CreateBeaconsTable extends Migration
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
 
-            $table->index(['id','uuid','place_id']);
-
+            $table->index(['id', 'uuid', 'place_id']);
         });
     }
 

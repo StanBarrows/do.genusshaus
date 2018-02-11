@@ -28,7 +28,7 @@ $factory->define(Event::class, function (Faker $faker) {
         'name'        => $faker->sentence(5, true),
         'description' => $faker->paragraph(3, true),
 
-        'start'  => $faker->dateTimeBetween('now','+2 years'),
+        'start'  => $faker->dateTimeBetween('now', '+2 years'),
         'finish' => null,
     ];
 });

@@ -3,8 +3,8 @@
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-
 use Genusshaus\Domain\Users\Models\User;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -17,7 +17,6 @@ use Genusshaus\Domain\Users\Models\User;
 */
 
 $factory->define(Place::class, function (Faker $faker) {
-
     return [
 
         'user_id' => function () {
@@ -27,10 +26,9 @@ $factory->define(Place::class, function (Faker $faker) {
         'region_id' => function () {
             return factory(Region::class)->create()->id;
         },
-        'name'      => $faker->company,
+        'name'             => $faker->company,
         'description'      => $faker->paragraph(3),
-        'active'    => $faker->boolean(true),
-        'published' => $faker->boolean(false),
+        'active'           => $faker->boolean(true),
+        'published'        => $faker->boolean(false),
     ];
 });
-

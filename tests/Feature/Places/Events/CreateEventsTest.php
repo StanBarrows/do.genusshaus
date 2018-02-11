@@ -6,7 +6,6 @@ use Genusshaus\Domain\Places\Models\Event;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-
 class CreateEventsTest extends TestCase
 {
     use DatabaseMigrations;
@@ -18,10 +17,10 @@ class CreateEventsTest extends TestCase
         parent::setUp();
         $this->disableExceptionHandling();
         $this->event = $event = create(Event::class);
-
     }
+
     /** @test */
-    function guests_may_not_create_posts()
+    public function guests_may_not_create_posts()
     {
         $this->withExceptionHandling();
         $this->get(route('places.events.create', $this->event))
@@ -29,5 +28,4 @@ class CreateEventsTest extends TestCase
         $this->post(route('places.events.store', $this->event))
             ->assertRedirect(route('login'));
     }
-
 }

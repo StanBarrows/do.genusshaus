@@ -24,7 +24,7 @@ class StoreMediasRequest extends FormRequest
     public function rules()
     {
         return [
-            'uploadcare' => 'required|url'
+            'uploadcare' => 'required|url',
         ];
     }
 }

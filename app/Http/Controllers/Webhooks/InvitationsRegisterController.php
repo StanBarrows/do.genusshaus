@@ -3,8 +3,8 @@
 namespace Genusshaus\Http\Controllers\Webhooks;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Webhooks\InvitationsRegisterRequest;
 use Genusshaus\Http\Requests\Webhooks\InvitationsStorePasswordRequest;
 use Illuminate\Auth\Events\PasswordReset;

@@ -20,8 +20,6 @@ class EventTest extends TestCase
         $this->event = $event = create(Event::class);
     }
 
-
-
     /** @test */
     public function create_a_event()
     {

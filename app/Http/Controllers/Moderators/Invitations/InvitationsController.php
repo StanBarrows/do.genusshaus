@@ -3,9 +3,9 @@
 namespace Genusshaus\Http\Controllers\Moderators\Invitations;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Moderators\Invitations\StoreInvitationsRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -38,10 +38,9 @@ class InvitationsController extends Controller
 
     public function store(StoreInvitationsRequest $request)
     {
-        $user = User::where('email',$request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
-        if(!$user->count())
-        {
+        if (!$user->count()) {
             $user = new User();
 
             $user->name = $request->name;

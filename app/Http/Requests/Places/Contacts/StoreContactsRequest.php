@@ -24,13 +24,13 @@ class StoreContactsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'web' => 'nullable|url|max:255',
-            'phone' => 'nullable|string|max:255',
-            'facebook' => 'nullable|string|max:255',
+            'name'      => 'required|string|max:255',
+            'email'     => 'required|email|max:255',
+            'web'       => 'nullable|url|max:255',
+            'phone'     => 'nullable|string|max:255',
+            'facebook'  => 'nullable|string|max:255',
             'instagram' => 'nullable|string|max:255',
-            'twitter' => 'nullable|string|max:255',
+            'twitter'   => 'nullable|string|max:255',
         ];
     }
 }
