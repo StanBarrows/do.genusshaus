@@ -45,9 +45,9 @@ class PlaceTest extends TestCase
     }
 
     /** @test */
-    public function a_place_has_one_address()
+    public function a_place_has_one_location()
     {
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne', $this->place->address());
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne', $this->place->location());
     }
 
     /** @test */

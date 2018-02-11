@@ -3,6 +3,7 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Http\Requests\Moderators\Places\StorePlacesRequest;
@@ -36,14 +37,33 @@ class PlacesController extends Controller
 
     public function store(StorePlacesRequest $request)
     {
+        $response = app('geocoder')->geocode($request->location)->get();
+
+        if(!$response->count())
+        {
+            return back();
+        }
+
+        $location = $response->first()->toArray();
+
         $place = new Place();
 
         $place->region_id = $request->region_id;
         $place->name = $request->name;
-        $place->active = false;
-        $place->published = false;
 
         $place->save();
+
+        $country = Country::first();
+
+        $place->location()->create([
+
+            'street' => $location['streetName'] . ' ' . $location['streetNumber'],
+            'postcode' => $location['postalCode'],
+            'city' => $location['locality'],
+            'country_id' => $country->id,
+            'latitude' => $location['latitude'],
+            'longitude' => $location['longitude'],
+        ]);
 
         return redirect()->route('moderators.places.index');
     }

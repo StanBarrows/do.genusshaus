@@ -1,10 +1,10 @@
 <?php
 
-namespace Genusshaus\Http\Requests\Moderators\Places;
+namespace Genusshaus\Http\Requests\Moderators\Places\Locations;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePlacesRequest extends FormRequest
+class UpdateLocationsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,6 @@ class StorePlacesRequest extends FormRequest
     public function rules()
     {
         return [
-            'region_id' => 'required|exists:regions,id',
-            'name'      => 'required|string|max:255',
             'location'   => 'required',
         ];
     }

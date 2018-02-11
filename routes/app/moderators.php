@@ -25,6 +25,7 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
 
             Route::group(['prefix' => '/location', 'namespace' => 'Location', 'as' => 'location.'], function () {
                 Route::get('/', 'LocationController@index')->name('index');
+                Route::patch('/{location}', 'LocationController@update')->name('update');
             });
 
             Route::group(['prefix' => '/users', 'namespace' => 'Users', 'as' => 'users.'], function () {

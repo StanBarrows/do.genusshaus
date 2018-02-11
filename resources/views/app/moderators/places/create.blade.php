@@ -62,19 +62,19 @@
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <input title="address"
-                               placeholder="Address"
-                               id="address"
-                               name="address"
+                        <input title="location"
+                               placeholder="Location"
+                               id="location"
+                               name="location"
                                type="text"
-                               class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
-                               value="{{ old('address') }}"
+                               class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}"
+                               value="{{ old('location') }}"
                                required
                         >
 
-                        @if ($errors->has('address'))
+                        @if ($errors->has('location'))
                             <div class="invalid-feedback">
-                                <strong>{{ $errors->first('address') }}</strong>
+                                <strong>{{ $errors->first('location') }}</strong>
                             </div>
                         @endif
                     </div>

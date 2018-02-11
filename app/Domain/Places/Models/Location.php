@@ -5,11 +5,11 @@ namespace Genusshaus\Domain\Places\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Address extends Model
+class Location extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [''];
+    protected $fillable = ['google_address_id','company','street','postcode','city','latitude','country_id','longitude'];
 
     public function place()
     {

@@ -1,7 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
-use Genusshaus\Domain\Places\Models\Address;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Place;
 
@@ -16,7 +16,7 @@ use Genusshaus\Domain\Places\Models\Place;
 |
 */
 
-$factory->define(Address::class, function (Faker $faker) {
+$factory->define(Location::class, function (Faker $faker) {
     return [
 
         'place_id' => function () {

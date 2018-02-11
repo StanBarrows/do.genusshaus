@@ -9,7 +9,7 @@ class CountriesTableSeeder extends Seeder
     {
         $countries = [
             [
-                'code'       => 'CHE',
+                'code'       => 'CH',
                 'name'       => 'Switzerland',
             ],
 

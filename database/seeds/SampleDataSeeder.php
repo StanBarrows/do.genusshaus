@@ -2,7 +2,7 @@
 
 use Faker\Factory as Faker;
 use Genusshaus\Domain\Moderators\Models\Beacon;
-use Genusshaus\Domain\Places\Models\Address;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Contact;
 use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Event;
@@ -49,7 +49,7 @@ class SampleDataSeeder extends Seeder
 
                     $country = Country::first()->id ?: factory(Country::class)->create()->id;
 
-                    factory(Address::class, 1)
+                    factory(Location::class, 1)
                         ->create(['place_id' => $place->id, 'country_id'=> $country])
                         ->each(function () {
                         });
@@ -103,7 +103,7 @@ class SampleDataSeeder extends Seeder
 
                 $country = Country::first()->id ?: factory(Country::class)->create()->id;
 
-                factory(Address::class, 1)
+                factory(Location::class, 1)
                     ->create(['place_id' => $place->id, 'country_id'=> $country])
                     ->each(function ($place) {
                     });

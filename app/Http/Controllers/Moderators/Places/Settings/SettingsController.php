@@ -44,11 +44,9 @@ class SettingsController extends Controller
 
     public function activate(Place $place)
     {
-        if ($place->user_id) {
-            $place->active = true;
-            $place->type = 'premium';
-            $place->save();
-        }
+        $place->active = true;
+        $place->type = 'premium';
+        $place->save();
 
         return back();
     }

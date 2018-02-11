@@ -2,13 +2,13 @@
 
 namespace Tests\Unit\Places;
 
-use Genusshaus\Domain\Places\Models\Address;
+use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
-class AddressTest extends TestCase
+class LocationTest extends TestCase
 {
     use DatabaseMigrations;
 
@@ -19,13 +19,13 @@ class AddressTest extends TestCase
         parent::setUp();
         $this->disableExceptionHandling();
 
-        $this->address = $address = create(Address::class);
+        $this->address = $address = create(Location::class);
     }
 
     /** @test */
-    public function create_a_address()
+    public function create_a_location()
     {
-        $this->assertInstanceOf(Address::class, $this->address);
+        $this->assertInstanceOf(Location::class, $this->address);
     }
 
     /** @test */
@@ -35,7 +35,7 @@ class AddressTest extends TestCase
     }
 
     /** @test */
-    public function a_address_belongts_to_one_country()
+    public function a_locations_belongs_to_one_country()
     {
         $this->assertInstanceOf(Country::class, $this->address->country);
     }

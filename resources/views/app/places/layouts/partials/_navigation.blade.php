@@ -2,7 +2,6 @@
     <div class="card-header text-center">
         <strong>{{ $place->name }}</strong>
 
-
         <div class="mt-3 mb-3">
 
             @if($place->is_sent_for_review)
@@ -16,7 +15,6 @@
             @endif
 
         </div>
-
 
     </div>
     <ul class="list-group list-group-flush">
@@ -36,8 +34,8 @@
         <li class="list-group-item {{ current_route('places.information.index') }}">
                 <a class="text-center" href="{{ route('places.information.index', $place) }}">Information</a>
         </li>
-        <li class="list-group-item {{ current_route('places.addresses.index') }}">
-                <a class="text-center" href="{{ route('places.addresses.index', $place) }}">Addresses</a>
+        <li class="list-group-item {{ current_route('places.locations.index') }}">
+                <a class="text-center" href="{{ route('places.locations.index', $place) }}">Locations</a>
         </li>
 
         <li class="list-group-item {{ current_route('places.openings.index') }}">

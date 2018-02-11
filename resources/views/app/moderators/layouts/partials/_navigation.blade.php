@@ -31,7 +31,7 @@
         <strong>Places</strong>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item {{ current_route('moderators.places.create') }}"><a href="{{ route('moderators.places.create') }}">Create a place</a></li>
+        <li class="list-group-item {{ current_route('moderators.places.create') }}"><a href="{{ route('moderators.places.create') }}">Create a new place</a></li>
         <li class="list-group-item {{ current_route('moderators.places.index') }}"><a href="{{ route('moderators.places.index') }}">Manage places</a></li>
     </ul>
 </div>

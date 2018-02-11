@@ -8,8 +8,8 @@
             Route::patch('/update', 'InformationController@update')->name('update');
         });
 
-        Route::group(['prefix' => '/addresses', 'namespace' => 'Addresses', 'as' => 'addresses.'], function () {
-            Route::get('/', 'AddressesController@index')->name('index');
+        Route::group(['prefix' => '/locations', 'namespace' => 'Locations', 'as' => 'locations.'], function () {
+            Route::get('/', 'LocationsController@index')->name('index');
         });
 
         Route::group(['prefix' => '/openings', 'namespace' => 'Openings', 'as' => 'openings.'], function () {
