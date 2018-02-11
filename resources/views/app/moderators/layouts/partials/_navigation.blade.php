@@ -1,6 +1,6 @@
 @role('moderator')
 
-{{--
+
 <div class="card">
     <div class="card-header">
         <strong>Moderators</strong>
@@ -12,8 +12,8 @@
     </ul>
 </div>
 
---}}
 
+{{--
 <div class="card">
     <div class="card-header">
         <strong>Onboarding</strong>
@@ -23,6 +23,7 @@
         <li class="list-group-item {{ current_route('moderators.invitations.index') }}"><a href="{{ route('moderators.invitations.index') }}">Pending invitiations</a></li>
     </ul>
 </div>
+--}}
 
 
 <div class="card mt-4">
@@ -36,6 +37,31 @@
 </div>
 
 
+
+<div class="card mt-4">
+    <div class="card-header">
+        <strong>Regions</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item {{ current_route('moderators.regions.index') }}"><a href="{{ route('moderators.regions.index') }}">Manage regions</a></li>
+
+
+    </ul>
+</div>
+
+<div class="card mt-4">
+    <div class="card-header">
+        <strong>Countries</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item {{ current_route('moderators.countries.index') }}"><a href="{{ route('moderators.countries.index') }}">Manage countries</a></li>
+
+
+    </ul>
+
+</div>
+
+{{--
 <div class="card mt-4">
     <div class="card-header">
         <strong>Beacons</strong>
@@ -45,6 +71,7 @@
         <li class="list-group-item {{ current_route('moderators.beacons.index') }}"><a href="{{ route('moderators.beacons.index') }}">Manage beacons</a></li>
     </ul>
 </div>
+--}}
 
 
 @endrole

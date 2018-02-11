@@ -19,10 +19,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return redirect()->route('moderators.invitations.create');
-
-//        return view('app.moderators.dashboard.index', compact('users'));
+      return view('app.moderators.dashboard.index');
     }
 }

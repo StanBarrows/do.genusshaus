@@ -10,41 +10,113 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
     });
 
     Route::group(['prefix' => '/places', 'namespace' => 'Places', 'as' => 'places.'], function () {
+
         Route::get('/', 'PlacesController@index')->name('index');
-
         Route::get('/create', 'PlacesController@create')->name('create');
-
-        Route::group(['prefix' => '/place'], function () {
-        });
-
-        Route::group(['prefix' => '/metas'], function () {
-        });
-
-        Route::group(['prefix' => '/setting'], function () {
-        });
-
         Route::post('/store', 'PlacesController@store')->name('store');
 
-        Route::get('/edit/{place}', 'PlacesController@edit')->name('edit');
-        Route::patch('/update/{place}', 'PlacesController@update')->name('update');
 
-        Route::patch('/activate/{place}', 'PlacesController@activate')->name('activate');
-        Route::patch('/deactivate/{place}', 'PlacesController@deactivate')->name('deactivate');
+        Route::group(['prefix' => '/{place}'], function () {
 
-        Route::patch('/assign/{place}', 'PlacesController@assign')->name('assign');
-        Route::patch('/unassign/{place}', 'PlacesController@unassign')->name('unassign');
+            Route::group(['prefix' => '/dashboard','namespace' => 'Dashboard', 'as' => 'dashboard.'], function () {
 
-        Route::patch('/publish/{place}', 'PlacesController@publish')->name('publish');
-        Route::patch('/unpublish/{place}', 'PlacesController@unpublish')->name('unpublish');
+                Route::get('/', 'DashboardController@index')->name('index');
 
-        Route::patch('/reset/{place}', 'PlacesController@reset')->name('reset');
 
-        Route::delete('/delete/{place}', 'PlacesController@delete')->name('delete');
+
+            });
+
+
+            Route::group(['prefix' => '/information','namespace' => 'Information', 'as' => 'information.'], function () {
+
+                Route::get('/', 'InformationController@index')->name('index');
+
+            });
+
+
+            Route::group(['prefix' => '/location','namespace' => 'Location', 'as' => 'location.'], function () {
+
+                Route::get('/', 'LocationController@index')->name('index');
+
+            });
+
+
+            Route::group(['prefix' => '/users','namespace' => 'Users', 'as' => 'users.'], function () {
+
+                Route::get('/', 'UsersController@index')->name('index');
+                Route::get('/invite', 'UsersController@invite')->name('invite');
+
+                Route::patch('/assign', 'UsersController@assign')->name('assign');
+
+
+            });
+
+
+
+            Route::group(['prefix' => '/categories','namespace' => 'Categories', 'as' => 'categories.'], function () {
+
+                Route::get('/', 'CategoriesController@index')->name('index');
+
+
+
+            });
+
+
+            Route::group(['prefix' => '/tags','namespace' => 'Tags', 'as' => 'tags.'], function () {
+
+                Route::get('/', 'TagsController@index')->name('index');
+
+
+            });
+
+
+            Route::group(['prefix' => '/setting','namespace' => 'Settings', 'as' => 'settings.'], function () {
+
+                Route::get('/', 'SettingsController@index')->name('index');
+
+
+                Route::patch('/activate', 'SettingsController@activate')->name('activate');
+                Route::patch('/deactivate', 'SettingsController@deactivate')->name('deactivate');
+
+                Route::patch('/reset', 'SettingsController@reset')->name('reset');
+
+                Route::patch('/unassign', 'SettingsController@unassign')->name('unassign');
+
+                Route::patch('/publish', 'SettingsController@publish')->name('publish');
+                Route::patch('/unpublish', 'SettingsController@unpublish')->name('unpublish');
+
+                Route::delete('/delete', 'SettingsController@delete')->name('delete');
+
+            });
+
+
+
+            Route::group(['prefix' => '/beacons', 'namespace' => 'Beacons', 'as' => 'beacons.'], function () {
+                Route::get('/', 'BeaconsController@index')->name('index');
+                Route::get('/create', 'BeaconsController@create')->name('create');
+                Route::post('/store', 'BeaconsController@store')->name('store');
+                Route::delete('/delete/{beacon}', 'BeaconsController@delete')->name('delete');
+            });
+
+        });
+
+
     });
 
-    Route::group(['prefix' => '/beacons', 'namespace' => 'Beacons', 'as' => 'beacons.'], function () {
-        Route::get('/', 'BeaconsController@index')->name('index');
-        Route::get('/create', 'BeaconsController@create')->name('create');
-        Route::post('/store', 'BeaconsController@store')->name('store');
+
+
+    Route::group(['prefix' => '/regions', 'namespace' => 'Regions', 'as' => 'regions.'], function () {
+        Route::get('/', 'RegionsController@index')->name('index');
+        Route::get('/create', 'RegionsController@create')->name('create');
+        Route::post('/store', 'RegionsController@store')->name('store');
     });
+
+    Route::group(['prefix' => '/countries', 'namespace' => 'Countries', 'as' => 'countries.'], function () {
+        Route::get('/', 'CountriesController@index')->name('index');
+        Route::get('/create', 'CountriesController@create')->name('create');
+        Route::post('/store', 'CountriesController@store')->name('store');
+    });
+
+
+
 });

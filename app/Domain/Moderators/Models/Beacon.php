@@ -6,11 +6,13 @@ use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
-use Ramsey\Uuid\Uuid;
 
 class Beacon extends Model
 {
     use SoftDeletes;
+
+    protected $fillable = ['estimote_id','major','minor'];
+
 
     public static function boot()
     {

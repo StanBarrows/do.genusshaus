@@ -8,8 +8,9 @@
         </h5>
         <div class="card-body">
 
-
-
+            <div class="alert alert-info" role="alert">
+                <strong>Info! </strong> No notifications available.
+            </div>
 
         </div>
     </div>

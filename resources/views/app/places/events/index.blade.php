@@ -25,7 +25,7 @@
                         <tr>
                             <td><a href="{{ route('places.events.edit', [$place, $event]) }}">{{ $event->name }}</a></td>
                             <td>{{ $event->start->diffForHumans() }}</td>
-                            <td>  @if($event->active)
+                            <td>  @if($event->published)
                                     <span class="badge badge-success">Published</span>
                                 @else
                                     <span class="badge badge-danger">Unpublished</span>

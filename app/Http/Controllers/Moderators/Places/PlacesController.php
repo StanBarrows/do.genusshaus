@@ -55,36 +55,9 @@ class PlacesController extends Controller
         return view('app.moderators.places.edit', compact('place'));
     }
 
-    public function activate(Place $place)
-    {
-        if ($place->user_id) {
-            $place->active = true;
-            $place->type = 'premium';
-            $place->save();
-        }
 
-        return back();
-    }
 
-    public function deactivate(Place $place)
-    {
-        $place->active = false;
-        $place->published = false;
-        $place->save();
 
-        return back();
-    }
-
-    public function assign(AssignUserRequest $request, Place $place)
-    {
-        $user = User::where('email', $request->email)->first();
-
-        $place->user_id = $user->id;
-        $place->active = true;
-        $place->save();
-
-        return back();
-    }
 
     public function unassign(Place $place)
     {
@@ -97,34 +70,6 @@ class PlacesController extends Controller
         return back();
     }
 
-    public function publish(Place $place)
-    {
-        if ($place->active) {
-            $place->published = true;
-            $place->is_sent_for_review = false;
-            $place->save();
-        }
-
-        return back();
-    }
-
-    public function unpublish(Place $place)
-    {
-        $place->published = false;
-        $place->is_sent_for_review = false;
-        $place->save();
-
-        return back();
-    }
-
-    public function reset(Place $place)
-    {
-        $place->is_sent_for_review = false;
-        $place->published = false;
-        $place->save();
-
-        return back();
-    }
 
     public function delete(Place $place)
     {

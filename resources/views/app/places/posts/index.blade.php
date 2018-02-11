@@ -25,10 +25,10 @@
                         <tr>
                             <td><a href="{{ route('places.posts.edit', [$place, $post]) }}">{{ $post->title }}</a></td>
 
-                            <td>  @if($post->active)
-                                    <span class="badge badge-success">Active</span>
+                            <td>  @if($post->published)
+                                    <span class="badge badge-success">Published</span>
                                 @else
-                                    <span class="badge badge-warning">Inactive</span>
+                                    <span class="badge badge-danger">Unpublished</span>
                                 @endif</td>
                             <td>{{ $post->created_at->diffForHumans() }}</td>
                         </tr>

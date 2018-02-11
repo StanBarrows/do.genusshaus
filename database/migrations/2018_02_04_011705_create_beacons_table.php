@@ -20,6 +20,8 @@ class CreateBeaconsTable extends Migration
 
             $table->unsignedInteger('place_id');
 
+            $table->string('estimote_id')->nullable();
+
             $table->string('major');
             $table->string('minor');
 

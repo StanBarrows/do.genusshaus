@@ -16,6 +16,7 @@
                 @yield('app.moderators.content')
 
             </div>
+
         </div>
 
     </div>

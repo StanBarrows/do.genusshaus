@@ -1,9 +1,9 @@
 <div class="card">
-    <div class="card-header">
+    <div class="card-header text-center">
         <strong>{{ $place->name }}</strong>
 
 
-        <span class="float-right">
+        <div class="mt-3 mb-3">
 
             @if($place->is_sent_for_review)
                 <span class="badge badge-warning">Sent for review</span>
@@ -15,7 +15,7 @@
                 @endif
             @endif
 
-        </span>
+        </div>
 
 
     </div>

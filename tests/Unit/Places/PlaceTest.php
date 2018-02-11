@@ -28,9 +28,10 @@ class PlaceTest extends TestCase
     }
 
     /** @test */
-    public function a_place_belongs_to_one_user()
+    public function a_place_has_many_user()
     {
-        $this->assertInstanceOf(User::class, $this->place->user);
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->users);
+
     }
 
     /** @test */

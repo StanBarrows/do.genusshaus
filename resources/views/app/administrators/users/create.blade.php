@@ -98,7 +98,7 @@
 
                 <div class="form-group row">
                     <div class="col-lg-12">
-                        <button class="btn btn-block btn-success" type="submit">Create</button>
+                        <button class="btn btn-block btn-success" type="submit">Create a new user</button>
                     </div>
                 </div>
 

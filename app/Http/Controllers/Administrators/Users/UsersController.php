@@ -19,7 +19,7 @@ class UsersController extends Controller
 
     public function index()
     {
-        $users = User::with('roles')->get();
+        $users = User::has('roles')->with('roles')->get();
 
         return view('app.administrators.users.index', compact('users'));
     }
@@ -62,34 +62,20 @@ class UsersController extends Controller
 
     public function update(UpdateUsersRequest $request, User $user)
     {
-        $user->roles()->detach();
+        if (!auth()->user()->isSameAs($user)) {
 
-        foreach ($request->roles as $role) {
-            $user->roles()->attach($role);
+            $user->roles()->detach();
+
+            foreach ($request->roles as $role) {
+                $user->roles()->attach($role);
+            }
         }
+
+
 
         return redirect()->route('administrators.users.index');
     }
 
-    public function activate(User $user)
-    {
-        if (!auth()->user()->isSameAs($user)) {
-            $user->active = true;
-            $user->save();
-        }
-
-        return back();
-    }
-
-    public function deactivate(User $user)
-    {
-        if (!auth()->user()->isSameAs($user)) {
-            $user->active = false;
-            $user->save();
-        }
-
-        return back();
-    }
 
     public function delete(User $user)
     {

@@ -19,10 +19,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return redirect()->route('administrators.users.create');
-
-//        return view('app.administrators.dashboard.index', compact('users'));
+        return view('app.administrators.dashboard.index');
     }
 }

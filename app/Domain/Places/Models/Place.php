@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
+use Spatie\Tags\HasTags;
 
 class Place extends Model
 {
-    use SoftDeletes, HasUploadcare;
+    use SoftDeletes, HasUploadcare, HasTags;
 
     protected $fillable = ['region_id', 'name', 'description', 'active'];
 
@@ -29,9 +30,9 @@ class Place extends Model
         return 'uuid';
     }
 
-    public function user()
+    public function users()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function region()

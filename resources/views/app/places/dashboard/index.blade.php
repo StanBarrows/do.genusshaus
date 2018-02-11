@@ -4,22 +4,6 @@
 
     <div class="row">
 
-        <div class="col-md-6 offset-3 mb-4">
-
-            <div class="card">
-                <h5 class="card-header">{{ $place->name }}</h5>
-
-                @if(optional($place->uploadcares)->count())
-
-                    <img class="card-img-top" src="{{ optional($place->uploadcares)->first()->url }}"
-                         alt="{{ $place->name }}">
-                @endif
-
-            </div>
-
-
-        </div>
-
         <div class="col-md-4">
 
             <div class="card">

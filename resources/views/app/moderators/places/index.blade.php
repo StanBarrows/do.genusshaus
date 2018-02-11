@@ -44,7 +44,7 @@
 
                             </td>
                             <td class="text-center">
-                                <a href="{{ route('moderators.places.edit', $place) }}" class="badge badge-primary">Edit</a>
+                                <a href="{{ route('moderators.places.dashboard.index', $place) }}" class="badge badge-primary">Edit</a>
                             </td>
                         </tr>
 
