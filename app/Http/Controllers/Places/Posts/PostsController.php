@@ -17,19 +17,19 @@ class PostsController extends Controller
 
     public function index(Place $place)
     {
-        $posts = $place->posts()->orderBy('created_at','desc')->get();
+        $posts = $place->posts()->orderBy('created_at', 'desc')->get();
 
-        return view('app.places.posts.index',compact('place','posts'));
+        return view('app.places.posts.index', compact('place', 'posts'));
     }
 
     public function create(Place $place)
     {
-        return view('app.places.posts.create',compact('place'));
+        return view('app.places.posts.create', compact('place'));
     }
 
     public function edit(Place $place, Post $post)
     {
-        return view('app.places.posts.edit',compact('place','post'));
+        return view('app.places.posts.edit', compact('place', 'post'));
     }
 
     public function store(StorePostsRequest $request, Place $place)
@@ -56,11 +56,9 @@ class PostsController extends Controller
         return redirect()->route('places.posts.index', $place);
     }
 
-
-
     public function update(UpdatePostsRequest $request, Place $place, Post $post)
     {
-       $post->update([
+        $post->update([
             'title'        => $request->title,
             'teaser'       => $request->teaser,
             'body'         => $request->body,
@@ -72,8 +70,6 @@ class PostsController extends Controller
         return back();
     }
 
-
-
     public function publish(Place $place, Post $post)
     {
         $post->published = true;
@@ -82,7 +78,6 @@ class PostsController extends Controller
         return back();
     }
 
-
     public function unpublish(Place $place, Post $post)
     {
         $post->published = false;
@@ -90,8 +85,6 @@ class PostsController extends Controller
 
         return back();
     }
-
-
 
     public function delete(Place $place, Post $post)
     {
@@ -104,5 +97,4 @@ class PostsController extends Controller
 
         return redirect()->route('places.posts.index', compact('place'));
     }
-
 }

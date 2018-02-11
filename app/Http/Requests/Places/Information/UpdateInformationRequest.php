@@ -2,7 +2,6 @@
 
 namespace Genusshaus\Http\Requests\Places\Information;
 
-use Carbon\Carbon;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateInformationRequest extends FormRequest
