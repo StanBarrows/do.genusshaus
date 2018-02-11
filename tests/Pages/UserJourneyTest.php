@@ -5,14 +5,14 @@ namespace Tests\Unit\Pages;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Smart6ate\Roles\Models\Role;
 use Tests\TestCase;
 
 class UserJourneyTest extends TestCase
 {
     use DatabaseMigrations;
 
-    protected $user, $place;
+    protected $user;
+    protected $place;
 
     protected function setUp()
     {
@@ -20,10 +20,9 @@ class UserJourneyTest extends TestCase
         $this->disableExceptionHandling();
         $this->withExceptionHandling();
         $this->user = $user = factory(User::class)->create(['active' => true]);
-        $this->place = $place = factory(Place::class)->create(['user_id' => $user->id,'active' => true]);
+        $this->place = $place = factory(Place::class)->create(['user_id' => $user->id, 'active' => true]);
 
         $this->signIn($user);
-
     }
 
     /** @test */
@@ -31,7 +30,6 @@ class UserJourneyTest extends TestCase
     {
         $this->get(route('users.profile.index'))->assertStatus(200);
     }
-
 
     /** @test */
     public function a_active_user_can_visit_a_place()
@@ -86,5 +84,4 @@ class UserJourneyTest extends TestCase
     {
         $this->get(route('places.settings.index', $this->place))->assertStatus(200);
     }
-
 }

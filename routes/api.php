@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +13,3 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/v1/places', 'PlacesController@create')->name('create');
-
