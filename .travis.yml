@@ -1,12 +1,19 @@
+env:
+  global:
+    - CC_TEST_REPORTER_ID=d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
 language: php
 
 php:
   - 7.2
-
+  
 before_script:
   - cp .env.travis .env
   - composer install --no-interaction
   - php artisan key:generate
+
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 services:
   - redis-server
@@ -16,5 +23,9 @@ cache:
     - vendor
 
 
+script:
+  - bundle exec rspec
+
 after_success:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
   - chmod +x ./tests.sh; ./tests.sh
