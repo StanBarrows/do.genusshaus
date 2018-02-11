@@ -1,6 +1,6 @@
 <?php
 
-namespace Genusshaus\App\Domain\Users;
+namespace Genusshaus\Domain\Users\Models;
 
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Database\Eloquent\SoftDeletes;

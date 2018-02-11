@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model'  => Genusshaus\App\Domain\Users\User::class,
+            'model'  => Genusshaus\Domain\Users\Models\User::class,
         ],
 
         // 'users' => [
