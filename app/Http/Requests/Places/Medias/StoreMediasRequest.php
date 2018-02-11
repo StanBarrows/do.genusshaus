@@ -26,7 +26,7 @@ class StoreMediasRequest extends FormRequest
         $regex = '%ucarecdn.com%';
 
         return [
-            'uploadcare' => 'required|url|regex:' . $regex,
+            'uploadcare' => 'required|url|regex:'.$regex,
         ];
     }
 }

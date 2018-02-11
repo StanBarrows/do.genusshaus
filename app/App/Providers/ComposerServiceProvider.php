@@ -3,7 +3,6 @@
 namespace Genusshaus\App\Providers;
 
 use Genusshaus\Http\Composers\NavigationComposers;
-use Genusshaus\Http\Composers\PlacesComposers;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 

@@ -4,7 +4,6 @@ namespace Tests\Unit\Places;
 
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 

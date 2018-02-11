@@ -19,9 +19,9 @@ class EventsController extends Controller
 
     public function index(Place $place)
     {
-        $events = $place->events()->orderBy('start','asc')->get();
+        $events = $place->events()->orderBy('start', 'asc')->get();
 
-        return view('app.places.events.index',compact('place','events'));
+        return view('app.places.events.index', compact('place', 'events'));
     }
 
     public function create(Place $place)
@@ -31,7 +31,7 @@ class EventsController extends Controller
 
     public function edit(Place $place, Event $event)
     {
-        return view('app.places.events.edit', compact('place','event'));
+        return view('app.places.events.edit', compact('place', 'event'));
     }
 
     public function store(StoreEventsRequest $request, Place $place)
@@ -62,7 +62,6 @@ class EventsController extends Controller
             'description' => $request->description,
             'start'       => $request->start,
         ]);
-
 
         return back();
 
@@ -102,10 +101,7 @@ class EventsController extends Controller
          $uploadcare->store();
 
  */
-
-
     }
-
 
     public function publish(Place $place, Event $event)
     {
@@ -115,7 +111,6 @@ class EventsController extends Controller
         return back();
     }
 
-
     public function unpublish(Place $place, Event $event)
     {
         $event->published = false;
@@ -123,8 +118,6 @@ class EventsController extends Controller
 
         return back();
     }
-
-
 
     public function delete(Place $place, Event $event)
     {
@@ -138,16 +131,11 @@ class EventsController extends Controller
         return redirect()->route('places.events.index', compact('place'));
     }
 
-
-
-
-
     public function createUploadcareObject(Event $event, Request $request)
     {
         $event->image_processed = false;
 
         $event->save();
-
 
         $new_uploadcare_object = app()->uploadcare->getFile($request->uploadcare);
 
@@ -161,20 +149,15 @@ class EventsController extends Controller
 
         $event->image_processed = true;
         $event->save();
-
     }
-
 
     public function deleteUploadcareObject(Event $event, Uploadcare $uploadcare)
     {
         $uploadcare->delete();
 
-        try
-        {
+        try {
             $event->deleteUploadcare($uploadcare);
-
         } catch (\Exception $exception) {
-
         }
     }
 
@@ -182,15 +165,12 @@ class EventsController extends Controller
     {
         $uploadcare_object_uuid = app()->uploadcare->getFile($request->uploadcare)->data['uuid'];
 
-        $check = Uploadcare::where('uuid',$uploadcare_object_uuid)->first();
+        $check = Uploadcare::where('uuid', $uploadcare_object_uuid)->first();
 
-        if(!empty($check))
-        {
+        if (!empty($check)) {
             return true;
         }
 
         return false;
     }
-
-
 }
