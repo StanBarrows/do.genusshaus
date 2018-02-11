@@ -5,8 +5,6 @@ namespace Genusshaus\Http\Controllers\Moderators\Places;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Domain\Users\Models\User;
-use Genusshaus\Http\Requests\Moderators\Places\AssignUserRequest;
 use Genusshaus\Http\Requests\Moderators\Places\StorePlacesRequest;
 
 class PlacesController extends Controller
@@ -55,10 +53,6 @@ class PlacesController extends Controller
         return view('app.moderators.places.edit', compact('place'));
     }
 
-
-
-
-
     public function unassign(Place $place)
     {
         $place->user_id = null;
@@ -69,7 +63,6 @@ class PlacesController extends Controller
 
         return back();
     }
-
 
     public function delete(Place $place)
     {

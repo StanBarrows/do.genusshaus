@@ -22,7 +22,6 @@ class SettingsController extends Controller
         return view('app.moderators.places.settings.index', compact('place'));
     }
 
-
     public function publish(Place $place)
     {
         if ($place->active) {
@@ -63,7 +62,6 @@ class SettingsController extends Controller
         return back();
     }
 
-
     public function reset(Place $place)
     {
         $place->is_sent_for_review = false;
@@ -72,7 +70,4 @@ class SettingsController extends Controller
 
         return back();
     }
-
-
-
 }

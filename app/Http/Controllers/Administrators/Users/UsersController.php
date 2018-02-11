@@ -63,7 +63,6 @@ class UsersController extends Controller
     public function update(UpdateUsersRequest $request, User $user)
     {
         if (!auth()->user()->isSameAs($user)) {
-
             $user->roles()->detach();
 
             foreach ($request->roles as $role) {
@@ -71,11 +70,8 @@ class UsersController extends Controller
             }
         }
 
-
-
         return redirect()->route('administrators.users.index');
     }
-
 
     public function delete(User $user)
     {

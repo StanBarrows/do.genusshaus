@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Controllers\Administrators\Logs;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Users\Models\User;
 
 class LogsController extends Controller
 {

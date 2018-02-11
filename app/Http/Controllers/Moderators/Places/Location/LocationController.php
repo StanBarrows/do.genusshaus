@@ -21,5 +21,4 @@ class LocationController extends Controller
     {
         return view('app.moderators.places.location.index', compact('place'));
     }
-
 }

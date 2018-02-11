@@ -10,9 +10,8 @@ use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Post;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Domain\Users\Models\User;
-use Spatie\Tags\Tag;
-
 use Illuminate\Database\Seeder;
+use Spatie\Tags\Tag;
 
 class SampleDataSeeder extends Seeder
 {
@@ -42,14 +41,11 @@ class SampleDataSeeder extends Seeder
 
                     $place->contact()->save(factory(Contact::class)->create(['place_id' => $place->id]));
 
-                    for ($x = 0; $x <= random_int(15,35); $x++) {
-
+                    for ($x = 0; $x <= random_int(15, 35); $x++) {
                         $faker = Faker::create();
                         $tag = Tag::findOrCreate($faker->colorName);
                         $place->attachTag($tag);
-
                     }
-
 
                     $country = Country::first()->id ?: factory(Country::class)->create()->id;
 
@@ -62,7 +58,6 @@ class SampleDataSeeder extends Seeder
                         ->create(['place_id' => $place->id])
                         ->each(function () {
                         });
-
 
                     factory(Event::class, random_int(1, 3))
                         ->create(['place_id' => $place->id])
@@ -77,7 +72,6 @@ class SampleDataSeeder extends Seeder
                             ]);
                         });
 
-
                     factory(Post::class, random_int(1, 3))
                         ->create(['place_id' => $place->id])
                         ->each(function ($post) {
@@ -90,12 +84,8 @@ class SampleDataSeeder extends Seeder
                                 'processed'         => true,
                             ]);
                         });
-
-
-
                 });
         }
-
 
         factory(Place::class, random_int(3, 5))
             ->create(['region_id' => $region, 'image_processed' => true, 'active' => false])
@@ -149,9 +139,5 @@ class SampleDataSeeder extends Seeder
                         ]);
                     });
             });
-
-
-
-
     }
 }

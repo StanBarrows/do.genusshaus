@@ -25,8 +25,8 @@ class StoreBeaconsRequest extends FormRequest
     {
         return [
             'estimote_id' => 'required|string|max:255',
-            'major'    => 'required|numeric|max:5000',
-            'minor'    => 'required|numeric|max:5000',
+            'major'       => 'required|numeric|max:5000',
+            'minor'       => 'required|numeric|max:5000',
         ];
     }
 }

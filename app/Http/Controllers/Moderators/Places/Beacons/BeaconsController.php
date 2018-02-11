@@ -23,14 +23,14 @@ class BeaconsController extends Controller
     {
         $beacons = $place->beacons;
 
-        return view('app.moderators.places.beacons.index', compact('place','beacons'));
+        return view('app.moderators.places.beacons.index', compact('place', 'beacons'));
     }
 
     public function create(Place $place)
     {
         $places = Place::all();
 
-        return view('app.moderators.places.beacons.create', compact('place','places'));
+        return view('app.moderators.places.beacons.create', compact('place', 'places'));
     }
 
     public function store(StoreBeaconsRequest $request, Place $place)
@@ -38,8 +38,8 @@ class BeaconsController extends Controller
         $place->beacons()->create([
 
             'estimote_id' => $request->estimote_id,
-            'major' => $request->major,
-            'minor' => $request->minor,
+            'major'       => $request->major,
+            'minor'       => $request->minor,
 
         ]);
 

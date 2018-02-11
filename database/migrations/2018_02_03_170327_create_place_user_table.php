@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePlaceUserTable extends Migration
 {
@@ -18,11 +18,10 @@ class CreatePlaceUserTable extends Migration
             $table->unsignedInteger('place_id');
             $table->unsignedInteger('user_id');
 
-           /* $table->foreign('place_id')->references('id')->on('places');
-            $table->foreign('user_id')->references('id')->on('users');*/
+            /* $table->foreign('place_id')->references('id')->on('places');
+             $table->foreign('user_id')->references('id')->on('users');*/
 
-           $table->index(['place_id','user_id']);
-
+            $table->index(['place_id', 'user_id']);
         });
     }
 

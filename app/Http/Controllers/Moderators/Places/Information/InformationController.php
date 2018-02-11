@@ -17,10 +17,8 @@ class InformationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index(Place $place)
     {
         return view('app.moderators.places.information.index', compact('place'));
     }
-
 }
