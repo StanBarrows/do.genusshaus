@@ -17,7 +17,8 @@ class CreateBeaconsTable extends Migration
             $table->increments('id');
 
             $table->uuid('uuid')->unique();
-            $table->unsignedInteger('place_id')->nullable();
+
+            $table->unsignedInteger('place_id');
 
             $table->string('major');
             $table->string('minor');
@@ -26,6 +27,9 @@ class CreateBeaconsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+
+            $table->index(['id','uuid','place_id']);
+
         });
     }
 

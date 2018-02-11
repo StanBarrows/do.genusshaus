@@ -33,6 +33,10 @@ class CreateEventsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+
+            $table->index(['id','uuid','place_id']);
+
+
         });
     }
 

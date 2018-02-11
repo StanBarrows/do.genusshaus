@@ -18,6 +18,9 @@ class CreateRegionsTable extends Migration
             $table->string('name')->unique();
             $table->boolean('active')->default(false);
             $table->softDeletes();
+
+            $table->index(['id']);
+
         });
     }
 

@@ -31,6 +31,9 @@ class CreateAddressesTable extends Migration
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+
+            $table->index(['id','place_id']);
+
         });
     }
 
