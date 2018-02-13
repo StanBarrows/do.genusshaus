@@ -30,6 +30,6 @@ $factory->define(Place::class, function (Faker $faker) {
         'description'            => $faker->paragraph(3),
         'active'                 => $faker->boolean(true),
         'image_processed'        => true,
-        'published'              => $faker->boolean(false),
+        'published'              => $faker->boolean(),
     ];
 });

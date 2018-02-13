@@ -37,12 +37,12 @@ class SampleData extends Command
      */
     public function handle()
     {
-        $this->info('hi');
-
         $this->call('migrate:fresh');
 
         $this->call('db:seed');
 
         $this->call('db:seed', ['--class' => 'SampleDataSeeder']);
+
+        $this->call('recommendation:setup');
     }
 }

@@ -1,12 +1,11 @@
 <?php
 
-namespace Genusshaus\Http\Resources;
+namespace Genusshaus\Http\Resources\LandingPage;
 
 use Illuminate\Http\Resources\Json\Resource;
-use Spatie\Tags\Tag;
 
 
-class PlaceTagsRessource extends Resource
+class PlacesIndexRessource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -14,11 +13,14 @@ class PlaceTagsRessource extends Resource
      * @param  \Illuminate\Http\Request
      * @return array
      */
+
+
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'name' => $this->slug
+            'uuid' => $this->uuid,
+            'name' => $this->name,
+            'image_url' => $this->uploadcares->first()->url,
         ];
     }
 

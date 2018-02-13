@@ -30,6 +30,7 @@
             <ul class="ml-auto navbar-nav">
 
                 @if (Auth::guest())
+                    <li class="nav-item"><a href="https://dev.genusshaus.ch" class="nav-link">Zurück zur Landingpage</a></li>
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                 @else
                     <li class="avatar">

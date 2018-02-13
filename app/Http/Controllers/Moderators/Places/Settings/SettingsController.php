@@ -3,7 +3,10 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Settings;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\Domain\Administrators\Jobs\AddPlaceToRecommender;
 use Genusshaus\Domain\Places\Models\Place;
+use Recombee\RecommApi\Requests\AddItem;
+use Recombee\RecommApi\Requests\SetItemValues;
 
 class SettingsController extends Controller
 {
@@ -29,6 +32,10 @@ class SettingsController extends Controller
             $place->is_sent_for_review = false;
             $place->save();
         }
+
+        $collection = Place::where('uuid', $place->uuid)->get();
+
+        AddPlaceToRecommender::dispatch($collection);
 
         return back();
     }

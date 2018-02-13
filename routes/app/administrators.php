@@ -15,6 +15,10 @@ Route::group(['prefix' => '/administrators', 'namespace' => 'Controllers\Adminis
         Route::delete('/delete/{user}', 'UsersController@delete')->name('delete');
     });
 
+    Route::group(['prefix' => '/recommendations', 'namespace' => 'Recommendations', 'as' => 'recommendations.'], function () {
+        Route::get('/', 'RecommendationsController@index')->name('index');
+    });
+
     Route::group(['prefix' => '/logs', 'namespace' => 'Logs', 'as' => 'logs.'], function () {
         Route::get('/', 'LogsController@index')->name('index');
     });

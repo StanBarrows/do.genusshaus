@@ -10,6 +10,10 @@ use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Post;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Domain\Users\Models\User;
+use Genusshaus\Domain\Ressources\Models\Device;
+
+use Genusshaus\Domain\Ressources\Models\LogPlace;
+
 use Illuminate\Database\Seeder;
 use Spatie\Tags\Tag;
 
@@ -17,7 +21,14 @@ class SampleDataSeeder extends Seeder
 {
     public function run()
     {
-        factory(User::class, 10)
+        factory(Device::class, 500)
+            ->create()
+            ->each(function () {
+
+            });
+
+
+        factory(User::class, 25)
             ->create()
             ->each(function ($user) {
             });
@@ -27,7 +38,7 @@ class SampleDataSeeder extends Seeder
         foreach ($users as $user) {
             $region = Region::first()->id ?: factory(Region::class)->create()->id;
 
-            factory(Place::class, random_int(1, 3))
+            factory(Place::class, random_int(2, 5))
                 ->create(['user_id' => $user->id, 'region_id' => $region, 'image_processed' => true])
                 ->each(function ($place) {
                     $faker = Faker::create();
@@ -86,6 +97,12 @@ class SampleDataSeeder extends Seeder
                         });
                 });
         }
+
+        factory(LogPlace::class, 2500)
+            ->create()
+            ->each(function ($log) {
+            });
+
 
         factory(Place::class, random_int(3, 5))
             ->create(['region_id' => $region, 'image_processed' => true, 'active' => false])

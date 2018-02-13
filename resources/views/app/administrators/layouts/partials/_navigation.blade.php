@@ -20,6 +20,18 @@
 </div>
 
 
+
+<div class="card mt-4">
+    <div class="card-header">
+        <strong>Recommendations</strong>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item {{ current_route('administrators.recommendations.index') }}"><a href="{{ route('administrators.recommendations.index') }}">Index</a></li>
+    </ul>
+</div>
+
+
+
 <div class="card mt-4">
     <div class="card-header">
         <strong>Logs</strong>
