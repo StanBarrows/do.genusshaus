@@ -37,6 +37,8 @@ class SampleData extends Command
      */
     public function handle()
     {
+        $this->call('down', ['--message' => 'Upgrading Database']);
+
         $this->call('migrate:fresh');
 
         $this->call('db:seed');
@@ -44,5 +46,8 @@ class SampleData extends Command
         $this->call('db:seed', ['--class' => 'SampleDataSeeder']);
 
         $this->call('recommendation:setup');
+
+        $this->call('up');
+
     }
 }

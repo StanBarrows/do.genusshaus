@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1518501949">
-  <project timestamp="1518501949">
+<coverage generated="1518502732">
+  <project timestamp="1518502732">
     <package name="Genusshaus\App\Console\Commands">
       <file name="/Users/sebastian/Development/tasty/app/App/Console/Commands/RecommendationSetUp.php">
         <class name="Genusshaus\App\Console\Commands\RecommendationSetUp" namespace="Genusshaus\App\Console\Commands">
@@ -10,31 +10,31 @@
         <line num="38" type="stmt" count="55"/>
         <line num="39" type="stmt" count="55"/>
         <line num="46" type="method" name="handle" visibility="public" complexity="4" crap="20.00" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="51" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
-        <line num="57" type="stmt" count="0"/>
-        <line num="59" type="stmt" count="0"/>
-        <line num="61" type="stmt" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="65" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="69" type="stmt" count="0"/>
-        <line num="71" type="stmt" count="0"/>
-        <line num="73" type="stmt" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <line num="50" type="stmt" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <line num="60" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
+        <line num="64" type="stmt" count="0"/>
+        <line num="66" type="stmt" count="0"/>
+        <line num="68" type="stmt" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="72" type="stmt" count="0"/>
+        <line num="74" type="stmt" count="0"/>
         <line num="76" type="stmt" count="0"/>
-        <line num="78" type="stmt" count="0"/>
+        <line num="77" type="stmt" count="0"/>
         <line num="80" type="stmt" count="0"/>
+        <line num="82" type="stmt" count="0"/>
         <line num="83" type="stmt" count="0"/>
-        <line num="85" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="90" type="stmt" count="0"/>
+        <line num="86" type="stmt" count="0"/>
+        <line num="88" type="stmt" count="0"/>
+        <line num="89" type="stmt" count="0"/>
         <line num="92" type="stmt" count="0"/>
-        <line num="94" type="stmt" count="0"/>
-        <line num="97" type="stmt" count="0"/>
-        <line num="99" type="stmt" count="0"/>
-        <metrics loc="100" ncloc="80" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="28" coveredelements="3"/>
+        <line num="93" type="stmt" count="0"/>
+        <metrics loc="94" ncloc="74" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="2" elements="28" coveredelements="3"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/App/Console/Commands/SampleData.php">
         <class name="Genusshaus\App\Console\Commands\SampleData" namespace="Genusshaus\App\Console\Commands">
@@ -58,12 +58,12 @@
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
         </class>
         <line num="26" type="method" name="schedule" visibility="protected" complexity="1" crap="1" count="55"/>
-        <line num="29" type="stmt" count="55"/>
-        <line num="36" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="55"/>
+        <line num="28" type="stmt" count="55"/>
+        <line num="35" type="method" name="commands" visibility="protected" complexity="1" crap="1" count="55"/>
+        <line num="37" type="stmt" count="55"/>
         <line num="38" type="stmt" count="55"/>
         <line num="39" type="stmt" count="55"/>
-        <line num="40" type="stmt" count="55"/>
-        <metrics loc="41" ncloc="24" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        <metrics loc="40" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
       </file>
     </package>
     <package name="Genusshaus\App\Controllers">
@@ -154,14 +154,14 @@
           <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="2" elements="7" coveredelements="3"/>
         </class>
         <line num="15" type="method" name="boot" visibility="public" complexity="1" crap="1" count="55"/>
-        <line num="21" type="stmt" count="55"/>
-        <line num="32" type="method" name="anonymousFunction:32#74" complexity="1" crap="1.42" count="55"/>
-        <line num="34" type="stmt" count="0"/>
-        <line num="35" type="stmt" count="0"/>
-        <line num="37" type="stmt" count="0"/>
-        <line num="39" type="stmt" count="55"/>
-        <line num="42" type="stmt" count="55"/>
-        <metrics loc="43" ncloc="33" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="8" coveredelements="4"/>
+        <line num="17" type="stmt" count="55"/>
+        <line num="26" type="method" name="anonymousFunction:26#74" complexity="1" crap="1.42" count="55"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="55"/>
+        <line num="32" type="stmt" count="55"/>
+        <metrics loc="33" ncloc="23" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="3" elements="8" coveredelements="4"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/App/Providers/RouteServiceProvider.php">
         <class name="Genusshaus\App\Providers\RouteServiceProvider" namespace="Genusshaus\App\Providers">
@@ -193,7 +193,7 @@
         <class name="HasRecommendations" namespace="Genusshaus\App\Traits\Ressources">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
         </class>
-        <metrics loc="11" ncloc="11" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        <metrics loc="7" ncloc="7" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Domain\Administrators\Jobs">
@@ -201,45 +201,45 @@
         <class name="Genusshaus\Domain\Administrators\Jobs\AddDeviceToRecommender" namespace="Genusshaus\Domain\Administrators\Jobs">
           <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
         </class>
-        <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="37" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="34" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
         <line num="39" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
-        <metrics loc="45" ncloc="35" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics loc="40" ncloc="30" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/Domain/Administrators/Jobs/AddLogsPlacesToRecommender.php">
         <class name="Genusshaus\Domain\Administrators\Jobs\AddLogsPlacesToRecommender" namespace="Genusshaus\Domain\Administrators\Jobs">
           <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
         </class>
-        <line num="27" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="30" type="stmt" count="0"/>
-        <line num="37" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="24" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="34" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="36" type="stmt" count="0"/>
+        <line num="37" type="stmt" count="0"/>
         <line num="39" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="44" type="stmt" count="0"/>
-        <metrics loc="45" ncloc="35" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics loc="40" ncloc="30" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="7" coveredelements="0"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/Domain/Administrators/Jobs/AddPlaceToRecommender.php">
         <class name="Genusshaus\Domain\Administrators\Jobs\AddPlaceToRecommender" namespace="Genusshaus\Domain\Administrators\Jobs">
           <metrics complexity="3" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
         </class>
-        <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="27" type="stmt" count="0"/>
         <line num="28" type="stmt" count="0"/>
-        <line num="29" type="stmt" count="0"/>
-        <line num="36" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="35" type="method" name="handle" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="37" type="stmt" count="0"/>
         <line num="38" type="stmt" count="0"/>
         <line num="40" type="stmt" count="0"/>
-        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
         <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
         <line num="47" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="53" type="stmt" count="0"/>
-        <metrics loc="54" ncloc="44" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
+        <line num="51" type="stmt" count="0"/>
+        <metrics loc="52" ncloc="42" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="0" elements="12" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Domain\Moderators\Models">
@@ -384,11 +384,11 @@
         <class name="Genusshaus\Domain\Ressources\Models\LogPlace" namespace="Genusshaus\Domain\Ressources\Models">
           <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
         </class>
-        <line num="15" type="method" name="device" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="17" type="stmt" count="0"/>
-        <line num="20" type="method" name="place" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <metrics loc="25" ncloc="24" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
+        <line num="13" type="method" name="device" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="18" type="method" name="place" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <metrics loc="22" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="4" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\App\Domain\Users\Jobs\Support">
@@ -470,61 +470,14 @@
     <package name="Genusshaus\Http\Controllers\Administrators\Recommendations">
       <file name="/Users/sebastian/Development/tasty/app/Http/Controllers/Administrators/Recommendations/RecommendationsController.php">
         <class name="Genusshaus\Http\Controllers\Administrators\Recommendations\RecommendationsController" namespace="Genusshaus\Http\Controllers\Administrators\Recommendations">
-          <metrics complexity="15" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="0" elements="52" coveredelements="0"/>
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
         </class>
-        <line num="23" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="26" type="stmt" count="0"/>
-        <line num="33" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="36" type="stmt" count="0"/>
-        <line num="38" type="stmt" count="0"/>
-        <line num="41" type="stmt" count="0"/>
-        <line num="43" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="48" type="stmt" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <line num="54" type="stmt" count="0"/>
-        <line num="56" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="60" type="method" name="resetDatabase" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="63" type="stmt" count="0"/>
-        <line num="65" type="method" name="getDeviceBasedRecommendation" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="71" type="method" name="getItemBasedRecommendation" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="73" type="stmt" count="0"/>
-        <line num="77" type="method" name="storeLogs" visibility="public" complexity="2" crap="6.00" count="0"/>
-        <line num="79" type="stmt" count="0"/>
-        <line num="80" type="stmt" count="0"/>
-        <line num="81" type="stmt" count="0"/>
-        <line num="83" type="stmt" count="0"/>
-        <line num="84" type="stmt" count="0"/>
-        <line num="87" type="stmt" count="0"/>
-        <line num="90" type="method" name="fillDevices" visibility="public" complexity="2" crap="6.00" count="0"/>
-        <line num="92" type="stmt" count="0"/>
-        <line num="93" type="stmt" count="0"/>
-        <line num="94" type="stmt" count="0"/>
-        <line num="96" type="stmt" count="0"/>
-        <line num="98" type="stmt" count="0"/>
-        <line num="100" type="stmt" count="0"/>
-        <line num="102" type="method" name="addDevice" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="104" type="stmt" count="0"/>
-        <line num="105" type="stmt" count="0"/>
-        <line num="108" type="method" name="fillPlaces" visibility="public" complexity="3" crap="12.00" count="0"/>
-        <line num="110" type="stmt" count="0"/>
-        <line num="111" type="stmt" count="0"/>
-        <line num="112" type="stmt" count="0"/>
-        <line num="114" type="stmt" count="0"/>
-        <line num="116" type="stmt" count="0"/>
-        <line num="119" type="stmt" count="0"/>
-        <line num="121" type="stmt" count="0"/>
-        <line num="123" type="stmt" count="0"/>
-        <line num="125" type="stmt" count="0"/>
-        <line num="130" type="method" name="addUser" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="132" type="stmt" count="0"/>
-        <line num="134" type="stmt" count="0"/>
-        <line num="136" type="method" name="getUsersList" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="138" type="stmt" count="0"/>
-        <metrics loc="140" ncloc="135" classes="1" methods="11" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="41" coveredstatements="0" elements="52" coveredelements="0"/>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="11" type="stmt" count="0"/>
+        <line num="12" type="stmt" count="0"/>
+        <line num="19" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <metrics loc="22" ncloc="17" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Controllers\Administrators\Users">
@@ -795,40 +748,40 @@
         <class name="Genusshaus\Http\Controllers\Moderators\Places\Settings\SettingsController" namespace="Genusshaus\Http\Controllers\Moderators\Places\Settings">
           <metrics complexity="8" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="33" coveredelements="0"/>
         </class>
-        <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="23" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <line num="28" type="method" name="publish" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="21" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="26" type="method" name="publish" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="29" type="stmt" count="0"/>
         <line num="30" type="stmt" count="0"/>
         <line num="31" type="stmt" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
         <line num="36" type="stmt" count="0"/>
         <line num="38" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
-        <line num="43" type="method" name="unpublish" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="41" type="method" name="unpublish" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="44" type="stmt" count="0"/>
         <line num="45" type="stmt" count="0"/>
-        <line num="46" type="stmt" count="0"/>
         <line num="47" type="stmt" count="0"/>
-        <line num="49" type="stmt" count="0"/>
-        <line num="52" type="method" name="activate" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="50" type="method" name="activate" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="52" type="stmt" count="0"/>
+        <line num="53" type="stmt" count="0"/>
         <line num="54" type="stmt" count="0"/>
-        <line num="55" type="stmt" count="0"/>
         <line num="56" type="stmt" count="0"/>
-        <line num="58" type="stmt" count="0"/>
-        <line num="61" type="method" name="deactivate" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="59" type="method" name="deactivate" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="61" type="stmt" count="0"/>
+        <line num="62" type="stmt" count="0"/>
         <line num="63" type="stmt" count="0"/>
-        <line num="64" type="stmt" count="0"/>
         <line num="65" type="stmt" count="0"/>
-        <line num="67" type="stmt" count="0"/>
-        <line num="70" type="method" name="reset" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="68" type="method" name="reset" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="70" type="stmt" count="0"/>
+        <line num="71" type="stmt" count="0"/>
         <line num="72" type="stmt" count="0"/>
-        <line num="73" type="stmt" count="0"/>
         <line num="74" type="stmt" count="0"/>
-        <line num="76" type="stmt" count="0"/>
-        <metrics loc="78" ncloc="73" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="33" coveredelements="0"/>
+        <metrics loc="76" ncloc="71" classes="1" methods="7" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="26" coveredstatements="0" elements="33" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Controllers\Moderators\Places\Tags">
@@ -1183,23 +1136,23 @@
           <metrics complexity="6" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="17" coveredelements="0"/>
         </class>
         <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="16" type="stmt" count="0"/>
-        <line num="18" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="20" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="25" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="27" type="stmt" count="0"/>
-        <line num="30" type="method" name="recommendations" visibility="public" complexity="2" crap="6.00" count="0"/>
-        <line num="32" type="stmt" count="0"/>
-        <line num="34" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="24" type="method" name="show" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="29" type="method" name="recommendations" visibility="public" complexity="2" crap="6.00" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="33" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
         <line num="36" type="stmt" count="0"/>
         <line num="38" type="stmt" count="0"/>
-        <line num="40" type="stmt" count="0"/>
+        <line num="41" type="stmt" count="0"/>
         <line num="43" type="stmt" count="0"/>
-        <line num="45" type="stmt" count="0"/>
-        <line num="48" type="method" name="getItemBasedRecommendation" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="50" type="stmt" count="0"/>
-        <metrics loc="54" ncloc="54" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="17" coveredelements="0"/>
+        <line num="46" type="method" name="getItemBasedRecommendation" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="48" type="stmt" count="0"/>
+        <metrics loc="50" ncloc="50" classes="1" methods="5" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="0" elements="17" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Controllers\Ressources\Places">
@@ -1212,18 +1165,18 @@
         <line num="15" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="17" type="stmt" count="0"/>
         <line num="19" type="stmt" count="0"/>
-        <metrics loc="22" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/Http/Controllers/Ressources/Places/TagsController.php">
         <class name="Genusshaus\Http\Controllers\Ressources\Places\TagsController" namespace="Genusshaus\Http\Controllers\Ressources\Places">
           <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
         </class>
-        <line num="13" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
-        <line num="15" type="stmt" count="0"/>
-        <line num="17" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="15" type="method" name="index" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="17" type="stmt" count="0"/>
         <line num="19" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <metrics loc="24" ncloc="24" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
+        <metrics loc="21" ncloc="21" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="5" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Controllers\Supporters">
@@ -1697,11 +1650,11 @@
         <class name="Genusshaus\Http\Resources\LandingPage\PlacesIndexRessource" namespace="Genusshaus\Http\Resources\LandingPage">
           <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
         </class>
-        <line num="18" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="16" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
         <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <line num="23" type="stmt" count="0"/>
-        <metrics loc="28" ncloc="22" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics loc="24" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Resources\Landingpage">
@@ -1716,7 +1669,7 @@
         <line num="23" type="stmt" count="0"/>
         <line num="24" type="stmt" count="0"/>
         <line num="25" type="stmt" count="0"/>
-        <metrics loc="30" ncloc="24" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="7" coveredelements="0"/>
+        <metrics loc="28" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="7" coveredelements="0"/>
       </file>
     </package>
     <package name="Genusshaus\Http\Resources">
@@ -1724,20 +1677,20 @@
         <class name="Genusshaus\Http\Resources\PlaceRessource" namespace="Genusshaus\Http\Resources">
           <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
         </class>
-        <line num="17" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="16" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="stmt" count="0"/>
         <line num="20" type="stmt" count="0"/>
         <line num="21" type="stmt" count="0"/>
-        <line num="22" type="stmt" count="0"/>
-        <metrics loc="27" ncloc="21" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
+        <metrics loc="24" ncloc="17" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="0" elements="4" coveredelements="0"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/Http/Resources/PlaceTagsRessource.php">
         <class name="Genusshaus\Http\Resources\PlaceTagsRessource" namespace="Genusshaus\Http\Resources">
           <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
         </class>
-        <line num="17" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="16" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
+        <line num="19" type="stmt" count="0"/>
         <line num="20" type="stmt" count="0"/>
-        <line num="21" type="stmt" count="0"/>
-        <metrics loc="26" ncloc="20" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+        <metrics loc="23" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
       </file>
       <file name="/Users/sebastian/Development/tasty/app/Http/Resources/TagRessource.php">
         <class name="Genusshaus\Http\Resources\TagRessource" namespace="Genusshaus\Http\Resources">
@@ -1746,7 +1699,7 @@
         <line num="16" type="method" name="toArray" visibility="public" complexity="1" crap="2.00" count="0"/>
         <line num="19" type="stmt" count="0"/>
         <line num="20" type="stmt" count="0"/>
-        <metrics loc="25" ncloc="19" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
+        <metrics loc="23" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="0" elements="3" coveredelements="0"/>
       </file>
     </package>
     <file name="/Users/sebastian/Development/tasty/app/helpers.php">
@@ -1755,6 +1708,6 @@
       <line num="9" type="stmt" count="18"/>
       <metrics loc="10" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="3" coveredelements="3"/>
     </file>
-    <metrics files="106" loc="4165" ncloc="3335" classes="96" methods="265" coveredmethods="83" conditionals="0" coveredconditionals="0" statements="720" coveredstatements="155" elements="985" coveredelements="238"/>
+    <metrics files="106" loc="3987" ncloc="3152" classes="96" methods="256" coveredmethods="83" conditionals="0" coveredconditionals="0" statements="682" coveredstatements="155" elements="938" coveredelements="238"/>
   </project>
 </coverage>
