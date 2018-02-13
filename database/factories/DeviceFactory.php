@@ -2,6 +2,7 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Ressources\Models\Device;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -13,12 +14,10 @@ use Genusshaus\Domain\Ressources\Models\Device;
 |
 */
 
-
-
 $factory->define(Device::class, function (Faker $faker) {
     return [
 
-        'uuid'    => $faker->unique()->uuid,
+        'uuid'          => $faker->unique()->uuid,
         'push_token'    => bcrypt($faker->unique()->iban('CHE')),
 
     ];

@@ -6,17 +6,11 @@ use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Ressources\Models\Device;
 use Genusshaus\Domain\Ressources\Models\LogPlace;
-use Recombee\RecommApi\Requests\AddDetailView;
-use Recombee\RecommApi\Requests\AddItem;
-use Recombee\RecommApi\Requests\AddItemProperty;
 use Recombee\RecommApi\Requests\AddUser;
-use Recombee\RecommApi\Requests\AddUserProperty;
 use Recombee\RecommApi\Requests\ItemBasedRecommendation;
 use Recombee\RecommApi\Requests\ListUsers;
 use Recombee\RecommApi\Requests\ResetDatabase;
-use Recombee\RecommApi\Requests\SetItemValues;
 use Recombee\RecommApi\Requests\UserBasedRecommendation;
-
 
 class RecommendationsController extends Controller
 {
@@ -32,11 +26,9 @@ class RecommendationsController extends Controller
      */
     public function index()
     {
-
         $this->fillPlaces();
 
         dd('success');
-
 
         dd('save!');
 
@@ -44,22 +36,17 @@ class RecommendationsController extends Controller
 
         dd('success');
 
-
         $this->fillDevices();
 
         dd('success');
 
-
-
         $this->resetDatabase();
 
         dd('deleted');
-
     }
 
     public function resetDatabase()
     {
-
     }
 
     public function getDeviceBasedRecommendation(Device $device, $count)
@@ -67,11 +54,9 @@ class RecommendationsController extends Controller
         return app()->recombee->send(new UserBasedRecommendation($device->uuid, $count));
     }
 
-
     public function getItemBasedRecommendation(Place $place, $count)
     {
         return app()->recombee->send(new ItemBasedRecommendation($place->uuid, $count));
-
     }
 
     public function storeLogs()
@@ -80,12 +65,9 @@ class RecommendationsController extends Controller
             ->where('id', '<=', 2500)
             ->get();
 
-        foreach ($logs as $log)
-        {
-      }
-
+        foreach ($logs as $log) {
+        }
     }
-
 
     public function fillDevices()
     {
@@ -93,10 +75,9 @@ class RecommendationsController extends Controller
                 ->where('id', '<=', 550)
                 ->get();
 
-            foreach ($devices as $device)
-            {
-                $this->addDevice($device);
-            }
+        foreach ($devices as $device) {
+            $this->addDevice($device);
+        }
     }
 
     public function addDevice(Device $device)
@@ -104,33 +85,26 @@ class RecommendationsController extends Controller
         app()->recombee->send(new AddUser($device->uuid));
     }
 
-
     public function fillPlaces()
     {
         $places = Place::where('id', '>=', 1)
             ->where('id', '<=', 150)
             ->get();
 
-        foreach ($places as $place)
-        {
+        foreach ($places as $place) {
             $this->addPlace($place);
         }
 
         $this->setPlacesProperties();
 
-        foreach ($places as $place)
-        {
+        foreach ($places as $place) {
             $this->fillPlaceProperties($place);
         }
     }
 
-
-
-
     public function addUser($uuid)
     {
         app()->recombee->send(new AddUser($uuid));
-
     }
 
     public function getUsersList()

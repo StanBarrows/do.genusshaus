@@ -3,14 +3,12 @@
 namespace Genusshaus\Domain\Administrators\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Recombee\RecommApi\Requests\AddItem;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
 use Recombee\RecommApi\Requests\AddUser;
-use Recombee\RecommApi\Requests\SetItemValues;
 
 class AddDeviceToRecommender implements ShouldQueue
 {
@@ -21,7 +19,6 @@ class AddDeviceToRecommender implements ShouldQueue
      *
      * @return void
      */
-
     protected $collection;
 
     public function __construct(Collection $collection)
@@ -36,10 +33,8 @@ class AddDeviceToRecommender implements ShouldQueue
      */
     public function handle()
     {
-        foreach ($this->collection as $device)
-        {
+        foreach ($this->collection as $device) {
             app()->recombee->send(new AddUser($device->uuid));
-
         }
     }
 }
