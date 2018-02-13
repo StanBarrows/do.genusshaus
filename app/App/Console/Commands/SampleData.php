@@ -48,6 +48,5 @@ class SampleData extends Command
         $this->call('recommendation:setup');
 
         $this->call('up');
-
     }
 }
