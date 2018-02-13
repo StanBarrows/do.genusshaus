@@ -12,12 +12,11 @@ class PlacesController extends Controller
 {
     public function __construct()
     {
-
     }
 
     public function index()
     {
-        $places = Place::where('published','=',true)->latest()->take(9)->get();
+        $places = Place::where('published', '=', true)->latest()->take(9)->get();
 
         return PlacesIndexRessource::collection($places);
     }
@@ -31,10 +30,9 @@ class PlacesController extends Controller
     {
         $recommendations = $this->getItemBasedRecommendation($place, 6);
 
-        $new = Place::where('id','=','abc')->get();
+        $new = Place::where('id', '=', 'abc')->get();
 
-        foreach ($recommendations as $recommendation)
-        {
+        foreach ($recommendations as $recommendation) {
             $latest = Place::where('uuid', $recommendation)->get();
 
             $new->add($latest);
@@ -48,7 +46,5 @@ class PlacesController extends Controller
     public function getItemBasedRecommendation(Place $place, $count)
     {
         return app()->recombee->send(new ItemBasedRecommendation($place->uuid, $count));
-
     }
-
 }

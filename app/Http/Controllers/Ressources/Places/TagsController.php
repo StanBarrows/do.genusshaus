@@ -3,8 +3,6 @@
 namespace Genusshaus\Http\Controllers\Ressources\Places;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Http\Resources\PlaceRessource;
 use Genusshaus\Http\Resources\TagRessource;
 use Spatie\Tags\Tag;
 
@@ -20,5 +18,4 @@ class TagsController extends Controller
 
         return TagRessource::collection($tags);
     }
-
 }

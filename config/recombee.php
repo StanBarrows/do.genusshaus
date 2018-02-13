@@ -18,6 +18,4 @@ return [
 
     'secret_token' => env('RC_SECRET_TOKEN'),
 
-
-
 ];

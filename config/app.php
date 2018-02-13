@@ -179,7 +179,7 @@ return [
         Genusshaus\App\Providers\RouteServiceProvider::class,
         \Genusshaus\App\Providers\ImpersonateServiceProvider::class,
         \Genusshaus\App\Providers\ComposerServiceProvider::class,
-        \Genusshaus\App\Providers\RecombeeServiceProvider::class
+        \Genusshaus\App\Providers\RecombeeServiceProvider::class,
 
     ],
 

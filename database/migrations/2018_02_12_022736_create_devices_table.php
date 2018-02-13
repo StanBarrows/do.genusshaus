@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDevicesTable extends Migration
 {
@@ -20,13 +20,7 @@ class CreateDevicesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-
-
-
             $table->index(['id', 'uuid']);
-
-
-
         });
     }
 

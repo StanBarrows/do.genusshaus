@@ -18,5 +18,4 @@ class PlacesController extends Controller
 
         return PlaceRessource::collection($places);
     }
-
 }

@@ -14,10 +14,6 @@ class RecombeeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
-
-
     }
 
     /**
@@ -27,17 +23,11 @@ class RecombeeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
-
-        $this->app->singleton('recombee', function($app) {
-
+        $this->app->singleton('recombee', function ($app) {
             $database_id = config('recombee.database_id');
             $secret_token = config('recombee.secret_token');
 
             return new Client($database_id, $secret_token);
-
         });
-
-
     }
 }
