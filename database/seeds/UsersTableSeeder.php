@@ -1,16 +1,12 @@
 <?php
 
 use Carbon\Carbon;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
+use Smart6ate\Roles\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $now = Carbon::now();
@@ -19,27 +15,32 @@ class UsersTableSeeder extends Seeder
             [
                 'name'       => 'Sebastian Fix',
                 'email'      => 'sebastian.fix@smartgate.ch',
-                'password'   => bcrypt('normal'),
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'name'       => 'Oliver Reist',
-                'email'      => 'oliver.reist@smartgate.ch',
-                'password'   => bcrypt('genusshaus2018$$'),
+                'password'   => bcrypt('UwaEbEG7owrEiVxzkbiBt8B'),
+                'active'     => true,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
 
             [
-                'name'       => 'Dominik Sapinski',
-                'email'      => 'dsapinski@soft-evolution.com',
-                'password'   => bcrypt('genusshaus2018$$'),
+                'name'       => 'Oliver Reist',
+                'email'      => 'oliver.reist@smartgate.ch',
+                'password'   => bcrypt('sNcsQvQx8HkYA7fwjmrpjdv'),
+                'active'     => true,
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
         ];
 
+        $roles = Role::all();
+
         User::insert($users);
+
+        $all_users = User::all();
+
+        foreach ($all_users as $user) {
+            foreach ($roles as $role) {
+                $user->roles()->attach($role);
+            }
+        }
     }
 }

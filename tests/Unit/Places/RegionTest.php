@@ -18,7 +18,14 @@ class RegionTest extends TestCase
     }
 
     /** @test */
-    public function a_region_has_places()
+    public function create_a_region()
+    {
+        $region = create(Region::class);
+        $this->assertInstanceOf(Region::class, $region);
+    }
+
+    /** @test */
+    public function a_region_has_many_places()
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->region->places);
     }

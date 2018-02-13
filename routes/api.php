@@ -1,18 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
+Route::get('/v1/places', 'Controllers\Ressources\Places\PlacesController@index');
+Route::get('/v1/tags', 'Controllers\Ressources\Places\TagsController@index');
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+    Route::group(['prefix' => '/v1/landingpage'], function () {
+        Route::get('/places', 'Controllers\Ressources\Landingpage\PlacesController@index');
+        Route::get('/places/show/{place}', 'Controllers\Ressources\Landingpage\PlacesController@show');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+        Route::get('/places/recommendations/{place}', 'Controllers\Ressources\Landingpage\PlacesController@recommendations');
+    });

@@ -3,6 +3,7 @@
 namespace Genusshaus\Http\Controllers\Users\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\Domain\Places\Models\Place;
 
 class DashboardController extends Controller
 {
@@ -13,7 +14,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['web', 'auth']);
     }
 
     /**
@@ -23,6 +24,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('app.users.dashboard.index');
+        $places = Place::where('user_id', auth()->user()->id)->active()->get();
+
+        return view('app.users.dashboard.index', compact('places'));
     }
 }

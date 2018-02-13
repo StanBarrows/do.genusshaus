@@ -17,17 +17,18 @@ use Genusshaus\Domain\Places\Models\Post;
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
-        'uuid'     => $faker->uuid->unique(),
+
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
 
-        'published' => false,
-        'pushed'    => false,
+        'published'      => $faker->boolean(),
+        'pushed'         => false,
+        'image_processed'=> true,
 
         'title'  => $faker->sentence(5, true),
-        'teaser' => $faker->paragraph(1, true),
-        'body'   => $faker->paragraph(3, true),
+        'teaser' => $faker->paragraph(3, true),
+        'body'   => $faker->paragraph(15, true),
 
         'author' => $faker->name,
         'src'    => $faker->url,

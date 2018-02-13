@@ -20,7 +20,14 @@ class PostTest extends TestCase
     }
 
     /** @test */
-    public function a_post_belongs_to_an_place()
+    public function create_a_post()
+    {
+        $post = create(Post::class);
+        $this->assertInstanceOf(Post::class, $post);
+    }
+
+    /** @test */
+    public function a_post_belongs_to_one_place()
     {
         $post = create(Post::class);
         $this->assertInstanceOf(Place::class, $post->place);

@@ -9,6 +9,12 @@ class Region extends Model
 {
     use SoftDeletes;
 
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+    ];
+
     public function places()
     {
         return $this->hasMany(Place::class);

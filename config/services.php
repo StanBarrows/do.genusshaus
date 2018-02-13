@@ -30,9 +30,14 @@ return [
     ],
 
     'stripe' => [
-        'model'  => Genusshaus\User::class,
+        'model'  => Genusshaus\App\Domain\Users\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+    'erp_smartgate' => [
+
+        'url'      => env('TICKETING_WEBHOOK_URL'),
+        'auth_key' => env('TICKETING_WEBHOOK_AUTH_KEY'),
     ],
 
 ];

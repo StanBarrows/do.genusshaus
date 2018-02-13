@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use Genusshaus\App\Domain\Users\User;
 use Genusshaus\App\Exceptions\Handler;
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 

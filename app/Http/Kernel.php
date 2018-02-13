@@ -36,6 +36,7 @@ class Kernel extends HttpKernel
             \Genusshaus\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Genusshaus\Http\Middleware\ImpersonateMiddleware::class,
+            \Genusshaus\Http\Middleware\AddUserIdToRequest::class,
         ],
 
         'api' => [
@@ -52,11 +53,12 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth'       => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings'   => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can'        => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest'      => \Genusshaus\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle'   => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'auth'                 => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'           => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'             => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'                  => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'                => \Genusshaus\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'             => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'user-is-active'       => \Genusshaus\Http\Middleware\UserIsActive::class,
     ];
 }

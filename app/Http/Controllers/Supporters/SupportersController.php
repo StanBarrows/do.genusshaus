@@ -3,14 +3,15 @@
 namespace Genusshaus\Http\Controllers\Supporters;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Supporters\StartImpersonateRequest;
 
 class SupportersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'role:supporter'], ['except' => ['destroy']]);
+        $this->middleware(['web', 'auth']);
+        $this->middleware(['role:supporter'], ['except' => ['destroy']]);
     }
 
     public function index()
@@ -22,15 +23,19 @@ class SupportersController extends Controller
     {
         $user = User::where('email', $request->email)->first();
 
-        session()->put('impersonate', $user->id);
+        if ($user->roles->isEmpty()) {
+            session()->put('impersonate', $user->id);
 
-        return redirect('/');
+            return redirect('/');
+        }
+
+        return back();
     }
 
     public function destroy()
     {
         session()->forget('impersonate');
 
-        return redirect('/');
+        return redirect()->route('supporters.index');
     }
 }

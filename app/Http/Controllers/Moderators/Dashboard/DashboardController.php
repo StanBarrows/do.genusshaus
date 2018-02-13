@@ -8,7 +8,7 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'role:moderator']);
+        $this->middleware(['web', 'auth', 'role:moderator']);
     }
 
     /**

@@ -16,12 +16,13 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->uuid('uuid')->default(\Ramsey\Uuid\Uuid::uuid1())->unique();
+            $table->uuid('uuid')->unique();
 
             $table->unsignedInteger('place_id');
 
             $table->boolean('published')->default(false);
             $table->boolean('pushed')->default(false);
+            $table->boolean('image_processed')->default(true);
 
             $table->string('name');
             $table->longText('description');
@@ -33,6 +34,8 @@ class CreateEventsTable extends Migration
             $table->softDeletes();
 
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
+
+            $table->index(['id', 'uuid', 'place_id']);
         });
     }
 

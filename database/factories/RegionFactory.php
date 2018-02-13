@@ -16,6 +16,6 @@ use Genusshaus\Domain\Places\Models\Region;
 
 $factory->define(Region::class, function (Faker $faker) {
     return [
-        'name' => $faker->unique()->state,
+        'name' => $faker->unique()->city,
     ];
 });

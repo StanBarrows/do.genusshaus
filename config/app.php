@@ -177,6 +177,9 @@ return [
         // Genusshaus\App\Providers\BroadcastServiceProvider::class,
         Genusshaus\App\Providers\EventServiceProvider::class,
         Genusshaus\App\Providers\RouteServiceProvider::class,
+        \Genusshaus\App\Providers\ImpersonateServiceProvider::class,
+        \Genusshaus\App\Providers\ComposerServiceProvider::class,
+        \Genusshaus\App\Providers\RecombeeServiceProvider::class,
 
     ],
 

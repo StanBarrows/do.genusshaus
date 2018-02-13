@@ -3,13 +3,12 @@
 namespace Genusshaus\Http\Controllers\Administrators\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
 
 class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth', 'role:administrator']);
+        $this->middleware(['web', 'auth', 'role:administrator']);
     }
 
     /**
@@ -19,8 +18,6 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-
-        return view('app.administrators.dashboard.index', compact('users'));
+        return view('app.administrators.dashboard.index');
     }
 }
