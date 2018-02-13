@@ -3,14 +3,12 @@
 namespace Genusshaus\Domain\Ressources\Models;
 
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LogPlace extends Model
 {
-/*    use SoftDeletes;*/
-
+    /*    use SoftDeletes;*/
 
     public function device()
     {
@@ -21,5 +19,4 @@ class LogPlace extends Model
     {
         return $this->belongsTo(Place::class);
     }
-
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateLogPlacesTable extends Migration
 {
@@ -25,12 +25,10 @@ class CreateLogPlacesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-
             $table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
             $table->foreign('place_id')->references('id')->on('places')->onDelete('cascade');
 
-            $table->index(['id', 'place_id','device_id']);
-
+            $table->index(['id', 'place_id', 'device_id']);
         });
     }
 

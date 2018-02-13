@@ -9,11 +9,9 @@ use Genusshaus\Domain\Places\Models\Location;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Post;
 use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Domain\Ressources\Models\Device;
-
 use Genusshaus\Domain\Ressources\Models\LogPlace;
-
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Seeder;
 use Spatie\Tags\Tag;
 
@@ -24,9 +22,7 @@ class SampleDataSeeder extends Seeder
         factory(Device::class, 500)
             ->create()
             ->each(function () {
-
             });
-
 
         factory(User::class, 25)
             ->create()
@@ -102,7 +98,6 @@ class SampleDataSeeder extends Seeder
             ->create()
             ->each(function ($log) {
             });
-
 
         factory(Place::class, random_int(3, 5))
             ->create(['region_id' => $region, 'image_processed' => true, 'active' => false])

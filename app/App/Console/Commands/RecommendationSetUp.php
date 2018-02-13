@@ -45,56 +45,50 @@ class RecommendationSetUp extends Command
      */
     public function handle()
     {
-
         $this->call('down', ['--message' => 'Upgrading Database']);
 
         app()->recombee->send(new ResetDatabase());
 
         sleep(2);
 
-        app()->recombee->send(new AddItemProperty('title','string'));
+        app()->recombee->send(new AddItemProperty('title', 'string'));
 
         sleep(1);
 
-        app()->recombee->send(new AddItemProperty('region','string'));
+        app()->recombee->send(new AddItemProperty('region', 'string'));
 
         sleep(1);
 
-        app()->recombee->send(new AddItemProperty('description','string'));
+        app()->recombee->send(new AddItemProperty('description', 'string'));
 
         sleep(1);
 
-        app()->recombee->send(new AddItemProperty('tags','set'));
+        app()->recombee->send(new AddItemProperty('tags', 'set'));
 
         sleep(1);
 
-        app()->recombee->send(new AddItemProperty('deleted','boolean'));
+        app()->recombee->send(new AddItemProperty('deleted', 'boolean'));
 
         sleep(1);
-
 
         $devices = Device::all();
 
-        foreach ($devices->chunk(100) as $collection)
-        {
+        foreach ($devices->chunk(100) as $collection) {
             AddDeviceToRecommender::dispatch($collection);
         }
 
         $places = Place::all();
 
-        foreach ($places->chunk(100) as $collection)
-        {
+        foreach ($places->chunk(100) as $collection) {
             AddPlaceToRecommender::dispatch($collection);
         }
 
         $logs = LogPlace::all();
 
-        foreach ($logs->chunk(100) as $collection)
-        {
+        foreach ($logs->chunk(100) as $collection) {
             AddLogsPlacesToRecommender::dispatch($collection);
         }
 
         $this->call('up');
-
     }
 }
