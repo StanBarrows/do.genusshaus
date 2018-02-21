@@ -29,8 +29,8 @@ $factory->define(Place::class, function (Faker $faker) {
         'location_city'       => $faker->city,
 
         'location_latitude'  => $faker->randomFloat(),
-        'location_latitude'  => $faker->randomFloat(8,47.51990000,47.57120000),
-        'location_longitude' => $faker->randomFloat(8,7.54808000,7.69440000),
+        'location_latitude'  => $faker->randomFloat(8, 47.51990000, 47.57120000),
+        'location_longitude' => $faker->randomFloat(8, 7.54808000, 7.69440000),
 
         'contact_name'       => $faker->name,
         'contact_avatar'     => $faker->imageUrl(100, 100),
