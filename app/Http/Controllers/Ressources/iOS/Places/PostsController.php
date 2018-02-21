@@ -17,14 +17,14 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
+
         return PostsIndexRessource::collection($posts);
     }
 
     public function show(ShowPostsRequest $request)
     {
-        $post = Post::where('uuid', '=',$request->uuid)->get();
+        $post = Post::where('uuid', '=', $request->uuid)->get();
 
         return PostsShowRessource::collection($post);
     }
-
 }

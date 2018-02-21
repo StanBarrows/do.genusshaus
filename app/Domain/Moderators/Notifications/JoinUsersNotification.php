@@ -52,7 +52,7 @@ class JoinUsersNotification extends Notification implements ShouldQueue
             ->subject('Invitiation Genusshaus')
             ->greeting('Hello '.$this->user->name)
             ->line('You received an invitation for '.$this->place->name)
-            ->action('Join ' . $this->place->name, route('invitiations.join', 'user='.$this->user->email.'&place='.$this->place->uuid))
+            ->action('Join '.$this->place->name, route('invitiations.join', 'user='.$this->user->email.'&place='.$this->place->uuid))
             ->line('Please do not hesitate to contact us, if you have any further questions!');
     }
 

@@ -13,7 +13,6 @@ class PlaceTagsRessource extends Resource
      *
      * @return array
      */
-
     public function toArray($request)
     {
         return [

@@ -1,8 +1,8 @@
 <?php
 
 use Faker\Factory as Faker;
-use Genusshaus\Domain\Ressources\Models\Event;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Ressources\Models\Event;
 use Illuminate\Database\Seeder;
 
 class EventsTableSeeder extends Seeder
@@ -12,7 +12,6 @@ class EventsTableSeeder extends Seeder
         $places = Place::all();
 
         foreach ($places as $place) {
-
             factory(Event::class, random_int(1, 3))
                 ->create(['place_id' => $place->id])
                 ->each(function ($event) {
@@ -27,4 +26,3 @@ class EventsTableSeeder extends Seeder
         }
     }
 }
-

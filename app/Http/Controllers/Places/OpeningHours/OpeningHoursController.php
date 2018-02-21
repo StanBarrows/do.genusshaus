@@ -28,17 +28,15 @@ class OpeningHoursController extends Controller
         return view('app.places.openings.index', compact('place'));
     }
 
-
     public function store(StoreOpeningHoursRequest $request)
     {
         $place = current_place();
 
         $place->openingHours()->create([
             'weekday' => $request->weekday,
-            'open' => $request->open,
-            'close' => $request->close,
+            'open'    => $request->open,
+            'close'   => $request->close,
         ]);
-
 
         return back();
     }

@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Requests\Ressources\iOS;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class SearchPlacesRequest extends FormRequest
 {
@@ -25,9 +24,9 @@ class SearchPlacesRequest extends FormRequest
     public function rules()
     {
         return [
-            'device_uuid' => 'required|exists:devices,uuid',
+            'device_uuid'  => 'required|exists:devices,uuid',
             'opening_hour' => 'required',
-            'tags' => 'required',
+            'tags'         => 'required',
         ];
     }
 }

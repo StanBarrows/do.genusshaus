@@ -34,11 +34,9 @@ class AppServiceProvider extends ServiceProvider
             return new PlacesObserver(app(Manager::class)->getPlace());
         });
 
-        Request::macro('place', function()
-        {
+        Request::macro('place', function () {
             return app(Manager::class)->getPlace();
         });
-
     }
 
     /**

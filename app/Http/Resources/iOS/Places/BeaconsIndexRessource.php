@@ -16,7 +16,7 @@ class BeaconsIndexRessource extends Resource
     public function toArray($request)
     {
         return [
-            'uuid' => $this->uuid,
+            'uuid'  => $this->uuid,
             'major' => $this->major,
             'minor' => $this->minor,
         ];

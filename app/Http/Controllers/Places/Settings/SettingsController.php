@@ -41,8 +41,7 @@ class SettingsController extends Controller
 
         $users = User::has('roles')->with('roles')->get();
 
-        foreach($users as $user)
-        {
+        foreach ($users as $user) {
             $user->notify(new ReviewRequestNotification($place));
         }
 

@@ -2,21 +2,17 @@
 
 namespace Genusshaus\App\Manager\Places;
 
-
 class Manager
 {
-   protected $place;
+    protected $place;
 
+    public function setPlace($place)
+    {
+        $this->place = $place;
+    }
 
-   public function setPlace($place)
-   {
-       $this->place = $place;
-
-   }
-
-   public function getPlace()
-   {
-       return $this->place;
-   }
-
+    public function getPlace()
+    {
+        return $this->place;
+    }
 }

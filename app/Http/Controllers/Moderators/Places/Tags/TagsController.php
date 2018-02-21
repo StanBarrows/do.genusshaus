@@ -47,6 +47,4 @@ class TagsController extends Controller
 
         return back();
     }
-
-
 }

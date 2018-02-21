@@ -25,7 +25,7 @@ class ShowEventsRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'uuid' => 'required|exists:events,uuid',
+            'uuid'        => 'required|exists:events,uuid',
         ];
     }
 }

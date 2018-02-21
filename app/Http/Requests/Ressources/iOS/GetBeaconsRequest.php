@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Requests\Ressources\iOS;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class GetBeaconsRequest extends FormRequest
 {
@@ -26,8 +25,8 @@ class GetBeaconsRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'major' => 'required|exists:beacons,major',
-            'minor' => 'required|exists:beacons,minor',
+            'major'       => 'required|exists:beacons,major',
+            'minor'       => 'required|exists:beacons,minor',
         ];
     }
 }

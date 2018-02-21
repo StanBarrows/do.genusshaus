@@ -19,7 +19,6 @@ class MediasController extends Controller
     {
         $place = current_place();
 
-
         return view('app.places.medias.index', compact('place'));
     }
 
