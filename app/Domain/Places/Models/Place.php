@@ -81,7 +81,7 @@ class Place extends Model
 
     public function openingHours()
     {
-        return $this->hasMany(OpeningHour::class);
+        return $this->hasMany(OpeningHour::class)->orderBy('weekday','asc');
     }
 
     public function favourites()

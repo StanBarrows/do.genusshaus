@@ -24,7 +24,7 @@ class SearchPlacesRequest extends FormRequest
     public function rules()
     {
         return [
-            'device_uuid'  => 'required|exists:devices,uuid',
+            'device_uuid'  => 'nullable|exists:devices,uuid',
             'opening_hour' => 'required',
             'tags'         => 'required',
         ];
