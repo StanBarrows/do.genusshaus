@@ -36,18 +36,12 @@ class SettingsController extends Controller
         return back();
     }
 
-
     public function type(Place $place)
     {
-
-        if($place->type === 'basic')
-        {
+        if ($place->type === 'basic') {
             $place->type = 'premium';
             $place->save();
-        }
-
-        else
-        {
+        } else {
             $place->type = 'basic';
             $place->save();
         }

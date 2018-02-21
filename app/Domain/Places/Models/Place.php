@@ -103,6 +103,7 @@ class Place extends Model
         if ($this->type === 'basic') {
             return 'ffffff';
         }
+
         return '000000';
     }
 }
