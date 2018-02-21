@@ -7,7 +7,7 @@
 
         <div class="card-body">
 
-            <form class="form-horizontal" method="POST" action="{{ route('places.events.store', $place) }}">
+            <form class="form-horizontal" method="POST" action="{{ route('places.events.store') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group row">

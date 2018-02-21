@@ -3,6 +3,7 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\App\Observers\Places\PlacesObserver;
 use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
@@ -13,6 +14,7 @@ class PlacesController extends Controller
     public function __construct()
     {
         $this->middleware(['web', 'auth', 'role:moderator']);
+
         $this->middleware('role:administrator')->only('delete');
     }
 
@@ -45,24 +47,25 @@ class PlacesController extends Controller
 
         $location = $response->first()->toArray();
 
-        $place = new Place();
+        Place::create([
 
-        $place->region_id = $request->region_id;
-        $place->name = $request->name;
+            'region_id' =>  $request->region_id,
 
-        $place->save();
+            'type' => 'basic',
 
-        $country = Country::first();
+            'name' =>  $request->name,
 
-        $place->location()->create([
+            'location_street'     => $location['streetName'].' '.$location['streetNumber'],
+            'location_postcode'   => $location['postalCode'],
+            'location_city'       => $location['locality'],
+            'location_latitude'   => $location['latitude'],
+            'location_longitude'  => $location['longitude'],
 
-            'street'     => $location['streetName'].' '.$location['streetNumber'],
-            'postcode'   => $location['postalCode'],
-            'city'       => $location['locality'],
-            'country_id' => $country->id,
-            'latitude'   => $location['latitude'],
-            'longitude'  => $location['longitude'],
+            'image'  => false,
+            'active'  => false,
+            'published'  => false,
         ]);
+
 
         return redirect()->route('moderators.places.index');
     }
@@ -72,25 +75,5 @@ class PlacesController extends Controller
         return view('app.moderators.places.edit', compact('place'));
     }
 
-    public function unassign(Place $place)
-    {
-        $place->user_id = null;
-        $place->active = false;
-        $place->published = false;
 
-        $place->save();
-
-        return back();
-    }
-
-    public function delete(Place $place)
-    {
-        $place->active = false;
-        $place->published = false;
-        $place->save();
-
-        $place->delete();
-
-        return redirect()->route('moderators.places.index');
-    }
 }

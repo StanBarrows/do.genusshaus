@@ -11,7 +11,7 @@
 
             @if($place->published)
 
-                <form class="form-horizontal" method="POST" action="{{ route('places.settings.unpublish', $place) }}">
+                <form class="form-horizontal" method="POST" action="{{ route('places.settings.unpublish') }}">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
 
@@ -26,34 +26,28 @@
             @else
 
 
-                @if($place->is_sent_for_review)
-
-
-                    <div class="form-horizontal">
-
-                        <div class="form-group row">
-                            <div class="col-lg-12">
-                                <button class="btn btn-block btn-light disabled" type="submit">Under review</button>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-                    @else
-                    <form class="form-horizontal" method="POST" action="{{ route('places.settings.review', $place) }}">
+                @if($place->reviewed)
+                    <form class="form-horizontal" method="POST" action="{{ route('places.settings.review') }}">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
 
                         <div class="form-group row">
                             <div class="col-lg-12">
-                                <button class="btn btn-block btn-warning" type="submit">Send for review</button>
+                                <button class="btn btn-block btn-success" type="submit">Send for review</button>
                             </div>
                         </div>
                     </form>
 
+                @else
+                    <div class="form-horizontal">
+
+                        <div class="form-group row">
+                            <div class="col-lg-12">
+                                <button class="btn btn-block btn-primary disabled" type="submit">Under review</button>
+                            </div>
+                        </div>
+
+                    </div>
                 @endif
 
 

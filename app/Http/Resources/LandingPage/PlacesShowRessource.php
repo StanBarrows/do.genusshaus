@@ -2,7 +2,6 @@
 
 namespace Genusshaus\Http\Resources\Landingpage;
 
-use Genusshaus\Http\Resources\PlaceTagsRessource;
 use Illuminate\Http\Resources\Json\Resource;
 
 class PlacesShowRessource extends Resource

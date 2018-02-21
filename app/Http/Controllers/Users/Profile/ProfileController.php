@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Users\Profile;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Users\Profile\UpdateProfileRequest;
 use Illuminate\Support\Facades\Auth;
 

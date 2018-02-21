@@ -5,6 +5,7 @@ namespace Genusshaus\Http\Controllers\Webhooks;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
+use Genusshaus\Http\Requests\Webhooks\InvitationsJoinRequest;
 use Genusshaus\Http\Requests\Webhooks\InvitationsRegisterRequest;
 use Genusshaus\Http\Requests\Webhooks\InvitationsStorePasswordRequest;
 use Illuminate\Auth\Events\PasswordReset;
@@ -21,10 +22,6 @@ class InvitationsRegisterController extends Controller
     public function index(InvitationsRegisterRequest $request)
     {
         $user = User::where('email', $request->user)->first();
-        $place = Place::where('uuid', $request->place)->first();
-
-        $place->active = true;
-        $place->save();
 
         if ($user->active) {
             return redirect()->route('users.dashboard.index');
@@ -32,6 +29,21 @@ class InvitationsRegisterController extends Controller
 
         return view('app.webhooks.invitations.index', compact('user'));
     }
+
+
+    public function join(InvitationsJoinRequest $request)
+    {
+        $user = User::where('email', $request->user)->first();
+
+
+        if ($user->active) {
+            return redirect()->route('users.dashboard.index');
+        }
+
+        return view('app.webhooks.invitations.index', compact('user'));
+    }
+
+
 
     public function store(InvitationsStorePasswordRequest $request, User $user)
     {

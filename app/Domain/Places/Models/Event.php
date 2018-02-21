@@ -2,14 +2,17 @@
 
 namespace Genusshaus\Domain\Places\Models;
 
+use Genusshaus\App\Traits\GeneralTraits;
+use Genusshaus\App\Traits\Places\ForPlaces;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
+use Spatie\Tags\HasTags;
 
 class Event extends Model
 {
-    use SoftDeletes, HasUploadcare;
+    use ForPlaces, SoftDeletes, HasUploadcare, HasTags, GeneralTraits;
 
     protected $fillable = ['name', 'description', 'start', 'finish'];
 
@@ -19,15 +22,6 @@ class Event extends Model
         'deleted_at',
         'start',
     ];
-
-    public static function boot()
-    {
-        parent::boot();
-
-        static::creating(function ($event) {
-            $event->uuid = (string) Str::uuid();
-        });
-    }
 
     public function place()
     {

@@ -82,7 +82,7 @@
                                        name="author"
                                        type="text"
                                        class="form-control{{ $errors->has('author') ? ' is-invalid' : '' }}"
-                                       value="{{ old('author', $post->src) }}"
+                                       value="{{ old('author', $post->author) }}"
                                        required>
 
                                 @if ($errors->has('author'))
@@ -159,7 +159,7 @@
 
                         @if($post->published)
                             <form class="" method="POST"
-                                  action="{{ route('places.posts.unpublish',[ $place, $post]) }}">
+                                  action="{{ route('places.posts.unpublish', $post) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
 
@@ -169,7 +169,7 @@
 
 
                             <form class="" method="POST"
-                                  action="{{ route('places.posts.publish',[ $place, $post]) }}">
+                                  action="{{ route('places.posts.publish', $post) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
 
@@ -183,7 +183,7 @@
                     <li class="list-group-item">
 
                         <form class="" method="POST"
-                              action="{{ route('places.posts.delete',[ $place, $post]) }}">
+                              action="{{ route('places.posts.delete', $post) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 

@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Users\Profile;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Domain\Users\User;
+use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Users\Profile\UpdatePasswordRequest;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;

@@ -1,9 +1,10 @@
 <?php
 
 use Faker\Generator as Faker;
-use Genusshaus\Domain\Places\Models\Event;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Ressources\Models\Event;
 
+use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -15,6 +16,10 @@ use Genusshaus\Domain\Places\Models\Place;
 |
 */
 
+
+
+
+
 $factory->define(Event::class, function (Faker $faker) {
     return [
 
@@ -22,14 +27,17 @@ $factory->define(Event::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
 
-        'published'              => $faker->boolean(),
-        'pushed'                 => false,
-        'image_processed'        => true,
+        'uuid' => (string) Str::uuid(),
 
         'name'        => $faker->sentence(5, true),
         'description' => $faker->paragraph(3, true),
 
         'start'  => $faker->dateTimeBetween('now', '+2 years'),
-        'finish' => null,
+
+        'image'     => $faker->boolean(false),
+        'published' => $faker->boolean(false),
+        'pushed'    => $faker->boolean(false),
+
+
     ];
 });

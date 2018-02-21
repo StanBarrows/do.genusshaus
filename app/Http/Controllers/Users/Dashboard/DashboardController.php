@@ -4,6 +4,7 @@ namespace Genusshaus\Http\Controllers\Users\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Ressources\Models\Event;
 
 class DashboardController extends Controller
 {
@@ -24,7 +25,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $places = Place::where('user_id', auth()->user()->id)->active()->get();
+        $places = auth()->user()->places()->isActive()->get();
 
         return view('app.users.dashboard.index', compact('places'));
     }

@@ -2,7 +2,7 @@
 
 @section('app.places.content')
 
-    <form class="form-horizontal" method="POST" action="{{ route('places.contacts.update', $place) }}">
+    <form class="form-horizontal" method="POST" action="{{ route('places.contacts.update') }}">
         {{ csrf_field() }}
         {{ method_field('PATCH') }}
 
@@ -22,8 +22,7 @@
                                name="name"
                                type="text"
                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
-                               value="{{ old('name', optional($place->contact)->name) }}"
-                               required
+                               value="{{ old('name', $place->contact_name ) }}"
                         >
 
                         @if ($errors->has('name'))
@@ -43,8 +42,7 @@
                                name="email"
                                type="email"
                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                               value="{{ old('email', optional($place->contact)->email) }}"
-                               required
+                               value="{{ old('email', $place->contact_email) }}"
                         >
 
                         @if ($errors->has('email'))
@@ -65,8 +63,7 @@
                                name="web"
                                type="text"
                                class="form-control{{ $errors->has('web') ? ' is-invalid' : '' }}"
-                               value="{{ old('web', optional($place->contact)->web) }}"
-                               required
+                               value="{{ old('web', $place->contact_web) }}"
                         >
 
                         @if ($errors->has('web'))
@@ -86,8 +83,7 @@
                                name="phone"
                                type="text"
                                class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                               value="{{ old('phone', optional($place->contact)->phone) }}"
-                               required
+                               value="{{ old('phone', $place->contact_phone) }}"
                         >
 
                         @if ($errors->has('phone'))
@@ -119,8 +115,7 @@
                                name="facebook"
                                type="url"
                                class="form-control{{ $errors->has('facebook') ? ' is-invalid' : '' }}"
-                               value="{{ old('facebook', optional($place->contact)->facebook) }}"
-                               required
+                               value="{{ old('facebook', $place->contact_facebook) }}"
                         >
 
                         @if ($errors->has('facebook'))
@@ -140,8 +135,7 @@
                                name="instagram"
                                type="url"
                                class="form-control{{ $errors->has('instagram') ? ' is-invalid' : '' }}"
-                               value="{{ old('instagram', optional($place->contact)->instagram) }}"
-                               required
+                               value="{{ old('instagram', $place->contact_instagram) }}"
                         >
 
                         @if ($errors->has('instagram'))
@@ -162,8 +156,7 @@
                                name="twitter"
                                type="url"
                                class="form-control{{ $errors->has('twitter') ? ' is-invalid' : '' }}"
-                               value="{{ old('twitter', optional($place->contact)->twitter) }}"
-                               required
+                               value="{{ old('twitter', $place->contact_twitter) }}"
                         >
 
                         @if ($errors->has('twitter'))

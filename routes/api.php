@@ -1,7 +1,6 @@
 <?php
 
-Route::get('/v1/places', 'Controllers\Ressources\Places\PlacesController@index');
-Route::get('/v1/tags', 'Controllers\Ressources\Places\TagsController@index');
+include 'api/v1.php';
 
     Route::group(['prefix' => '/v1/landingpage'], function () {
         Route::get('/places', 'Controllers\Ressources\Landingpage\PlacesController@index');

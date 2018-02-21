@@ -4,10 +4,12 @@
 
     <div class="row">
 
-        <div class="col-md-4">
+
+
+        <div class="col-md-4 ">
 
             <div class="card">
-                <h5 class="card-header">Visitors
+                <h5 class="card-header">Status
 
 
                 </h5>
@@ -15,12 +17,19 @@
                 <div class="card-body text-center">
 
 
-                    <strong>{{ random_int(10,250) }}</strong>
+                    @if(!empty($place))
+                        @if($place->published)
+                            <span class="badge badge-success">Published</span>
+                        @else
+                            <span class="badge badge-danger">Unpublished</span>
+                        @endif
+                    @endif
                 </div>
             </div>
 
 
         </div>
+
 
 
         <div class="col-md-4 ">
@@ -38,8 +47,11 @@
                 </div>
             </div>
 
-
         </div>
+
+
+
+
 
 
         <div class="col-md-4">

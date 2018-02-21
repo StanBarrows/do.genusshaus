@@ -20,6 +20,6 @@ Route::group(['prefix' => '/administrators', 'namespace' => 'Controllers\Adminis
     });
 
     Route::group(['prefix' => '/logs', 'namespace' => 'Logs', 'as' => 'logs.'], function () {
-        Route::get('/', 'LogsController@index')->name('index');
+        Route::get('/', 'ServicesController@index')->name('index');
     });
 });

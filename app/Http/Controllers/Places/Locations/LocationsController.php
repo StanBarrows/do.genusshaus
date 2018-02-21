@@ -13,14 +13,14 @@ class LocationsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index(Place $place)
+    public function index()
     {
-        $location = $place->location;
+        $place = current_place();
 
-        return view('app.places.locations.index', compact('place', 'location'));
+        return view('app.places.locations.index', compact('place'));
     }
 
-    public function update(StoreContactsRequest $request, Place $place)
+    public function update(StoreContactsRequest $request)
     {
         return back();
     }

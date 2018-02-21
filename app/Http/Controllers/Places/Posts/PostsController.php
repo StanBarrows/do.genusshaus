@@ -15,11 +15,11 @@ class PostsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index(Place $place)
+    public function index()
     {
-        $posts = $place->posts()->orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
-        return view('app.places.posts.index', compact('place', 'posts'));
+        return view('app.places.posts.index', compact('posts'));
     }
 
     public function create(Place $place)

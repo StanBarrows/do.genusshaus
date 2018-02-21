@@ -5,7 +5,7 @@
 
     <div class="card">
 
-        <h5 class="card-header">Invite a new user
+        <h5 class="card-header">Invite a user
 
         </h5>
 
@@ -63,7 +63,7 @@
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <button class="btn btn-block btn-success" type="submit">Invite a new user</button>
+                        <button class="btn btn-block btn-success" type="submit">Invite a user</button>
 
                     </div>
                 </div>

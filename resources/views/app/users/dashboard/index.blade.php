@@ -9,11 +9,9 @@
                     <div class="col-md-4 mt-4">
                         <div class="card">
 
-                            @if(optional($place->uploadcares)->count())
-                                <img class="card-img-top" src="{{ optional($place->uploadcares)->first()->url }}" alt="{{ $place->title }}">
-                                @else
-                                <img class="card-img-top" src="{{ asset('storage/images/preview_places.jpg') }}" alt="{{ $place->title }}">
-                            @endif
+
+                            <img class="card-img-top" src="{{ $place->getPreviewImage()  }}" alt="{{ $place->title }}">
+
 
 
                             <div class="card-body text-center">

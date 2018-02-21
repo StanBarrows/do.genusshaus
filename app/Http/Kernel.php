@@ -34,9 +34,14 @@ class Kernel extends HttpKernel
             // \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Genusshaus\Http\Middleware\VerifyCsrfToken::class,
-            \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Genusshaus\Http\Middleware\ImpersonateMiddleware::class,
             \Genusshaus\Http\Middleware\AddUserIdToRequest::class,
+        ],
+
+        'places' => [
+            \Genusshaus\Http\Middleware\Places\Places::class,
+            \Genusshaus\Http\Middleware\Places\Config::class,
+
         ],
 
         'api' => [

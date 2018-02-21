@@ -19,17 +19,33 @@ use Genusshaus\Domain\Users\Models\User;
 $factory->define(Place::class, function (Faker $faker) {
     return [
 
-        'user_id' => function () {
-            return factory(User::class)->create()->id;
-        },
-
         'region_id' => function () {
             return factory(Region::class)->create()->id;
         },
         'name'                   => $faker->company,
         'description'            => $faker->paragraph(3),
-        'active'                 => $faker->boolean(true),
-        'image_processed'        => true,
-        'published'              => $faker->boolean(),
+
+        'location_street'     => $faker->streetAddress,
+        'location_postcode'   => $faker->postcode,
+        'location_city'       => $faker->city,
+
+        'location_latitude'  => $faker->latitude,
+        'location_longitude' => $faker->longitude,
+
+        'contact_name'      => $faker->name,
+        'contact_avatar'     => $faker->imageUrl(100,100),
+
+        'contact_email'       => $faker->email,
+        'contact_web'       => $faker->url,
+        'contact_phone'     => $faker->phoneNumber,
+        'contact_facebook'  => $faker->url,
+        'contact_instagram' => $faker->url,
+        'contact_twitter'   => $faker->url,
+
+        'open'              => false,
+        'image'              => false,
+        'active'                 => false,
+        'published'              => false,
+        'reviewed'              => true,
     ];
 });

@@ -23,7 +23,7 @@
                     @foreach($events as $event)
 
                         <tr>
-                            <td><a href="{{ route('places.events.edit', [$place, $event]) }}">{{ $event->name }}</a></td>
+                            <td><a href="{{ route('places.events.edit', [$event]) }}">{{ $event->name }}</a></td>
                             <td>{{ $event->start->diffForHumans() }}</td>
                             <td>  @if($event->published)
                                     <span class="badge badge-success">Published</span>

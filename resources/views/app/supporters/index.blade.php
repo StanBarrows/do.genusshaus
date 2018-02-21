@@ -10,7 +10,7 @@
         <div class="card-body">
 
             <div class="alert alert-info" role="alert">
-                <strong>Heads up!</strong> You're only allowed to impersonate users without any roles!
+                <strong>Heads up!</strong> You're only allowed to impersonate users without any roles on the application!
 
             </div>
 

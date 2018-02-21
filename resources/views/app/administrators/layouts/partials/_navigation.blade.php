@@ -19,9 +19,7 @@
     </ul>
 </div>
 
-
-
-<div class="card mt-4">
+{{--<div class="card mt-4">
     <div class="card-header">
         <strong>Recommendations</strong>
     </div>
@@ -39,6 +37,9 @@
     <ul class="list-group list-group-flush">
         <li class="list-group-item {{ current_route('administrators.logs.index') }}"><a href="{{ route('administrators.logs.index') }}">Manage logs</a></li>
     </ul>
-</div>
+</div>--}}
+
 
 @endrole
+
+

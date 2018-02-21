@@ -5,14 +5,14 @@
     <div class="card">
         <h5 class="card-header">Dashboard
 
-            <div class="float-right"><a href="{{ route('users.support.index', $place) }}" class="btn btn-sm btn-primary">Request changes</a> </div>
+            <div class="float-right"><a href="{{ route('users.support.index') }}" class="btn btn-sm btn-primary">Request changes</a> </div>
 
         </h5>
 
         <div class="card-body">
 
 
-            <h6>Place-Type</h6>
+          {{--  <h6>Place-Type</h6>
             <div class="form-group row">
 
 
@@ -22,7 +22,7 @@
                            class="form-control"
                            value="{{ $place->type }}" disabled>
                 </div>
-            </div>
+            </div>--}}
 
             <h6>Region</h6>
             <div class="form-group row">

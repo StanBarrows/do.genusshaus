@@ -20,7 +20,6 @@
                         <th>Status</th>
                         <th>Last activity</th>
 
-
                     </tr>
                     </thead>
                     <tbody>
@@ -33,7 +32,7 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->active }}</td>
-                            <td>{{ $user->last_activity->diffForHumans() }}</td>
+                            <td>{{ optional($user->last_activity)->diffForHumans() }}</td>
 
 
                         </tr>

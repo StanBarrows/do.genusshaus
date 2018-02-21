@@ -44,11 +44,12 @@
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item {{ current_route('moderators.places.users.invite') }}"><a href="{{ route('moderators.places.users.invite', $place) }}">Invite</a></li>
-        <li class="list-group-item">
+
+      {{--  <li class="list-group-item">
 
             <a data-toggle="modal" href="#assign-user">Assign</a>
 
-        </li>
+        </li>--}}
 
 
         <li class="list-group-item {{ current_route('moderators.places.users.index') }}"><a href="{{ route('moderators.places.users.index', $place) }}">Manage</a></li>
@@ -95,7 +96,7 @@
 
 
 
-<div class="modal fade" id="assign-user" tabindex="-1" role="dialog" aria-labelledby="assign-user"
+{{--<div class="modal fade" id="assign-user" tabindex="-1" role="dialog" aria-labelledby="assign-user"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -149,7 +150,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 
 @role('administrator')
 <div class="modal fade" id="delete-place" tabindex="-1" role="dialog" aria-labelledby="delete-place"

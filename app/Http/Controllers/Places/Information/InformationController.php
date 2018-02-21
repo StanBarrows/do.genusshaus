@@ -10,16 +10,20 @@ class InformationController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['web', 'auth']);
+
     }
 
-    public function index(Place $place)
+    public function index()
     {
+        $place = current_place();
+
         return view('app.places.information.index', compact('place'));
     }
 
-    public function update(UpdateInformationRequest $request, Place $place)
+    public function update(UpdateInformationRequest $request)
     {
+        $place = current_place();
+
         $place->description = $request->description;
         $place->save();
 

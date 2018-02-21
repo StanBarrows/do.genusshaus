@@ -3,7 +3,8 @@
 namespace Genusshaus\Http\Controllers\Places\Settings;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Places\Notifications\ReviewRequestNotification;
+use Genusshaus\Domain\Users\Models\User;
 
 class SettingsController extends Controller
 {
@@ -12,13 +13,17 @@ class SettingsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index(Place $place)
+    public function index()
     {
+        $place = current_place();
+
         return view('app.places.settings.index', compact('place'));
     }
 
-    public function unpublish(Place $place)
+    public function unpublish()
     {
+        $place = current_place();
+
         $place->published = false;
         $place->save();
 
@@ -27,12 +32,19 @@ class SettingsController extends Controller
         return back();
     }
 
-    public function review(Place $place)
+    public function review()
     {
-        $place->is_sent_for_review = true;
+        $place = current_place();
+
+        $place->reviewed = false;
         $place->save();
 
-        //Notify Moderators
+        $users = User::has('roles')->with('roles')->get();
+
+        foreach($users as $user)
+        {
+            $user->notify(new ReviewRequestNotification($place));
+        }
 
         return back();
     }

@@ -15,8 +15,11 @@ class MediasController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index(Place $place)
+    public function index()
     {
+        $place = current_place();
+
+
         return view('app.places.medias.index', compact('place'));
     }
 

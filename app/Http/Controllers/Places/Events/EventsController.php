@@ -17,26 +17,31 @@ class EventsController extends Controller
         $this->middleware(['web', 'auth']);
     }
 
-    public function index(Place $place)
+    public function index()
     {
-        $events = $place->events()->orderBy('start', 'asc')->get();
+        $events = Event::all();
 
-        return view('app.places.events.index', compact('place', 'events'));
+        return view('app.places.events.index', compact('events'));
     }
 
-    public function create(Place $place)
+    public function push(Event $event)
     {
-        return view('app.places.events.create', compact('place'));
+        return view('app.places.events.push', compact( 'event'));
     }
 
-    public function edit(Place $place, Event $event)
+    public function create()
     {
-        return view('app.places.events.edit', compact('place', 'event'));
+        return view('app.places.events.create');
     }
 
-    public function store(StoreEventsRequest $request, Place $place)
+    public function edit(Event $event)
     {
-        $event = $place->events()->create([
+        return view('app.places.events.edit', compact( 'event'));
+    }
+
+    public function store(StoreEventsRequest $request)
+    {
+        $event = Event::create([
             'name'        => $request->name,
             'description' => $request->description,
             'start'       => $request->start,
@@ -52,10 +57,10 @@ class EventsController extends Controller
 
         $uploadcare->store();
 
-        return redirect()->route('places.events.index', $place);
+        return redirect()->route('places.events.index');
     }
 
-    public function update(UpdateEventsRequest $request, Place $place, Event $event)
+    public function update(UpdateEventsRequest $request, Event $event)
     {
         $event->update([
             'name'        => $request->name,
@@ -65,7 +70,7 @@ class EventsController extends Controller
 
         return back();
 
-        /* if (!$place->image_processed)
+         if (!$place->image_processed)
          {
              return back();
          }
@@ -100,10 +105,10 @@ class EventsController extends Controller
 
          $uploadcare->store();
 
- */
+
     }
 
-    public function publish(Place $place, Event $event)
+    public function publish(Event $event)
     {
         $event->published = true;
         $event->save();
@@ -111,7 +116,7 @@ class EventsController extends Controller
         return back();
     }
 
-    public function unpublish(Place $place, Event $event)
+    public function unpublish(Event $event)
     {
         $event->published = false;
         $event->save();
@@ -119,7 +124,7 @@ class EventsController extends Controller
         return back();
     }
 
-    public function delete(Place $place, Event $event)
+    public function delete(Event $event)
     {
         $event->published = false;
         $event->pushed = false;
@@ -128,7 +133,7 @@ class EventsController extends Controller
 
         $event->delete();
 
-        return redirect()->route('places.events.index', compact('place'));
+        return redirect()->route('places.events.index');
     }
 
     public function createUploadcareObject(Event $event, Request $request)

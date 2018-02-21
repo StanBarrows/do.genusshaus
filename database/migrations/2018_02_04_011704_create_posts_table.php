@@ -20,16 +20,15 @@ class CreatePostsTable extends Migration
 
             $table->unsignedInteger('place_id');
 
-            $table->boolean('published')->default(false);
-            $table->boolean('pushed')->default(false);
-
-            $table->boolean('image_processed')->default(true);
-
             $table->string('title');
             $table->text('teaser');
             $table->longText('body');
             $table->string('author')->nullable();
             $table->string('src')->nullable();
+
+            $table->boolean('image')->default(false);
+            $table->boolean('published')->default(false);
+            $table->boolean('pushed')->default(false);
 
             $table->timestamps();
             $table->softDeletes();

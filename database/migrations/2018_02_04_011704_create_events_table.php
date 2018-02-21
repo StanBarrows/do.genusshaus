@@ -20,15 +20,14 @@ class CreateEventsTable extends Migration
 
             $table->unsignedInteger('place_id');
 
-            $table->boolean('published')->default(false);
-            $table->boolean('pushed')->default(false);
-            $table->boolean('image_processed')->default(true);
-
             $table->string('name');
             $table->longText('description');
 
             $table->dateTime('start');
-            $table->dateTime('finish')->nullable();
+
+            $table->boolean('image')->default(false);
+            $table->boolean('published')->default(false);
+            $table->boolean('pushed')->default(false);
 
             $table->timestamps();
             $table->softDeletes();

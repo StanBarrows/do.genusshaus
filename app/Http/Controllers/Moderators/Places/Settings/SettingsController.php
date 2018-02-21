@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Settings;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Administrators\Jobs\AddPlaceToRecommender;
 use Genusshaus\Domain\Places\Models\Place;
 
 class SettingsController extends Controller
@@ -18,6 +17,8 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index(Place $place)
     {
         return view('app.moderators.places.settings.index', compact('place'));
@@ -27,13 +28,12 @@ class SettingsController extends Controller
     {
         if ($place->active) {
             $place->published = true;
-            $place->is_sent_for_review = false;
             $place->save();
         }
 
-        $collection = Place::where('uuid', $place->uuid)->get();
+        /*   $collection = Place::where('uuid', $place->uuid)->get();
 
-        AddPlaceToRecommender::dispatch($collection);
+         AddPlaceToRecommender::dispatch($collection);*/
 
         return back();
     }
@@ -41,7 +41,6 @@ class SettingsController extends Controller
     public function unpublish(Place $place)
     {
         $place->published = false;
-        $place->is_sent_for_review = false;
         $place->save();
 
         return back();
@@ -50,7 +49,6 @@ class SettingsController extends Controller
     public function activate(Place $place)
     {
         $place->active = true;
-        $place->type = 'premium';
         $place->save();
 
         return back();
@@ -60,17 +58,21 @@ class SettingsController extends Controller
     {
         $place->active = false;
         $place->published = false;
+
         $place->save();
 
         return back();
     }
 
-    public function reset(Place $place)
+    public function delete(Place $place)
     {
-        $place->is_sent_for_review = false;
+        $place->active = false;
         $place->published = false;
         $place->save();
 
-        return back();
+        $place->delete();
+
+        return redirect()->route('moderators.places.index');
     }
+
 }

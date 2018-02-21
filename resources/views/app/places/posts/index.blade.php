@@ -23,7 +23,7 @@
                     @foreach($posts as $post)
 
                         <tr>
-                            <td><a href="{{ route('places.posts.edit', [$place, $post]) }}">{{ $post->title }}</a></td>
+                            <td><a href="{{ route('places.posts.edit', [$post]) }}">{{ $post->title }}</a></td>
 
                             <td>  @if($post->published)
                                     <span class="badge badge-success">Published</span>

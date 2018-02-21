@@ -3,7 +3,8 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Users;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
+use Genusshaus\Domain\Moderators\Notifications\SendReviewRequestNotification;
+use Genusshaus\Domain\Moderators\Notifications\JoinUsersNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Moderators\Places\Users\AssignUserRequest;
@@ -49,33 +50,33 @@ class UsersController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (empty($user)) {
-            $user = new User();
 
+            $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make(Str::random(16));
             $user->active = false;
             $user->setRememberToken(Str::random(60));
             $user->save();
+
+            $user->places()->attach($place);
+
+            $user->notify(new SendReviewRequestNotification($user, $place));
+
+
+
         }
 
-        $place->user_id = $user->id;
-        $place->active = true;
-        $place->save();
+        else
+        {
+            $user->places()->attach($place);
 
-        $user->notify(new InviteUsersNotification($user, $place));
+            $user->notify(new JoinUsersNotification($user, $place));
+        }
 
-        return redirect()->route('moderators.places.users.index', $place);
-    }
-
-    public function assign(AssignUserRequest $request, Place $place)
-    {
-        $user = User::where('email', $request->email)->first();
-
-        $place->user_id = $user->id;
-        $place->active = true;
-        $place->save();
 
         return back();
     }
+
+
 }

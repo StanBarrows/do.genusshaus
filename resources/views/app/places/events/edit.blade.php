@@ -12,7 +12,7 @@
                 <div class="card-body">
 
                     <form class="form-horizontal" method="POST"
-                          action="{{ route('places.events.update',[ $place, $event]) }}">
+                          action="{{ route('places.events.update',[ $event]) }}">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
 
@@ -120,7 +120,7 @@
 
                         @if($event->published)
                             <form class="" method="POST"
-                                  action="{{ route('places.events.unpublish',[ $place, $event]) }}">
+                                  action="{{ route('places.events.unpublish',$event) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
 
@@ -130,7 +130,7 @@
 
 
                             <form class="" method="POST"
-                                  action="{{ route('places.events.publish',[ $place, $event]) }}">
+                                  action="{{ route('places.events.publish',$event) }}">
                                 {{ csrf_field() }}
                                 {{ method_field('PATCH') }}
 
@@ -144,7 +144,7 @@
                     <li class="list-group-item">
 
                         <form class="" method="POST"
-                              action="{{ route('places.events.delete',[ $place, $event]) }}">
+                              action="{{ route('places.events.delete', $event) }}">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
 
@@ -152,6 +152,13 @@
                         </form>
 
                     </li>
+
+                    <li class="list-group-item">
+
+                        <a href="{{ route('places.events.push', $event) }}">Push Center</a>
+                    </li>
+
+
 
                 </ul>
             </div>

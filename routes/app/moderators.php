@@ -19,7 +19,7 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
 
             Route::group(['prefix' => '/location', 'namespace' => 'Location', 'as' => 'location.'], function () {
                 Route::get('/', 'LocationController@index')->name('index');
-                Route::patch('/{location}', 'LocationController@update')->name('update');
+                Route::patch('/', 'LocationController@update')->name('update');
             });
 
             Route::group(['prefix' => '/users', 'namespace' => 'Users', 'as' => 'users.'], function () {
@@ -36,6 +36,7 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
 
             Route::group(['prefix' => '/tags', 'namespace' => 'Tags', 'as' => 'tags.'], function () {
                 Route::get('/', 'TagsController@index')->name('index');
+                Route::patch('/', 'TagsController@update')->name('update');
             });
 
             Route::group(['prefix' => '/setting', 'namespace' => 'Settings', 'as' => 'settings.'], function () {

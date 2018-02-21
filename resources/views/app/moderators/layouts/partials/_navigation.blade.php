@@ -38,7 +38,7 @@
 
 
 
-<div class="card mt-4">
+{{--<div class="card mt-4">
     <div class="card-header">
         <strong>Regions</strong>
     </div>
@@ -47,9 +47,9 @@
 
 
     </ul>
-</div>
+</div>--}}
 
-<div class="card mt-4">
+{{--<div class="card mt-4">
     <div class="card-header">
         <strong>Countries</strong>
     </div>
@@ -59,19 +59,7 @@
 
     </ul>
 
-</div>
-
-{{--
-<div class="card mt-4">
-    <div class="card-header">
-        <strong>Beacons</strong>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item {{ current_route('moderators.beacons.create') }}"><a href="{{ route('moderators.beacons.create') }}">Add a beacons</a></li>
-        <li class="list-group-item {{ current_route('moderators.beacons.index') }}"><a href="{{ route('moderators.beacons.index') }}">Manage beacons</a></li>
-    </ul>
-</div>
---}}
+</div>--}}
 
 
 @endrole
