@@ -16,6 +16,7 @@ class TagsIndexRessource extends Resource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'name' => $this->slug,
         ];
     }
