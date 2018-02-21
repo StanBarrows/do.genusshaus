@@ -17,8 +17,8 @@ class OpeningHoursIndexRessource extends Resource
     {
         return [
             'weekday' => $this->weekday,
-            'open'    => substr($this->open, 0,-3),
-            'close'   => substr($this->close,0,-3)
+            'open'    => substr($this->open, 0, -3),
+            'close'   => substr($this->close, 0, -3),
         ];
     }
 }
