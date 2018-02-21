@@ -2,7 +2,42 @@
 
 @section('app.moderators.places.content')
 
+
     <div class="card">
+
+        <h5 class="card-header">Type
+
+        </h5>
+
+        <div class="card-body">
+
+            @if($place->type === 'basic')
+                <form class="form-inline" method="POST"
+                      action="{{ route('moderators.places.settings.type', $place) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
+
+                    <button class="btn btn-sm btn-block btn-dark">Set to premium</button>
+
+                </form>
+            @else
+                <form class="form-inline" method="POST"
+                      action="{{ route('moderators.places.settings.type', $place) }}">
+                    {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
+
+                    <button class="btn btn-sm btn-block btn-light">Set to basic</button>
+
+                </form>
+            @endif
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card mt-4">
 
         <h5 class="card-header">Activation
 

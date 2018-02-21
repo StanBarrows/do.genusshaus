@@ -14,6 +14,7 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
+                        <th class="text-center">Type</th>
                         <th class="text-center">Stauts</th>
                         <th class="text-center"></th>
                     </tr>
@@ -25,6 +26,15 @@
                         <tr>
                             <th scope="row">{{ $place->id }}</th>
                             <td>{{ $place->name }}</td>
+                            <td class="text-center">
+
+                                @if($place->type === 'basic')
+                                    <span class="badge badge-light">Basic</span>
+                                @else
+                                    <span class="badge badge-dark">Premium</span>
+                                @endif
+
+                            </td>
                             <td class="text-center">
                                 @if($place->active)
                                     <span class="badge badge-success">Active</span>

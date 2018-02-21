@@ -11,7 +11,7 @@ class PlacesTableSeeder extends Seeder
     {
         $region = Region::first() ?: factory(Region::class)->create();
 
-        factory(Place::class, 100)
+        factory(Place::class, 5)
                 ->create(['region_id' => $region->id])
                 ->each(function ($place) {
                     $faker = Faker::create();

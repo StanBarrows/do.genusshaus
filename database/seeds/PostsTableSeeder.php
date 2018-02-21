@@ -12,7 +12,7 @@ class PostsTableSeeder extends Seeder
         $places = Place::all();
 
         foreach ($places as $place) {
-            factory(Post::class, random_int(1, 3))
+            factory(Post::class, random_int(1, 4))
                 ->create(['place_id' => $place->id])
                 ->each(function ($event) {
                     $faker = Faker::create();
