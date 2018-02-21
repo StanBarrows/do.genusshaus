@@ -16,14 +16,14 @@ class PostsIndexRessource extends Resource
     public function toArray($request)
     {
         return [
-            'uuid'                => $this->uuid,
-            'title'               => $this->title,
-            'teaser'              => $this->teaser,
-            'image'               => $this->getPreviewImage(),
-            'author'              => $this->author,
+            'uuid'                   => $this->uuid,
+            'title'                  => $this->title,
+            'teaser'                 => $this->teaser,
+            'image'                  => $this->getPreviewImage(),
+            'author'                 => $this->author,
             'source'                 => $this->src,
-            'created_at'          => optional($this->created_at)->timestamp,
-            'created_at_readable' => optional($this->created_at)->diffForHumans(),
+            'created_at'             => optional($this->created_at)->timestamp,
+            'created_at_readable'    => optional($this->created_at)->diffForHumans(),
         ];
     }
 }

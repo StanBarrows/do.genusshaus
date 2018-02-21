@@ -25,8 +25,8 @@ class EventsShowRessource extends Resource
                 'place_name'    => $this->place->name,
                 'postcode'      => $this->place->location_postcode,
                 'place'         => $this->place->location_city,
-                'latitude'  => $this->place->location_latitude,
-                'longitude' => $this->place->location_longitude,
+                'latitude'      => $this->place->location_latitude,
+                'longitude'     => $this->place->location_longitude,
             ],
 
             'from'          => ($this->start)->timestamp,
