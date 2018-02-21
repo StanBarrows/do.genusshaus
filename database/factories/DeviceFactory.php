@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Ressources\Models\Device;
-
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories

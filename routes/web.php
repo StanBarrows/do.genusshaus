@@ -8,7 +8,6 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::group(['prefix' => '/backend'], function () {
-
         include 'app/users.php';
 
         Route::group(['middleware' => ['user-is-active']], function () {

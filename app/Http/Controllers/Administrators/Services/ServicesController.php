@@ -16,7 +16,6 @@ class ServicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function index()
     {
         return view('app.administrators.services.index');

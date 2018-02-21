@@ -18,18 +18,18 @@ class BeaconsShowPostsRessource extends Resource
     {
         $place = $this->place;
         $beacons = $place->beacons;
-        $posts = Post::where('place_id','=',$place->id)->get();
+        $posts = Post::where('place_id', '=', $place->id)->get();
 
         return [
             'place_uuid' => $this->place->uuid,
             'place_name' => $this->place->name,
 
-            'uuid' => $this->uuid,
+            'uuid'  => $this->uuid,
             'major' => $this->major,
             'minor' => $this->minor,
 
             'articles' => PostsIndexRessource::collection($posts),
-            'beacons' => BeaconsIndexRessource::collection($beacons),
+            'beacons'  => BeaconsIndexRessource::collection($beacons),
 
         ];
     }

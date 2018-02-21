@@ -3,7 +3,6 @@
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
-use Genusshaus\Domain\Users\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,20 +31,20 @@ $factory->define(Place::class, function (Faker $faker) {
         'location_latitude'  => $faker->latitude,
         'location_longitude' => $faker->longitude,
 
-        'contact_name'      => $faker->name,
-        'contact_avatar'     => $faker->imageUrl(100,100),
+        'contact_name'       => $faker->name,
+        'contact_avatar'     => $faker->imageUrl(100, 100),
 
         'contact_email'       => $faker->email,
-        'contact_web'       => $faker->url,
-        'contact_phone'     => $faker->phoneNumber,
-        'contact_facebook'  => $faker->url,
-        'contact_instagram' => $faker->url,
-        'contact_twitter'   => $faker->url,
+        'contact_web'         => $faker->url,
+        'contact_phone'       => $faker->phoneNumber,
+        'contact_facebook'    => $faker->url,
+        'contact_instagram'   => $faker->url,
+        'contact_twitter'     => $faker->url,
 
-        'open'              => false,
-        'image'              => false,
+        'open'                   => false,
+        'image'                  => false,
         'active'                 => false,
         'published'              => false,
-        'reviewed'              => true,
+        'reviewed'               => true,
     ];
 });

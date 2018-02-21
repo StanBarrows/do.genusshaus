@@ -3,7 +3,6 @@
 namespace Genusshaus\Domain\Places\Notifications;
 
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -50,7 +49,7 @@ class ReviewRequestNotification extends Notification implements ShouldQueue
             ->subject('An incoming review request for Genusshaus')
             ->greeting('Hello moderator!')
             ->line('There is an incoming review request for: '.$this->place->name)
-            ->action( 'Review', route('moderators.places.settings.index', $this->place));
+            ->action('Review', route('moderators.places.settings.index', $this->place));
     }
 
     /**

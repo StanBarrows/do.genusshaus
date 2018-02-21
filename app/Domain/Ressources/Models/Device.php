@@ -11,7 +11,7 @@ class Device extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['push_token','last_activty'];
+    protected $fillable = ['push_token', 'last_activty'];
 
     protected $dates = [
         'created_at',
@@ -19,7 +19,6 @@ class Device extends Model
         'deleted_at',
         'last_activty',
     ];
-
 
     public static function boot()
     {
@@ -34,5 +33,4 @@ class Device extends Model
     {
         return $this->belongsToMany(Place::class, 'favourites', 'device_id', 'place_id')->withTimeStamps();
     }
-
 }

@@ -18,7 +18,6 @@ trait ForPlaces
             new PlaceScope($manager->getPlace())
         );
 
-
         static::observe(
             app(PlacesObserver::class)
         );

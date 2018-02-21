@@ -2,10 +2,8 @@
 
 namespace Genusshaus\App\Traits;
 
-
 trait GeneralTraits
 {
-
     public function scopeIsActive($query)
     {
         return $query->where('active', true);
@@ -28,10 +26,10 @@ trait GeneralTraits
 
     public function getPreviewImage()
     {
-        if($this->uploadcares()->count())
-        {
+        if ($this->uploadcares()->count()) {
             return $this->uploadcares->first()->url;
         }
+
         return 'http://via.placeholder.com/900x600';
     }
 }

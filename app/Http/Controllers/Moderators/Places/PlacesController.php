@@ -3,8 +3,6 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\App\Observers\Places\PlacesObserver;
-use Genusshaus\Domain\Places\Models\Country;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
 use Genusshaus\Http\Requests\Moderators\Places\StorePlacesRequest;
@@ -49,11 +47,11 @@ class PlacesController extends Controller
 
         Place::create([
 
-            'region_id' =>  $request->region_id,
+            'region_id' => $request->region_id,
 
             'type' => 'basic',
 
-            'name' =>  $request->name,
+            'name' => $request->name,
 
             'location_street'     => $location['streetName'].' '.$location['streetNumber'],
             'location_postcode'   => $location['postalCode'],
@@ -61,11 +59,10 @@ class PlacesController extends Controller
             'location_latitude'   => $location['latitude'],
             'location_longitude'  => $location['longitude'],
 
-            'image'  => false,
-            'active'  => false,
+            'image'      => false,
+            'active'     => false,
             'published'  => false,
         ]);
-
 
         return redirect()->route('moderators.places.index');
     }
@@ -74,6 +71,4 @@ class PlacesController extends Controller
     {
         return view('app.moderators.places.edit', compact('place'));
     }
-
-
 }

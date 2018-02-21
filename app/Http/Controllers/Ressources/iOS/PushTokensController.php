@@ -14,13 +14,13 @@ class PushTokensController extends Controller
 
     public function update(UpdatePushTokensRequest $request)
     {
-        $device = Device::where('uuid','=',$request->device_uuid)->first();
+        $device = Device::where('uuid', '=', $request->device_uuid)->first();
         $device->push_token = $request->token;
 
         $device->save();
 
         return response()->json([
-            'message' => 'successfully updated!'
+            'message' => 'successfully updated!',
         ], 200);
     }
 }

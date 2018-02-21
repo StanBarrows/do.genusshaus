@@ -23,9 +23,8 @@ class EventsController extends Controller
 
     public function show(ShowEventsRequest $request)
     {
-        $event = Event::where('uuid', '=',$request->uuid)->get();
+        $event = Event::where('uuid', '=', $request->uuid)->get();
 
         return EventsShowRessource::collection($event);
     }
-
 }

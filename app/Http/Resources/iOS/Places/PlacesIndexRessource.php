@@ -13,28 +13,25 @@ class PlacesIndexRessource extends Resource
      *
      * @return array
      */
-
-
     public function toArray($request)
     {
         return [
 
-            'type' => $this->type,
+            'type'       => $this->type,
             'icon_image' => $this->getIconImage(),
             'icon_color' => $this->getIconColor(),
 
             'uuid' => $this->uuid,
 
-            'name' => $this->name,
+            'name'        => $this->name,
             'description' => $this->description,
 
-            'geo_latitude' => $this->location_latitude,
+            'geo_latitude'  => $this->location_latitude,
             'geo_longitude' => $this->location_latitude,
-
 
             'image' => $this->getPreviewImage(),
 
-            'created_at' => $this->created_at->timestamp,
+            'created_at'          => $this->created_at->timestamp,
             'created_at_readable' => $this->created_at->diffForHumans(),
 
             'tags' => TagsIndexRessource::collection($this->tags),

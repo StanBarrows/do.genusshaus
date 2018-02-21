@@ -3,7 +3,6 @@
 namespace Genusshaus\Http\Requests\Ressources\iOS;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class LogPhraseRequest extends FormRequest
 {
@@ -26,7 +25,7 @@ class LogPhraseRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'search' => 'required',
+            'search'      => 'required',
         ];
     }
 }

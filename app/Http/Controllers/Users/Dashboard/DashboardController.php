@@ -3,8 +3,6 @@
 namespace Genusshaus\Http\Controllers\Users\Dashboard;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Ressources\Models\Event;
 
 class DashboardController extends Controller
 {

@@ -23,9 +23,8 @@ class PlacesController extends Controller
 
     public function show(ShowPlacesRequest $request)
     {
-        $place = Place::where('uuid', '=',$request->uuid)->get();
+        $place = Place::where('uuid', '=', $request->uuid)->get();
 
         return PlacesShowRessource::collection($place);
     }
-
 }

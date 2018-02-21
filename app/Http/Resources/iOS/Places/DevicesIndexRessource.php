@@ -16,8 +16,8 @@ class DevicesIndexRessource extends Resource
     public function toArray($request)
     {
         return [
-            'uuid' => $this->uuid,
-            'push_token' => $this->push_token,
+            'uuid'         => $this->uuid,
+            'push_token'   => $this->push_token,
             'last_activty' => optional($this->last_activity)->diffForHumans(),
         ];
     }

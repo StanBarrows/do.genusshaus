@@ -25,7 +25,7 @@ class ShowPlacesRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'uuid' => 'required|exists:places,uuid',
+            'uuid'        => 'required|exists:places,uuid',
         ];
     }
 }

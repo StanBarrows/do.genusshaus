@@ -25,7 +25,7 @@ class ShowPostsRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'uuid' => 'required|exists:posts,uuid',
+            'uuid'        => 'required|exists:posts,uuid',
         ];
     }
 }
