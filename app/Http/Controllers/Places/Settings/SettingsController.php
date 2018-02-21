@@ -32,19 +32,4 @@ class SettingsController extends Controller
         return back();
     }
 
-    public function review()
-    {
-        $place = current_place();
-
-        $place->reviewed = false;
-        $place->save();
-
-        $users = User::has('roles')->with('roles')->get();
-
-        foreach ($users as $user) {
-            $user->notify(new ReviewRequestNotification($place));
-        }
-
-        return back();
-    }
 }

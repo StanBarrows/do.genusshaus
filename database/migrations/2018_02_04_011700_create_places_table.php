@@ -32,8 +32,6 @@ class CreatePlacesTable extends Migration
             $table->string('location_longitude')->nullable();
 
             $table->string('contact_name')->nullable();
-            $table->string('contact_avatar')->nullable();
-
             $table->string('contact_email')->nullable();
             $table->string('contact_web')->nullable();
             $table->string('contact_phone')->nullable();
@@ -47,7 +45,6 @@ class CreatePlacesTable extends Migration
             $table->boolean('image')->default(false);
             $table->boolean('active')->default(false);
             $table->boolean('published')->default(false);
-            $table->boolean('reviewed')->default(true);
 
             $table->timestamps();
             $table->softDeletes();

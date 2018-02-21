@@ -67,35 +67,21 @@ class EventsController extends Controller
             'start'       => $request->start,
         ]);
 
-        return back();
-
-        if (!$place->image_processed) {
-            return back();
-        }
-
-        if ($place->uploadcares->count()) {
+        if ($event->uploadcares->count()) {
             if ($this->validateIfUploadcareObjectExists($request)) {
                 return back();
             } else {
-                $this->createUploadcareObject($place, $request);
+                $this->createUploadcareObject($event, $request);
 
-                $old_uploadcare_object = $place->uploadcares->first();
-                $this->deleteUploadcareObject($place, $old_uploadcare_object);
+                $old_uploadcare_object = $event->uploadcares->first();
+                $this->deleteUploadcareObject($event, $old_uploadcare_object);
             }
         } else {
-            $this->createUploadcareObject($place, $request);
+            $this->createUploadcareObject($event, $request);
         }
 
         return back();
-        $uploadcare = app()->uploadcare->getFile($request->uploadcare);
 
-        $event->uploadcares()->create([
-             'uploadcareable_id' => $event->id,
-             'uuid'              => $uploadcare->data['uuid'],
-             'url'               => $uploadcare->getUrl(),
-         ]);
-
-        $uploadcare->store();
     }
 
     public function publish(Event $event)
@@ -128,10 +114,6 @@ class EventsController extends Controller
 
     public function createUploadcareObject(Event $event, Request $request)
     {
-        $event->image_processed = false;
-
-        $event->save();
-
         $new_uploadcare_object = app()->uploadcare->getFile($request->uploadcare);
 
         $event->uploadcares()->create([
@@ -142,8 +124,6 @@ class EventsController extends Controller
 
         $new_uploadcare_object->store();
 
-        $event->image_processed = true;
-        $event->save();
     }
 
     public function deleteUploadcareObject(Event $event, Uploadcare $uploadcare)

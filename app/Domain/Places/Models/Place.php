@@ -28,6 +28,7 @@ class Place extends Model
         'location_latitude',
         'location_longitude',
         'contact_name',
+        'contact_email',
         'contact_avatar',
         'contact_web',
         'contact_phone',

@@ -2,6 +2,7 @@
 
 namespace Genusshaus\Http\Controllers\Places\Medias;
 
+use Carbon\Carbon;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Places\Medias\StoreMediasRequest;
@@ -34,9 +35,6 @@ class MediasController extends Controller
 
     public function createUploadcareObject(Place $place, Request $request)
     {
-        $place->image_processed = false;
-        $place->save();
-
         $new_uploadcare_object = app()->uploadcare->getFile($request->uploadcare);
 
         $place->uploadcares()->create([
@@ -46,10 +44,7 @@ class MediasController extends Controller
         ]);
 
         $new_uploadcare_object->store();
-
-        $place->image_processed = true;
-        $place->save();
-    }
+        }
 
     public function validateIfUploadcareObjectExists(Request $request)
     {
@@ -66,10 +61,6 @@ class MediasController extends Controller
 
     public function update(StoreMediasRequest $request, Place $place)
     {
-        if (!$place->image_processed) {
-            return back();
-        }
-
         if ($place->uploadcares->count()) {
             if ($this->validateIfUploadcareObjectExists($request)) {
                 return back();

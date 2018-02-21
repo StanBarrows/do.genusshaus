@@ -3,8 +3,8 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Users;
 
 use Genusshaus\App\Controllers\Controller;
+use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
 use Genusshaus\Domain\Moderators\Notifications\JoinUsersNotification;
-use Genusshaus\Domain\Moderators\Notifications\SendReviewRequestNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
 use Genusshaus\Http\Requests\Moderators\Places\Users\StoreInvitationsRequest;
@@ -59,8 +59,10 @@ class UsersController extends Controller
 
             $user->places()->attach($place);
 
-            $user->notify(new SendReviewRequestNotification($user, $place));
+            $user->notify(new InviteUsersNotification($user, $place));
+
         } else {
+            $user->places()->detach($place);
             $user->places()->attach($place);
 
             $user->notify(new JoinUsersNotification($user, $place));

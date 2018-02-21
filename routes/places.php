@@ -61,9 +61,7 @@ Route::group(['prefix' => '/place', 'middleware' => ['places'], 'namespace' => '
 
     Route::group(['prefix' => '/settings', 'namespace' => 'Settings', 'as' => 'settings.'], function () {
         Route::get('/', 'SettingsController@index')->name('index');
-
         Route::patch('/unpublish', 'SettingsController@unpublish')->name('unpublish');
-        Route::patch('/review', 'SettingsController@review')->name('review');
     });
 
     Route::get('/{place?}', 'Dashboard\DashboardController@index')->name('dashboard.index');

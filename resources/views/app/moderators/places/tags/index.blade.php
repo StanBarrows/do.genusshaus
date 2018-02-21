@@ -2,7 +2,6 @@
 
 @section('styles')
 
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
 @endsection
@@ -22,20 +21,19 @@
             </div>
 
 
-            <form class="form-horizontal" method="" action="#">
+            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.tags.update', $place) }}">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
+
 
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <input title="tags"
-                               placeholder="tags"
+                        <select title="tags"
                                id="tags"
                                name="tags[]"
-                               class="form-control{{ $errors->has('tags') ? ' is-invalid' : '' }}"
-                               value="{{ old('tags') }}"
-                               required multiple="multiple">
+                               class="multiple-tags form-control{{ $errors->has('tags') ? ' is-invalid' : '' }}"
+                                required multiple="multiple"></select>
 
                         @if ($errors->has('tags'))
                             <div class="invalid-feedback">
@@ -45,12 +43,10 @@
                     </div>
                 </div>
 
-
-
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <button class="btn btn-block btn-success disabled" type="" disabled>Update tags</button>
+                        <button class="btn btn-block btn-success" type="submit">Update tags</button>
 
                     </div>
                 </div>
@@ -95,7 +91,7 @@
 
     <script>
 
-        $(".tags").select2({
+        $(".multiple-tags").select2({
             placeholder: "Tags",
             tags: true
         });
