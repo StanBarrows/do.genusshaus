@@ -27,7 +27,7 @@ class BeaconsController extends Controller
     public function show(GetBeaconsRequest $request)
     {
         $beacons = Beacon::where('major','=', $request->major)->where('minor','=',$request->minor)->get();
-        
+
         if (!$beacons->count())
         {
             return response()->json([
