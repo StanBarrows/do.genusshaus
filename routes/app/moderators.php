@@ -45,14 +45,12 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
                 Route::patch('/activate', 'SettingsController@activate')->name('activate');
                 Route::patch('/deactivate', 'SettingsController@deactivate')->name('deactivate');
 
-
                 Route::patch('/publish', 'SettingsController@publish')->name('publish');
                 Route::patch('/unpublish', 'SettingsController@unpublish')->name('unpublish');
 
                 Route::delete('/delete', 'SettingsController@delete')->name('delete');
 
                 Route::patch('/type', 'SettingsController@type')->name('type');
-
             });
 
             Route::group(['prefix' => '/beacons', 'namespace' => 'Beacons', 'as' => 'beacons.'], function () {
