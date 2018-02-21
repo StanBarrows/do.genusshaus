@@ -22,7 +22,7 @@ class PostsShowRessource extends Resource
             'body'                => $this->body,
             'image'               => $this->getPreviewImage(),
             'author'              => $this->author,
-            'src'                 => $this->src,
+            'source'                 => $this->src,
             'created_at'          => $this->created_at->timestamp,
             'created_at_readable' => $this->created_at->diffForHumans(),
 

@@ -21,7 +21,7 @@ class PostsIndexRessource extends Resource
             'teaser'              => $this->teaser,
             'image'               => $this->getPreviewImage(),
             'author'              => $this->author,
-            'src'                 => $this->src,
+            'source'                 => $this->src,
             'created_at'          => optional($this->created_at)->timestamp,
             'created_at_readable' => optional($this->created_at)->diffForHumans(),
         ];
