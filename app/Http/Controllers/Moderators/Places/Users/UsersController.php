@@ -3,11 +3,10 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Users;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Moderators\Notifications\SendReviewRequestNotification;
 use Genusshaus\Domain\Moderators\Notifications\JoinUsersNotification;
+use Genusshaus\Domain\Moderators\Notifications\SendReviewRequestNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
-use Genusshaus\Http\Requests\Moderators\Places\Users\AssignUserRequest;
 use Genusshaus\Http\Requests\Moderators\Places\Users\StoreInvitationsRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -50,7 +49,6 @@ class UsersController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (empty($user)) {
-
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
@@ -62,21 +60,12 @@ class UsersController extends Controller
             $user->places()->attach($place);
 
             $user->notify(new SendReviewRequestNotification($user, $place));
-
-
-
-        }
-
-        else
-        {
+        } else {
             $user->places()->attach($place);
 
             $user->notify(new JoinUsersNotification($user, $place));
         }
 
-
         return back();
     }
-
-
 }

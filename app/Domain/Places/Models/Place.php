@@ -91,20 +91,19 @@ class Place extends Model
 
     public function getIconImage()
     {
-        if($this->type === 'premium')
-        {
-            return "https://ucarecdn.com/6b0ec8c7-31fe-4a06-be39-04ccc75fa4b6/";
+        if ($this->type === 'premium') {
+            return 'https://ucarecdn.com/6b0ec8c7-31fe-4a06-be39-04ccc75fa4b6/';
         }
+
         return 'https://ucarecdn.com/6b0ec8c7-31fe-4a06-be39-04ccc75fa4b6/';
     }
 
     public function getIconColor()
     {
-        if($this->type === 'premium')
-        {
-            return "000000";
+        if ($this->type === 'premium') {
+            return '000000';
         }
+
         return 'ffffff';
     }
-
 }

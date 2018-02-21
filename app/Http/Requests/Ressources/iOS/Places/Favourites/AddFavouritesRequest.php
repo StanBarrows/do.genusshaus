@@ -25,7 +25,7 @@ class AddFavouritesRequest extends FormRequest
     {
         return [
             'device_uuid' => 'required|exists:devices,uuid',
-            'place_uuid' => 'required|exists:places,uuid',
+            'place_uuid'  => 'required|exists:places,uuid',
         ];
     }
 }

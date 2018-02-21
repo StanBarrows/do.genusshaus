@@ -16,7 +16,6 @@ class Places
      *
      * @return mixed
      */
-
     public function handle($request, Closure $next)
     {
         $place = $this->resolvePlace(
@@ -32,12 +31,12 @@ class Places
 
         return $next($request);
     }
+
     protected function registerPlace($place)
     {
         app(Manager::class)->setPlace($place);
 
         session()->put('place', $place->id);
-
     }
 
     protected function resolvePlace($place)

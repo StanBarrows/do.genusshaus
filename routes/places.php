@@ -1,7 +1,6 @@
 <?php
 
 Route::group(['prefix' => '/place', 'middleware' => ['places'], 'namespace' => 'Controllers\Places', 'as' => 'places.'], function () {
-
     Route::group(['prefix' => '/information', 'namespace' => 'Information', 'as' => 'information.'], function () {
         Route::get('/', 'InformationController@index')->name('index');
         Route::patch('/update', 'InformationController@update')->name('update');

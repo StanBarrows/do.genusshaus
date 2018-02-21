@@ -1,10 +1,10 @@
 <?php
 
 use Faker\Generator as Faker;
-
-use Genusshaus\Domain\Ressources\Models\Post;
 use Genusshaus\Domain\Places\Models\Place;
+use Genusshaus\Domain\Ressources\Models\Post;
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -35,9 +35,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'published' => $faker->boolean(false),
         'pushed'    => $faker->boolean(false),
         'image'     => $faker->boolean(false),
-
-
-
 
     ];
 });

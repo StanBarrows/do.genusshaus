@@ -3,8 +3,8 @@
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Ressources\Models\Event;
-
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -15,10 +15,6 @@ use Illuminate\Support\Str;
 | model instances for testing / seeding your application's database.
 |
 */
-
-
-
-
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
@@ -37,7 +33,6 @@ $factory->define(Event::class, function (Faker $faker) {
         'image'     => $faker->boolean(false),
         'published' => $faker->boolean(false),
         'pushed'    => $faker->boolean(false),
-
 
     ];
 });

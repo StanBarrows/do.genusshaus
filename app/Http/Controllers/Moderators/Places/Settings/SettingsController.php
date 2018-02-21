@@ -17,8 +17,6 @@ class SettingsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
     public function index(Place $place)
     {
         return view('app.moderators.places.settings.index', compact('place'));
@@ -74,5 +72,4 @@ class SettingsController extends Controller
 
         return redirect()->route('moderators.places.index');
     }
-
 }

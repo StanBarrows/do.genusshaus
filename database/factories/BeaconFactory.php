@@ -4,6 +4,7 @@ use Faker\Generator as Faker;
 use Genusshaus\Domain\Moderators\Models\Beacon;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Support\Str;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -22,7 +23,7 @@ $factory->define(Beacon::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
         'estimote_id' => Str::random(16),
-        'major' => $faker->numberBetween(1, 250),
-        'minor' => $faker->numberBetween(1, 250),
+        'major'       => $faker->numberBetween(1, 250),
+        'minor'       => $faker->numberBetween(1, 250),
     ];
 });

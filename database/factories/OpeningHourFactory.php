@@ -1,10 +1,10 @@
 <?php
 
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\OpeningHour;
 use Genusshaus\Domain\Places\Models\Place;
 
-use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -17,9 +17,8 @@ use Carbon\Carbon;
 */
 
 $factory->define(OpeningHour::class, function (Faker $faker) {
-
-    $carbon = Carbon::createFromFormat('H:i:s','08:00:00');
-    $new_carbon = Carbon::createFromFormat('H:i:s','08:30:00')->addHours(random_int(1,9));
+    $carbon = Carbon::createFromFormat('H:i:s', '08:00:00');
+    $new_carbon = Carbon::createFromFormat('H:i:s', '08:30:00')->addHours(random_int(1, 9));
 
     return [
 
@@ -27,9 +26,9 @@ $factory->define(OpeningHour::class, function (Faker $faker) {
             return factory(Place::class)->create()->id;
         },
 
-        'weekday' => random_int(1,7),
+        'weekday' => random_int(1, 7),
 
-        'open'  => $carbon,
-        'close'  => $new_carbon
+        'open'   => $carbon,
+        'close'  => $new_carbon,
     ];
 });

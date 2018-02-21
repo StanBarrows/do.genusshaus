@@ -10,17 +10,16 @@ use Genusshaus\Http\Resources\iOS\Places\PlacesIndexRessource;
 
 class SearchController extends Controller
 {
-
     public function search(SearchPlacesRequest $request)
     {
-        $places =  Place::withAllTags($request->tags)
-            ->orderBy('name','asc')
+        $places = Place::withAllTags($request->tags)
+            ->orderBy('name', 'asc')
             ->get();
 
-        if($places->count())
-        {
+        if ($places->count()) {
             return PlacesIndexRessource::collection($places);
         }
+
         return response()->json([
         ], 204);
     }

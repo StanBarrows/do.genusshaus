@@ -4,7 +4,6 @@ namespace Genusshaus\Http\Controllers\Places\Events;
 
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Event;
-use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Places\Events\StoreEventsRequest;
 use Genusshaus\Http\Requests\Places\Events\UpdateEventsRequest;
 use Illuminate\Http\Request;
@@ -26,7 +25,7 @@ class EventsController extends Controller
 
     public function push(Event $event)
     {
-        return view('app.places.events.push', compact( 'event'));
+        return view('app.places.events.push', compact('event'));
     }
 
     public function create()
@@ -36,7 +35,7 @@ class EventsController extends Controller
 
     public function edit(Event $event)
     {
-        return view('app.places.events.edit', compact( 'event'));
+        return view('app.places.events.edit', compact('event'));
     }
 
     public function store(StoreEventsRequest $request)
@@ -70,42 +69,33 @@ class EventsController extends Controller
 
         return back();
 
-         if (!$place->image_processed)
-         {
-             return back();
-         }
+        if (!$place->image_processed) {
+            return back();
+        }
 
-         if($place->uploadcares->count()) {
+        if ($place->uploadcares->count()) {
+            if ($this->validateIfUploadcareObjectExists($request)) {
+                return back();
+            } else {
+                $this->createUploadcareObject($place, $request);
 
-             if($this->validateIfUploadcareObjectExists($request))
-             {
-                 return back();
-             }
+                $old_uploadcare_object = $place->uploadcares->first();
+                $this->deleteUploadcareObject($place, $old_uploadcare_object);
+            }
+        } else {
+            $this->createUploadcareObject($place, $request);
+        }
 
-             else
-             {
-                 $this->createUploadcareObject($place, $request);
+        return back();
+        $uploadcare = app()->uploadcare->getFile($request->uploadcare);
 
-                 $old_uploadcare_object = $place->uploadcares->first();
-                 $this->deleteUploadcareObject($place, $old_uploadcare_object);
-             }
-         }
-         else
-         {
-             $this->createUploadcareObject($place, $request);
-         }
-
-         return back(); $uploadcare = app()->uploadcare->getFile($request->uploadcare);
-
-         $event->uploadcares()->create([
+        $event->uploadcares()->create([
              'uploadcareable_id' => $event->id,
              'uuid'              => $uploadcare->data['uuid'],
              'url'               => $uploadcare->getUrl(),
          ]);
 
-         $uploadcare->store();
-
-
+        $uploadcare->store();
     }
 
     public function publish(Event $event)

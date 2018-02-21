@@ -3,8 +3,6 @@
 namespace Genusshaus\Http\Middleware\Places;
 
 use Closure;
-use Genusshaus\App\Manager\Places\Manager;
-use Genusshaus\Domain\Places\Models\Place;
 
 class Config
 {
@@ -16,7 +14,6 @@ class Config
      *
      * @return mixed
      */
-
     public function handle($request, Closure $next)
     {
         $place = $request->place();
@@ -25,5 +22,4 @@ class Config
 
         return $next($request);
     }
-
 }

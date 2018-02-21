@@ -6,7 +6,6 @@ use Genusshaus\App\Traits\GeneralTraits;
 use Genusshaus\App\Traits\Places\ForPlaces;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Str;
 use Smart6ate\Uploadcare\Traits\HasUploadcare;
 use Spatie\Tags\HasTags;
 

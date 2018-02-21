@@ -33,9 +33,9 @@ class LocationController extends Controller
         $location = $response->first()->toArray();
 
         $place->update([
-            'location_street'  => $location['streetName'].' '.$location['streetNumber'],
-            'location_postcode'=> $location['postalCode'],
-            'location_city'    => $location['locality'],
+            'location_street'     => $location['streetName'].' '.$location['streetNumber'],
+            'location_postcode'   => $location['postalCode'],
+            'location_city'       => $location['locality'],
             'location_latitude'   => $location['latitude'],
             'location_longitude'  => $location['longitude'],
         ]);

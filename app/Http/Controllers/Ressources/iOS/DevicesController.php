@@ -19,11 +19,9 @@ class DevicesController extends Controller
     {
         $device = Device::create();
 
-            return response()->json([
-                'message' => 'successfully registered!',
-                'device_uuid' => $device->uuid
+        return response()->json([
+                'message'     => 'successfully registered!',
+                'device_uuid' => $device->uuid,
             ], 200);
     }
-
-
 }

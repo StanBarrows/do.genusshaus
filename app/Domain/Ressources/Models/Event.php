@@ -19,7 +19,6 @@ class Event extends Model
         'start',
     ];
 
-
     public function place()
     {
         return $this->belongsTo(Place::class);

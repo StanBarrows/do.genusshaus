@@ -1,7 +1,6 @@
 <?php
 
 Route::group(['prefix' => '/v1', 'namespace' => 'Controllers\Ressources\iOS'], function () {
-
     Route::get('/devices', 'DevicesController@index');
     Route::get('/device/register', 'DevicesController@register');
 
@@ -15,8 +14,7 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Controllers\Ressources\iOS'], f
     Route::post('/search', 'SearchController@search');
     Route::post('/search/phrase', 'SearchController@log');
 
-    Route::group(['namespace' => 'Places',], function () {
-
+    Route::group(['namespace' => 'Places'], function () {
         Route::group(['prefix' => '/places'], function () {
             Route::get('/', 'PlacesController@index');
             Route::post('/show', 'PlacesController@show');
@@ -30,7 +28,6 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Controllers\Ressources\iOS'], f
         Route::group(['prefix' => '/events'], function () {
             Route::get('/', 'EventsController@index');
             Route::post('/show', 'EventsController@show');
-
         });
 
         Route::group(['prefix' => '/favourites'], function () {
@@ -38,8 +35,5 @@ Route::group(['prefix' => '/v1', 'namespace' => 'Controllers\Ressources\iOS'], f
             Route::post('/add', 'FavouritesController@add');
             Route::post('/remove', 'FavouritesController@remove');
         });
-
     });
 });
-
-
