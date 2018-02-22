@@ -81,7 +81,6 @@ class EventsController extends Controller
         }
 
         return back();
-
     }
 
     public function publish(Event $event)
@@ -123,7 +122,6 @@ class EventsController extends Controller
         ]);
 
         $new_uploadcare_object->store();
-
     }
 
     public function deleteUploadcareObject(Event $event, Uploadcare $uploadcare)

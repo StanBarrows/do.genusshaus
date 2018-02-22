@@ -16,7 +16,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RegionsTableSeeder::class);
 
-
         /*
             $this->call(PlacesTableSeeder::class);
 

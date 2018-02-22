@@ -3,8 +3,6 @@
 namespace Genusshaus\Http\Controllers\Places\Settings;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Places\Notifications\ReviewRequestNotification;
-use Genusshaus\Domain\Users\Models\User;
 
 class SettingsController extends Controller
 {
@@ -31,5 +29,4 @@ class SettingsController extends Controller
 
         return back();
     }
-
 }
