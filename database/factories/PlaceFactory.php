@@ -28,8 +28,8 @@ $factory->define(Place::class, function (Faker $faker) {
         'location_postcode'   => $faker->postcode,
         'location_city'       => $faker->city,
 
-        'location_latitude'  => $faker->randomFloat(4,47.5199,47.5712),
-        'location_longitude' => $faker->randomFloat(4,7.5480,7.6944),
+        'location_latitude'  => $faker->randomFloat(4, 47.5199, 47.5712),
+        'location_longitude' => $faker->randomFloat(4, 7.5480, 7.6944),
 
         'contact_name'       => $faker->name,
         'contact_avatar'     => $faker->imageUrl(100, 100),
