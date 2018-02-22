@@ -16,7 +16,7 @@ class OpeningHoursIndexRessource extends Resource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+            'id'      => $this->id,
             'weekday' => $this->weekday,
             'open'    => substr($this->open, 0, -3),
             'close'   => substr($this->close, 0, -3),
