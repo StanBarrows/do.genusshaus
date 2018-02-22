@@ -58,8 +58,10 @@ class MediasController extends Controller
         return false;
     }
 
-    public function update(StoreMediasRequest $request, Place $place)
+    public function update(StoreMediasRequest $request)
     {
+        $place = current_place();
+
         if ($place->uploadcares->count()) {
             if ($this->validateIfUploadcareObjectExists($request)) {
                 return back();
