@@ -17,7 +17,7 @@ class TagsIndexRessource extends Resource
     {
         return [
             'id'   => $this->id,
-            'tag' => $this->name,
+            'tag'  => $this->name,
         ];
     }
 }
