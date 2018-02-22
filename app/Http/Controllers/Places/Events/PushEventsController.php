@@ -30,7 +30,7 @@ class PushEventsController extends Controller
                         'sound' => 'default',
                     ],
 
-                'targets' => [json_decode($event->place->favourites->pluck('push_token'))],
+                'targets' => [$event->place->favourites->pluck('push_token')->first()],
             ];
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
