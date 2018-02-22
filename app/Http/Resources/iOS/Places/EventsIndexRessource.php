@@ -18,7 +18,7 @@ class EventsIndexRessource extends Resource
         return [
             'uuid'          => $this->uuid,
             'name'          => $this->name,
-            'description' => $this->description,
+            'description'   => $this->description,
 
             'location' => [
                 'place_uuid'    => $this->place->uuid,
@@ -28,8 +28,6 @@ class EventsIndexRessource extends Resource
                 'latitude'      => $this->place->location_latitude,
                 'longitude'     => $this->place->location_longitude,
             ],
-
-
 
             'from'          => ($this->start)->timestamp,
             'from_readable' => optional($this->start)->diffForHumans(),
