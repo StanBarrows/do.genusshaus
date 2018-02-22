@@ -13,13 +13,11 @@ class DevicesController extends Controller
         $devices = Device::all();
 
         if ($devices->count()) {
-
             return DevicesIndexRessource::collection($devices);
         }
 
         return response()->json([
         ], 204);
-
     }
 
     public function register()

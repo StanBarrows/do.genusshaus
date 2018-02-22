@@ -16,25 +16,20 @@ class PlacesController extends Controller
 
     public function index()
     {
-
         $places = Place::isPublished()->get();
 
         if ($places->count()) {
-
             return PlacesIndexRessource::collection($places);
         }
 
         return response()->json([
         ], 204);
-
-
     }
 
     public function show(ShowPlacesRequest $request)
     {
         $place = Place::where('uuid', '=', $request->uuid)->first();
 
-       return new PlacesShowRessource($place);
-
+        return new PlacesShowRessource($place);
     }
 }
