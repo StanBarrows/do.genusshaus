@@ -16,7 +16,7 @@ class PlacesSearchRessource extends Resource
     public function toArray($request)
     {
         return [
-            'uuid' => $this->uuid
+            'uuid' => $this->uuid,
         ];
     }
 }

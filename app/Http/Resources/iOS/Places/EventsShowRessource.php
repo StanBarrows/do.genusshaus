@@ -23,7 +23,7 @@ class EventsShowRessource extends Resource
             'location' => [
                 'place_uuid'    => $this->place->uuid,
                 'place_name'    => $this->place->name,
-                'street'      => $this->place->location_street,
+                'street'        => $this->place->location_street,
                 'postcode'      => $this->place->location_postcode,
                 'place'         => $this->place->location_city,
                 'latitude'      => $this->place->location_latitude,
@@ -33,7 +33,7 @@ class EventsShowRessource extends Resource
             'from'          => ($this->start)->timestamp,
             'from_readable' => optional($this->start)->diffForHumans(),
             'image'         => $this->getPreviewImage(),
-            'image_uuid' => $this->getPreviewImageUuid(),
+            'image_uuid'    => $this->getPreviewImageUuid(),
 
             'tags' => TagsIndexRessource::collection($this->tags),
 
