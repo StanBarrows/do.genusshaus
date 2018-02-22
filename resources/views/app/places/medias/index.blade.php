@@ -20,7 +20,7 @@
             <div class="card-body text-center">
 
 
-                <form class="form-horizontal" method="POST" action="{{ route('places.medias.update', $place) }}">
+                <form class="form-horizontal" method="POST" action="{{ route('places.medias.update') }}">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
 
