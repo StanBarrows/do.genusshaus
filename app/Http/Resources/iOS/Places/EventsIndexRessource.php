@@ -19,7 +19,7 @@ class EventsIndexRessource extends Resource
             'uuid'          => $this->uuid,
             'name'          => $this->name,
             'description' => $this->description,
-            
+
             'location' => [
                 'place_uuid'    => $this->place->uuid,
                 'place_name'    => $this->place->name,

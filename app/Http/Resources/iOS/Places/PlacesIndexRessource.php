@@ -27,7 +27,7 @@ class PlacesIndexRessource extends Resource
             'description' => $this->description,
 
             'geo_latitude'  => $this->location_latitude,
-            'geo_longitude' => $this->location_latitude,
+            'geo_longitude' => $this->location_longitude,
 
             'image' => $this->getPreviewImage(),
 
