@@ -12,7 +12,11 @@ class DevicesController extends Controller
     {
         $devices = Device::all();
 
-        return DevicesIndexRessource::collection($devices);
+        if ($devices->count()) {
+
+            return DevicesIndexRessource::collection($devices);
+        }
+
     }
 
     public function register()

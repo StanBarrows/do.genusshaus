@@ -18,7 +18,14 @@ class EventsController extends Controller
     {
         $events = Event::all();
 
-        return EventsIndexRessource::collection($events);
+        if ($events->count()) {
+
+            return EventsIndexRessource::collection($events);
+        }
+
+        return response()->json([
+        ], 204);
+
     }
 
     public function show(ShowEventsRequest $request)

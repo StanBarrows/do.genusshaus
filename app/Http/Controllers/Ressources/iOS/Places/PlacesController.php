@@ -19,7 +19,16 @@ class PlacesController extends Controller
 
         $places = Place::all();
 
-         return PlacesIndexRessource::collection($places);
+
+        if ($places->count()) {
+
+            return PlacesIndexRessource::collection($places);
+        }
+
+        return response()->json([
+        ], 204);
+
+
     }
 
     public function show(ShowPlacesRequest $request)

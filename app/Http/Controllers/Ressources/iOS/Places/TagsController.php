@@ -16,6 +16,10 @@ class TagsController extends Controller
     {
         $tags = Tag::all();
 
-        return TagsIndexRessource::collection($tags);
+        if ($tags->count()) {
+
+            return TagsIndexRessource::collection($tags);
+        }
+
     }
 }

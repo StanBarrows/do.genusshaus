@@ -18,7 +18,14 @@ class PostsController extends Controller
     {
         $posts = Post::all();
 
-        return PostsIndexRessource::collection($posts);
+        if ($posts->count()) {
+
+            return PostsIndexRessource::collection($posts);
+        }
+
+        return response()->json([
+        ], 204);
+
     }
 
     public function show(ShowPostsRequest $request)
