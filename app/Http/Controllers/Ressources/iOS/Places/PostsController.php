@@ -16,7 +16,7 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::isPublished()->get();
 
         if ($posts->count()) {
 

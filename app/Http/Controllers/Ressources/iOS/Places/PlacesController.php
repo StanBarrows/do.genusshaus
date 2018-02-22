@@ -17,7 +17,7 @@ class PlacesController extends Controller
     public function index()
     {
 
-        $places = Place::all();
+        $places = Place::isPublished()->get();
 
         if ($places->count()) {
 

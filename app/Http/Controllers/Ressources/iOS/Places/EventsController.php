@@ -16,7 +16,7 @@ class EventsController extends Controller
 
     public function index()
     {
-        $events = Event::all();
+        $events = Event::isPublished()->get();
 
         if ($events->count()) {
 
