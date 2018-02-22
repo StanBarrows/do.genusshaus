@@ -23,8 +23,8 @@ class PostsController extends Controller
 
     public function show(ShowPostsRequest $request)
     {
-        $post = Post::where('uuid', '=', $request->uuid)->get();
+        $post = Post::where('uuid', '=', $request->uuid)->first();
 
-        return PostsShowRessource::collection($post);
+        return new PostsShowRessource($post);
     }
 }

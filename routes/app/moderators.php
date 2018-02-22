@@ -22,7 +22,7 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
                 Route::patch('/', 'LocationController@update')->name('update');
             });
 
-            Route::group(['prefix' => '/users', 'namespace' => 'Users', 'as' => 'users.'], function () {
+            Route::group(['prefix' => '/users', 'namespace' => 'NewPlacesShowRessource', 'as' => 'users.'], function () {
                 Route::get('/', 'UsersController@index')->name('index');
                 Route::get('/invite', 'UsersController@invite')->name('invite');
                 Route::post('/invite/store', 'UsersController@store')->name('invite.store');
