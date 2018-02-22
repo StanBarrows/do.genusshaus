@@ -19,10 +19,8 @@ class BeaconsController extends Controller
         $beacons = Beacon::all();
 
         if ($beacons->count()) {
-
             return BeaconsIndexRessource::collection($beacons);
         }
-
     }
 
     public function show(GetBeaconsRequest $request)
