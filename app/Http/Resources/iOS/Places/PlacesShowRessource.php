@@ -30,18 +30,15 @@ class PlacesShowRessource extends Resource
             'geo_latitude'  => $this->location_latitude,
             'geo_longitude' => $this->location_longitude,
 
-
-
             'created_at'               => $this->created_at->timestamp,
             'created_at_diffForHUmans' => $this->created_at->diffForHumans(),
 
-            'image' => $this->getPreviewImage(),
+            'image'      => $this->getPreviewImage(),
             'image_uuid' => $this->getPreviewImageUuid(),
-
 
             'icon' => $this->getIconImage(),
 
-            'tags' => TagsIndexRessource::collection($this->tags),
+            'tags'    => TagsIndexRessource::collection($this->tags),
             'contact' => [
 
                 'name'      => $this->contact_name,
