@@ -2,7 +2,6 @@
 
 namespace Genusshaus\Http\Controllers\Places\Medias;
 
-use Carbon\Carbon;
 use Genusshaus\App\Controllers\Controller;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Http\Requests\Places\Medias\StoreMediasRequest;
@@ -44,7 +43,7 @@ class MediasController extends Controller
         ]);
 
         $new_uploadcare_object->store();
-        }
+    }
 
     public function validateIfUploadcareObjectExists(Request $request)
     {

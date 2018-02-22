@@ -60,7 +60,6 @@ class UsersController extends Controller
             $user->places()->attach($place);
 
             $user->notify(new InviteUsersNotification($user, $place));
-
         } else {
             $user->places()->detach($place);
             $user->places()->attach($place);
