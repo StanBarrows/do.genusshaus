@@ -18,13 +18,13 @@ class EventsIndexRessource extends Resource
         return [
             'uuid'          => $this->uuid,
             'name'          => $this->name,
-            'description' => $this->description,
+            'description'   => $this->description,
             'place_uuid'    => $this->place->uuid,
-            'place'    => $this->place->name,
+            'place'         => $this->place->name,
             'from'          => ($this->start)->timestamp,
             'from_readable' => optional($this->start)->diffForHumans(),
             'image'         => $this->getPreviewImage(),
-            'image_uuid' => $this->getPreviewImageUuid(),
+            'image_uuid'    => $this->getPreviewImageUuid(),
 
         ];
     }
