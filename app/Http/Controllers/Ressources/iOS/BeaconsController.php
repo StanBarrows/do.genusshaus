@@ -19,13 +19,11 @@ class BeaconsController extends Controller
         $beacons = Beacon::all();
 
         if ($beacons->count()) {
-
             return BeaconsIndexRessource::collection($beacons);
         }
 
         return response()->json([
         ], 204);
-
     }
 
     public function show(GetBeaconsRequest $request)
