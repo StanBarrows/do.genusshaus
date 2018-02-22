@@ -60,7 +60,7 @@ class PlacesShowRessource extends Resource
 
             'articles' => PostsIndexRessource::collection($articles),
 
-            'events'   => EventsIndexRessource::collection($events),
+            'events'   => EventsShowRessource::collection($events),
 
         ];
     }
