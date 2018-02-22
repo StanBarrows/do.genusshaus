@@ -17,6 +17,7 @@ class PlacesShowRessource extends Resource
 
             'type'       => $this->type,
             'icon_color' => $this->getIconColor(),
+            'icon_image' => $this->getIconImage(),
 
             'uuid' => $this->uuid,
 
@@ -45,7 +46,10 @@ class PlacesShowRessource extends Resource
             'contact' => [
 
                 'name'      => $this->contact_name,
-                'avatar'    => $this->contact_avatar,
+
+                'avatar_uuid'    => md5($this->contact_avatar),
+                'avatar'    => 'https://www.gravatar.com/avatar/'. $this->uuid .'?s=250&d=mm',
+
                 'web'       => $this->contact_web,
                 'email'     => $this->contact_email,
                 'phone'     => $this->contact_phone,

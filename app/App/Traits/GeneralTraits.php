@@ -34,7 +34,6 @@ trait GeneralTraits
         return 'https://ucarecdn.com/57e60dd2-dffd-4913-b25e-1f12d3dc9bb3/-/crop/502x335/26,0/-/preview/';
     }
 
-
     public function getPreviewImageUuid()
     {
         if ($this->uploadcares()->count()) {

@@ -28,7 +28,5 @@ class PlacesController extends Controller
 
        return new PlacesShowRessource($place);
 
-
-
     }
 }
