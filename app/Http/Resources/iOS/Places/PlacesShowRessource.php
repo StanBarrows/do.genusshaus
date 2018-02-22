@@ -16,7 +16,6 @@ class PlacesShowRessource extends Resource
         return [
 
             'type'       => $this->type,
-            'icon_image' => $this->getIconImage(),
             'icon_color' => $this->getIconColor(),
 
             'uuid' => $this->uuid,
@@ -31,6 +30,16 @@ class PlacesShowRessource extends Resource
             'geo_latitude'  => $this->location_latitude,
             'geo_longitude' => $this->location_latitude,
 
+
+
+            'created_at'               => $this->created_at->timestamp,
+            'created_at_diffForHUmans' => $this->created_at->diffForHumans(),
+
+            'image' => $this->getPreviewImage(),
+
+            'icon' => $this->getIconImage(),
+
+            'tags' => TagsIndexRessource::collection($this->tags),
             'contact' => [
 
                 'name'      => $this->contact_name,
@@ -44,16 +53,10 @@ class PlacesShowRessource extends Resource
 
             ],
 
-            'image' => $this->getPreviewImage(),
-
             'openings' => OpeningHoursIndexRessource::collection($this->openingHours),
 
-            'created_at'               => $this->created_at->timestamp,
-            'created_at_diffForHUmans' => $this->created_at->diffForHumans(),
-
-            'tags' => TagsIndexRessource::collection($this->tags),
-
             'articles' => PostsIndexRessource::collection($articles),
+
             'events'   => EventsIndexRessource::collection($events),
 
         ];
