@@ -24,7 +24,7 @@ class GetBeaconsRequest extends FormRequest
     public function rules()
     {
         return [
-            'device_uuid' => 'required|exists:devices,uuid',
+            'device_uuid' => 'nullable|exists:devices,uuid',
             'major'       => 'required|exists:beacons,major',
             'minor'       => 'required|exists:beacons,minor',
         ];
