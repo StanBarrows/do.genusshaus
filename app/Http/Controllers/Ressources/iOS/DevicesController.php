@@ -17,6 +17,9 @@ class DevicesController extends Controller
             return DevicesIndexRessource::collection($devices);
         }
 
+        return response()->json([
+        ], 204);
+
     }
 
     public function register()

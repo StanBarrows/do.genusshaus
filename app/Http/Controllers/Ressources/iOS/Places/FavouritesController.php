@@ -18,12 +18,14 @@ class FavouritesController extends Controller
 
         $places = $device->favourites;
 
-        if (!$places->count()) {
-            return response()->json([
-            ], 204);
+        if ($places->count()) {
+
+            return PlacesIndexRessource::collection($places);
         }
 
-        return PlacesIndexRessource::collection($places);
+        return response()->json([
+        ], 204);
+
     }
 
     public function add(AddFavouritesRequest $request)

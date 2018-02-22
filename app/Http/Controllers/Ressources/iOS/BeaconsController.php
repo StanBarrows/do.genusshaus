@@ -23,6 +23,9 @@ class BeaconsController extends Controller
             return BeaconsIndexRessource::collection($beacons);
         }
 
+        return response()->json([
+        ], 204);
+
     }
 
     public function show(GetBeaconsRequest $request)

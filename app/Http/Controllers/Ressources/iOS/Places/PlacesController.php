@@ -19,7 +19,6 @@ class PlacesController extends Controller
 
         $places = Place::all();
 
-
         if ($places->count()) {
 
             return PlacesIndexRessource::collection($places);
