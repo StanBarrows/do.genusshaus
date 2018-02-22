@@ -17,7 +17,6 @@ class SearchController extends Controller
             ->get();
 
         if ($places->count()) {
-
             return PlacesSearchRessource::collection($places);
         }
 
