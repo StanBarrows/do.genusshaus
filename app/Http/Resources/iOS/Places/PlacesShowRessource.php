@@ -28,7 +28,7 @@ class PlacesShowRessource extends Resource
             'place'    => $this->location_city,
 
             'geo_latitude'  => $this->location_latitude,
-            'geo_longitude' => $this->location_latitude,
+            'geo_longitude' => $this->location_longitude,
 
 
 
