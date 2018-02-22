@@ -9,6 +9,7 @@ class PushEventsController extends Controller
 {
     public function send(Event $event)
     {
+
         require_once 'class.fcm.php';
 
         $place = $event->place;
@@ -30,7 +31,11 @@ class PushEventsController extends Controller
                         'sound' => 'default',
                     ],
 
-                'targets' => [$event->place->favourites->pluck('push_token')->latest()],
+                'targets' => [
+
+                    $event->place->favourites->pluck('push_token')->first()
+
+                ],
             ];
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
