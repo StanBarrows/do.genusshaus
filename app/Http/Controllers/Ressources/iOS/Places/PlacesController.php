@@ -16,6 +16,7 @@ class PlacesController extends Controller
 
     public function index()
     {
+
         $places = Place::all();
 
          return PlacesIndexRessource::collection($places);

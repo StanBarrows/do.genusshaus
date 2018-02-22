@@ -2,6 +2,8 @@
 
 namespace Genusshaus\App\Traits;
 
+use Carbon\Carbon;
+
 trait GeneralTraits
 {
     public function scopeIsActive($query)
@@ -29,7 +31,7 @@ trait GeneralTraits
         if ($this->uploadcares()->count()) {
             return $this->uploadcares->first()->url;
         }
-        return null;
+        return 'https://ucarecdn.com/57e60dd2-dffd-4913-b25e-1f12d3dc9bb3/-/crop/502x335/26,0/-/preview/';
     }
 
 
@@ -39,6 +41,6 @@ trait GeneralTraits
             return $this->uploadcares->first()->uuid;
         }
 
-        return null;
+        return 'image-' . Carbon::now()->timestamp;
     }
 }
