@@ -29,16 +29,12 @@ trait GeneralTraits
         if ($this->uploadcares()->count()) {
             return $this->uploadcares->first()->url;
         }
-        return null;
     }
-
 
     public function getPreviewImageUuid()
     {
         if ($this->uploadcares()->count()) {
             return $this->uploadcares->first()->uuid;
         }
-
-        return null;
     }
 }

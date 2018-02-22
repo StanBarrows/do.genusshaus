@@ -18,16 +18,13 @@ class PlacesController extends Controller
     {
         $places = Place::all();
 
-         return PlacesIndexRessource::collection($places);
+        return PlacesIndexRessource::collection($places);
     }
 
     public function show(ShowPlacesRequest $request)
     {
         $place = Place::where('uuid', '=', $request->uuid)->first();
 
-       return new PlacesShowRessource($place);
-
-
-
+        return new PlacesShowRessource($place);
     }
 }
