@@ -34,18 +34,18 @@ class PlacesShowRessource extends Resource
             'created_at'               => $this->created_at->timestamp,
             'created_at_diffForHUmans' => $this->created_at->diffForHumans(),
 
-            'image' => $this->getPreviewImage(),
+            'image'      => $this->getPreviewImage(),
             'image_uuid' => $this->getPreviewImageUuid(),
 
             'icon' => $this->getIconImage(),
 
-            'tags' => TagsIndexRessource::collection($this->tags),
+            'tags'    => TagsIndexRessource::collection($this->tags),
             'contact' => [
 
                 'name'      => $this->contact_name,
 
                 'avatar_uuid'    => md5($this->contact_avatar),
-                'avatar'    => 'https://www.gravatar.com/avatar/'. $this->uuid .'?s=250&d=mm',
+                'avatar'         => 'https://www.gravatar.com/avatar/'.$this->uuid.'?s=250&d=mm',
 
                 'web'       => $this->contact_web,
                 'email'     => $this->contact_email,
