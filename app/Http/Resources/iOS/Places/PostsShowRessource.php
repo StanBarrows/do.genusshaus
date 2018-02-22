@@ -21,7 +21,7 @@ class PostsShowRessource extends Resource
             'teaser'                 => $this->teaser,
             'body'                   => $this->body,
             'image'                  => $this->getPreviewImage(),
-            'image_uuid' => $this->getPreviewImageUuid(),
+            'image_uuid'             => $this->getPreviewImageUuid(),
             'author'                 => $this->author,
             'source'                 => $this->src,
             'created_at'             => $this->created_at->timestamp,
