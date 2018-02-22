@@ -36,6 +36,8 @@ class PlacesShowRessource extends Resource
             'created_at_diffForHUmans' => $this->created_at->diffForHumans(),
 
             'image' => $this->getPreviewImage(),
+            'image_uuid' => $this->getPreviewImageUuid(),
+
 
             'icon' => $this->getIconImage(),
 

@@ -32,6 +32,7 @@ class EventsShowRessource extends Resource
             'from'          => ($this->start)->timestamp,
             'from_readable' => optional($this->start)->diffForHumans(),
             'image'         => $this->getPreviewImage(),
+            'image_uuid' => $this->getPreviewImageUuid(),
 
             'tags' => TagsIndexRessource::collection($this->tags),
 
