@@ -31,4 +31,12 @@ trait GeneralTraits
         }
         return 'https://ucarecdn.com/f56e1eae-1bb6-4e4e-beba-0a6b4695034b/-/crop/502x335/26,0/-/preview/';
     }
+
+    public function getPreviewImageUuid()
+    {
+        if ($this->uploadcares()->count()) {
+            return $this->uploadcares->first()->uuid;
+        }
+        return 'https://ucarecdn.com/f56e1eae-1bb6-4e4e-beba-0a6b4695034b/-/crop/502x335/26,0/-/preview/';
+    }
 }
