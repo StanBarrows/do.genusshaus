@@ -35,6 +35,8 @@ class PushEventsController extends Controller
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
 
+        dd($response);
+
         return back();
     }
 }
