@@ -3,15 +3,21 @@
 namespace Tests\Browser\Tests\Supporters;
 
 use Genusshaus\Domain\Users\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\DuskTestCase;
 
 class SupportersDashboardTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
+
+    use DatabaseMigrations;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
+
+    }
 
     /** @test */
     public function access_supporters_dashboard_index()

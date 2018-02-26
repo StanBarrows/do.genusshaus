@@ -3,15 +3,20 @@
 namespace Tests\Browser\Tests\Users;
 
 use Genusshaus\Domain\Users\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\DuskTestCase;
 
 class UsersDashboardTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
+    use DatabaseMigrations;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
+
+    }
 
     /** @test */
     public function access_users_dashboard_index()
