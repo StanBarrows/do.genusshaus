@@ -14,16 +14,21 @@ php:
 
 services:
   - redis-server
+  - mysql
 
 cache:
   directories:
     - vendor
 
+before_script:
+  - mysql -u root -e 'CREATE DATABASE do.genusshaus.travis;'
+  - mysql -u root -e "CREATE USER 'homestead'@'localhost' IDENTIFIED BY 'secret';"
+  - mysql -u root -e "GRANT ALL ON do.genusshaus.travis.* TO 'makler'@'localhost';
+
 install:
    - cp .env.travis .env
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
    - php artisan key:generate
-
 
 after_script:
   - vendor/bin/test-reporter

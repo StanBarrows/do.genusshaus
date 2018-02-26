@@ -14,22 +14,21 @@
     </logging>
 
     <testsuites>
-
         <testsuite name="Unit">
-                <directory suffix="Test.php">./tests/Pages</directory>
-            </testsuite>
-
-              <testsuite name="Unit">
                 <directory suffix="Test.php">./tests/Integration</directory>
-            </testsuite>-->
+        </testsuite>-->
 
-         <testsuite name="Feature">
+        <testsuite name="Feature">
             <directory suffix="Test.php">./tests/Feature</directory>
         </testsuite>
 
         <testsuite name="Unit">
              <directory suffix="Test.php">./tests/Unit</directory>
          </testsuite>
+
+        <testsuite name="Browser">
+            <directory suffix="Test.php">./tests/Browser</directory>
+        </testsuite>
 
     </testsuites>
     <filter>
