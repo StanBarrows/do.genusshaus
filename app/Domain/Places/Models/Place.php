@@ -4,6 +4,7 @@ namespace Genusshaus\Domain\Places\Models;
 
 use Genusshaus\App\Traits\GeneralTraits;
 use Genusshaus\Domain\Moderators\Models\Beacon;
+use Genusshaus\Domain\Users\Models\Device;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -83,6 +84,11 @@ class Place extends Model
     {
         return $this->hasMany(OpeningHour::class)->orderBy('weekday', 'asc');
     }
+
+    public function favourites()
+     {
+         return $this->belongsToMany(Device::class, 'favourites');
+     }
 
     public function getIconImage()
     {
