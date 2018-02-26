@@ -1,3 +1,7 @@
+sudo: required
+
+dist: trusty
+
 env:
   global:
     - CC_TEST_REPORTER_ID=d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
@@ -12,6 +16,10 @@ language: php
 php:
   - 7.2
 
+
+addons:
+   chrome: stable
+
 services:
   - redis-server
 
@@ -24,6 +32,12 @@ install:
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
    - php artisan key:generate
 
+before_script:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+  - php artisan serve &
+
+script:
+   - php artisan dusk
 
 after_script:
   - vendor/bin/test-reporter
