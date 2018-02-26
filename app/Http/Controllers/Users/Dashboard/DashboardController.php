@@ -24,11 +24,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $place = Place::first();
+       /* $place = Place::first();
 
         $token_array = $place->favourites->pluck('push_token')->toArray();
 
-        dd($token_array);
+        dd($token_array);*/
 
         $places = auth()->user()->places()->isActive()->get();
 
