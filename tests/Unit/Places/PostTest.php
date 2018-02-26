@@ -12,12 +12,16 @@ class PostTest extends TestCase
     use DatabaseMigrations;
 
     protected $place;
-
     public function setUp()
     {
         parent::setUp();
         $this->disableExceptionHandling();
+
+        $this->place = setPlacesEnvironment();
+
+
     }
+
 
     /** @test */
     public function create_a_post()

@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Ressources\Models\Event;
 use Illuminate\Support\Str;
+use Genusshaus\Domain\Places\Models\Event;
 
 /*
 |--------------------------------------------------------------------------

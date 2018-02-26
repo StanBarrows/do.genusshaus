@@ -32,8 +32,6 @@ $factory->define(Place::class, function (Faker $faker) {
         'location_longitude' => $faker->randomFloat(4, 7.5480, 7.6944),
 
         'contact_name'       => $faker->name,
-        'contact_avatar'     => $faker->imageUrl(100, 100),
-
         'contact_email'       => $faker->email,
         'contact_web'         => $faker->url,
         'contact_phone'       => $faker->phoneNumber,
@@ -45,6 +43,5 @@ $factory->define(Place::class, function (Faker $faker) {
         'image'                  => false,
         'active'                 => false,
         'published'              => false,
-        'reviewed'               => true,
     ];
 });

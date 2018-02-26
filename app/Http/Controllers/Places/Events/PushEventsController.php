@@ -3,7 +3,7 @@
 namespace Genusshaus\Http\Controllers\Places\Events;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Ressources\Models\Event;
+use Genusshaus\Domain\Places\Models\Event;
 
 class PushEventsController extends Controller
 {
@@ -39,8 +39,6 @@ class PushEventsController extends Controller
             ];
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
-
-        dd($response);
 
         return back();
     }

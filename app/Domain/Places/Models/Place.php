@@ -57,7 +57,7 @@ class Place extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class,'place_user');
     }
 
     public function region()
@@ -83,11 +83,6 @@ class Place extends Model
     public function openingHours()
     {
         return $this->hasMany(OpeningHour::class)->orderBy('weekday', 'asc');
-    }
-
-    public function favourites()
-    {
-        return $this->belongsToMany(Device::class, 'favourites');
     }
 
     public function getIconImage()

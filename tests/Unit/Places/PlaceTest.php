@@ -4,6 +4,7 @@ namespace Tests\Unit\Places;
 
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Places\Models\Region;
+use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -17,7 +18,10 @@ class PlaceTest extends TestCase
     {
         parent::setUp();
         $this->disableExceptionHandling();
-        $this->place = $place = create(Place::class);
+        $this->withoutMiddleware();
+
+        $this->place = setPlacesEnvironment();
+
     }
 
     /** @test */
@@ -30,6 +34,12 @@ class PlaceTest extends TestCase
     public function a_place_has_many_user()
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->users);
+
+      /*  $user = create(User::class);
+        $user->places()->attach($this->place);
+
+        $this->assertInstanceOf(User::class, $this->place->users->first());*/
+
     }
 
     /** @test */
@@ -39,21 +49,15 @@ class PlaceTest extends TestCase
     }
 
     /** @test */
-    public function a_place_has_one_contact()
-    {
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne', $this->place->contact());
-    }
-
-    /** @test */
-    public function a_place_has_one_location()
-    {
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Relations\HasOne', $this->place->location());
-    }
-
-    /** @test */
     public function a_place_has_many_beacons()
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->beacons);
+    }
+
+    /** @test */
+    public function a_place_has_many_opening_hours()
+    {
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->openingHours);
     }
 
     /** @test */

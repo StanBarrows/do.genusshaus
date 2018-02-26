@@ -11,24 +11,28 @@ class EventTest extends TestCase
 {
     use DatabaseMigrations;
 
-    protected $event;
+    protected $place;
 
     public function setUp()
     {
         parent::setUp();
         $this->disableExceptionHandling();
-        $this->event = $event = create(Event::class);
+
+        $this->place = setPlacesEnvironment();
+
     }
 
     /** @test */
     public function create_a_event()
     {
-        $this->assertInstanceOf(Event::class, $this->event);
+        $event = create(Event::class);
+        $this->assertInstanceOf(Event::class, $event);
     }
 
     /** @test */
     public function a_event_belongs_to_one_place()
     {
-        $this->assertInstanceOf(Place::class, $this->event->place);
+        $event = create(Event::class);
+        $this->assertInstanceOf(Place::class, $event->place);
     }
 }

@@ -19,7 +19,7 @@ class InformationController extends Controller
         return view('app.places.information.index', compact('place'));
     }
 
-    public function update(UpdateInformationRequest $request)
+    public function update_information_fails_with_no_attributes(UpdateInformationRequest $request)
     {
         $place = current_place();
 

@@ -5,7 +5,6 @@ namespace Genusshaus\App\Providers;
 use Genusshaus\App\Manager\Places\Manager;
 use Genusshaus\App\Observers\Places\PlacesObserver;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\Resource;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
 
         });*/
 
-        Resource::withoutWrapping();
 
         $this->app->singleton(Manager::class, function () {
             return new Manager();

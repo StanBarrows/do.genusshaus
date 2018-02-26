@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 use Genusshaus\Domain\Places\Models\Place;
-use Genusshaus\Domain\Ressources\Models\Post;
+use Genusshaus\Domain\Places\Models\Post;
 use Illuminate\Support\Str;
 
 /*
@@ -15,6 +15,8 @@ use Illuminate\Support\Str;
 | model instances for testing / seeding your application's database.
 |
 */
+
+
 
 $factory->define(Post::class, function (Faker $faker) {
     return [
