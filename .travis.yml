@@ -21,7 +21,7 @@ cache:
     - vendor
 
 before_script:
-  - mysql -e 'create database do.genusshaus.travis;'
+  - mysql -e 'create database genusshaus;'
 
 install:
    - cp .env.travis .env
