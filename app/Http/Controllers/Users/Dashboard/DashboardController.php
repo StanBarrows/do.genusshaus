@@ -24,6 +24,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $place = Place::first();
+
+        $token_array = $place->favourites->pluck('push_token')->toArray();
+
+        dd($token_array);
+
         $places = auth()->user()->places()->isActive()->get();
 
         return view('app.users.dashboard.index', compact('places'));

@@ -32,7 +32,7 @@ class PushEventsController extends Controller
 
                 'targets' =>
 
-                    [json_encode($event->place->favourites->pluck('push_token'))]
+                    $place->favourites->pluck('push_token')->toArray()
                 ,
             ];
 
