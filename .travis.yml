@@ -21,9 +21,7 @@ cache:
     - vendor
 
 before_script:
-  - mysql -u root -e 'CREATE DATABASE do.genusshaus.travis;'
-  - mysql -u root -e "CREATE USER 'homestead'@'localhost' IDENTIFIED BY 'secret';"
-  - mysql -u root -e "GRANT ALL ON do.genusshaus.travis.* TO 'makler'@'localhost';
+  - mysql -e 'create database do.genusshaus.travis;'
 
 install:
    - cp .env.travis .env
