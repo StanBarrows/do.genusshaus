@@ -32,13 +32,15 @@ class PushEventsController extends Controller
 
                 'targets' => [
 
-                    $event->place->favourites->pluck('push_token')->first(),
+                    $event->place->favourites->pluck('push_token'),
 
                 ],
             ];
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
 
+        dd($response);
+        
         return back();
     }
 }
