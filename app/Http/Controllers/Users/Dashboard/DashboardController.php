@@ -23,6 +23,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
+
+        $arr = array ( 0 => "lorem", 1 => "ipsum", 2 => "dolor");
+
+        $str = implode (', ', $arr);
+
+        dd($str);
+
+
         $places = auth()->user()->places()->isActive()->get();
 
         return view('app.users.dashboard.index', compact('places'));

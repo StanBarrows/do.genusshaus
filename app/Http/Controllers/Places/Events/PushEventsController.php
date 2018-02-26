@@ -31,8 +31,8 @@ class PushEventsController extends Controller
                     ],
 
                 'targets' => [
-
-                    $event->place->favourites->pluck('push_token'),
+                    'eFgosZOuHC8:APA91bEUzPcb8VwZl0Vi2Bk5dsIwkTs96hb9b1HkkvKwdcRrS3TQIo04Rc2Pt0-1jT3783gAslnQtBV0oS6yZbyICl4QdZrlgnQr5M9vUgzBW-Klwr9ymYZhoH3baW5yDC3xex_hOPLp',
+                    'f3EyE3tirGk:APA91bFbwz3kilwJbdxBupjOK3HWCmn_mplSFxT8osgBvYUt3Ls80pzHTo66DQEXRUwCBdFMgTIsAhtdxVUb-ztEDVomYOo6c8hzZLvT6v6FfGyURIz0lFzAtI3B71L1_8ZY8lvBllFi'
 
                 ],
             ];
@@ -40,7 +40,7 @@ class PushEventsController extends Controller
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
 
         dd($response);
-        
+
         return back();
     }
 }
