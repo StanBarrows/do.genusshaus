@@ -5,7 +5,6 @@ namespace Genusshaus\App\Providers;
 use Genusshaus\App\Manager\Places\Manager;
 use Genusshaus\App\Observers\Places\PlacesObserver;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
 
@@ -18,9 +17,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-
-
         if ($this->app->environment('local', 'testing')) {
             $this->app->register(DuskServiceProvider::class);
             $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
