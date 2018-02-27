@@ -5,7 +5,7 @@
 
     <div class="card">
 
-        <h5 class="card-header">Invite a user
+        <h5 class="card-header">Invite new user
 
         </h5>
 
@@ -13,7 +13,7 @@
 
 
 
-            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.users.invite.store', $place) }}">
+            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.users.invite.new.store', $place) }}">
                 {{ csrf_field() }}
 
                 <div class="form-group row">
@@ -63,7 +63,7 @@
                 <div class="form-group row">
 
                     <div class="col-lg-12">
-                        <button class="btn btn-block btn-success" type="submit">Invite a user</button>
+                        <button class="btn btn-block btn-success" type="submit">Invite new user</button>
 
                     </div>
                 </div>
@@ -76,7 +76,54 @@
 
     </div>
 
+    @if(($users->count()))
+    <div class="card mt-4">
 
+        <h5 class="card-header">Invite existing user
+
+        </h5>
+
+        <div class="card-body">
+
+            <form class="form-horizontal" method="POST" action="{{ route('moderators.places.users.invite.existing.store', $place) }}">
+                {{ csrf_field() }}
+
+                <div class="form-group row">
+
+                    <div class="col-lg-12">
+
+                        <select title="user" id="user_id" name="user_id" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" required>
+
+                            <option value="" selected disabled>Please select a user</option>
+                            @foreach($users as $user)
+                                <option>{{ $user->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @if ($errors->has('user_id'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('user_id') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+
+                    <div class="col-lg-12">
+                        <button class="btn btn-block btn-success" type="submit">Invite existing user</button>
+
+                    </div>
+                </div>
+
+
+            </form>
+
+        </div>
+
+
+    </div>
+    @endif
 
     <div class="card mt-4">
 
@@ -86,33 +133,40 @@
 
         <div class="card-body">
 
-
-
-            @if(($users->count()))
+            @if(($inactives->count()))
                 <table class="table">
                     <thead>
                     <tr>
                         <th>E-Mail</th>
                         <th>Send invitation at</th>
-                        {{--
+
                                                     <th></th>
-                        --}}
+
 
                     </tr>
                     </thead>
                     <tbody>
 
 
-                    @foreach($users as $user)
+                    @foreach($inactives as $user)
 
                         <tr>
 
                             <td>{{ $user->email }}</td>
 
                             <td>{{ $user->created_at->diffForHumans() }}</td>
-                            {{--
-                                                            <td><a href="#" class="btn btn-sm btn-primary">Resend invitation</a></td>
-                            --}}
+
+                            <td>
+
+                                <form class="form-inline text-left" method="POST"
+                                      action="{{ route('moderators.places.users.resend',[$place, $user]) }}">
+                                    {{ csrf_field() }}
+                                    {{ method_field('PATCH') }}
+
+                                    <button  class="btn btn-sm btn-primary" type="submit">Resend</button>
+                                </form>
+
+                            </td>
 
                         </tr>
 

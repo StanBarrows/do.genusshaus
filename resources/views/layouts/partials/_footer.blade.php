@@ -1,7 +1,7 @@
 <footer class="footer mt-5">
     <div class="container">
         <span class="text-muted">&copy; {{ \Carbon\Carbon::now()->year }} - <a target="_blank"
-                                                                               href="https://www.smartgate.ch">smartgate AG</a> - Genusshaus v1.0.2rbc</span>
+                                                                               href="https://www.smartgate.ch">smartgate AG</a> - Genusshaus v1.1.0rbc</span>
 
 
         @if(!Auth::guest())

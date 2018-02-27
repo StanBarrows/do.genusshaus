@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class JoinUsersNotification extends Notification implements ShouldQueue
+class InviteNewUsersNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
@@ -52,7 +52,7 @@ class JoinUsersNotification extends Notification implements ShouldQueue
             ->subject('Invitiation Genusshaus')
             ->greeting('Hello '.$this->user->name)
             ->line('You received an invitation for '.$this->place->name)
-            ->action('Join '.$this->place->name, route('invitiations.join', 'user='.$this->user->email.'&place='.$this->place->uuid))
+            ->action('Register', route('invitiations.register', 'user='.$this->user->email.'&place='.$this->place->uuid))
             ->line('Please do not hesitate to contact us, if you have any further questions!');
     }
 

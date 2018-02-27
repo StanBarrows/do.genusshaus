@@ -3,11 +3,12 @@
 namespace Genusshaus\Http\Controllers\Moderators\Places\Users;
 
 use Genusshaus\App\Controllers\Controller;
-use Genusshaus\Domain\Moderators\Notifications\InviteUsersNotification;
+use Genusshaus\Domain\Moderators\Notifications\InviteNewUsersNotification;
 use Genusshaus\Domain\Moderators\Notifications\JoinUsersNotification;
 use Genusshaus\Domain\Places\Models\Place;
 use Genusshaus\Domain\Users\Models\User;
-use Genusshaus\Http\Requests\Moderators\Places\Users\StoreInvitationsRequest;
+use Genusshaus\Http\Requests\Moderators\Places\Users\StoreExistingUserInvitationRequest;
+use Genusshaus\Http\Requests\Moderators\Places\Users\StoreNewUserInvitationsRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
@@ -32,9 +33,11 @@ class UsersController extends Controller
 
     public function invite(Place $place)
     {
-        $users = User::inactive()->get();
+        $users = User::all();
 
-        return view('app.moderators.places.users.invite', compact('place', 'users'));
+        $inactives = $place->users()->inactive()->get();
+
+        return view('app.moderators.places.users.invite', compact('place', 'users','inactives'));
     }
 
     public function create(Place $place)
@@ -44,11 +47,40 @@ class UsersController extends Controller
         return view('app.moderators.places.users.create', compact('place', 'places'));
     }
 
-    public function store(StoreInvitationsRequest $request, Place $place)
+
+    public function resend(Place $place, User $user)
+    {
+        $user->notify(new InviteNewUsersNotification($user, $place));
+
+        return back();
+    }
+
+
+    public function remove(Place $place, User $user)
+    {
+        $user->places()->detach($place);
+
+        return back();
+    }
+
+
+    public function existingStore(StoreExistingUserInvitationRequest $request, Place $place)
+    {
+        $user = User::where('id', $request->user_id)->first();
+
+        $user->places()->detach($place);
+        $user->places()->attach($place);
+
+        return back();
+
+    }
+
+    public function newStore(StoreNewUserInvitationsRequest $request, Place $place)
     {
         $user = User::where('email', $request->email)->first();
 
-        if (empty($user)) {
+        if (empty($user))
+        {
             $user = new User();
             $user->name = $request->name;
             $user->email = $request->email;
@@ -59,12 +91,7 @@ class UsersController extends Controller
 
             $user->places()->attach($place);
 
-            $user->notify(new InviteUsersNotification($user, $place));
-        } else {
-            $user->places()->detach($place);
-            $user->places()->attach($place);
-
-            $user->notify(new JoinUsersNotification($user, $place));
+            $user->notify(new InviteNewUsersNotification($user, $place));
         }
 
         return back();

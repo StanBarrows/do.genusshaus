@@ -19,6 +19,7 @@
                         <th>E-Mail</th>
                         <th>Status</th>
                         <th>Last activity</th>
+                        <th></th>
 
                     </tr>
                     </thead>
@@ -33,6 +34,18 @@
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->active }}</td>
                             <td>{{ optional($user->last_activity)->diffForHumans() }}</td>
+
+                            <td>
+
+                                <form class="form-inline text-left" method="POST"
+                                      action="{{ route('moderators.places.users.remove',[$place, $user]) }}">
+                                    {{ csrf_field() }}
+                                    {{ method_field('PATCH') }}
+
+                                    <button  class="btn btn-sm btn-danger" type="submit">Remove</button>
+                                </form>
+
+                            </td>
 
 
                         </tr>

@@ -23,9 +23,17 @@ Route::group(['prefix' => '/moderators', 'namespace' => 'Controllers\Moderators'
             });
 
             Route::group(['prefix' => '/users', 'namespace' => 'Users', 'as' => 'users.'], function () {
+
                 Route::get('/', 'UsersController@index')->name('index');
                 Route::get('/invite', 'UsersController@invite')->name('invite');
-                Route::post('/invite/store', 'UsersController@store')->name('invite.store');
+
+                Route::patch('/invite/resend/{user}', 'UsersController@resend')->name('resend');
+
+                Route::patch('/remove/{user}', 'UsersController@remove')->name('remove');
+
+
+                Route::post('/invite/new/store', 'UsersController@newStore')->name('invite.new.store');
+                Route::post('/invite/existing/store', 'UsersController@existingStore')->name('invite.existing.store');
 
                 Route::patch('/assign', 'UsersController@assign')->name('assign');
             });

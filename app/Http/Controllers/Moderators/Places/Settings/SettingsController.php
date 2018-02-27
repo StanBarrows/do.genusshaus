@@ -24,14 +24,54 @@ class SettingsController extends Controller
 
     public function publish(Place $place)
     {
-        if ($place->active) {
-            $place->published = true;
-            $place->save();
+
+        if(empty($place->description))
+        {
+            return back();
         }
 
-        /*   $collection = Place::where('uuid', $place->uuid)->get();
+        if(empty($place->contact_name))
+        {
+            return back();
+        }
 
-         AddPlaceToRecommender::dispatch($collection);*/
+        if(empty($place->contact_email))
+        {
+            return back();
+        }
+
+        if(empty($place->contact_phone))
+        {
+            return back();
+        }
+
+        if(empty($place->contact_web))
+        {
+            return back();
+        }
+
+        if (empty($place->active))
+        {
+            return back();
+        }
+
+        if (empty($place->openingHours()->count()))
+        {
+            return back();
+        }
+
+
+
+        if (empty($place->uploadcares()->count()))
+        {
+            return back();
+        }
+
+
+        $place->published = true;
+
+        $place->save();
+
 
         return back();
     }

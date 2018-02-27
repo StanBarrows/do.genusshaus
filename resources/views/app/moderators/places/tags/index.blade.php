@@ -17,7 +17,7 @@
         <div class="card-body">
 
             <div class="alert alert-info" role="alert">
-                <strong>Available tags! </strong> Frühstück, Mitagessen, Nachtessen, Trinken, Take-Away, 30 Minuten, 1 Stunde, Gemütlich
+                <strong>Available tags! </strong> Frühstück, Mittagessen, Nachtessen, Trinken, Take-Away, 30 Minuten, 1 Stunde, Gemütlich
             </div>
 
 

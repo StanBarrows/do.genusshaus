@@ -4,7 +4,7 @@ namespace Genusshaus\Http\Requests\Moderators\Places\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreInvitationsRequest extends FormRequest
+class StoreNewUserInvitationsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class StoreInvitationsRequest extends FormRequest
     {
         return [
             'name'      => 'required|string|max:255',
-            'email'     => 'required|email',
+            'email'     => 'required|string|email|max:255|unique:users',
         ];
     }
 }
