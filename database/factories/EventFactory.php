@@ -1,9 +1,9 @@
 <?php
 
 use Faker\Generator as Faker;
+use Genusshaus\Domain\Places\Models\Event;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Support\Str;
-use Genusshaus\Domain\Places\Models\Event;
 
 /*
 |--------------------------------------------------------------------------

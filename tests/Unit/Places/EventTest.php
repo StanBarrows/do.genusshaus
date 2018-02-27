@@ -19,7 +19,6 @@ class EventTest extends TestCase
         $this->disableExceptionHandling();
 
         $this->place = setPlacesEnvironment();
-
     }
 
     /** @test */
