@@ -8,18 +8,14 @@ use Tests\DuskTestCase;
 
 class AdministratorsUsersTest extends DuskTestCase
 {
-
     use DatabaseMigrations;
-
 
     public function setUp()
     {
         parent::setUp();
 
         $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
-
     }
-
 
     /** @test */
     public function access_administrators_users_index()
