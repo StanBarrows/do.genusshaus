@@ -15,7 +15,6 @@ class UsersSupportTest extends DuskTestCase
         parent::setUp();
 
         $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
-
     }
 
     /** @test */
