@@ -20,12 +20,9 @@ class OpeningHourTest extends TestCase
         $this->hours = $hours = create(OpeningHour::class);
     }
 
-
     /** @test */
     public function a_opening_hours_belongs_to_one_place()
     {
         $this->assertInstanceOf(Place::class, $this->hours->place);
     }
-
-
 }

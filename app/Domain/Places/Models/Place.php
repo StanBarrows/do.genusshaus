@@ -4,7 +4,6 @@ namespace Genusshaus\Domain\Places\Models;
 
 use Genusshaus\App\Traits\GeneralTraits;
 use Genusshaus\Domain\Moderators\Models\Beacon;
-use Genusshaus\Domain\Ressources\Models\Device;
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -57,7 +56,7 @@ class Place extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class,'place_user');
+        return $this->belongsToMany(User::class, 'place_user');
     }
 
     public function region()

@@ -2,11 +2,8 @@
 
 namespace Tests\Browser\Tests\Administrators;
 
-use Illuminate\Http\Request;
-use Tests\DuskTestCase;
-use Laravel\Dusk\Browser;
 use Genusshaus\Domain\Users\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\DuskTestCase;
 
 class AdministratorsUsersTest extends DuskTestCase
 {
@@ -17,18 +14,15 @@ class AdministratorsUsersTest extends DuskTestCase
      */
 
     /** @test */
-
     public function access_administrators_users_index()
     {
         $path = route('administrators.users.index');
 
-        $this->browse(function ($browser) use($path) {
+        $this->browse(function ($browser) use ($path) {
             $browser
                 ->loginAs(User::find(1))
                 ->visit($path)
                 ->assertPathIs('/backend/administrators/users');
-
-
         });
     }
 
@@ -37,15 +31,11 @@ class AdministratorsUsersTest extends DuskTestCase
     {
         $path = route('administrators.users.create');
 
-        $this->browse(function ($browser) use($path) {
+        $this->browse(function ($browser) use ($path) {
             $browser
                 ->loginAs(User::find(1))
                 ->visit($path)
                 ->assertPathIs('/backend/administrators/users/create');
-
-
         });
     }
-
-
 }

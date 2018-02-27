@@ -31,7 +31,7 @@ $factory->define(Place::class, function (Faker $faker) {
         'location_latitude'  => $faker->randomFloat(4, 47.5199, 47.5712),
         'location_longitude' => $faker->randomFloat(4, 7.5480, 7.6944),
 
-        'contact_name'       => $faker->name,
+        'contact_name'        => $faker->name,
         'contact_email'       => $faker->email,
         'contact_web'         => $faker->url,
         'contact_phone'       => $faker->phoneNumber,

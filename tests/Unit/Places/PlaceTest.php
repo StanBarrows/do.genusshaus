@@ -21,7 +21,6 @@ class PlaceTest extends TestCase
         $this->withoutMiddleware();
 
         $this->place = setPlacesEnvironment();
-
     }
 
     /** @test */
@@ -35,11 +34,10 @@ class PlaceTest extends TestCase
     {
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->place->users);
 
-      /*  $user = create(User::class);
-        $user->places()->attach($this->place);
+        /*  $user = create(User::class);
+          $user->places()->attach($this->place);
 
-        $this->assertInstanceOf(User::class, $this->place->users->first());*/
-
+          $this->assertInstanceOf(User::class, $this->place->users->first());*/
     }
 
     /** @test */

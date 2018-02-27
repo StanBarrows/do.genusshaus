@@ -14,7 +14,6 @@ class DashboardController extends Controller
 
     public function index(Place $place)
     {
-
         return view('app.places.dashboard.index', compact('place'));
     }
 }
