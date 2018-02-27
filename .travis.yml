@@ -37,7 +37,7 @@ install:
 
    - cp .env.dusk.travis .env.dusk
 
-   - cp phpunit.travis.xml phpunit.travis.xml
+   - cp phpunit.travis.xml phpunit.xml
 
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
    - php artisan key:generate
