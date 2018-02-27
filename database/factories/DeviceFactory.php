@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
 $factory->define(Device::class, function (Faker $faker) {
     return [
 
-        'uuid'       => Str::uuid(),
+        'uuid'             => Str::uuid(),
         'push_token'       => Str::random(20),
     ];
 });
