@@ -8,16 +8,13 @@ use Tests\DuskTestCase;
 
 class AdministratorsDashboardTest extends DuskTestCase
 {
-
     use DatabaseMigrations;
-
 
     public function setUp()
     {
         parent::setUp();
 
         $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
-
     }
 
     /** @test */
