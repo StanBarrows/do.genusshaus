@@ -5,8 +5,6 @@ namespace Genusshaus\Domain\Users\Models;
 use Genusshaus\Domain\Places\Models\Place;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Smart6ate\Roles\Traits\HasRoles;
 
 class Device extends Authenticatable
 {
@@ -36,7 +34,7 @@ class Device extends Authenticatable
     ];
 
     public function favourites()
-     {
-         return $this->belongsToMany(Place::class, 'favourites', 'device_id', 'place_id')->withTimeStamps();
-     }
+    {
+        return $this->belongsToMany(Place::class, 'favourites', 'device_id', 'place_id')->withTimeStamps();
+    }
 }
