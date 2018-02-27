@@ -8,21 +8,10 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="false">
-
-    <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-    </logging>
-
     <testsuites>
-
-        <testsuite name="Feature">
-            <directory suffix="Test.php">./tests/Feature</directory>
+        <testsuite name="Browser Test Suite">
+            <directory suffix="Test.php">./tests/Browser</directory>
         </testsuite>
-
-        <testsuite name="Unit">
-             <directory suffix="Test.php">./tests/Unit</directory>
-         </testsuite>
-
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
@@ -40,5 +29,3 @@
         <env name="QUEUE_DRIVER" value="sync"/>
     </php>
 </phpunit>
-
-
