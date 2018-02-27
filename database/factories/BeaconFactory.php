@@ -22,7 +22,7 @@ $factory->define(Beacon::class, function (Faker $faker) {
         'place_id' => function () {
             return factory(Place::class)->create()->id;
         },
-        'estimote_id' => Str::random(16),
+        'estimote_id' => Str::random(12),
         'major'       => $faker->numberBetween(1, 250),
         'minor'       => $faker->numberBetween(1, 250),
     ];
