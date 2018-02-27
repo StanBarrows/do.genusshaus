@@ -25,9 +25,9 @@ class DashboardController extends Controller
     {
         /*
                 $arr = array ( 0 => "lorem", 1 => "ipsum", 2 => "dolor");
-        
+
                 $str = implode (', ', $arr);
-        
+
                 dd($str);*/
 
         $places = auth()->user()->places()->isActive()->get();
