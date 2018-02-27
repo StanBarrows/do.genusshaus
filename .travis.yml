@@ -1,11 +1,8 @@
+dist: trust
+
 env:
   global:
     - CC_TEST_REPORTER_ID=d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
-
-addons:
-  code_climate:
-    repo_token:
-      secure: d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
 
 language: php
 
@@ -14,23 +11,20 @@ php:
 
 services:
   - redis-server
-  - mysql
+  - postgre
 
 addons:
-  apt:
-    sources:
-      - mysql-5.7-trusty
-    packages:
-      - mysql-server
-
-dist: trust
+  code_climate:
+    repo_token:
+      secure: d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
 
 cache:
   directories:
     - vendor
 
 before_script:
-  - mysql -e 'create database genusshaus;'
+   - psql -c 'create database travis;' -U postgres
+
 
 install:
    - cp .env.travis .env

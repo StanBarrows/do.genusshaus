@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1519689590">
-  <project timestamp="1519689590">
+<coverage generated="1519702023">
+  <project timestamp="1519702023">
     <package name="Genusshaus\App\Console\Commands">
       <file name="/home/vagrant/smartgate/do.genusshaus/app/App/Console/Commands/RecommendationSetUp.php">
         <class name="Genusshaus\App\Console\Commands\RecommendationSetUp" namespace="Genusshaus\App\Console\Commands">
@@ -127,23 +127,23 @@
         <class name="Genusshaus\App\Providers\AppServiceProvider" namespace="Genusshaus\App\Providers">
           <metrics complexity="6" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="9" elements="15" coveredelements="13"/>
         </class>
-        <line num="18" type="method" name="boot" visibility="public" complexity="2" crap="2" count="17"/>
-        <line num="20" type="stmt" count="17"/>
-        <line num="21" type="stmt" count="17"/>
-        <line num="22" type="stmt" count="17"/>
-        <line num="31" type="method" name="anonymousFunction:31#148" complexity="1" crap="1" count="17"/>
-        <line num="32" type="stmt" count="11"/>
-        <line num="33" type="stmt" count="17"/>
-        <line num="35" type="method" name="anonymousFunction:35#179" complexity="1" crap="1" count="17"/>
-        <line num="36" type="stmt" count="6"/>
+        <line num="19" type="method" name="boot" visibility="public" complexity="2" crap="2" count="17"/>
+        <line num="24" type="stmt" count="17"/>
+        <line num="25" type="stmt" count="17"/>
+        <line num="26" type="stmt" count="17"/>
+        <line num="35" type="method" name="anonymousFunction:35#159" complexity="1" crap="1" count="17"/>
+        <line num="36" type="stmt" count="11"/>
         <line num="37" type="stmt" count="17"/>
-        <line num="39" type="method" name="anonymousFunction:39#216" complexity="1" crap="1.12" count="17"/>
-        <line num="40" type="stmt" count="0"/>
+        <line num="39" type="method" name="anonymousFunction:39#190" complexity="1" crap="1" count="17"/>
+        <line num="40" type="stmt" count="6"/>
         <line num="41" type="stmt" count="17"/>
-        <line num="42" type="stmt" count="17"/>
-        <line num="49" type="method" name="register" visibility="public" complexity="1" crap="1" count="17"/>
-        <line num="51" type="stmt" count="17"/>
-        <metrics loc="52" ncloc="37" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="16" coveredelements="14"/>
+        <line num="43" type="method" name="anonymousFunction:43#227" complexity="1" crap="1.12" count="17"/>
+        <line num="44" type="stmt" count="0"/>
+        <line num="45" type="stmt" count="17"/>
+        <line num="46" type="stmt" count="17"/>
+        <line num="53" type="method" name="register" visibility="public" complexity="1" crap="1" count="17"/>
+        <line num="55" type="stmt" count="17"/>
+        <metrics loc="56" ncloc="41" classes="1" methods="5" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="10" elements="16" coveredelements="14"/>
       </file>
       <file name="/home/vagrant/smartgate/do.genusshaus/app/App/Providers/AuthServiceProvider.php">
         <class name="Genusshaus\App\Providers\AuthServiceProvider" namespace="Genusshaus\App\Providers">
@@ -1844,6 +1844,6 @@
       <line num="19" type="stmt" count="0"/>
       <metrics loc="21" ncloc="21" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="6" coveredelements="0"/>
     </file>
-    <metrics files="109" loc="4340" ncloc="3463" classes="101" methods="277" coveredmethods="41" conditionals="0" coveredconditionals="0" statements="773" coveredstatements="89" elements="1050" coveredelements="130"/>
+    <metrics files="109" loc="4344" ncloc="3467" classes="101" methods="277" coveredmethods="41" conditionals="0" coveredconditionals="0" statements="773" coveredstatements="89" elements="1050" coveredelements="130"/>
   </project>
 </coverage>
