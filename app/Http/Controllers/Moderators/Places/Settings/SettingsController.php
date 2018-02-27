@@ -24,54 +24,41 @@ class SettingsController extends Controller
 
     public function publish(Place $place)
     {
-
-        if(empty($place->description))
-        {
+        if (empty($place->description)) {
             return back();
         }
 
-        if(empty($place->contact_name))
-        {
+        if (empty($place->contact_name)) {
             return back();
         }
 
-        if(empty($place->contact_email))
-        {
+        if (empty($place->contact_email)) {
             return back();
         }
 
-        if(empty($place->contact_phone))
-        {
+        if (empty($place->contact_phone)) {
             return back();
         }
 
-        if(empty($place->contact_web))
-        {
+        if (empty($place->contact_web)) {
             return back();
         }
 
-        if (empty($place->active))
-        {
+        if (empty($place->active)) {
             return back();
         }
 
-        if (empty($place->openingHours()->count()))
-        {
+        if (empty($place->openingHours()->count())) {
             return back();
         }
 
-
-
-        if (empty($place->uploadcares()->count()))
-        {
+        if (empty($place->uploadcares()->count())) {
             return back();
         }
-
 
         $place->published = true;
 
         $place->save();
-
 
         return back();
     }
