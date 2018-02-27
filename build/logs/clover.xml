@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1519773216">
-  <project timestamp="1519773216">
+<coverage generated="1519773726">
+  <project timestamp="1519773726">
     <package name="Genusshaus\App\Console\Commands">
       <file name="/home/vagrant/smartgate/do.genusshaus/app/App/Console/Commands/RecommendationSetUp.php">
         <class name="Genusshaus\App\Console\Commands\RecommendationSetUp" namespace="Genusshaus\App\Console\Commands">
