@@ -31,7 +31,7 @@ class UsersDashboardTest extends DuskTestCase
         });
     }
 
-    /**
+    /*
      * @test
      * @group users
      */
