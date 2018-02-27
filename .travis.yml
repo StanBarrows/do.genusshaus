@@ -1,10 +1,10 @@
-dist: trust
+sudo: required
+language: php
+dist: trusty
 
 env:
   global:
     - CC_TEST_REPORTER_ID=d572a6fcb618ca97b91c06fb4e11ad1b0a0ba817eead5c233c46234e45f96105
-
-language: php
 
 php:
   - 7.2
@@ -24,7 +24,14 @@ cache:
 
 before_script:
    - psql -c 'create database travis;' -U postgres
+   - export DISPLAY=:99.0
+   - sh -e /etc/init.d/xvfb start
+   - ./vendor/laravel/dusk/bin/chromedriver-linux &
 
+
+script:
+  - phpunit
+  - php artisan dusk
 
 install:
    - cp .env.travis .env
