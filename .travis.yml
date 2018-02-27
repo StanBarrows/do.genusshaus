@@ -34,9 +34,6 @@ script:
 
 install:
    - cp .env.travis .env
-
-   - cp .env.dusk.local.testing .env.dusk.local
-
    - cp phpunit.travis.xml phpunit.xml
 
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
