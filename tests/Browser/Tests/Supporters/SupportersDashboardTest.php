@@ -8,7 +8,6 @@ use Tests\DuskTestCase;
 
 class SupportersDashboardTest extends DuskTestCase
 {
-
     use DatabaseMigrations;
 
     public function setUp()
@@ -16,7 +15,6 @@ class SupportersDashboardTest extends DuskTestCase
         parent::setUp();
 
         $this->artisan('db:seed', ['--class' => 'DatabaseSeeder']);
-
     }
 
     /** @test */
