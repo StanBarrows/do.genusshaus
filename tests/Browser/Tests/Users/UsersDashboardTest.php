@@ -35,12 +35,11 @@ class UsersDashboardTest extends DuskTestCase
      * @test
      * @group users
      */
-
     public function access_to_active_places()
     {
         $path = route('users.dashboard.index');
 
-        $place =  create(Place::class);
+        $place = create(Place::class);
         $place->active = true;
         $place->save();
 
@@ -58,4 +57,3 @@ class UsersDashboardTest extends DuskTestCase
         });
     }
 }
-
