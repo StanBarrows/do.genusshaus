@@ -30,10 +30,7 @@ class PushEventsController extends Controller
                         'sound' => 'default',
                     ],
 
-                'targets' =>
-
-                    $place->favourites->pluck('push_token')->toArray()
-                ,
+                'targets' => $place->favourites->pluck('push_token')->toArray(),
             ];
 
         $response = $push->Push($data['data'], $data['targets'], $data['notification']);
