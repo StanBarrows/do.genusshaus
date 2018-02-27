@@ -86,9 +86,9 @@ class Place extends Model
     }
 
     public function favourites()
-     {
-         return $this->belongsToMany(Device::class, 'favourites');
-     }
+    {
+        return $this->belongsToMany(Device::class, 'favourites');
+    }
 
     public function getIconImage()
     {

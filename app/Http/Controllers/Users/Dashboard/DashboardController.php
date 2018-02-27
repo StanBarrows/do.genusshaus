@@ -23,13 +23,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $arr = [0 => 'lorem', 1 => 'ipsum', 2 => 'dolor'];
 
-        $arr = array ( 0 => "lorem", 1 => "ipsum", 2 => "dolor");
-
-        $str = implode (', ', $arr);
+        $str = implode(', ', $arr);
 
         dd($str);
-
 
         $places = auth()->user()->places()->isActive()->get();
 
