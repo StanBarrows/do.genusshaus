@@ -4,9 +4,7 @@ namespace Tests\Browser\Tests\Auth;
 
 use Genusshaus\Domain\Users\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Mail;
 use Tests\Browser\Pages\Auth\ForgotPasswordPage;
-use Tests\Browser\Pages\Auth\SignInPage;
 use Tests\DuskTestCase;
 
 class ForgotPasswordTest extends DuskTestCase
@@ -14,19 +12,18 @@ class ForgotPasswordTest extends DuskTestCase
     use DatabaseMigrations;
 
     /**
-   * @test
-   * @group auth
-   */
-
+     * @test
+     * @group auth
+     */
     public function a_user_can_send_a_reset_password_email()
     {
         $path = route('login');
 
         $user = factory(User::class)->create([
 
-            'name' => 'Max Mustermann',
-            'email' => 'max.mustermann@genusshaus.ch',
-            'password' => bcrypt('password')
+            'name'     => 'Max Mustermann',
+            'email'    => 'max.mustermann@genusshaus.ch',
+            'password' => bcrypt('password'),
 
         ]);
 
@@ -37,6 +34,4 @@ class ForgotPasswordTest extends DuskTestCase
                 ->assertSeeIn('.card', 'We have e-mailed your password reset link!');
         });
     }
-
-
 }

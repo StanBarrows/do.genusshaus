@@ -24,7 +24,6 @@ class SignInPage extends BasePage
      *
      * @return void
      */
-
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url());
@@ -38,7 +37,6 @@ class SignInPage extends BasePage
             ->type('@password', $password)
             ->click('@login-button');
     }
-
 
     /**
      * Get the element shortcuts for the page.
