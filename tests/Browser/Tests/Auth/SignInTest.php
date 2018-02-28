@@ -12,25 +12,24 @@ class SignInTest extends DuskTestCase
     use DatabaseMigrations;
 
     /**
-   * @test
-   * @group auth
-   */
-
+     * @test
+     * @group auth
+     */
     public function a_user_can_sign_in()
     {
         $path = route('login');
 
         $user = factory(User::class)->create([
 
-            'name' => 'Max Mustermann',
-            'email' => 'max.mustermann@genusshaus.ch',
-            'password' => bcrypt('password')
+            'name'     => 'Max Mustermann',
+            'email'    => 'max.mustermann@genusshaus.ch',
+            'password' => bcrypt('password'),
 
         ]);
 
         $this->browse(function ($browser) use ($path, $user) {
             $browser
-                ->visit(new SignInPage)
+                ->visit(new SignInPage())
                 ->signIn($user->email, 'password')
                 ->assertPathIs('/backend/users/dashboard')
                 ->assertSeeIn('.navbar', $user->name);
