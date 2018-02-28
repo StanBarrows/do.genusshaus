@@ -28,7 +28,7 @@ before_script:
    - cp phpunit.travis.xml phpunit.xml
 
     - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-    - php artisan serve &
+
 
 install:
    - travis_retry composer install --no-interaction --prefer-dist --no-suggest
@@ -40,6 +40,7 @@ install:
 
 script:
   - phpunit
+  - php artisan dusk
 
 after_script:
   - vendor/bin/test-reporter
