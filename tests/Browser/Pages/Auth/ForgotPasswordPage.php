@@ -34,7 +34,7 @@ class ForgotPasswordPage extends BasePage
     {
         $browser
             ->resize(1920, 1080)
-            ->type('email', $email)
+            ->type('@email', $email)
             ->click('@reset-password-send-reset-link-button');
     }
 
@@ -47,6 +47,7 @@ class ForgotPasswordPage extends BasePage
     public function elements()
     {
         return [
+            '@email' => '#email'
         ];
     }
 }

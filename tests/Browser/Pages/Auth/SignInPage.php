@@ -34,8 +34,8 @@ class SignInPage extends BasePage
     {
         $browser
             ->resize(1920, 1080)
-            ->type('email', $email)
-            ->type('password', $password)
+            ->type('@email', $email)
+            ->type('@password', $password)
             ->click('@login-button');
     }
 
@@ -48,6 +48,8 @@ class SignInPage extends BasePage
     public function elements()
     {
         return [
+            '@email' => '#email',
+            '@password' => '#password'
         ];
     }
 }
