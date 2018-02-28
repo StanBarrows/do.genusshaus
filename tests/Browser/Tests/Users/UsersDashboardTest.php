@@ -36,7 +36,7 @@ class UsersDashboardTest extends DuskTestCase
      * @group users
      */
 
-   /* public function access_to_active_places()
+   public function access_to_active_places()
     {
         $path = route('users.dashboard.index');
 
@@ -56,5 +56,5 @@ class UsersDashboardTest extends DuskTestCase
                 ->assertSee($place->name)
                 ->assertSee($user->name);
         });
-    }*/
+    }
 }
