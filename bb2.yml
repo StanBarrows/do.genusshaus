@@ -1,4 +1,4 @@
-sudo: required
+sudo: true
 language: php
 dist: trusty
 
@@ -11,7 +11,7 @@ php:
 
 services:
   - redis-server
-  - postgre
+  - postgres
 
 addons:
   code_climate:
