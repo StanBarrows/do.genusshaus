@@ -35,9 +35,15 @@
         <env name="DB_DATABASE" value="testing"/>
         <env name="DB_USERNAME" value="postgres"/>
         <env name="DB_PASSWORD" value=""/>
-        <env name="CACHE_DRIVER" value="file"/>
+
         <env name="SESSION_DRIVER" value="database"/>
+
+        <env name="CACHE_DRIVER" value="file"/>
         <env name="QUEUE_DRIVER" value="sync"/>
+
+        <env name="MAIL_FROM_NAME" value="Genusshaus"/>
+        <env name="MAIL_FROM_ADDRESS" value="do@genusshaus.ch"/>
+        <env name="MAIL_DRIVER" value="log"/>
     </php>
 </phpunit>
 

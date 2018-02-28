@@ -5,7 +5,7 @@ namespace Tests\Browser\Pages\Auth;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Page as BasePage;
 
-class Login extends BasePage
+class ForgotPasswordPage extends BasePage
 {
     /**
      * Get the URL for the page.
@@ -14,7 +14,7 @@ class Login extends BasePage
      */
     public function url()
     {
-        return route('login');
+        return '/password/reset';
     }
 
     /**
@@ -24,10 +24,20 @@ class Login extends BasePage
      *
      * @return void
      */
+
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url());
     }
+
+    public function sendPasswordResetLink(Browser $browser, $email = null)
+    {
+        $browser
+            ->resize(1920, 1080)
+            ->type('@email', $email)
+            ->click('@send-password-reset-link-button');
+    }
+
 
     /**
      * Get the element shortcuts for the page.
@@ -37,7 +47,7 @@ class Login extends BasePage
     public function elements()
     {
         return [
-            '@element' => '#selector',
+            '@email' => '#email',
         ];
     }
 }

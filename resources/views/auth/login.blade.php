@@ -65,7 +65,7 @@
 
                         <div class="form-group row">
                             <div class="col-lg-8 offset-2 text-center">
-                                <button type="submit" class="btn btn-block btn-primary">
+                                <button dusk="login-button" type="submit" class="btn btn-block btn-primary">
                                     Login
                                 </button>
 

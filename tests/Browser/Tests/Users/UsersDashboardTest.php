@@ -35,6 +35,7 @@ class UsersDashboardTest extends DuskTestCase
      * @test
      * @group users
      */
+
    /* public function access_to_active_places()
     {
         $path = route('users.dashboard.index');

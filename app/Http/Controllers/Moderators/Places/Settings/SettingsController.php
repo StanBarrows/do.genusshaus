@@ -48,6 +48,10 @@ class SettingsController extends Controller
             return back();
         }
 
+        if (empty($place->tags()->count())) {
+            return back();
+        }
+
         if (empty($place->openingHours()->count())) {
             return back();
         }
