@@ -40,7 +40,6 @@ install:
 
 script:
   - phpunit
-  - php artisan dusk
 
 after_script:
   - vendor/bin/test-reporter
