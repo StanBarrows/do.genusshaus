@@ -33,6 +33,7 @@ class SignInPage extends BasePage
     {
         $browser
             ->resize(1920, 1080)
+            ->dump()
             ->type('@email', $email)
             ->type('@password', $password)
             ->click('@login-button');
