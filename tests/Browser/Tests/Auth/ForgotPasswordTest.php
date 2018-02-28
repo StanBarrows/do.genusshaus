@@ -18,7 +18,7 @@ class ForgotPasswordTest extends DuskTestCase
    * @group auth
    */
 
-    public function a_user_can_sign_in()
+    public function a_user_can_send_a_reset_password_email()
     {
         $path = route('login');
 

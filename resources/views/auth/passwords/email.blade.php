@@ -19,7 +19,7 @@
                         <div class="form-group row">
 
                             <div class="col-lg-8 offset-2">
-                                <input id="email" name="email" title="email" placeholder="E-mail" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  value="{{ old('email') }}">
+                                <input dusk="reset-password-email" id="email" name="email" title="email" placeholder="E-mail" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"  value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <div class="invalid-feedback">
@@ -31,7 +31,7 @@
 
                         <div class="form-group row">
                             <div class="col-lg-8 offset-lg-2">
-                                <button  dusk="send-password-reset-link-button" type="submit" class="btn btn-block btn-primary">
+                                <button  dusk="reset-password-send-reset-link-button" type="submit" class="btn btn-block btn-primary">
                                     Send Password Reset Link
                                 </button>
                             </div>
