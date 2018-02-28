@@ -24,7 +24,6 @@ class ForgotPasswordPage extends BasePage
      *
      * @return void
      */
-
     public function assert(Browser $browser)
     {
         $browser->assertPathIs($this->url());
@@ -37,7 +36,6 @@ class ForgotPasswordPage extends BasePage
             ->type('@email', $email)
             ->click('@send-password-reset-link-button');
     }
-
 
     /**
      * Get the element shortcuts for the page.
