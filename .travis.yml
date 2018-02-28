@@ -42,6 +42,7 @@ install:
    - php artisan key:generate
 
 script:
+  - phpunit
   - php artisan dusk
 
 after_script:
