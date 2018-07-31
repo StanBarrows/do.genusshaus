@@ -1,3 +1,21 @@
+body.homepage {
+    background-image: url('../img/homepage.jpg');
+    background-size: cover;
+}
+
+.navbar-brand img {
+    height: 38px;
+}
+
+.h1-title {
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 45px 0px 0px 0px;
+    padding: 0px;
+}
+
 .avatar
 {
     padding: 0px;

@@ -80,6 +80,50 @@
                     </div>
                 </div>
 
+                <!-- Vizah GmbH -->
+                <div class="form-group row">
+
+                    <div class="col-lg-12">
+                        <input title="title"
+                               placeholder="Title"
+                               id="title"
+                               name="title"
+                               type="text"
+                               class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}"
+                               value="{{ old('title') }}"
+                               required
+                        >
+
+                        @if ($errors->has('title'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('title') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+
+                <!-- Vizah GmbH -->
+                <div class="form-group row">
+
+                    <div class="col-lg-12">
+                        <textarea title="body"
+                               placeholder="Body"
+                               id="body"
+                               name="body"
+                               class="form-control{{ $errors->has('body') ? ' is-invalid' : '' }}"
+                               required
+                        >{{ old('body') }}</textarea>
+
+                        @if ($errors->has('body'))
+                            <div class="invalid-feedback">
+                                <strong>{{ $errors->first('body') }}</strong>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+
+
                 <div class="form-group row">
 
                     <div class="col-lg-12">

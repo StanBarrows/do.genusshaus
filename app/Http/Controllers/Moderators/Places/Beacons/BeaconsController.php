@@ -36,11 +36,11 @@ class BeaconsController extends Controller
     public function store(StoreBeaconsRequest $request, Place $place)
     {
         $place->beacons()->create([
-
             'estimote_id' => $request->estimote_id,
             'major'       => $request->major,
             'minor'       => $request->minor,
-
+            'title'       => $request->title,
+            'body'        => $request->body
         ]);
 
         return redirect()->route('moderators.places.beacons.index', $place);

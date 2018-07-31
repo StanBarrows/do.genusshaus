@@ -27,6 +27,8 @@ class StoreBeaconsRequest extends FormRequest
             'estimote_id' => 'required|string|max:255',
             'major'       => 'required|numeric|max:5000',
             'minor'       => 'required|numeric|max:5000',
+            'title'       => 'required|string|max:500',
+            'body'        => 'required|string|max:5000',
         ];
     }
 }

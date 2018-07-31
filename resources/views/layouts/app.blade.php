@@ -21,7 +21,7 @@
 
 
 </head>
-<body>
+<body @if(Route::currentRouteName() == "login") class="homepage" @endif>
 <div id="app">
 
     @include('layouts.partials._navigation')

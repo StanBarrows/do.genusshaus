@@ -2,7 +2,7 @@
 
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
+            <img src="{{ asset('img/smartgate_logo_black.png') }}" alt="{{ config('app.name', 'Laravel') }}" />
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
@@ -15,13 +15,7 @@
 
                 @if (!Auth::guest())
                     <li class="nav-item"><a href="{{ route('users.dashboard.index') }}" class="nav-link">Your dashboard</a></li>
-
-
-
                     <li class="nav-item"><a href="{{ route('users.support.index') }}" class="nav-link"><strong><i style="color: #4ca0f5" class="fas fa-question-circle fa-lg"></i></strong> Support</a></li>
-
-
-
                 @endif
             </ul>
 
@@ -29,7 +23,11 @@
             <ul class="ml-auto navbar-nav">
 
                 @if (Auth::guest())
+                    <!--
                     <li class="nav-item"><a href="https://dev.genusshaus.ch" class="nav-link">Zurück zur Landingpage</a></li>
+                    -->
+                    <li class="nav-item"><a href="#" class="nav-link">DE</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">EN</a></li>
                     <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
                 @else
                     <li class="avatar">
@@ -97,5 +95,3 @@
 
     </div>
 </nav>
-
-
